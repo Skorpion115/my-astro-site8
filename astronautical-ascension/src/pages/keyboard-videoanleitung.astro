@@ -1,0 +1,98 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import YouTube from "../components/YouTube.astro";
+import "../styles/lite-yt-embed.css";
+const pageTitle = "Weiterführende Lektionen für Keyboard";
+const description = "Lerne das Stück 🎹 Hammond Flip von Klaus Wunderlich.";
+const keywords = "gitarrenunterricht für akustische gitarre, yesterday - beatles, city of neworleans - arlo guthrie";
+const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = `${SITE_URL}/keyboard-videoanleitung/`;
+
+
+// RDFa-Markup für das Video nur auf dieser Seite
+// Video-Daten
+
+const videoData = [
+  {
+    loc: `${SITE_URL}/keyboard-videoanleitung/`,
+    title: "Hammond Organ - Hammond Flip - Klaus Wunderlich",
+    description: "Keyboard Tutorial über eine Klaus Wunderlich Komposition. Das Stück heißt 'Hammond Flip'.",
+    content_loc: "https://www.youtube.com/embed/244HlpB3JoA",
+    thumbnail_loc: "https://i.ytimg.com/vi/244HlpB3JoA/hqdefault.jpg",
+    publication_date: "2021-07-08T14:00:00+02:00",
+    duration: "PT3M6S",
+  },
+  {
+    loc: `${SITE_URL}/keyboard-videoanleitung/`,
+    title: "Hammond Organ Komponist: Klaus Wunderlich Titel: H-schisch",
+    description: "Ein Keyboard Tutorial über den Komponist Klaus Wunderlich. Das Stück das ich spiele heißt 'H-schisch'. Das ist in einem Notenheft von ihm mit 12 Kompositionen. Klaus Wunderlich brachte ein Notenbuch heraus mit 12 Kompositionen von ihm. Für jede Tonart komponierte er ein Stück. Ich habe das Stück in H Durgewählt. Ich habe es mit einem HAMMOND XM-1 Expander aufgenommen.",
+    content_loc: "https://www.youtube.com/embed/y2KtSx3-W3w",
+    thumbnail_loc: "https://i.ytimg.com/vi/y2KtSx3-W3w/hqdefault.jpg",
+    publication_date: "2023-05-19T14:00:00+02:00",
+    duration: "PT4M16S",
+  },
+  {
+    loc: `${SITE_URL}/keyboard-videoanleitung/`,
+    title: "Hammond Organ Komponist: Klaus Wunderlich Titel: E-Hering",
+    description:
+      "Noch ein Stück aus dem Heft 12 Kompositionen von Klaus Wunderlich. Ein Keyboard Tutorial über den Komponisten Klaus Wunderlich. Titel: E-Hering.",
+    content_loc: "https://www.youtube.com/embed/t0tOQfL2qSE",
+    thumbnail_loc: "https://i.ytimg.com/vi/t0tOQfL2qSE/hqdefault.jpg",
+    publication_date: "2023-04-12T14:00:00+02:00",
+    duration: "PT5M38S",
+  },
+];
+---
+<BaseLayout
+pageTitle={pageTitle}
+description={description}
+keywords={keywords}
+href={pageUrl}
+ogTitle={pageTitle}
+ogDescription={description}
+ogUrl={pageUrl}
+twitterTitle={pageTitle}
+twitterDescription={description}
+twitterUrl={pageUrl}
+>
+<br />
+<!-- RDFa-Markup Struktur für das VideoObject -->
+{
+    videoData.map((video) => (
+      <div vocab="http://schema.org/" typeof="VideoObject">
+        <meta property="name" content={video.title} />
+        <meta property="description" content={video.description} />
+        <meta property="thumbnailUrl" content={video.thumbnail_loc} />
+        <meta property="uploadDate" content={video.publication_date} />
+        <meta property="duration" content={video.duration} />
+        <meta property="contentUrl" content={video.content_loc} />
+        <meta property="embedUrl" content={video.content_loc} />
+
+        <div class="video-container-wrapper">
+          <div class="video-container">
+            <lite-youtube
+              videoid={video.content_loc.split("/").pop()}
+              style={
+                "background-image: url('" + video.thumbnail_loc + "');"
+              }
+            >
+              <a
+                href={video.content_loc}
+                class="lty-playbtn"
+                title={video.title}
+              >
+                <span class="lyt-visually-hidden">
+                  Play Video: {video.title}
+                </span>
+              </a>
+            </lite-youtube>
+          </div>
+          <h2>{video.title}</h2>
+          <p>{video.description}</p>
+        </div>
+      </div>
+    ))
+}
+
+<YouTube />
+</BeseLayout>

@@ -1,0 +1,109 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Ich rufe Sie zurück!";
+const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = `${SITE_URL}/contact_4/`;
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description="Falls die Fragen haben können sie mir gerne eine kurze Mitteilung schicken. Ich werde sie zurück rufen! 😀"
+  keywords="ich rufe sie zurück, rückruf"
+  href={pageUrl}
+>
+<br />
+  <div class="container4">
+    <form
+      name="contact_4"
+      method="POST"
+      action="/danke-seite/"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+    >
+      <!-- Honeypot field (invisible to users) -->
+      <p style="display:none">
+        <label
+          >Don’t fill this out if you're human: <input
+            name="bot-field"
+          /></label
+        >
+      </p>
+
+      <input type="hidden" name="form-name" value="contact_4" />
+
+      <div>
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          autocomplete="name"
+          id="name"
+          name="name"
+          placeholder="Namen eintragen"
+          class="form-control form-control-lg"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="subject">Betreff:</label>
+        <input
+          name="subject"
+          type="text"
+          id="subject"
+          maxlength="30"
+          placeholder="Rückruf"
+          class="form-control form-control-lg"
+        />
+      </div>
+
+      <div>
+        <label for="message">Nachricht:</label>
+        <textarea
+          id="message"
+          name="message"
+          cols="23"
+          rows="10"
+          placeholder="Bitte um Rückruf"></textarea>
+      </div>
+
+      <div>
+        <label for="phone">Telefonnummer:</label>
+        <input
+          type="tel"
+          id="phone"
+          autocomplete="tel-national"
+          name="phone"
+          class="form-control form-control-lg"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="email">E-Mail:</label>
+        <input
+          type="email"
+          id="email"
+          autocomplete="email"
+          name="email"
+          class="form-control form-control-lg"
+        />
+      </div>
+
+      <br />
+      <!--
+        <div
+          class="g-recaptcha"
+          data-sitekey="6LdRPP0pAAAAAPoJR0Z6iRH_HFqnJBE4rNpKdLuP"
+        >
+        </div> -->
+      <!--
+        <script src="/scripts/form-handler.js" type="module" defer></script>
+        <br />
+        <div> -->
+      <button type="submit" class="btn btn-lg btn-primary">Absenden</button>
+    </form>
+  </div>
+</BaseLayout>
+<p>
+  <a href="../index.html" class="normal-links">Zurück</a>
+</p>

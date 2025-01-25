@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Impressum";
+const description = "Impressum";
+const keywords = "impressum, musicstudio ziebart, gunzenhausener str. 20, 90451 nürnberg";
+const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = `${SITE_URL}/impressum/`;
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <h2>Adresse</h2>
+  <div>
+    <hr />
+    <p>
+      Musicstudio Ziebart
+      <br />
+      <br /> Gunzenhausener Str. 20
+      <br />
+      <br /> 90451 Nürnberg<br />
+      <br />
+      <br /> Staatl. anerkannter Musiklehrer
+      <br />
+      <br /> Telefon:
+      <br />
+      <a class="normal-links" href="tel:+499116320890">+49 (0)911 6320890</a>
+      <br />
+      <br />
+      <br /> Steuernummer: 218/292/70320 Finanzamt Fürth
+      <br />
+      <br /> Inhaltlich Verantwortlicher gem. &sect; 55 II RStV: Rudolf Ziebart (Anschrift
+      s.o.)
+      <br />
+      <br />
+      <br />
+      Meine 
+      <a
+        class="normal-links"
+        href="https://maps.google.de/maps?ie=UTF8&cid=10230175189141752103&q=Musikschule+Ziebart&iwloc=A&gl=DE&hl=de"
+        target="top"
+        >Standortansicht im Stadtplan!
+      </a>
+    </p>
+  </div>
+</BaseLayout>

@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
+import type { MarkdownInstance } from "astro";
+
+// Interface für das Frontmatter jedes Blog-Posts
+interface PostFrontmatter {
+  title: string;
+  description: string;
+  pubDate: string;
+  author: string;
+  image: { url: string; alt: string };
+  /*
+  tags: string[]; */
+}
+
+// Sammeln aller Blog-Posts
+const allPosts: MarkdownInstance<PostFrontmatter>[] = await Astro.glob("./posts/*.md");
+const pageTitle = "Meine Blog Seite";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <p>
+    Ich möchte einige gute Ratschläge für Musiker und Musikerinnen geben. Viele
+    Gitarren Anfänger wissen nicht wie man eine Gitarre stimmt. Hier zu habe ich
+    den kleinen Blog Gitarre stimmen geschrieben. Das gleiche gilt auch für alle
+    Banjo Picker. Da das Banjo lauter als eine normale Gitarre ist haben viele
+    Bedenken wegen der Nachbarschaft vor allen in Wohnungen. Hier stelle ich
+    einen Banjo Dämpfer vor der das Problem lösen sollte.
+  </p>
+  <p>
+    Außerdem möchte ich noch das Astro Framework erwähnen mit dem ich meine
+    ganze Webseite geschrieben habe.
+  </p>
+  
+  <ul>
+    {
+      allPosts.map((post) => (
+        <BlogPost url={post.url} title={post.frontmatter.title} />
+      ))
+    }
+  </ul>
+</BaseLayout>

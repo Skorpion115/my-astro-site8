@@ -1,0 +1,84 @@
+article section img {
+  max-width: 30%;
+  height: auto;
+  box-shadow: 0 0 0.6rem 0.3rem #4c4948;
+  border-radius: 5px;
+  float: right;
+  margin-top: 1.25rem;
+  margin-left: 1rem;
+  margin-right: 3rem;
+}
+
+/* ANCHOR Neue Table CSS */
+
+table.basis-table {
+  border-collapse: collapse;
+  margin: 2rem 0;
+  min-width: 400px;
+  border-radius: 0.3rem 0.3rem 0 0;
+  font-weight: normal;
+  overflow: hidden;
+  text-align: left;
+}
+
+table.basis-table thead tr {
+  background-color: rebeccapurple;
+  color: white;
+}
+
+table.basis-table th,
+table.basis-table td {
+  padding: 0.75rem 1rem;
+}
+
+table.basis-table tbody tr {
+  border-bottom: 0.6rem solid #ccc;
+}
+
+table.basis-table tbody tr:last-of-type {
+  border-bottom: 0.125rem solid rebeccapurple;
+}
+
+table.basis-table tbody tr.active {
+  font-weight: bold;
+  color: rebeccapurple;
+}
+
+/* ANCHOR basis-card CSS */
+.basis-card {
+  display: none;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.basis-header {
+  background-color: rebeccapurple;
+  color: white;
+  border-radius: 0.3rem 0.3rem 0 0;
+  padding: 0.6rem;
+  font-weight: bold;
+}
+
+.basis-card div {
+  padding: 0.6rem;
+  border-bottom: 0.6rem solid #ccc;
+}
+
+.basis-card div:last-of-type {
+  border-bottom: 0.125rem solid rebeccapurple;
+}
+
+.basis-card div>span {
+  color: rgb(218, 54, 54);
+  font-weight: bold;
+}
+
+@media screen and (max-width: 578px) {
+  table.basis-table {
+    display: none;
+  }
+
+  .basis-card {
+    display: block;
+  }
+}

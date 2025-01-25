@@ -1,0 +1,88 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import YouTube from "../components/YouTube.astro";
+import "../styles/lite-yt-embed.css";
+const pageTitle = "Weiterführende Lektionen für Akustische Gitarre";
+const description = "Lerne das Stück Yesterday 🎸 von den Beatles und City Of NewOrleans von Arlo Guthrie.";
+const keywords = "gitarrenunterricht für akustische gitarre, yesterday - beatles, city of neworleans - arlo guthrie";
+const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = `${SITE_URL}/gitarre-videoanleitung/`;
+
+// RDFa-Markup für das Video nur auf dieser Seite
+// Video-Daten
+
+const videoData = [
+  {
+    loc: `${SITE_URL}/gitarrenunterricht/`,
+    title: "Beatles - Yesterday Gitarre Tutorial",
+    description:
+      "Lernvideo und Gitarren Tutorial für das Gitarrenstück 'Yesterday von den Beatles'. Dieses Stück kann man wunderbar alleine spielen, also ohne Bass, Drums usw. Die Gitarre wird in einer Double Flatstimmung umgestimmt.",
+    content_loc: "https://www.youtube.com/embed/oqko5Mk_UBk",
+    thumbnail_loc: "https://i.ytimg.com/vi/oqko5Mk_UBk/hqdefault.jpg",
+    publication_date: "2023-07-01T14:00:00+02:00",
+    duration: "PT12M41S",
+  },
+  {
+    loc: `${SITE_URL}/gitarrenunterricht/`,
+    title: "City Of NewOrleans - Arlo Guthrie",
+    description:
+      "Ein schönes Beispiel für ein Fingerpicking mit Gitarre und Gesang: Ich habe mir damals den Song von Arlo Guthrie rausgesucht. Es heißt 'City Of NewOrleans'. Er selbst spielt übrigens bei diesem Song ein Klavier. Es ist ein Lernvideo und Gitarren Tutorial. Dieses Stück war Arlo Guthries einziger Welthit. Als damals Steve Goodman, der Komponist des berühmten Songs zu ihm sagte: Ich hätte da einen guten Hit für dich, sagte Arlo Guthrie: 'Ich hasse Hits!'. Warum das weiß ich nicht.",
+    content_loc: "https://www.youtube.com/embed/yEF6e2ZSZ0k",
+    thumbnail_loc: "https://i.ytimg.com/vi/yEF6e2ZSZ0k/hqdefault.jpg",
+    publication_date: "2021-08-26T14:00:00+02:00",
+    duration: "PT4M49S",
+  },
+];
+---
+<BaseLayout
+pageTitle={pageTitle}
+description={description}
+keywords={keywords}
+href={pageUrl}
+ogTitle={pageTitle}
+ogDescription={description}
+ogUrl={pageUrl}
+twitterTitle={pageTitle}
+twitterDescription={description}
+twitterUrl={pageUrl}
+>
+<br />
+<!-- RDFa-Markup Struktur für das VideoObject -->
+{
+    videoData.map((video) => (
+      <div vocab="http://schema.org/" typeof="VideoObject">
+        <meta property="name" content={video.title} />
+        <meta property="description" content={video.description} />
+        <meta property="thumbnailUrl" content={video.thumbnail_loc} />
+        <meta property="uploadDate" content={video.publication_date} />
+        <meta property="duration" content={video.duration} />
+        <meta property="contentUrl" content={video.content_loc} />
+        <meta property="embedUrl" content={video.content_loc} />
+
+        <div class="video-container-wrapper">
+          <div class="video-container">
+            <lite-youtube
+              videoid={video.content_loc.split("/").pop()}
+              style={
+                "background-image: url('" + video.thumbnail_loc + "');"
+              }
+            >
+              <a
+                href={video.content_loc}
+                class="lty-playbtn"
+                title={video.title}
+              >
+                <span class="lyt-visually-hidden">
+                  Play Video: {video.title}
+                </span>
+              </a>
+            </lite-youtube>
+          </div>
+          <h2>{video.title}</h2>
+          <p>{video.description}</p>
+        </div>
+      </div>
+    ))
+}
+  <YouTube />
+</BaseLayout>

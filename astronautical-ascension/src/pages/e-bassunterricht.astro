@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Bassunterricht für Slap und Pop Technik";
+const description = "Ich gebe Bassunterricht in Eibach 🎸. Bass für Anfänger aber auch Pop und Slaptechnick steht auf dem Programm.";
+const keywords = "bassunterricht f&uuml;r slap und pop technik, bassunterricht, rock bass jaecki reznicek, e-bassunterricht, e-bass unterricht, e-bassunterricht n&uuml;rnberg, e-bassunterricht in eibach, unterricht bassgitarre, bass lehrer, bassgitarre lernen, bassgitarre lernen, bass unterricht, bass gitarre anfarnger, bass unterricht in der naehe, e-bass lernen, e-bass für anfaenger, bassnoten für anfaenger, e-bass lehrer, noten lernen bass";
+const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = `${SITE_URL}/e-bassunterricht/`;
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <article>
+    <section>
+      <h2>Rock Bass Jäcki Reznicek</h2>
+      <p>
+        <img
+          src="/images/reznicek-bassschule.webp"
+          alt="Bild SEO Bassschule von Jäcki Reznicek"
+          aria-label="Bild SEO Bassschule von Jäcki Reznicek"
+        />
+      </p>
+      <p>
+        Für den E-Bassunterricht nehme ich gerne die E-Bass Schule von dem Jäcki
+        Reznicek. "Rock Bass" heißt der Titel davon. Es ist eine CD zum
+        mitspielen dabei. Das normale Bass Spiel erfolgt in der rechten Hand
+        durch anlegen. Also man zupft die Saite an und der Finger kommt auf die
+        darunter liegende Saite zu stehen. Dies ergibt einen volleren Ton. Es
+        gibt passiv Bässe zu kaufen. Einer der berühmtesten war der Fender
+        Jazzbass. Dann gibt auch die aktiv Bässe. Die klingen schärfer. Beliebte
+        Aktiv Bässe ist der Musicman Bass oder auch die Warwick Bässe. Auf der
+        Abbildung rechts ist so ein Warwick Bass zu sehen.<br />
+        In der Bassschule wird auch auf die Pop und Slap Technik ausführlich eingegangen.
+        In der Slap Technik schlägt der Daumen der rechten Hand auf die Saite und
+        die Pop Technik heißt das der Zeigefinger der rechten Hand die Saite von
+        unten an anreist.<br />
+        Die E-Bass Schule arbeitet mit Tabulatur und mit Noten. Eine sehr professionelle
+        Schule wie ich meine. Wie der Name der Schule schon aussagt wird vorwiegend
+        Rockmusik gespielt. Aber es ist auch viel "Funk" dabei.
+      </p>
+      <p>
+        <a href="/unterricht/" class="normal-links">zurück</a>
+      </p>
+    </section>
+  </article>
+</BaseLayout>

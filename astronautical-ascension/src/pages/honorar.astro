@@ -1,0 +1,109 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Honorar für Musikunterricht";
+const description =
+  "Was kostet heutzutage ein guter Musikunterricht? 🤑, Monatshonorar bei 45 min 65,- EUR";
+const keywords = "honorar, günstige preise, gruppenunterricht, einzelunterricht";
+const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = `${SITE_URL}/honorar/`;
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <h2>Günstige Preise für Ihren Musikunterricht</h2>
+
+  <p>Der Unterricht findet einmal in der Woche statt!</p>
+  <div class="container3">
+    <div class="item item-1">
+      <p>
+        <b>Form</b><br />
+        2-er Gruppe<br />
+        Einzelunterricht
+      </p>
+    </div>
+    <div class="item item-2">
+      <p>
+        <b>Dauer</b><br />
+        45 min <br />
+        45 min
+      </p>
+    </div>
+    <div class="item item-3">
+      <p>
+        <img
+          src="/images/money-125x125.png"
+          alt="Geldsack"
+          aria-label="Geldsack"
+        />
+      </p>
+      <p>
+        <b>Preise</b><br />
+        <b>56,- EUR</b> Monatshonorar pro Person<br />
+        <b>72,- EUR</b> Monatshonorar
+      </p>
+    </div>
+  </div>
+
+  <p>
+    Der Gruppenunterricht besteht in der Regel nur aus zwei Schülern! Man hat
+    dann mehr Zeit für jeden einzelnen. Im
+  </p>
+  <h2>Online-Musikunterricht</h2>
+  <p>gelten übrigens die selben Preise!</p>
+  <p>
+    Die Ferieneinteilung ist dem allgemeinen Schulbetrieb angepa&#223;t. Die
+    Aufnahme eines Sch&#252;lers ist jederzeit möglich. Der Unterrichtsvertrag
+    gilt zunächst für ein halbes Jahr, wobei eine Kündigungsfrist von einem
+    Monat einzuhalten ist.
+  </p>
+  <p>
+    Es gibt vom Sozialamt Nürnberg sogenannte Gutschein Coupons für
+    sozialschwächere Familien. Ich nehme die Gutscheine gerne an und löse sie
+    beim Sozialamt ein. Wenn Sie näheres darüber wissen möchten ist hier der
+    Link dazu:
+    <br />
+  </p>
+  <section class="coupon">
+    <p>Gutschein erhalten bei:</p>
+    <a
+      href="https://www.nuernberg.de/internet/sozialamt_nbg/freizeit_und_kultur.html#_0_2"
+      rel="noopener noreferrer noopener"
+      target="_blank"
+      class="normal-links"
+    >
+    <p>Leistungen für Bildung und Teilhabe Nürnberg.</p>
+      <img
+        src="/images/button-orange-100x100.png"
+        alt="Coupon"
+        aria-label="Coupon"
+        class="coupon-image"
+      />
+    </a>
+  </section>
+  <p>
+    Sie können beim Sozialamt Gutscheine beantragen. Der Gutschein beläuft sich auf 15,- EUR pro Monat für Musikunterricht.
+  </p>
+  <h3>Wer erhält die Leistung?</h3>
+  <p>
+    Alle Kinder und Jugendlichen bis zum 18. Geburtstag, wenn sie selbst oder ihre Eltern eine der folgenden Sozialleistungen erhalten:<br />
+    Arbeitslosengeld II / Bürgergeld (Sozialgesetzbuch II)<br />
+    Kinderzuschlag (Bundeskindergeldgesetz)<br />
+    Wohngeld (Wohngeldgesetz) und Kindergeld<br />
+    Hilfe zum Lebensunterhalt oder Grundsicherung im Alter und bei Erwerbsminderung (Sozialgesetzbuch XII)<br />
+    Leistungen nach dem Asylbewerberleistungsgesetz
+  </p>
+  <h4>Wofür können die Gutscheine genutzt werden?</h4>
+  <p>
+    Unterricht in künstlerischen Fächern wie Tanz, Theater und Musik.
+  </p>
+</BaseLayout>

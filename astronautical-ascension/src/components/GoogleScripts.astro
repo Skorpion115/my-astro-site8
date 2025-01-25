@@ -1,0 +1,99 @@
+<script async is:inline src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
+<script async is:inline src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script>
+<script async is:inline>
+  // Google Tag Manager
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-PWK4LSL");
+
+  // Gtag Configuration
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  // Default consent configuration
+  gtag("consent", "default", {
+    "ad_user_data": "denied",
+    "ad_personalization": "denied",
+    "ad_storage": "denied",
+    "analytics_storage": "denied",
+    "wait_for_update": 500
+  });
+
+  gtag("js", new Date());
+
+  // Function to initialize Google Analytics
+  function initializeGoogleAnalytics() {
+    gtag("config", "GT-MR4MFC6", { 
+      "anonymize_ip": true,
+      "currency": "EUR",
+      "region": "EU",
+      "linker": {
+        "domains": ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"]
+      }
+    });
+    gtag("config", "G-CXBFDX52C7"); // GA4 tracking
+  }
+
+  // Function to initialize Google AdWords
+  function initializeGoogleAdWords() {
+    gtag("config", "GT-5TG3DK3", {
+      "anonymize_ip": true,
+      "currency": "EUR",
+      "region": "EU",
+      "linker": {
+        "domains": ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"]
+      }
+    });
+    gtag("config", "AW-1000620606"); // Ads tracking
+  }
+
+  // Check for consent status from cmpEvent
+  function checkUserConsentFromEvent(event) {
+    var consentData = event.detail;
+    // Hypothetical structure of event.detail; adjust as necessary
+    return consentData && 
+      consentData.cmpConsersVendors.includes("s26") && 
+      consentData.cmpConsentVendors.includes("s135") && 
+      consentData.cmpConsentVendors.includes("s30") &&
+      consentData.cmpConsentVendors.includes("s1") && 
+      consentData.cmpConsentVendors.includes("s905") && 
+      consentData.cmpConsentVendors.includes("s2612") && 
+      consentData.cmpGDPR === 1;
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Listen for the custom consent event
+    document.addEventListener('cmpEvent', function(event) {
+      if (checkUserConsentFromEvent(event)) {
+        gtag("consent", "update", {
+          "ad_user_data": "granted",
+          "ad_personalization": "granted",
+          "ad_storage": "granted",
+          "analytics_storage": "granted"
+        });
+        initializeGoogleAnalytics();
+        initializeGoogleAdWords();
+      }
+    });
+  });
+
+  document.addEventListener('consentGiven', function() {
+    gtag("consent", "update", {
+      "ad_user_data": "granted",
+      "ad_personalization": "granted",
+      "ad_storage": "granted",
+      "analytics_storage": "granted"
+    });
+    initializeGoogleAnalytics();
+    initializeGoogleAdWords();
+  });
+</script>

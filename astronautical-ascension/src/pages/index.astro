@@ -1,11 +1,215 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+const pageTitle = "Musiklehrer erteilt Musikunterricht | Musicstudio Ziebart";
+const description =
+  "Ich gebe Musikunterricht in Nürnberg 🎹. Individueller Unterricht für Anfänger und Fortgeschrittene 🎼, jetzt anrufen! Tel.: 0911/6320890.";
+const keywords =
+  "musiklehrer erteilt musikunterricht | musicstudio-ziebart, musikunterricht nürnberg, musikschule für alle, musikmachen, musik machen, musikschule nürnberg standorte, musikschule nürnberg lehrer, musikschule nürnberg preise, musikschule eibach, musicstudio ziebart online musikunterricht, privatmusikunterricht, musikunterricht grundschule, musikschule, google search console, günstige Preise, musikausbildung, qualifizierter musiklehrer, online-musikunterricht, kinder musikalisch fördern, musicstudio-ziebart, musikschule nürnberg kinder, klavierunterricht kinder nürnberg, musikschulen nürnberg, musikschule nürnberg, nürnberg musikschule, gitarrenunterricht für kinder nürnberg, gitarre lernen nürnberg, musikschule nürnberg eibach, musikschule nürnberg preise, musikschule in der naehe, musikschule nürnberg kinder, musiklehrer, musiklehrer nürnberg";
+const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = SITE_URL;
+const pageDescription =
+  "Ich gebe Musikunterricht in Nürnberg 🎹. Individueller Unterricht für Anfänger und Fortgeschrittene 🎼, jetzt anrufen! Tel.: 0911/6320890";
+/*
+const pageImage = "https://www.musicstudio-ziebart.de/images/musikunterricht.webp"; */
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={pageDescription}
+  ogUrl={pageUrl}
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <div class="firmenname">Staatl. Anerk. Musiklehrer</div>
+  <p>
+    <img
+      src="/images/musikunterricht.webp"
+      alt="Bild SEO Musiklehrer erteilt Musikunterricht | Musicstudio-ziebart"
+      aria-label="Bild SEO Musiklehrer erteilt Musikunterricht | Musicstudio-ziebart"
+    />
+  </p>
+  <article class="conteneur">
+    <section class="marchandise marchandise-1">
+      <h2>Musikunterricht für alle</h2>
+      <p>
+        Das Musikstudio wurde 1984 gegründet. Ich bin staatl. anerkannter
+        Musiklehrer mit pädagogischer Ausbildung. Ich gebe Musikunterricht in
+        Nürnberg für alle Altersklassen. Es ist eine Musikschule für alle der
+        oder die Interesse an Musik hat. Das Unterrichtshonorar ist bei allen
+        Instrument dasselbe. Oft werde ich gefragt mit wieviel Jahren soll man
+        denn anfangen zum musizieren? Also frühestens ab der 2. Klasse ist es
+        ein ganz gutes Alter meine ich. Bei Blockflöte kann man vielleicht noch
+        ein bißchen früher anfangen.
+      </p>
+      <h2>Ist Musikunterricht gut für Kinder?</h2>
+      <p>
+        Ist der Besuch einer Musikschule gut für Kinder? Ja der Besuch kann für
+        Kinder äußerst von Vorteil sein. Musikschulen fördern auch die
+        persönliche Entwicklung der Kinder.
+      </p>
+      <h2>Was bringt Musikschule?</h2>
+      <p>
+        Musik und das Erlernen eines Instrumentes helfen Kindern und
+        Jugendlichen, Eigeninitiative und Leistungsbereitschaft zu entwickeln.
+        Sie fördern Ausdauer und Konzentrationsfähigkeit.
+      </p>
+      <h2>Warum wird Musik in der Schule unterrichtet?</h2>
+      <p>
+        Guter Musikunterricht, ob in der allgemeinbildenden Schule oder in der
+        Musikschule, unterstützt die Entwicklung von Kindern und Jugendlichen
+        umfassend.
+      </p>
+      <h2>Qualifizierte Musiklehrer</h2>
+      <p>
+        Qualifizierte Musiklehrer sind wichtig damit die Schüler nicht
+        überfordert werden. Es ist wichtig einen sogenannten roten Leitfaden zu
+        haben. Also eine Schule nutzen die einen langsamen Aufbau beinhaltet bis
+        es zum Erfolg führt. Es hat keinen Sinn einfach nur Zettel auszugeben da
+        ein Stück leichten Schwierigkeitsgrad und dann sofort ein Stück mit
+        schwierigen Schwierigkeitsgrad. Die Schüler verlieren die Lust am
+        Spielen wenn sie überfordert werden. Übrigens um ein Instrument zu
+        erlernen damit halbwegs was rauskommt das nach Musik klingt braucht es
+        ungefähr 2 Jahre.
+      </p>
+      <h2>Egal ob Anfänger oder Fortgeschrittener</h2>
+      <p>
+        Tauchen Sie ein in die wunderbare Welt der Musik mit den besten
+        Musikunterrichtsstätten in Nürnberg! Wenn Sie leidenschaftlich gerne ein
+        neues Instrument erlernen oder Ihre bereits vorhandenen Fähigkeiten
+        verbessern möchten, dann sind Sie hier genau richtig. Egal, ob Sie
+        Anfänger oder Fortgeschrittener sind, ich habe langjährige Erfahrung in
+        der Lehre verschiedener Musikrichtungen und Instrumente. Von Gitarre und
+        Klavier über E-Gitarre und Bass bis hin zur Klarinette und Saxophon. In
+        unserem Musikunterrichtsraum in Nürnberg erwartet Sie nicht nur
+        Unterricht in hoher Qualität, sondern auch eine freundliche und
+        motivierende Atmosphäre. Ich glaube daran, dass Musik eine universelle
+        Sprache ist, die Menschen verbindet und Freude bereitet. Lassen Sie mir
+        helfen, Ihre musikalischen Ziele zu erreichen und Ihre Leidenschaft für
+        Musik zu entfachen. Starten Sie noch heute Ihren musikalischen Lebensweg
+        mit mir!
+      </p>
+      <p>
+        Musik selber spielen oder Musik machen ist ein interressantes Hobby für
+        jung und alt und vielleicht macht es ja der eine oder die andere einmal
+        zum Beruf? Musik spielen macht Spaß! Außerdem führt das Musizieren oder
+        Singen weg von der Konsumierung und führt zu eigenen Kreativitäten!
+      </p>
+      <h2>Online-Musikunterricht</h2>
+      <p>
+        Ich biete zusätzlich zu dem bisherigen Präsenzunterricht einen<br />
+        <b>Online-Musikunterricht</b><br />
+        an. Dieser Musikunterricht wird über das Streaming Programm Skype oder Zoom
+        gemacht. Die Preise sind dieselben als beim dem Präsenzunterricht. Die Konditionen
+        sind beim Online-Musikunterricht etwas anders. Sie können monatlich kündigen.
+        Falls die Chemie zwischen Lehrer und Schüler nicht stimmt. Sie brauchen sich
+        also nicht auf lange Vertragsbindungen einlassen. Die Ferien im Monat August
+        brauchen Sie nicht bezahlen.
+      </p>
+      <p>
+        Ich möchte an dieser Stelle ausdrücklich darauf hinweisen das der
+        Online-Musikunterricht einige Vorteile hat. Falls Sie nicht in Nürnberg
+        wohnen sondern weiter weg wäre es unmöglich einen Musikunterricht zu
+        machen. Es wäre zu zeitaufwending und zu kostspielig. Aber durch diesen
+        Online-Musikunterricht können Sie überall in ganz Deutschland wohnen und
+        wir könnten uns trotzdem einmal in der Woche virtuell treffen. Dies
+        erspart auch die Anfahrtskosten und die Zeit die man dazu braucht. Also
+        ich habe einen Schüler aus Thüringen und das klappt bis jetzt wunderbar.
+        Ich freue mich jedesmal auf diesen Online-Musikunterricht und er auch
+        ohne diesen weiten Weg in Kauf zu nehmen um zu mir zu kommen.
+      </p>
+
+      <p>
+        <small>
+          Hinweis: Für alle Handy Benutzer. Oben rechts ist so ein Kreis für das
+          Sonnenzeichen. Darauf klicken dann wird es zu einem Mond. Dies ist der
+          Darkmode falls die Sonneneinstrahlung zu stark ist.
+        </small>
+      </p>
+    </section>
+
+    <section class="marchandise marchandise-2">
+      <h2>Was kostet Musikunterricht in Deuschland?</h2>
+      <p>
+        Von den Musikschulen Nürnberg bin ich wahrscheinlich die günstigste mit
+        72,- € Monatshonorar bei 45 min Einzelunterricht.
+      </p>
+      <p>Ich freue mich auf Ihren Besuch oder Anruf!</p>
+      <br />
+      <h2>Kontakt</h2>
+      <p>
+        Musicstudio Ziebart <br />
+        Gunzenhausener Str. 20 <br />
+        90451 Nürnberg
+      </p>
+      <p>Staatl. anerkannter Musiklehrer</p>
+
+      <ul class="link-card-grid">
+        <Card
+          href="/contact_4/"
+          title="Rückruf"
+          body="Kurze Mitteilung an mich!"
+        />
+      </ul>
+      <hr />
+      <br />
+      <img
+        src="images/anruf-192x192.png"
+        alt="Bild Telefonhoerer"
+        aria-label="Bild Telefonhoerer"
+      />
+      <h2>Telefon</h2>
+      <address>
+        <p>
+          Ruf mich an:<br />
+          <a href="tel:+499116320890" class="normal-links">0911 6320890</a>
+        </p>
+      </address>
+      <br />
+      <p>
+        eMail:&nbsp;
+        <a
+          href="mailto:postmaster@musicstudio-ziebart.de"
+          class="normal-links"
+          onfocus="this.blur()"
+          >postmaster@musicstudio-ziebart.de
+        </a>
+      </p>
+      <p>
+        Meine
+        <a
+          href="https://maps.google.de/maps?ie=UTF8&cid=10230175189141752103&q=Musikschule+Ziebart&iwloc=A&gl=DE&hl=de"
+          target="top"
+          class="normal-links"
+          >Standortansicht im Stadtplan!
+        </a>
+      </p>
+      <hr />
+      <br />
+      <br />
+      <p>ÖFFNUNGSZEITEN:</p>
+      <p>Montag - Freitag 14.00 - 19.00 Uhr</p>
+      <br />
+      <p>
+        Powered by <a href="https://astro.build" class="normal-links"
+          >{Astro.generator}</a
+        >
+      </p>
+      <br />
+      <hr />
+      <br />
+      <p>
+        Auf meinem YouTube Kanal ist für alle Hammond Fans was dabei! Auch
+        E-Gitarristen und Akustische Gitarre kommen auf ihre Kosten. Übrigens
+        das klassische Klavier ist bei den Menschen immer noch hoch im Kurs.
+        Einfach unten auf YouTube klicken!
+      </p>
+    </section>
+  </article>
+</BaseLayout>
+

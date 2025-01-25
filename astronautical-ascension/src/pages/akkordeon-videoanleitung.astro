@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import YouTube from "../components/YouTube.astro";
+import "../styles/lite-yt-embed.css";
+const pageTitle = "Weiterführende Lektionen für das Akkordeonspiel";
+const description = "Lerne das Stück L'akkordeon von Sergio Castelli!";
+const keywords =
+  "akkordeonunterricht, l'akkordeon triste - sergio castelli, akkordeonlehrer in nuernberg";
+const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = `${SITE_URL}/akkordeon-videoanleitung/`;
+
+// RDFa-Markup für das Video nur auf dieser Seite
+// Video-Daten
+const videoData = [
+  {
+    loc: `${SITE_URL}/akkordeon-videoanleitung/`, // URL der Seite, auf der das Video eingebettet ist
+    title: "L'accordeon Triste - Französische Akkordeonmusik",
+    description:
+      "Lerne das Akkordeonstück 'L'accordeon Triste' von Sergio Castelli. Das steht rechts unten auf YouTube ansehen. Darauf klicken dann kann man unten bei der Videobeschreibung die Noten downloaden",
+    content_loc: "https://www.youtube.com/embed/Va-gkuUp1KI", // URL des eingebetteten Videos
+    thumbnail_loc: "https://i.ytimg.com/vi/Va-gkuUp1KI/hqdefault.jpg", // URL des Vorschaubildes
+    publication_date: "2024-11-10T10:00:00+02:00", // Veröffentlichungsdatum im ISO 8601 Format
+    duration: "PT4M18S", // Dauer des Videos im ISO 8601 Format
+  },
+];
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <br />
+  <!-- RDFa-Markup Struktur für das VideoObject -->
+
+  {
+    videoData.map((video) => (
+      <div vocab="http://schema.org/" typeof="VideoObject">
+        <meta property="name" content={video.title} />
+        <meta property="description" content={video.description} />
+        <meta property="contentUrl" content={video.content_loc} />
+        <meta property="thumbnailUrl" content={video.thumbnail_loc} />
+        <meta property="uploadDate" content={video.publication_date} />
+        <meta property="duration" content={video.duration} />
+        <meta property="embedUrl" content={video.content_loc} />
+
+        <div class="video-container-wrapper">
+          <div class="video-container">
+            <lite-youtube
+              videoid={video.content_loc.split("/").pop()}
+              style={"background-image: url('" + video.thumbnail_loc + "');"}
+            >
+              <a
+                href={video.content_loc}
+                class="lty-playbtn"
+                title={video.title}
+              >
+                <span class="lyt-visually-hidden">
+                  Play Video: {video.title}
+                </span>
+              </a>
+            </lite-youtube>
+          </div>
+          <h2>{video.title}</h2>
+          <p>{video.description}</p>
+        </div>
+      </div>
+    ))
+  }
+  <YouTube />
+</BaseLayout>

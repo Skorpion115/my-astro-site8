@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Querfloetenunterricht mit geschlossenen Klappen";
+const description = "Ich gebe Querfloetenunterricht 🎼 in Nürnberg. Es gibt Querfloeten mit offenen oder geschlossenen Klappen.";
+const keywords = "querfloetenunterricht mit geschlossenen klappen, querfloetenunterricht, querfloetenunterricht in eibach, querfloete, querfloetenunterricht n&uuml;rnberg, querfloetenunterricht in der nähe, querfloete spielen lernen, querfloetenkurs, querfloetenunterricht für kinder, querfloeten lehrer, querfloeteunterricht";
+const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = `${SITE_URL}/querfloetenunterricht/`;
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <article id="querfloete">
+    <section>
+      <h2>Lern Querfloete spielen</h2>
+      <p>
+        <img
+          src="/images/querfloete-querfloetenschule.webp"
+          alt="Bild SEO Weinzierl Querfloetenschule"
+          aria-label="Bild SEO Weinzierl Querfloete"
+        />
+      </p>
+      <p>
+        Die Querflöte ist das Instrument der Götter sagt man. Ich nehme die
+        Querflötenschule von Elisabeth Weinzierl und Edmund Wächter. Der Titel
+        ist "Lern Querflöte spielen". Eine CD ist ebenfalls dabei und es gibt 2
+        Bänder von diesem Werk.
+      </p>
+      <br />
+      <p>
+        <a href="/instrumentenkauf/" class="normal-links"
+          >Mehr Info über die Querflöte</a
+        >
+      </p>
+      <p>
+        <a href="/unterricht/" class="normal-links">zurück</a>
+      </p>
+    </section>
+  </article>
+</BaseLayout>

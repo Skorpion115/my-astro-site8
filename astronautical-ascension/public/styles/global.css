@@ -1,0 +1,1257 @@
+/* ANCHOR Registriere deine benutzerdefinierte Schriftart und teile dem Browser mit, wo sie zu finden ist. */
+@font-face {
+  font-family: "IBM";
+  src: url("/fonts/OpenSans-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM";
+  src: url("/fonts/OpenSans-Italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM";
+  src: url("/fonts/OpenSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ANCHOR Grundlegende Einstellungen */
+html {
+  background-color: #f1f5f9;
+  /* heller Hintergrund für Light Modus */
+  color: #000;
+  /* Dunklerer Text für besseren Kontrast */
+  font-size: 100%;
+}
+
+/* ANCHOR: Darkmode CSS */
+html.dark {
+  background-color: #222;
+  /* dunkler Hintergrund für Dark Modus */
+  color: #e2e2e2;
+}
+
+/* Hamburger-Menü Linien im Dark Mode */
+html.dark .hamburger .line {
+  background-color: #000000;
+  /* Schwarze Linien im Dark Mode */
+}
+
+html.dark #themeToggle svg {
+  fill: none;
+  /* Falls das SVG selbst gefüllt werden soll */
+}
+
+/* ANCHOR Custom Properties General Style */
+body {
+  --font: "IBM", sans-serif;
+  --line: 3ch;
+  --font-scale: 0.4vw;
+  margin: 0 auto;
+  width: 100%;
+  font-family: var(--font);
+  font-style: normal;
+  font-size: calc(1rem + var(--font-scale));
+  line-height: var(--line);
+  font-weight: 400;
+  padding: 0;
+  opacity: 1;
+}
+
+h1 {
+  margin: 2.5rem 1.25rem 0rem 0.25rem;
+  font-size: 1.3rem;
+  color: #5269e9;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 1.25rem 1.25rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1.25rem 1.25rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1.25rem 1.25rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+  font-weight: normal;
+  padding: 1.25rem 1.25rem;
+}
+
+h6 {
+  font-size: 1.0rem;
+  font-weight: bold;
+  padding: 1.25rem 1.25rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  font-weight: normal;
+  text-align: start;
+  padding: 0rem 1.25rem;
+}
+
+/* Wenn das Menü geöffnet ist, den Body nicht scrollen lassen */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ANCHOR Titel im Header */
+
+.author {
+  padding: 0.2rem 0; /* oben und unten 0.9rem, links und rechts 0.9rem */
+  font-size: 0.9rem;
+  font-style: italic;
+  text-align: center;
+  width: 100%; /* Stellt sicher, dass der Titel die volle Breite einnimmt */
+}
+
+.dark .author {
+  color: #000000;
+}
+
+/* Navigation im Dark Mode, weißer Hintergrund */
+.dark .nav-links {
+  background-color: #333;
+  /* Heller Hintergrund für die Navigation */
+}
+
+/* Schwarzer Text im Dark Mode funktioniert */
+.dark .nav-links-secondary a,
+.dark .nav-links a {
+  color: #f7f7f7;
+  background-color: #333333;
+}
+
+/* Grüner Hover im Dark Mode*/
+.dark .nav-links a:hover,
+.dark .nav-links a:focus {
+  background-color: #b5eeb5;
+  /* Leicht dunkler beim Hover */
+}
+
+/* Schwarze Pfeilfarbe im Dark Mode */
+html.dark .nav-links a::after {
+  color: #f7f7f7;
+}
+
+.dark .nav-links a:active {
+  background-color: transparent;
+  /* Keine Hintergrundfarbe beim Klicken im Dark Mode */
+  color: inherit;
+}
+
+a:focus,
+button:focus,
+.nav-links a:focus {
+  outline: none;
+  /* Entfernt den blauen Umriss beim Fokussieren */
+  box-shadow: none;
+  /* Entfernt eventuelle Schatteneffekte */
+}
+
+/* ANCHOR Im Dark Modus sind die Links in gold geschrieben funktioniert*/
+
+.dark .normal-links {
+  color: #af8848;
+}
+
+/* Weitere Anpassungen für den Dark Mode */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: #ff9776;
+}
+
+
+
+
+/* ANCHOR ThemeToggle Button Styling */
+#themeToggle {
+  position: absolute;
+  top: 0.9rem;
+  /* Gleiche Höhe wie das Hamburger-Menü */
+  right: 1.8rem;
+  /* Abstand vom rechten Bildschirmrand */
+  z-index: 20;
+  /* Sicherstellen, dass der Schalter über anderen Elementen liegt */
+  border: 0;
+  background: none;
+  padding: 0;
+}
+
+.sun {
+  fill: black;
+  /* Schwarze Sonne im Light Mode */
+}
+
+.moon {
+  fill: transparent;
+  /* Transparent im Light Mode, damit sie unsichtbar ist */
+}
+
+html.dark .sun {
+  fill: transparent;
+  /* Verstecke die Sonne im Dark Mode */
+}
+
+html.dark .moon {
+  fill: #f1c40f;
+  /* Zeige den Mond in Gelb im Dark Mode */
+}
+
+/* ANCHOR Hamburger-Menü für nav-links immer sichtbar */
+
+.hamburger {
+  position: absolute;
+  top: 0.8rem;
+  left: 1.25rem;
+  cursor: pointer;
+  z-index: 11;
+  background-color: transparent;
+  flex-direction: column;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+}
+
+.hamburger .line {
+  display: block;
+  width: 1.50rem;
+  height: 0.20rem;
+  margin-bottom: 0.313rem;
+  background-color: #555;
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+}
+
+/* Aktiv-Zustand für das Hamburger-Menü */
+.hamburger.active .line {
+  background-color: #12aa12;
+}
+
+
+
+/* Hamburger-Menü im Light Mode */
+.hamburger .line {
+  background-color: #000000; /* Schwarzer Balken im Light Mode */
+}
+
+/* Sicherstellen, dass der Dark Mode auch richtig eingestellt ist */
+html.dark #themeToggle {
+  color: #f1c40f; /* Gelb für den Mond im Dark Mode */
+  fill: #f1c40f;  /* Gelbe Füllfarbe für das Icon */
+}
+
+/* ANCHOR Styles für die Header-Komponente */
+
+header {
+  position: relative; /* Damit sich #themeToggle und .hamburger darauf beziehen können */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  z-index: 10; /* Sicherstellen, dass der Header über anderen Elementen liegt */
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box; /* Sicherstellen, dass Padding zur Breite zählt */
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between; /* Platzierung von Hamburger links und Toggle rechts */
+  align-items: center;
+  width: 100%;
+}
+
+hamburger,
+.theme-toggle {
+  z-index: 20; /* Sicherstellen, dass diese Elemente vor anderen liegen */
+}
+
+
+
+/* ANCHOR Navigation Styles Menu nav-links allgemein für beide Modes */
+
+.nav-links {
+  position: fixed;
+  top: 5rem; /* nav-links Navigationsleiste Abstand noch oben */
+  left: -15.6rem;
+  width: 15.6rem;
+  height: calc(100vh - 5rem); /* Dynamische Höhe basierend auf der Viewport-Höhe */
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 2rem 0;
+  overflow-y: auto;
+  transition: left 0.3s ease;
+  z-index: 10;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.nav-links.expanded {
+  left: 0;
+  /* Navigation sichtbar */
+}
+
+
+/* Navigations Links in einer Flexbox bei Light Mode Textfarbe schwarz funktioniert */
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3rem 0.9rem;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 0.9rem;
+  color: #000;
+}
+
+/* grüner Hover wird benutzt bei nav-links */
+.nav-links a:hover,
+.nav-links a:focus {
+  background-color: #b5eeb5;
+}
+
+/* ANCHOR media screen Befehle für größere Bildschirme */
+
+
+/* Für größere Bildschirme ab 637px */
+@media screen and (min-width: 637px) {
+  .hamburger {
+    display: flex;
+    /* Hamburger-Menü wird eingeblendet sonst wird es aufgeklappt */
+  }
+
+  /* Pfeile in nav-links-secondary ausblenden */
+  .nav-links-secondary a::after {
+    content: '';
+    /* Pfeile in der sekundären Navigation ausblenden */
+  }
+
+  /* Pfeile anzeigen */
+  .nav-links a::after {
+    content: '>';
+    /* Pfeile im mobilen Modus anzeigen */
+  }
+}
+
+/* ANCHOR Für kleinere Bildschirme unter 637px */
+@media screen and (max-width: 636px) {
+  .nav-links {
+    left: -15,6rem;
+    /* Standardmäßig ausgeblendet */
+  }
+
+  .hamburger {
+    display: flex;
+    /* Hamburger-Menü wird angezeigt */
+  }
+
+  .nav-links.expanded {
+    left: 0;
+    /* Navigation wird sichtbar bei Aktivierung */
+  }
+
+  /* Pfeile anzeigen */
+  .nav-links a::after {
+    content: '>';
+    /* Pfeile im mobilen Modus anzeigen */
+  }
+}
+
+/* ANCHOR Desktop Navleiste für nav-links-secondary */
+
+.nav-links-secondary {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 1.0rem;
+  width: 100%;
+  background-color: #222;
+  color: #f7f7f7;
+  display: flex;
+  flex-wrap: wrap;
+  /* Ermöglicht das Umbrechen in eine neue Zeile */
+  justify-content: space-around; /* Gleichmäßige Verteilung der Links */
+  align-items: center; /* Vertikale Ausrichtung der Links */
+  padding: 0.2rem 0; /* Etwas Abstand oben und unten */
+  margin: 0;
+  z-index: 5; /* Höherer Z-Index, damit es über anderen Inhalten liegt */
+  box-sizing: border-box; /* Stellt sicher, dass Padding zur Breite gezählt wird */
+}
+
+/* Navigations Links in einer Flexbox bei Light Mode */
+.nav-links-secondary a {
+  padding: 0 0.1rem; /* Etwas Abstand links und rechts der Links oben und unten 0 */
+  text-decoration: none;
+  font-weight: normal;
+  color: #f7f7f7;
+  font-size: 0.9rem;
+  /* Sanfter Übergang bei Hover */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+/* grüner Hover wird benutzt */
+.nav-links-secondary a:hover,
+.nav-links-secondary a:focus {
+  background-color: #b5eeb5;
+}
+
+/* ANCHOR Dark Mode spezifische Stile für nav-links-secondary */
+.dark .nav-links-secondary {
+  background-color: #222; /* Dunkler Hintergrund im Dark Mode */
+  color: #f7f7f7; /* Hellere Schriftfarbe im Dark Mode */
+}
+
+/* Links in nav-links-secondary im Dark Mode */
+.dark .nav-links-secondary a {
+  color: #f7f7f7; /* Hellere Schriftfarbe für Links im Dark Mode */
+}
+
+/* ANCHOR blog-post img */
+
+.blog-post img {
+  max-width: 300px;
+  /* gewünschte maximale Breite */
+  width: auto;
+  height: auto;
+}
+
+/* ANCHOR Videos Einstellungen */
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-container-wrapper {
+  max-width: 100%;
+  width: 560px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin: 0 auto;
+}
+
+/* ANCHOR neue Videoeinstellungen von YouTube */
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin: 0 auto;
+}
+
+/* verkleinert das Video auf 560px */
+
+.container {
+  max-width: 100%;
+  width: 560px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* ANCHOR css für index.astro */
+
+/* Überschrift */
+.firmenname {
+  text-align: center;
+  font-size: 0.9rem;
+  font-style: italic;
+  padding: 0.2rem;
+}
+
+/* Responsives Titelbild bei Index */
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* ANCHOR Hauptseite */
+.conteneur {
+  border: 0px solid black;
+  align-content: space-between;
+  width: 94vw;
+  font-style: normal;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+/* Container Inhalt */
+.marchandise {
+  padding: 0.625rem;
+}
+
+/* Kind Elemente */
+.marchandise-1 {
+  flex: 2;
+}
+
+.marchandise-2 {
+  flex: 1;
+}
+
+/* ANCHOR Card Position und Style*/
+
+.marchandise-2 .link-card-grid {
+  padding: 0.5rem;
+}
+
+/* Bilder von marchandise-2 */
+
+.marchandise.marchandise-2 img {
+  max-width: 30%;
+  height: auto;
+  border-radius: 5px;
+  float: right;
+  margin-top: 1.25rem;
+  margin-left: 1rem;
+  margin-right: 3rem;
+}
+
+/* ANCHOR contact_4 */
+
+.container4 {
+  margin: 0 auto;
+  padding: 5%;
+  box-sizing: border-box;
+  background-color: #def7de;
+}
+
+label {
+  display: block;
+  font-size: 1.125rem;
+  padding: 0.625rem;
+}
+
+/* Der Rand um die Felder */
+.form-control {
+  border: 1px solid #ddd;
+  border-radius: 0px;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Die Breite der Felder */
+.form-control.form-control-lg {
+  height: calc(3.5rem + 2px);
+  padding: 1rem 0.75rem;
+  font-size: 1.125rem;
+}
+
+form {
+  max-width: 31.25rem;
+  margin: 0 auto;
+  text-align: left;
+  padding: 1.25rem 0;
+  font-size: 1.125rem;
+}
+
+/* Schriftgröße im Ausfüllbereich */
+input,
+textarea {
+  /*background-color: #1b1c1e;*/
+  font-family: "Poppins", sans-serif;
+  font-size: 1.125rem;
+  padding: 0.625rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0.625rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Button css */
+.btn {
+  border-radius: 0;
+  border: 0;
+  color: white;
+}
+
+.btn.btn-primary {
+  background-color: #545557;
+  padding: 0.94rem 7rem;
+  font-size: 1.125rem;
+  margin-top: 1.875rem;
+  cursor: pointer;
+  transition: all 0.3 ease;
+  text-align: center;
+}
+
+.btn.btn-primary:hover {
+  background-color: rgb(140, 236, 140);
+  color: black;
+}
+
+/* ANCHOR contact_2 */
+
+.container1 {
+  margin: 0 auto;
+  padding: 5%;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  /* Hellgrauer Hintergrund für das Formular */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Schatten um das Formular */
+}
+
+label {
+  display: block;
+  font-size: 1.125rem;
+  padding: 0.625rem;
+  color: #555;
+}
+
+
+/* Formular */
+
+fieldset legend {
+  color: #333;
+  font-size: 1.5rem;
+  padding: 0.625rem;
+}
+
+fieldset {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+  background-color: #def7de;
+}
+
+/* ganze Formular */
+
+.form-element {
+  color: #828282;
+}
+
+/* Der Rand um die Felder */
+.form-control {
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Die Breite der Felder */
+.form-control.form-control-lg {
+  height: calc(3.5rem + 2px);
+  padding: 1rem 0.75rem;
+  font-size: 1.125rem;
+}
+
+form {
+  max-width: 31.25rem;
+  margin: 0 auto;
+  text-align: left;
+  padding: 1.25rem 0;
+  font-size: 1.125rem;
+}
+
+select,
+option {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  color: #333;
+  text-align: center;
+  font-size: 1.125rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Größe der Platzhalter */
+.form-control::placeholder {
+  font-size: 1.125rem;
+}
+
+/* Schriftgröße im Ausfüllbereich */
+input,
+textarea {
+  /*background-color: #1b1c1e; */
+  font-family: "Poppins", sans-serif;
+  font-size: 1.125rem;
+  /*color: #fff; */
+  font-size: 1.125rem;
+  padding: 0.625rem;
+}
+
+.btn {
+  border-radius: 0;
+  border: 0;
+  color: white;
+}
+
+.btn.btn-primary {
+  background-color: #545557;
+  padding: 0.94rem 7rem;
+  font-size: 1.125rem;
+  margin-top: 1.875rem;
+  cursor: pointer;
+  transition: all 0.3 ease;
+  text-align: center;
+}
+
+.btn.btn-primary:hover {
+  background-color: rgb(140, 236, 134);
+  color: black;
+}
+
+/* Tabelle */
+.table2 {
+  width: 90%;
+  border-collapse: collapse;
+  background-color: #222;
+  box-shadow: 2px 2px 5px #666666;
+  margin: 0 1.25rem; /* Fügt links und rechts 1.25rem Abstand hinzu */
+  color: #fff;
+}
+
+.table2 th, .table2 td {
+  border: 0.06rem solid #ccc;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+/* Mobile Anpassungen */
+@media screen and (max-width: 600px) {
+  .table2 {
+    width: 90%;
+    font-size: 1.125rem;
+  }
+
+  .table2 th,
+  .table2 td {
+    padding: 0.5rem;
+  }
+
+  .table2 thead {
+    display: none;
+  }
+
+  .table2 tbody,
+  .table2 tr,
+  .table2 td {
+    display: block;
+    width: 100%;
+  }
+
+  .table2 tr {
+    margin-bottom: 0.625rem;
+  }
+
+  .table2 td {
+    text-align: left;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .table2 td::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+  }
+}
+
+
+/* ANCHOR instrumentkauf.astro */
+
+.container2 {
+  /* 100 view width */
+  width: 100vw;
+  max-width: 100%;
+  /* view height kompletten viewport der verfügbar ist */
+  font-style: normal;
+  /* feste Höhe */
+  /* nebeneinander */
+  display: flex;
+  /* links starten */
+  justify-content: flex-start;
+  /* verticale Ausrichtung */
+  align-items: flex-start;
+  /* Zeilenumbruch möglich */
+  flex-wrap: wrap;
+  /* Für mehrere Element */
+  align-content: flex-start;
+}
+
+/* Tabelle für Sprungmarken */
+.container2 table {
+  font-weight: normal;
+  text-align: center;
+  line-height: 3rem;
+  table-layout: auto;
+  width: 30%;
+  margin-left: 1.2rem;
+}
+
+/* ANCHOR Schriftgröße für die table */
+/*
+  .artikel.artikel.artikel-1 table {
+    font-size: 1.0rem;
+  }*/
+
+/* Container Inhalt */
+.artikel {
+  padding: 0.625rem 0.25rem;
+}
+
+/* Kindelelemente */
+.artikel-1 {
+  flex: 34%;
+}
+
+.artikel-2 {
+  flex: 33%;
+}
+
+.artikel-3 {
+  flex: 33%;
+}
+
+/* ANCHOR honorar.astro */
+
+.container3 {
+  font-style: normal;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.item {
+  padding: 0.5rem 1.5rem;
+}
+
+.item-1 {
+  flex: 25%;
+}
+
+.item-2 {
+  flex: 25%;
+}
+
+.item-3 {
+  flex: 50%;
+}
+
+.item.item-3 img {
+  width: 30%;
+  height: auto;
+  margin-left: 1%;
+  border-radius: 0.313rem;
+}
+
+.coupon img {
+  width: 30%;
+  height: auto;
+  margin-left: 1%;
+  border-radius: 0.313rem;
+}
+
+/* Styling für die Coupon-Sektion */
+.coupon {
+  text-align: center;
+  /* Optional: Bild zentrieren */
+}
+
+/* Spezifisches Styling für das Coupon-Bild */
+.coupon img.coupon-image {
+  width: 100px; /* Passe hier die Größe an */
+  height: auto;
+  margin-left: 1%;
+  border-radius: 0.313rem;
+}
+
+/* ANCHOR unterricht.astro */
+
+.contenitore {
+  border: 0px solid black;
+  align-content: space-between;
+  width: 94vw;
+  font-style: normal;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+/* Container Inhalt */
+.contenuto {
+  padding: 0.625rem;
+}
+
+/* Kind Elemente */
+.contenuto-1 {
+  flex: 25%;
+}
+
+.contenuto-2 {
+  flex: 25%;
+}
+
+.contenuto-3 {
+  flex: 25%;
+}
+
+.contenuto-4 {
+  flex: 25%;
+}
+
+/* ANCHOR Bilder von marchandise-1 */
+
+.contenuto.contenuto-1 img {
+  max-width: 30%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 1.25rem;
+  margin-left: 1rem;
+  margin-right: 3rem;
+}
+
+.contenuto.contenuto-2 img {
+  max-width: 30%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 1.25rem;
+  margin-left: 1rem;
+  margin-right: 3rem;
+}
+
+.contenuto.contenuto-3 img {
+  max-width: 30%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 1.25rem;
+  margin-left: 1rem;
+  margin-right: 3rem;
+}
+
+/* pictures from instrumentenkauf.html */
+.artikel.artikel.artikel-1 img {
+  width: 50%;
+  height: auto;
+  margin-left: 1%;
+  border-radius: 0.313rem;
+}
+
+/* ANCHOR Bild von Querlöte */
+.artikel.artikel.artikel-2 img {
+  width: 90%;
+  height: auto;
+  margin-left: 1%;
+  border-radius: 0.313rem;
+}
+
+/* ANCHOR Bild von Sax */
+.artikel.artikel.artikel-3 img {
+  width: 50%;
+  height: auto;
+  margin-left: 1%;
+  border-radius: 0.313rem;
+}
+
+/* Bilder von Banjo, Klavier */
+.artikel.artikel.artikel-4 img {
+  width: 50%;
+  height: auto;
+  margin-left: 1%;
+  border-radius: 0.313rem;
+}
+
+/* ANCHOR faq.astro */
+
+.faq-container {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 1.25rem 0;
+  font-family: var(--font);
+  font-style: normal;
+}
+
+.faq-item {
+  margin-bottom: 1.25rem;
+}
+
+.faq-question {
+  margin-bottom: 0.6rem;
+}
+
+.faq-answer a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.faq-answer a:hover {
+  text-decoration: underline;
+}
+
+.back-link {
+  display: block;
+  margin-top: 1.25rem;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* ANCHOR download.astro */
+
+#download {
+  display: block;
+  width: 96%;
+  margin: 7% auto;
+  padding: 1.25rem;
+  text-align: center;
+  font-style: normal;
+}
+
+#download article {
+  display: inline-block;
+  width: 96%;
+  vertical-align: top;
+}
+
+/* ANCHOR Neue Table CSS */
+
+table.basis-table {
+  border-collapse: collapse;
+  margin: 2rem 0;
+  min-width: 400px;
+  border-radius: 0.3rem 0.3rem 0 0;
+  font-weight: normal;
+  overflow: hidden;
+  text-align: left;
+}
+
+table.basis-table thead tr {
+  background-color: rebeccapurple;
+  color: white;
+}
+
+table.basis-table th,
+table.basis-table td {
+  padding: 0.75rem 1rem;
+}
+
+table.basis-table tbody tr {
+  border-bottom: 0.063rem solid #ccc;
+}
+
+table.basis-table tbody tr:last-of-type {
+  border-bottom: 0.125rem solid rebeccapurple;
+}
+
+table.basis-table tbody tr.active {
+  font-weight: bold;
+  color: rebeccapurple;
+}
+
+/* ANCHOR basis-card CSS */
+
+.basis-card {
+  display: none;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.basis-header {
+  background-color: rebeccapurple;
+  color: white;
+  border-radius: 0.3rem 0.3rem 0 0;
+  padding: 0.6rem;
+  font-weight: bold;
+}
+
+.basis-card div {
+  padding: 0.6rem;
+  border-bottom: 0.06rem solid #ccc;
+}
+
+.basis-card div:last-of-type {
+  border-bottom: 0.125rem solid rebeccapurple;
+}
+
+.basis-card div>span {
+  color: rgb(218, 54, 54);
+  font-weight: bold;
+}
+
+@media screen and (max-width: 578px) {
+  table.basis-table {
+    display: none;
+  }
+
+  .basis-card {
+    display: block;
+  }
+}
+
+/* ANCHOR harmonielehre.astro*/
+
+#harmonielehre {
+  width: 96%;
+  max-width: 100%;
+  margin: 2rem auto;
+}
+
+#harmonielehre article {
+  display: inline-block;
+  margin: 2rem auto;
+  width: 100%;
+  vertical-align: top;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-container-wrapper {
+  max-width: 100%;
+  width: 560px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* ANCHOR pupils-download */
+#download2 {
+  display: block;
+  width: 96%;
+  max-width: 100%;
+  margin: 7% auto;
+  padding: 1.25rem;
+  text-align: center;
+  font-style: normal;
+}
+
+#download2 article {
+  display: inline-block;
+  width: 96%;
+  vertical-align: top;
+}
+
+/* ANCHOR Neue basis-table CSS */
+
+table.basis-table {
+  border-collapse: collapse;
+  margin: 32px 0;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  font-weight: normal;
+  overflow: hidden;
+  text-align: left;
+}
+
+table.basis-table thead tr {
+  background-color: rebeccapurple;
+  color: white;
+}
+
+table.basis-table th,
+table.basis-table td {
+  padding: 12px 16px;
+}
+
+table.basis-table tbody tr {
+  border-bottom: 0.06rem solid #ccc;
+}
+
+table.basis-table tbody tr:last-of-type {
+  border-bottom: 0.125rem solid rebeccapurple;
+}
+
+table.basis-table tbody tr.active {
+  font-weight: bold;
+  color: rebeccapurple;
+}

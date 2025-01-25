@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Meisterhaftes Akkordeonspiel erlernen: Die ultinative Anleitung für Akkordeonunterricht";
+const description = "ch gebe Akkordeonunterricht in Eibach. Benutze dazu die Akkordeonschule von Alfons Holzschuh Band 1 und 2. 🎹";
+const keywords = "meisterhaftes akkordeonspiel erlernen, akkordeonunterricht, alfons holzschuh, akkordeonunterricht n&uuml;rnberg, akkordeon lernen online, akkordeon privatunterricht, akkordeon lernen n&uuml;rnberg, akkordeon lernen, akkordeon spielen lernen, akkordeon lernen anfaenger, akkordeon, akkordeon kurs, akkordeon spielen, akkordeonunterricht für erwachsene, accordion lesson";
+const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = `${SITE_URL}/akkordeonunterricht/`;
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <article>
+    <section>
+      <h2>Akkordeonschule von Alfons Holzschuh</h2>
+      <p>
+        <img
+          src="/images/holzschuh-akkordeonschule.webp"
+          alt="Bild SEO Akkordeonschule von Alfons Holzschuh"
+          aria-label="Bild SEO Akkordeonschule von Alfons Holzschuh"
+        />
+      </p>
+      <p>
+        Für den Akkordeonunterricht nehme ich am Anfang die Akkordeonschule von
+        Alfons Holzschuh. Es gibt davon 2 Bänder. Das Akkordeon war früher das
+        Top Instrument. Man kann damit hervoragend Volksmusik spielen. Für
+        Französiche Musette Stücke oder Tangos wird das Akkordeon gerne
+        eingesetzt. Heute ist das immernoch so! Dann gibt es von Heinz Munsonius
+        ganz berühmte Akkordeon Klassiker wie Tanzende Finger zum Beispiel. Für den Anfang 
+        genügt ein Akkordeon mit 72 Bässen. Die großen Akkordeons haben 120 Bässe. Sie sind dann auch 
+        wesentlich schwerer.
+      </p>
+      <p>
+        Mehr Info <a href="/instrumentenkauf/" class="normal-links"
+          >über das Akkordeon</a
+        >
+      </p>
+      <br />
+      <p>
+        <a href="/unterricht/" class="normal-links">zurück</a>
+      </p>
+      <p>
+        Weiterführende Lektionen <a
+        href="/akkordeon-videoanleitung/"
+        class="normal-links">L'accordeon Triste - Sergio Castelli</a
+      >
+      </p>
+    </section>
+  </article>
+</BaseLayout>

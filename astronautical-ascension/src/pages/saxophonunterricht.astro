@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+// import Dapper from "../../public/images/dapper-saxophonschule.webp";
+const pageTitle = "Saxophonunterricht für jung und alt";
+const description = "Ich gebe Saxophonunterricht 🎷 in N&uuml;rnberg. Ich benutze daszu die Klaus Dapper Saxophonschule Band 1 und 2.";
+const keywords = "saxophonunterricht f&uuml;r jung und alt, saxophonunterricht, das saxophonbuch klaus dapper, saxophon lernen, saxophon f&uuml;r kinder, saxophon f&uuml;r erwachsene, professioneller saxophonunterricht, saxophon unterricht, saxophon unterricht in eibach, saxophon unterricht n&uuml;rnberg, saxophon spielen lernen, saxophon online lernen, altsaxophon lernen, saxophon schnupperkurs, tenorsaxophon lernen, saxophon lernen anfaenger, saxophon f&uuml;r anfaenger, saxophonlehrer n&uuml;rnberg, saxophon lessons";
+const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = `${SITE_URL}/saxophonunterricht/`;
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <article>
+    <section>
+      <br />
+      <h2>Erfahrender Saxophonunterricht für alle Altersgruppen</h2>
+      <p>
+        Willkommen bei unserem professionellen Saxophonunterricht für alle Altersgruppen! 
+        Unser Ziel ist es, Ihnen das Saxophonspiel auf eine unterhaltsame und zugängliche 
+        Weise beizubringen, unabhängig davon, ob Sie jung oder alt sind.  
+      </p>
+      <h2>Warum Saxophonunterricht?</h2>
+      <p>
+        Das Saxophon ist ein vielseitiges und faszinierendes Instrument, das Menschen jeden 
+        Alters begeistert. Es ist nie zu früh oder zu spät, um das Saxophonspiel zu erlernen. 
+        Hier sind einige der Vorteile des Saxophonunterrichts:  
+      </p>
+      <p>
+        Stressabau: Das Spielen des Saxophons kann stressabbauend wirken und das allgemeine Wohlbefinden steigern.  
+      </p>
+      <p>
+        Kognitive Entwicklung: Das Erlernen eines Musikinstruments fördert die kognitive Entwicklung und verbessert die Konzentrationsfähigkeit. 
+      </p>
+      <p>
+        Gemeinschaft und Freude: Musik zu machen kann eine großartige Möglichkeit sein, neue Freunde zu finden und gemeinsam Freude am Musizieren zu erleben.  
+      </p>   
+      <h2>Das Saxophonbuch, Klaus Dapper</h2>
+      <p>
+        <img
+          src="/images/dapper-saxophonschule.webp"
+          alt="Bild SEO Das Saxophonbuch von Klaus Dapper"
+          aria-label="Bild SEO Das Saxophonbuch von Klaus Dapper"
+        />
+      </p>
+      <p>
+        Für den Saxophon Unterricht nehme ich die Klaus Dapper Saxophonschule.
+        Der Titel des Buches heißt "Das Saxophonbuch". Eine CD ist auch dabei
+        und es gibt 2 Bänder. Man muß angeben ob es ein Bb-Tenor Saxophon ist
+        oder ein Eb-Alt Saxophon.
+      </p>
+      <h2>Kontaktieren sie uns noch heute!</h2>
+      <p>
+        Bereit, das Saxophon zu erlernen oder Ihr Können zu verbessern? Kontaktieren Sie uns noch heute, um Ihren ersten Unterrichtstermin zu vereinbaren!
+      </p>
+      <br />
+      <p>
+        <a href="/unterricht/" class="normal-links">zurück</a>
+      </p>
+    </section>
+  </article>
+</BaseLayout>

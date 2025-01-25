@@ -1,0 +1,80 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Die meistgestellten Fragen";
+const description = "Die meistgestellten Fragen! 🤓. Wie alt muss mein Kind sein, um ein Instrument zu erlernen?";
+const keywords = "haefig gestellte Fragen"
+const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = `${SITE_URL}/faq/`;
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <article>  
+    <section id="faq">
+      <div class="faq-container">     
+        <div class="faq-item">
+          <h2 class="faq-question">Wie ist die Kündigung bei einem Online-Musikunterricht?</h2>
+          <p>
+            Die Kündigung ist monatlich. Sie brauchen sich also auf keinerlei längere Vertragsbindung einlassen. Der Monat August in den Ferien wird nicht bezahlt.
+          </p>
+        </div>
+        
+        <div class="faq-item">
+          <h3 class="faq-question">Wie alt muss mein Kind sein, um ein Instrument erlernen zu können?</h3>
+          <p>
+            Ich würde sagen frühestens ab der 1., besser ab der 2. Klasse. Dann können die Kinder das Buchstabenalphabet und man kann ihnen somit leichter das Notensystem erklären.
+          </p>
+        </div>
+        
+        <div class="faq-item">
+          <h3 class="faq-question">Machen Sie Früherziehung ab 2 Jahren?</h3>
+          <p>Nein, definitiv nicht!</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3 class="faq-question">Wo kann ich das richtige Instrument kaufen?</h3>
+          <p>
+            Ich kann Ihnen den <a href="http://www.musik-klier.de/index.asp" class="normal-links">Musik Klier</a> in der Südstadt empfehlen. Es ist ein großes Musikgeschäft mit einer Reparaturwerkstatt.
+          </p>
+        </div>
+        
+        <div class="faq-item">
+          <h3 class="faq-question">Findet der Musikunterricht während den Ferien statt?</h3>
+          <p>
+            Nein, während der Schulferien hat die Musikschule geschlossen, wie es die bayerische Ferienverordnung vorsieht.
+          </p>
+        </div>
+        
+        <div class="faq-item">
+          <h3 class="faq-question">Muss ich während der Ferien das Unterrichtshonorar weiter bezahlen?</h3>
+          <p>Ja, denn es ist alles auf ein Jahr umgerechnet.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3 class="faq-question">Wie lange laufen Ihre Verträge?</h3>
+          <p>
+            Die Musikunterrichtsverträge laufen auf ein halbes Jahr mit einem Monat Kündigungsfrist. Dies ist eine gute Kündigungsfrist. Bei einem Sportverein oder in anderen Musikschulen laufen die Verträge auf ein Jahr. Um ein Instrument einigermaßen spielen zu können, dauert es eben mindestens ein bis zwei Jahre!
+          </p>
+        </div>
+        
+        <div class="faq-item">
+          <h3 class="faq-question">Wieviel Geld kostet der Musikunterricht im Monat?</h3>
+          <p>
+            Weitere Informationen zu den Kosten finden Sie auf unserer <a href="/honorar/" class="normal-links">Honorar-Seite</a>.
+          </p>
+        </div>
+        
+        <p><a href="/" class="back-link">Zurück zur Startseite</a></p>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

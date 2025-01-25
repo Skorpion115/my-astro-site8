@@ -1,0 +1,62 @@
+---
+import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
+import ExternalScripts from "../components/ExternalScripts.astro";
+import ExternalScripts3 from "../components/ExternalScripts3.astro";
+import GoogleScripts from "../components/GoogleScripts.astro";
+const pageTitle = "Anbieter";
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+  <link rel="manifest" href="/manifest.json" /> -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="robots" content="max-snippet:-1, INDEX, FOLLOW" />
+    <title>{pageTitle}</title>
+    <meta name="description" content="Liste der Anbieter und deren Details" />
+    <link rel="canonical" href="https://www.musicstudio-ziebart.de/anbieter/" />
+    <meta
+      name="google-site-verification"
+      content="Zitul6WICKD7zrzgptxGVrh2GEhozasdEM_d1tGi2aw"
+    />
+    <meta
+      name="author"
+      content="Musicstudio Ziebart, postmaster@musicstudio-ziebart.de"
+    />
+    <meta
+      name="DC.Publisher"
+      content="Musicstudio Ziebart, postmaster@musicstudio-ziebart.de"
+    />
+    <ManuellesBlockieren />
+    <ExternalScripts />
+    <ExternalScripts3 />
+    <GoogleScripts />
+  </head>
+  <body>
+    <h3>Anbieterliste</h3>
+    <!-- Vendorliste von Consentmanager -->
+    <div id="cmpvendorlist"></div>
+
+    <script
+      src="https://delivery.consentmanager.net/delivery/vendorlist.php?cdid=b018a967f10b6"
+      type="text/javascript" is:inline
+      async></script>
+
+    <h4>Cookie Info Liste</h4>
+
+    <div id="cmpcookieinfo"></div>
+
+    <script
+      src="https://delivery.consentmanager.net/delivery/cookieinfo.php?cdid=b018a967f10b6"
+      type="text/javascript" is:inline
+      async></script>
+
+    <p><a href="/" class="normal-links">Zurück zur Startseite</a></p>
+
+    <br />
+  </body>
+</html>

@@ -1,0 +1,108 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import YouTube from "../components/YouTube.astro";
+import "../styles/lite-yt-embed.css";
+const pageTitle = "Videoanleitung für Bluegrass Banjo";
+const description = "Ich möchte noch ein paar Videoanleitungen für Banjo geben! 🪕";
+const keywords = "flint hill special - earl scruggs, train 45, cripple creek";
+const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = `${SITE_URL}/banjo-videoanleitung/`;
+
+// Video-Daten
+
+const videoData = [
+  {
+    loc: `${SITE_URL}/banjo-videoanleitung/`,
+    title: "Flint Hill Special - Banjo Lesson",
+    description:
+      "Lerne das Banjostück 'Flint Hill Special von Earl Scruggs'. Es wird in dem Stück ein sogenannter D-Tuner verwendet. Ich erkläre genau wie man so einen D-Tuner benutzt und einstellt.",
+    content_loc: "https://www.youtube.com/embed/R75ZetEwmtw",
+    thumbnail_loc: "https://i.ytimg.com/vi/R75ZetEwmtw/hqdefault.jpg",
+    publication_date: "2023-06-17T14:00:00+02:00",
+    duration: "PT13M32S",
+  },
+  {
+    loc: `${SITE_URL}/banjo-videoanleitung/`,
+    title: "Train 45 - Bluegrass Banjo",
+    description: "Lerne das Banjostück Train 45 - Bluegrass Banjo.",
+    content_loc: "https://www.youtube.com/embed/uo5ojnmRHPo",
+    thumbnail_loc: "https://i.ytimg.com/vi/uo5ojnmRHPo/hqdefault.jpg",
+    publication_date: "2023-05-26T14:00:00+02:00",
+    duration: "PT06M31S",
+  },
+  {
+    loc: `${SITE_URL}/banjo-videoanleitung/`,
+    title: "Banjo Beginner Lesson 2",
+    description:
+      "Lerne das Banjostück 'Cripple Creek'. Mit diesem Stück hat Earl Scruggs als kleiner Junge schon einen Preis gewonnen.",
+    content_loc: "https://www.youtube.com/embed/WmYlSqvpUkw",
+    thumbnail_loc: "https://i.ytimg.com/vi/WmYlSqvpUkw/hqdefault.jpg",
+    publication_date: "2023-04-05T14:00:00+02:00",
+    duration: "PT09M16S",
+  },
+];
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <article>
+    <section>
+      <br />
+      {
+        videoData.map((video) => (
+          <div vocab="http://schema.org/" typeof="VideoObject">
+            <meta property="name" content={video.title} />
+            <meta property="description" content={video.description} />
+            <meta property="contentUrl" content={video.content_loc} />
+            <meta property="thumbnailUrl" content={video.thumbnail_loc} />
+            <meta property="uploadDate" content={video.publication_date} />
+            <meta property="duration" content={video.duration} />
+            <meta property="embedUrl" content={video.content_loc} />
+
+            <div class="video-container-wrapper">
+              <div class="video-container">
+                <lite-youtube
+                  videoid={video.content_loc.split("/").pop()}
+                  style={
+                    "background-image: url('" + video.thumbnail_loc + "');"
+                  }
+                >
+                  <a
+                    href={video.content_loc}
+                    class="lty-playbtn"
+                    title={video.title}
+                  >
+                    <span class="lyt-visually-hidden">
+                      Play Video: {video.title}
+                    </span>
+                  </a>
+                </lite-youtube>
+              </div>
+              <h2>{video.title}</h2>
+              <p>{video.description}</p>
+            </div>
+          </div>
+        ))
+      }
+
+      <br />
+      <p>
+        <a href="/banjounterricht/" class="normal-links"
+          >zurück zu banjounterricht</a
+        >
+      </p>
+      <hr />
+    </section>
+  </article>
+  <YouTube />
+</BaseLayout>

@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Keyboardunterricht für jung und alt";
+const description =
+  "Ich gebe Keyboardunterricht 🎹 in Nürnberg Eibach. Zuerst lernt man die Akkordbegleitung. Später kommt die linke Hand dazu.";
+const keywords =
+  "keyboardunterricht für jung und alt, hammond flip - klaus wunderlich, hschisch - klaus wunderlich, e-hering - klaus wunderlich, der neue weg zum keyboardspiel, keyboardschule, keyboardunterricht in der naehe, keyboardlehrer, keyboard unterricht erwachsene, keyboardunterricht in eibach, keyboard anfänger, keyboardnoten für anfaenger, einsteiger keyboard, keyboard spielen lernen, keyboard unterricht, keyboard kurs, keyboard für anfänger, keyboardunterricht nürnberg, keyboard lernen, keyboard spielen, keyboard lessons";
+const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = `${SITE_URL}/keyboardunterricht/`;
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <section>
+    <article>
+      <h2>Der neue Weg zum Keyboardspiel</h2>
+      <p>
+        <img
+          src="/images/benthien-keyboardschule.webp"
+          alt="Bild SEO Axel Benthien Keyboardschule"
+          aria-label="Bild SEO Axel Benthien Keyboardschule"
+        />
+      </p>
+      <p>
+        Für die Keyboard Freunde wird meistens die Keyboardschule von Axel
+        Benthien "Der neue Weg zum Keyboardspiel" verwendet. Es gibt 6 Bänder
+        davon. Das Keyboard ist ein elektronische Instrument. Das normale Ziel
+        ist es mit der linken Hand Akkorde zu greifen. Dann beginnt die
+        Rythmusautomatik zu spielen. Die rechte Hand nutzt spielt man dann die
+        Melodie. Später im Band 3 kommt die linke Hand immer mehr zu Einsatz.
+        Sie spielt dann nicht mehr nur die Akkorde sondern nimmt dann auch die
+        Begleitung wie ein Klavierspieler auf.
+      </p>
+      <br />
+      <p>
+        Weiterführende Lektionen <a
+          href="/keyboard-videoanleitung/"
+          class="normal-links">Zusätzliche Materialien</a
+        >
+      </p>
+      <p>
+        <a href="/unterricht/" class="normal-links">zurück</a>
+      </p>
+    </article>
+  </section>
+</BaseLayout>

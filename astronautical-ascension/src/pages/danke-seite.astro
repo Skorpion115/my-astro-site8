@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Danke für die kurze Mitteilung!";
+const description = "Erfolgsmeldung";
+const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = `${SITE_URL}/danke-seite/`;
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords="Rueckruf"
+  href={pageUrl}
+>
+  <p>Ihre kurze Mitteilung ist auf dem Weg! Ich werde mich sobald wie möglich bei Ihnen melden.</p>
+  <br>
+  <p><a href="/" class="normal-links">Zurück zur Startseite</a></p>
+</BaseLayout>

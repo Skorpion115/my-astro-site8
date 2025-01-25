@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Klarinettenunterricht für Böhm und Deutsches System";
+const description = "Ich gebe Klarinettenunterricht 🎼 in Nürnberg. Ich benutze sowohl das Böhmsystem als auch das deutsche System";
+const keywords = "klarinettenunterricht f&uuml;r boem und deutsche system, klarinettenunterricht, neue schule für klarinette ewald koch, klarinette lernen, klarinettenunterricht n&uuml;rnberg, klarinettenschule, klarinette lernen, klarinettenschule für anfaenger, musikschule klarinette, klarinettenunterricht in n&uuml;rnberg, klarinettenunterricht in eibach, klarinette, klarinettenunterricht, klarinette für anfaenger, klarinettenkurs, musikschule für klarinette, klarinettenunterricht eibach, unterricht klarinette, musikunterricht klarinette, klarinettenlehrer, Klarinette lernen für anfaenger";
+const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = `${SITE_URL}/klarinettenunterricht/`;
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <article>
+    <section>
+      <h2>Neue Schule für Klarinette, Ewald Koch</h2>
+      <p>
+        <img
+          src="/images/koch-klarinettenschule.webp"
+          alt="Bild SEO Neue Schule für Klarinette von Ewald Koch"
+          aria-label="Bild SEO Neue Schule für Klarinette von Ewald Koch"
+        />
+      </p>
+      <p>
+        Für den Klarinettenunterricht benutze ich gerne die Schule vom Professor
+        Ewald Koch mit dem Titel: "Neue Schule für Klarinette". Es gibt 2 Bänder
+        davon und eine CD ist ebenfalls dabei. Ein riesen Werk kann ich nur
+        sagen.
+      </p>      
+      <p>
+        <a href="/instrumentenkauf/" class="normal-links">Mehr Info über die Klarinette</a>
+      </p>     
+      <br />
+      <br />
+      <p>
+        <a href="/unterricht/" class="normal-links">zurück</a>
+      </p>
+    </section>
+  </articel>
+</BaseLayout>

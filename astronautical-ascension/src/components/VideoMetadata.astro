@@ -1,0 +1,12 @@
+---
+const { title, description, thumbnail_loc, publication_date, duration, content_loc } = Astro.props;
+---
+
+<!-- RDFa-Markup für das Video -->
+<meta property="name" content={title} />
+<meta property="description" content={description} />
+<meta property="thumbnailUrl" content={thumbnail_loc} />
+<meta property="uploadDate" content={publication_date} />
+<meta property="duration" content={duration} />
+<meta property="contentUrl" content={content_loc} />
+<meta property="embedUrl" content={content_loc} />
