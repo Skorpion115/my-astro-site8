@@ -5,8 +5,8 @@
 // import GoogleScripts from "../components/GoogleScripts.astro";
 // import { ViewTransitions } from "astro:transitions";
 // import Header from "../components/Header.astro";
-// import Footer from "../components/Footer.astro";
-// import Footer2 from "../components/Footer2.astro";
+import Footer from "../components/Footer.astro";
+import Footer2 from "../components/Footer2.astro";
 
 const {
   pageTitle,
@@ -116,10 +116,10 @@ const urlPath = Astro.url.pathname;
     <main>
       <slot />
     </main>
-    <!--
+    
     <Footer />
     <br />
-    <Footer2 /> -->
+    <Footer2 />
 
     <!-- Scripte extern einbinden -->
     <script src="/scripts/cookie-banner.js" is:inline async></script>
