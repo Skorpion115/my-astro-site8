@@ -4,7 +4,7 @@
 // import ExternalScripts3 from "../components/ExternalScripts3.astro";
 // import GoogleScripts from "../components/GoogleScripts.astro";
 // import { ViewTransitions } from "astro:transitions";
-// import Header from "../components/Header.astro";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Footer2 from "../components/Footer2.astro";
 
@@ -79,8 +79,8 @@ const urlPath = Astro.url.pathname;
     <ExternalScripts />
     <ExternalScripts3 />
     <GoogleScripts />
-    <ViewTransitions />
-    <Header /> -->
+    <ViewTransitions /> -->
+    <Header />
     <!-- Bedingte CSS-Dateien für spezifische Seiten -->
     {urlPath === '/gitarrenunterricht/' && <link rel="stylesheet" href="/styles/gitarrenunterricht.css" />}
     {urlPath === '/e-gitarrenunterricht/' && <link rel="stylesheet" href="/styles/e-gitarrenunterricht.css" />}
@@ -126,6 +126,7 @@ const urlPath = Astro.url.pathname;
     <script src="/scripts/menu.js" is:inline async></script>
     <script src="/scripts/load-iframes.js" is:inline async></script>
     <script src="/scripts/document-cookie.js" is:inline async></script>
-    <script src="/register-service-worker.js" is:inline defer></script>
+    <!--
+    <script src="/register-service-worker.js" is:inline defer></script> -->
   </body>
 </html>
