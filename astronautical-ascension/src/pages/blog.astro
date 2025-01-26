@@ -15,7 +15,10 @@ interface PostFrontmatter {
 }
 
 // Sammeln aller Blog-Posts
-const allPosts: MarkdownInstance<PostFrontmatter>[] = await Astro.glob("./posts/*.md");
+const posts = Object.values(
+  import.meta.glob<MarkdownInstance<PostFrontmatter>>('./posts/*.md', { eager: true })
+);
+
 const pageTitle = "Meine Blog Seite";
 ---
 
@@ -32,12 +35,24 @@ const pageTitle = "Meine Blog Seite";
     Außerdem möchte ich noch das Astro Framework erwähnen mit dem ich meine
     ganze Webseite geschrieben habe.
   </p>
-  
+
   <ul>
-    {
-      allPosts.map((post) => (
-        <BlogPost url={post.url} title={post.frontmatter.title} />
-      ))
-    }
+    {posts.map((post) => (
+      <BlogPost 
+        url={post.url} 
+        title={post.frontmatter.title} 
+        description={post.frontmatter.description}
+        pubDate={post.frontmatter.pubDate}
+        author={post.frontmatter.author} 
+      />
+    ))}
+  </ul>
+
+  <ul>
+    {posts.map((post) => (
+      <li>
+        <a href={post.url}>{post.frontmatter.title}</a>
+      </li>
+    ))}
   </ul>
 </BaseLayout>
