@@ -25,11 +25,12 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        "@scripts": resolve(__dirname, "public/scripts")
-      }
-      // Weitere Vite-spezifische Konfiguration hier hinzufügen, falls nötig
-    }
+        "@scripts": resolve(__dirname, "public/scripts"), // Alias für Scripts im public-Ordner
+        "@": resolve(__dirname, "src"), // Alias für den src-Ordner
+      },
+    },
   },
+  
     // Project root directory
   root: ".",
 
