@@ -1,8 +1,8 @@
 ---
-// import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
-// import ExternalScripts from "../components/ExternalScripts.astro";
-// import ExternalScripts3 from "../components/ExternalScripts3.astro";
-// import GoogleScripts from "../components/GoogleScripts.astro";
+import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
+import ExternalScripts from "../components/ExternalScripts.astro";
+import ExternalScripts3 from "../components/ExternalScripts3.astro";
+import GoogleScripts from "../components/GoogleScripts.astro";
 import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -74,11 +74,11 @@ const urlPath = Astro.url.pathname;
     <meta name="robots" content="max-snippet:-1, INDEX, FOLLOW" />
     <meta name="theme-color" content="#191919" />
     <!-- Another Components or scripts -->
-     <!--
+    
     <ManuellesBlockieren />
     <ExternalScripts />
     <ExternalScripts3 />
-    <GoogleScripts /> -->
+    <GoogleScripts />
     <ClientRouter />
     <Header />
     <!-- Bedingte CSS-Dateien für spezifische Seiten -->

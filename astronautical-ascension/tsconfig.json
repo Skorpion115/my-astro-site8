@@ -6,6 +6,12 @@
     "module": "nodenext",
     "target": "esnext"
   },
-  "include": [".astro/types.d.ts", "**/*"],
+  "include": [
+    "src",
+    "astro.config.mjs",
+    "src/types/vendor.d.ts",
+    "src/types/global.d.ts",
+    ".astro/types.d.ts" 
+  ],
   "exclude": ["dist"]
 }
