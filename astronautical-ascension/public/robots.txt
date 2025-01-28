@@ -1,5 +1,3 @@
 User-agent: *
-Disallow: /_astro/post-1.DC0IJZlc.css
-Disallow: /_astro/index.D7j3op8X.css
-Disallow: /_astro/post-1.BWi1m-w0.css
+Allow: /
 Sitemap: https://www.musicstudio-ziebart.de/sitemap.xml
