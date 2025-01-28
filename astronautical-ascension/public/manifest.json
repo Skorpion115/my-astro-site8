@@ -1,0 +1,70 @@
+{
+  "short_name": "Musikschule", 
+  "name": "Musicstudio Ziebart",
+  "icons": [
+    {
+      "src": "manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }   
+  ],
+  "id": "/?source=pwa",
+  "start_url": "/?source=pwa",
+  "background_color": "#191919",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#191919",
+  "shortcuts": [
+    {
+      "name": "Musikunterricht in Nürnberg",
+      "short_name": "Musikunterricht",
+      "description": "Schaue mehr info",
+      "url": "/info?source=pwa",
+      "icons": [{ "src": "manifest-icon-192.maskable.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Musikunterricht in Eibach",
+      "short_name": "Music Lessons",
+      "description": "Schaue mehr informationen",
+      "url": "/informationen?source=pwa",
+      "icons": [{ "src": "manifest-icon-192.maskable.png", "sizes": "192x192" }]
+    }
+  ],
+  "description": "Musikunterricht in Nürnberg",
+    "screenshots": [
+      {
+        "src": "/images/screenshot1.jpg",
+        "type": "image/jpg",
+        "sizes": "720x1560",
+        "form_factor": "narrow"
+      },
+      {
+        "src": "/images/screenshot2.png",
+        "type": "image/png",
+        "sizes": "1560x720",
+        "form_factor": "wide"
+      }
+    ],
+    
+    "lang": "de",
+    "orientation": "any"
+  }
