@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import netlify from "@astrojs/netlify";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
 
@@ -30,6 +31,9 @@ export default defineConfig({
       },
     },
   },
+
+  output: "static",
+  adapter: netlify(),
   
     // Project root directory
   root: ".",
