@@ -1,6 +1,6 @@
 [build]
 command = "npm run build"
-base = "helpless-halo/"
+base = "astronautical-ascension/"
 publish = "dist"
 
 [build.environment]
