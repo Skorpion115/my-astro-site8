@@ -1256,9 +1256,19 @@ table.basis-table tbody tr.active {
   color: rebeccapurple;
 }
 
+/* ANCHOR Footer */
+
+.youtube-footer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-left: 1.25rem;
+}
+
+
 /* ANCHOR Footer2 */ 
 
-footer {
+.endfooter {
   font-size: calc(0.75rem + var(--font-scale));
   margin-bottom: 32px;
   background: #000000;
@@ -1270,7 +1280,7 @@ footer {
   text-align: center;
 }
 
-footer ul {
+.endfooter ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -1279,6 +1289,6 @@ footer ul {
   gap: 8px;
 }
 
-footer .navigation-links a {
+.endfooter .navigation-links a {
   color: #e2dbdb;
 }
