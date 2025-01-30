@@ -1255,3 +1255,30 @@ table.basis-table tbody tr.active {
   font-weight: bold;
   color: rebeccapurple;
 }
+
+/* ANCHOR Footer2 */ 
+
+footer {
+  font-size: calc(0.75rem + var(--font-scale));
+  margin-bottom: 32px;
+  background: #000000;
+  color: #e2dbdb;
+  margin: 0 auto;
+  padding: 3px 24px;
+  width: 100%;
+  max-width: 1260px;
+  text-align: center;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+footer .navigation-links a {
+  color: #e2dbdb;
+}
