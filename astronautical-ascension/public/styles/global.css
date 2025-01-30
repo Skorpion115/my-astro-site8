@@ -1256,16 +1256,6 @@ table.basis-table tbody tr.active {
   color: rebeccapurple;
 }
 
-/* ANCHOR Footer */
-
-.youtube-footer {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-  margin-left: 1.25rem;
-}
-
-
 /* ANCHOR Footer2 */ 
 
 .endfooter {
