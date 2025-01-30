@@ -7,24 +7,29 @@ const pageUrl = `${SITE_URL}/contact_4/`;
 
 <BaseLayout
   pageTitle={pageTitle}
-  description="Falls Sie Fragen haben, können Sie mir gerne eine kurze Mitteilung schicken. Ich werde Sie zurückrufen! 😀"
+  description="Falls die Fragen haben können sie mir gerne eine kurze Mitteilung schicken. Ich werde sie zurück rufen! 😀"
   keywords="ich rufe sie zurück, rückruf"
   href={pageUrl}
 >
 <br />
   <div class="container4">
     <form
-      action="https://formsubmit.co/a7f052e0376799b4e2582093f684876f"
+      name="contact_4"
       method="POST"
+      action="/danke-seite/"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
     >
-      <!-- Honeypot-Feld (versteckt) -->
-      <input type="text" name="_honey" style="display:none">
+      <!-- Honeypot field (invisible to users) -->
+      <p style="display:none">
+        <label
+          >Don’t fill this out if you're human: <input
+            name="bot-field"
+          /></label
+        >
+      </p>
 
-      <!-- Verhindert Captcha-Anforderung -->
-      <input type="hidden" name="_captcha" value="false">
-
-      <!-- Leitet nach Absenden auf die Danke-Seite weiter -->
-      <input type="hidden" name="_next" value="https://www.musicstudio-ziebart.de/danke-seite/">
+      <input type="hidden" name="form-name" value="contact_4" />
 
       <div>
         <label for="name">Name:</label>
@@ -81,11 +86,20 @@ const pageUrl = `${SITE_URL}/contact_4/`;
           autocomplete="email"
           name="email"
           class="form-control form-control-lg"
-          required
         />
       </div>
 
       <br />
+      <!--
+        <div
+          class="g-recaptcha"
+          data-sitekey="6LdRPP0pAAAAAPoJR0Z6iRH_HFqnJBE4rNpKdLuP"
+        >
+        </div> -->
+      <!--
+        <script src="/scripts/form-handler.js" type="module" defer></script>
+        <br />
+        <div> -->
       <button type="submit" class="btn btn-lg btn-primary">Absenden</button>
     </form>
   </div>
