@@ -1256,6 +1256,22 @@ table.basis-table tbody tr.active {
   color: rebeccapurple;
 }
 
+/* ANCHOR Footer1 */
+
+.youtube-footer a {
+  padding: 0.5rem 1rem;
+  color: white;
+  background-color: #4c1d95;
+  text-decoration: none;
+  display: inline-block; /* Damit die Buttons korrekt angezeigt werden */
+  margin: 5px; /* Abstand zwischen den Links */
+  border-radius: 5px; /* Optionale Abrundung */
+}
+
+.youtube-footer a:first-child {
+  margin-left: 2rem; /* Oder mehr, je nach Bedarf */
+}
+
 /* ANCHOR Footer2 */ 
 
 .endfooter {
