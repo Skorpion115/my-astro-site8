@@ -1,2 +1,3 @@
 User-agent: *
+Allow: /delivery/js/cmp_final.min.js
 Sitemap: https://www.musicstudio-ziebart.de/sitemap.xml
