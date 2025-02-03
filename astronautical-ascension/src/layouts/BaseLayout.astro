@@ -122,19 +122,16 @@ console.log("Astro nonce:", Astro.props.nonce);
     <Footer2 />
 
     <!-- Scripte extern einbinden -->
-    <script src="/scripts/cookie-banner.js" is:inline async></script>
+    <script src="/scripts/cookie-banner.js" nonce={nonce} defer></script>
     <script src="/scripts/menu.js" nonce={nonce}  defer></script>
-    <script src="/scripts/load-iframes.js" is:inline async></script>
-    <script src="/scripts/document-cookie.js" is:inline async></script>
+    <script src="/scripts/load-iframes.js" nonce={nonce} defer></script>
+    <script src="/scripts/document-cookie.js" nonce={nonce} defer></script>
     <script src="/register-service-worker.js" defer></script>
-
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const script = document.querySelector('script[src="/scripts/menu.js"]');
         console.log("Body nonce:", script ? (script as HTMLScriptElement).nonce : "Nicht vorhanden");
       });
-    </script>
-    
-    
+    </script> 
   </body>
 </html>
