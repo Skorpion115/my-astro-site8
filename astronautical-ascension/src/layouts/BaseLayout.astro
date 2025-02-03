@@ -25,7 +25,8 @@ const {
 // Die aktuelle URL-Pfad vom Astro-Objekt erhalten
 // const urlPath = Astro.url.pathname;
 const urlPath = new URL(Astro.request.url).pathname;
-
+// Netlify setzt automatisch das Nonce
+const nonce = Astro.props.nonce;
 ---
 
 <html lang="de">
@@ -121,7 +122,7 @@ const urlPath = new URL(Astro.request.url).pathname;
 
     <!-- Scripte extern einbinden -->
     <script src="/scripts/cookie-banner.js" is:inline async></script>
-    <script src="/scripts/menu.js" is:inline async></script>
+    <script src="/scripts/menu.js" nonce={nonce} is:inline async></script>
     <script src="/scripts/load-iframes.js" is:inline async></script>
     <script src="/scripts/document-cookie.js" is:inline async></script>
     <script src="/register-service-worker.js" is:inline defer></script>
