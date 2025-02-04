@@ -4,6 +4,8 @@ import ExternalScripts from "../components/ExternalScripts.astro";
 import ExternalScripts3 from "../components/ExternalScripts3.astro";
 import GoogleScripts from "../components/GoogleScripts.astro";
 const pageTitle = "Anbieter";
+const nonce = Astro.props.nonce;
+console.log("Astro nonce:", Astro.props.nonce);
 ---
 
 <!doctype html>
@@ -52,8 +54,10 @@ const pageTitle = "Anbieter";
 
     <script
       src="https://delivery.consentmanager.net/delivery/cookieinfo.php?cdid=b018a967f10b6"
-      type="text/javascript" is:inline
-      async></script>
+      nonce={nonce}
+      type="text/javascript"
+      async>
+    </script>
 
     <p><a href="/" class="normal-links">Zurück zur Startseite</a></p>
 
