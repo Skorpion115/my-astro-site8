@@ -63,5 +63,13 @@ console.log("Astro nonce:", Astro.props.nonce);
     <p><a href="/" class="normal-links">Zurück zur Startseite</a></p>
 
     <br />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const scripts = document.querySelectorAll("script");
+        scripts.forEach((script, index) => {
+          console.log(`Script ${index + 1} nonce:`, script.nonce || "Nicht vorhanden");
+        });
+      });
+    </script>
   </body>
 </html>
