@@ -6,7 +6,7 @@ import GoogleScripts from "../components/GoogleScripts.astro";
 const pageTitle = "Anbieter";
 const nonce = Astro.props.nonce;
 console.log("Astro nonce:", Astro.props.nonce);
-const cdid = 'b018a967f10b6&1=automatic';  // Beispiel für eine dynamische cdid-Nummer
+const cdid = 'b018a967f10b6';  // Beispiel für eine dynamische cdid-Nummer
 ---
 
 <!doctype html>
@@ -67,6 +67,9 @@ const cdid = 'b018a967f10b6&1=automatic';  // Beispiel für eine dynamische cdid
       nonce={nonce} 
       async>
     </script>
+
+   
+
 
     <h3>Cookie Info Liste</h3>
     <!--
