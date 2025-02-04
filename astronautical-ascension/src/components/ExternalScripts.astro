@@ -4,7 +4,7 @@ import GoogleScripts from "./GoogleScripts.astro";
 
 <GoogleScripts />
 
-<script async
+<script nonce={Astro.props.nonce} async
     is:inline
     type="text/plain"
     class="cmplazyload"
