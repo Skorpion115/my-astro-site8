@@ -124,21 +124,29 @@ console.log("Astro nonce:", Astro.props.nonce);
       });
     </script>
 
-
     <script nonce={nonce}>
       document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll("[onclick]").forEach(function (el) {
-          const onclickCode = el.getAttribute("onclick");
-          if (onclickCode) {
-            el.removeAttribute("onclick"); // Entfernt blockiertes Attribut
-            el.addEventListener("click", function (event) {
-              new Function(onclickCode).call(this, event); // Führt Code trotzdem aus
-            });
-            console.log("onclick ersetzt:", el);
-          }
-        });
+        function fixButtons() {
+          document.querySelectorAll("[onclick]").forEach(function (el) {
+            const onclickCode = el.getAttribute("onclick");
+            if (onclickCode) {
+              el.removeAttribute("onclick");
+              el.addEventListener("click", function (event) {
+                new Function(onclickCode).call(this, event);
+              });
+            }
+          });
+        }
+
+        // Direkt beim Laden reparieren
+        fixButtons();
+
+        // Überwacht Änderungen im DOM und repariert neue Buttons
+        new MutationObserver(fixButtons).observe(document.body, { childList: true, subtree: true });
       });
     </script>
+
+
 
 
   </body>
