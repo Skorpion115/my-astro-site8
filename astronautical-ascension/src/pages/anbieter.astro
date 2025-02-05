@@ -113,5 +113,28 @@ console.log("Astro nonce:", Astro.props.nonce);
         });
       });
     </script>
+
+    <script nonce={nonce}>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.body.addEventListener("click", function (event) {
+          if (event.target.matches(".cmpvendorlistb018a967f10b6 button")) {
+            console.log("Button wurde geklickt:", event.target);
+          }
+        });
+      });
+    </script>
+
+    <script nonce={nonce}>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("[onclick]").forEach(function (el) {
+          const onclickCode = el.getAttribute("onclick");
+          el.removeAttribute("onclick"); // Entfernt blockiertes Attribut
+          el.addEventListener("click", function () {
+            new Function(onclickCode).call(this); // Führt den Code trotzdem aus
+          });
+        });
+      });
+    </script>
+
   </body>
 </html>
