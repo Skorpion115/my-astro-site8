@@ -124,17 +124,22 @@ console.log("Astro nonce:", Astro.props.nonce);
       });
     </script>
 
+
     <script nonce={nonce}>
       document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll("[onclick]").forEach(function (el) {
           const onclickCode = el.getAttribute("onclick");
-          el.removeAttribute("onclick"); // Entfernt blockiertes Attribut
-          el.addEventListener("click", function () {
-            new Function(onclickCode).call(this); // Führt den Code trotzdem aus
-          });
+          if (onclickCode) {
+            el.removeAttribute("onclick"); // Entfernt blockiertes Attribut
+            el.addEventListener("click", function (event) {
+              new Function(onclickCode).call(this, event); // Führt Code trotzdem aus
+            });
+            console.log("onclick ersetzt:", el);
+          }
         });
       });
     </script>
+
 
   </body>
 </html>
