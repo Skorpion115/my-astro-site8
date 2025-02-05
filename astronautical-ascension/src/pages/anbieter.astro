@@ -41,41 +41,24 @@ console.log("Astro nonce:", Astro.props.nonce);
   <body>
     <h3>Anbieterliste</h3>
     <!-- Vendorliste von Consentmanager -->
+    <div id="cmpvendorlist"></div>
 
-    <div class="cmpvendorlistb018a967f10b6 cmpstyleroot"></div>
+    <h4>Cookie Info Liste</h4>
 
-    <script
-      src="https://delivery.consentmanager.net/delivery/vendorlist.php?cdid=b018a967f10b6&l=automatic"
-      type="text/javascript"
-      nonce="{Astro.props.nonce}"
-      async
-    ></script>
-
-    <h3>Cookie Info Liste</h3>
-
-    <div class="cmpcookieinfob018a967f10b6 cmpstyleroot"></div>
-
-    <script
-      src="https://delivery.consentmanager.net/delivery/cookieinfo.php?cdid=b018a967f10b6&l=automatic"
-      type="text/javascript"
-      nonce="{Astro.props.nonce}"
-      async
-    ></script>
-
-    <h3>Cookies Informationen</h3>
-    <div id="cmpinlinepreferencesbox"></div>
-    <link
-      rel="stylesheet"
-      href="https://delivery.consentmanager.net/delivery/cmpinline.min.css"
-    />
+    <div id="cmpcookieinfo"></div>
 
     <p><a href="/" class="normal-links">Zurück zur Startseite</a></p>
 
     <br />
 
     <!-- Externe Skripte für Event Handling -->
+    <!-- 
+    <script src="/scripts/onclick.js" type="text/javascript" nonce={nonce} defer></script> -->
+    <script src="/scripts/vendorlist.js" type="text/javascript" nonce={nonce} defer></script>
 
-    <script src="/scripts/onclick.js" type="text/javascript" nonce={nonce} defer></script>
+    <script src="/scripts/cookie-info.js" type="text/javascript" nonce={nonce} defer></script>
+      
     <script src="/scripts/debug.js" type="text/javascript" nonce={nonce} defer></script>
+
   </body>
 </html>
