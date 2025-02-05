@@ -6,7 +6,6 @@ import GoogleScripts from "../components/GoogleScripts.astro";
 const pageTitle = "Anbieter";
 const nonce = Astro.props.nonce;
 console.log("Astro nonce:", Astro.props.nonce);
-// const cdid = 'b018a967f10b6';  // Beispiel für eine dynamische cdid-Nummer
 ---
 
 <!doctype html>
@@ -42,112 +41,41 @@ console.log("Astro nonce:", Astro.props.nonce);
   <body>
     <h3>Anbieterliste</h3>
     <!-- Vendorliste von Consentmanager -->
-     <!--
-    <div id="cmpvendorlist"></div> -->
-    <!--
-    <script
-      src="https://delivery.consentmanager.net/delivery/vendorlist.php?cdid=b018a967f10b6"
-      type="text/javascript"
-      nonce={nonce}
-      async>
-    </script> -->
 
     <div class="cmpvendorlistb018a967f10b6 cmpstyleroot"></div>
-    <!--
-    <script 
-      src="https://delivery.consentmanager.net/delivery/vendorlist.php?cdid=b018a967f10b6&l=automatic" 
-      type="text/javascript"
-      nonce={nonce} 
-      async>
-    </script> -->
-    <!--
-    <script 
-      src={`https://delivery.consentmanager.net/delivery/vendorlist.php?cdid=${cdid}&l=automatic`} 
-      type="text/javascript" 
-      nonce={nonce} 
-      async>
-    </script> -->
 
-    <script 
+    <script
       src="https://delivery.consentmanager.net/delivery/vendorlist.php?cdid=b018a967f10b6&l=automatic"
       type="text/javascript"
-      nonce="{Astro.props.nonce}" 
-      async>
-    </script>
-
-
-   
-
+      nonce="{Astro.props.nonce}"
+      async
+    ></script>
 
     <h3>Cookie Info Liste</h3>
-    <!--
-    <div id="cmpcookieinfo"></div> -->
-    <!--
-    <script
-      src="https://delivery.consentmanager.net/delivery/cookieinfo.php?cdid=b018a967f10b6"
-      type="text/javascript"
-      nonce={nonce}
-      async>
-    </script> -->
 
     <div class="cmpcookieinfob018a967f10b6 cmpstyleroot"></div>
-    <script 
-      src="https://delivery.consentmanager.net/delivery/cookieinfo.php?cdid=b018a967f10b6&l=automatic" 
+
+    <script
+      src="https://delivery.consentmanager.net/delivery/cookieinfo.php?cdid=b018a967f10b6&l=automatic"
       type="text/javascript"
-      nonce={nonce} 
-      async>
-    </script>
+      nonce="{Astro.props.nonce}"
+      async
+    ></script>
 
     <h3>Cookies Informationen</h3>
     <div id="cmpinlinepreferencesbox"></div>
-    <link rel="stylesheet" href="https://delivery.consentmanager.net/delivery/cmpinline.min.css">
+    <link
+      rel="stylesheet"
+      href="https://delivery.consentmanager.net/delivery/cmpinline.min.css"
+    />
 
     <p><a href="/" class="normal-links">Zurück zur Startseite</a></p>
 
     <br />
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const scripts = document.querySelectorAll("script");
-        scripts.forEach((script, index) => {
-          console.log(`Script ${index + 1} nonce:`, script.nonce || "Nicht vorhanden");
-        });
-      });
-    </script>
 
-    <script nonce={nonce}>
-      document.addEventListener("DOMContentLoaded", function () {
-        document.body.addEventListener("click", function (event) {
-          if (event.target.matches(".cmpvendorlistb018a967f10b6 button")) {
-            console.log("Button wurde geklickt:", event.target);
-          }
-        });
-      });
-    </script>
+    <!-- Externe Skripte für Event Handling -->
 
-    <script nonce={nonce}>
-      document.addEventListener("DOMContentLoaded", function () {
-        function fixButtons() {
-          document.querySelectorAll("[onclick]").forEach(function (el) {
-            const onclickCode = el.getAttribute("onclick");
-            if (onclickCode) {
-              el.removeAttribute("onclick");
-              el.addEventListener("click", function (event) {
-                new Function(onclickCode).call(this, event);
-              });
-            }
-          });
-        }
-
-        // Direkt beim Laden reparieren
-        fixButtons();
-
-        // Überwacht Änderungen im DOM und repariert neue Buttons
-        new MutationObserver(fixButtons).observe(document.body, { childList: true, subtree: true });
-      });
-    </script>
-
-
-
-
+    <script src="/scripts/onclick.js" type="text/javascript" nonce={nonce} defer></script>
+    <script src="/scripts/debug.js" type="text/javascript" nonce={nonce} defer></script>
   </body>
 </html>
