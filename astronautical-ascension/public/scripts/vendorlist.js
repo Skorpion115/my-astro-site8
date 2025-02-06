@@ -8,14 +8,8 @@ script.src = "https://delivery.consentmanager.net/delivery/vendorlist.php?cdid=b
 script.type = "text/javascript";
 script.async = true;
 
-// Falls eine Nonce vorhanden ist, setzen
-if (nonceValue) {
-  script.setAttribute("nonce", nonceValue);
-}
-
 // Script in den <head> einfügen
 document.head.appendChild(script);
 
 // Debugging: Prüfen, ob die Nonce korrekt gesetzt wurde
 console.log("Gesetzte Nonce:", document.querySelector('script[src*="vendorlist.php"]')?.getAttribute("nonce"));
-
