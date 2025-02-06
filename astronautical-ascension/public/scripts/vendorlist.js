@@ -1,15 +1,22 @@
-// Die Nonce aus dem aktuell laufenden Script-Tag holen
-const currentScript = document.currentScript;
-const nonceValue = currentScript ? currentScript.nonce : "";
+// Die Nonce aus einem existierenden Script-Tag holen
+const nonceValue = document.querySelector("script[data-nonce]")?.getAttribute("data-nonce");
 
-// Neues Script-Element für die Vendorliste erstellen
+// Neues Script für die Vendorlist laden
 const script = document.createElement("script");
 script.src = "https://delivery.consentmanager.net/delivery/vendorlist.php?cdid=b018a967f10b6&l=automatic";
 script.type = "text/javascript";
+if (nonceValue) {
+  script.setAttribute("nonce", nonceValue);
+}
 script.async = true;
-
-// Script in den <head> einfügen
 document.head.appendChild(script);
 
-// Debugging: Prüfen, ob die Nonce korrekt gesetzt wurde
-console.log("Gesetzte Nonce:", document.querySelector('script[src*="vendorlist.php"]')?.getAttribute("nonce"));
+// Event-Listener für den Button setzen
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("meinButton");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      alert("Button funktioniert!");
+    });
+  }
+});
