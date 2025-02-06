@@ -10,6 +10,8 @@ SITE_URL = "https://www.musicstudio-ziebart.de"
 for = "/*"
 
 [headers.values]
+Attribution-Reporting-Eligible = '{"trigger": "true"}'
+Attribution-Reporting-Support = '{"os": "true"}'
 X-Frame-Options = "SAMEORIGIN"
 X-XSS-Protection = "1; mode=block"
 Access-Control-Allow-Origin = "https://www.musicstudio-ziebart.de"
