@@ -37,6 +37,10 @@ console.log("Astro nonce:", Astro.props.nonce);
     <ExternalScripts />
     <ExternalScripts3 />
     <GoogleScripts />
+
+    <!-- Deine CSP muss 'nonce-{nonce}' als Wert beinhalten, z.B.: -->
+    <meta http-equiv="Content-Security-Policy" content={`script-src 'self' 'nonce-${nonce}'`}>
+
   </head>
   <body>
     <h3>Anbieterliste</h3>
