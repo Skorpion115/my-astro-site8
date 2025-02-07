@@ -11,12 +11,20 @@ if (nonceValue) {
 script.async = true;
 document.head.appendChild(script);
 
-// Event-Listener für den Button setzen
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("meinButton");
-  if (btn) {
-    btn.addEventListener("click", () => {
-      alert("Button funktioniert!");
-    });
+// Warten, bis das Script geladen ist, und die Vendorlist initialisieren
+script.onload = function () {
+  if (typeof cmpShowVendorList !== "undefined") {
+    cmpShowVendorList("cmpvendorlist");
+  } else {
+    console.warn("Consentmanager Vendorlist konnte nicht geladen werden.");
+  }
+};
+
+// Sicherstellen, dass das Cookie-Info-Skript ebenfalls funktioniert
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof cmpShowCookieInfo !== "undefined") {
+    cmpShowCookieInfo("cmpcookieinfo");
+  } else {
+    console.warn("Consentmanager Cookie Info konnte nicht geladen werden.");
   }
 });
