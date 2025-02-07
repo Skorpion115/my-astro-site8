@@ -38,15 +38,14 @@ console.log("Astro nonce:", Astro.props.nonce);
     <ExternalScripts3 />
     <GoogleScripts />
 
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://delivery.consentmanager.net https://d.delivery.consentmanager.net https://cdn.consentmanager.net https://www.musicstudio-ziebart.de/scripts/;">
-
-
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://delivery.consentmanager.net https://d.delivery.consentmanager.net https://cdn.consentmanager.net https://www.musicstudio-ziebart.de/scripts/;"
+    />
   </head>
   <body>
     <h3>Anbieterliste</h3>
-    <!--
-    <button id="meinButton">consentmanager</button> -->
-    
+
     <!-- Vendorliste von Consentmanager -->
     <div id="cmpvendorlist"></div>
 
@@ -59,19 +58,15 @@ console.log("Astro nonce:", Astro.props.nonce);
     <br />
 
     <!-- Externe Skripte für Event Handling -->
-    <!--
-    <script src="/scripts/onclick.js" type="text/javascript" nonce={nonce} defer></script> -->
-    <!--
-    <script src="/scripts/vendor-list.js" type="text/javascript" nonce={nonce} defer></script> -->
-    <!--
-    <script src="/scripts/vendorlist.js" type="text/javascript" nonce={nonce} defer></script> -->
-    <script src="/scripts/vendorlist.js" type="text/javascript" nonce={nonce} defer data-nonce={nonce}></script>
-    <script src="/scripts/cookie-info.js" type="text/javascript" nonce={nonce} defer></script>    
-    <script src="/scripts/debug.js" type="text/javascript" nonce={nonce} defer></script>
+    <script
+      src="/scripts/vendorlist.js"
+      type="text/javascript"
+      nonce={nonce}
+      defer
+      data-nonce={nonce}></script>
+    <script src="/scripts/cookie-info.js" nonce={nonce} defer></script>
+    <script src="/scripts/debug.js" nonce={nonce} defer></script>
     <script src="/scripts/document-cookie.js" nonce={nonce} defer></script>
     <script src="/register-service-worker.js" defer></script>
-    <!--
-    <script src="/scripts/meinscript.js" type="text/javascript" nonce={nonce} defer></script> -->
-
   </body>
 </html>
