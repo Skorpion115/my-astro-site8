@@ -2,11 +2,18 @@
 const nonce = Astro.props.nonce;
 console.log("Astro nonce:", Astro.props.nonce);
 ---
-
+<!--
 <script
   src="https://delivery.consentmanager.net/delivery/vendorlist.php?cdid=b018a967f10b6&l=de&h=musicstudio-ziebart.de"
   type="text/javascript"
   nonce={nonce}
   async
 >
-</script>
+</script> -->
+
+<!-- Einbinden des externen Skripts -->
+<script 
+    async 
+    src="/scripts/vendor-list.js" 
+    nonce={nonce}
+/> 
