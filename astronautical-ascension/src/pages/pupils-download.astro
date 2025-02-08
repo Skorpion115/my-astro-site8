@@ -2,11 +2,23 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Schülermaterial";
 const description = "Schüler download";
+const keywords = "Songs für Schüler";
 const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
 const pageUrl = `${SITE_URL}/pupils-download/`;
 ---
 
-<BaseLayout pageTitle={pageTitle} description={description} href={pageUrl}>
+<BaseLayout 
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
   <section id="download2">
     <h2 transition:animate="slide">Gespielte Titel</h2>
     <article>
@@ -80,28 +92,27 @@ const pageUrl = `${SITE_URL}/pupils-download/`;
           </tr>
           <tr>
             <td>3</td>
-            <td>Ruby</td>
-            <td>Kenny Rogers</td>
+            <td>Homeward Bound</td>
+            <td>Simon & Garfunkel</td>
             <td>Gitarre</td>
           </tr>
           <tr>
             <td>
-              <a
-                href="/Songs/Kenny Rogers - Ruby.mp3"
-                target="_blank"
-                class="normal-links">anhören</a
-              >
+              <audio controls>
+                <source src="/Songs/Homeward Bound.mp3" type="audio/mpeg" />
+                Dein Browser unterstützt das Audio-Element nicht.
+              </audio>
             </td>
             <td>
               <a
-                href="/bilder/Ruby - Rhythmus Guitar.pdf"
+                href="/bilder/Homeward Bound.pdf"
                 target="_blank"
                 class="normal-links">ansehen</a
               >
             </td>
             <td>
-              <a href="/zip_download/Ruby.zip" class="normal-links"
-                >download 3,13 MB</a
+              <a href="/zip_download/Homeward Bound.zip" class="normal-links"
+                >download 4,97 MB</a
               >
             </td>
           </tr>
@@ -173,21 +184,18 @@ const pageUrl = `${SITE_URL}/pupils-download/`;
       </div>
       <div class="basis-card">
         <div class="basis-header">ID: 3</div>
-        <div><span>Titel:</span> Ruby</div>
-        <div><span>Komponist:</span> Kenny Rogers</div>
+        <div><span>Titel:</span> Homeward Bound</div>
+        <div><span>Komponist:</span> Simon & Garfunkel</div>
         <div><span>Instrument:</span> Gitarre</div>
         <div>
-          <span>anhören:</span><a
-            href="/Songs/Kenny Rogers - Ruby.mp3"
-            target="_blank"
-            class="normal-links"
-          >
-            anhören</a
-          >
+          <audio controls>
+            <source src="/Songs/Homeward Bound.mp3" type="audio/mpeg" />
+            Dein Browser unterstützt das Audio-Element nicht.
+          </audio>
         </div>
         <div>
           <span>ansehen:</span><a
-            href="/bilder/Ruby - Rhythmus Guitar.pdf"
+            href="/bilder/Homeward Bound.pdf"
             target="_blank"
             class="normal-links"
           >
@@ -196,10 +204,10 @@ const pageUrl = `${SITE_URL}/pupils-download/`;
         </div>
         <div>
           <span>Download:</span><a
-            href="/zip_download/Ruby.zip"
+            href="/zip_download/Homeward Bound.zip"
             class="normal-links"
           >
-            3,13 MB</a
+            4,97 MB</a
           >
         </div>
       </div>
