@@ -48,10 +48,24 @@ console.log("Astro nonce:", Astro.props.nonce);
     <h3>Anbieterliste</h3>
 
     <!-- Vendorliste von Consentmanager -->
-    <div id="cmpvendorlist"></div>
+     <!--
+    <div id="cmpvendorlist"></div> -->
+
+    <h3>Anbieterliste 2</h3>
+
+    <p>Hier finden Sie Informationen über die Verwendung von Cookies auf dieser Website.</p>
+
+    <!-- Consentmanager Vendorlist Code -->
+    <div class="cmpvendorlistb018a967f10b6 cmpstyleroot"></div>
+    <!--
+    <script 
+      src="https://delivery.consentmanager.net/delivery/vendorlist.php?cdid=b018a967f10b6&l=de&h=musicstudio-ziebart.de" 
+      type="text/javascript" async>
+    </script> -->
+
 
     <h4>Cookie Info Liste</h4>
-
+    
     <div id="cmpcookieinfo"></div>
 
     <p><a href="/" class="normal-links">Zurück zur Startseite</a></p>
@@ -59,12 +73,15 @@ console.log("Astro nonce:", Astro.props.nonce);
     <br />
 
     <!-- Externe Skripte für Event Handling -->
+     <!--
     <script
       src="/scripts/vendorlist.js"
       type="text/javascript"
       nonce={nonce}
       defer
-      data-nonce={nonce}></script>
+      data-nonce={nonce}></script> -->
+    
+    <script src="/scripts/vendor-list.js" nonce={nonce} defer></script>
     <script src="/scripts/cookie-info.js" nonce={nonce} defer></script>
     <script src="/scripts/debug.js" nonce={nonce} defer></script>
     <script src="/scripts/document-cookie.js" nonce={nonce} defer></script>
