@@ -1,2 +1,2 @@
-/* 
-  Content-Security-Policy: script-src 'self' 'nonce-*';
+/*
+Content-Security-Policy: script-src 'self' 'nonce-{Astro.props.nonce}';
