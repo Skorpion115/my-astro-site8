@@ -3,6 +3,7 @@ import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
 import ExternalScripts from "../components/ExternalScripts.astro";
 import ExternalScripts3 from "../components/ExternalScripts3.astro";
 import GoogleScripts from "../components/GoogleScripts.astro";
+import VendorList from "../components/VendorList.astro";
 const pageTitle = "Anbieter";
 const nonce = Astro.props.nonce;
 console.log("Astro nonce:", Astro.props.nonce);
@@ -37,6 +38,7 @@ console.log("Astro nonce:", Astro.props.nonce);
     <ExternalScripts />
     <ExternalScripts3 />
     <GoogleScripts />
+    <VendorList />
 
     <meta
       http-equiv="Content-Security-Policy"
@@ -80,8 +82,8 @@ console.log("Astro nonce:", Astro.props.nonce);
       nonce={nonce}
       defer
       data-nonce={nonce}></script> -->
-    
-    <script src="/scripts/vendor-list.js" nonce={nonce} defer></script>
+    <!--
+    <script src="/scripts/vendor-list.js" nonce={nonce} defer></script> -->
     <script src="/scripts/cookie-info.js" nonce={nonce} defer></script>
     <script src="/scripts/debug.js" nonce={nonce} defer></script>
     <script src="/scripts/document-cookie.js" nonce={nonce} defer></script>
