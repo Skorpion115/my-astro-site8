@@ -1,11 +1,11 @@
 ---
 import GoogleScripts from "./GoogleScripts.astro";
+export let nonce: string;
 ---
 
 <GoogleScripts />
 
-<script nonce={Astro.props.nonce} async
-    is:inline
+<script nonce={nonce} async
     type="text/plain"
     class="cmplazyload"
     data-cmp-vendor="s26,s135,s30,s905,s2612"

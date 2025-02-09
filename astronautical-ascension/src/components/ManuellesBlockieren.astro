@@ -1,8 +1,9 @@
 ---
-// ManuellesBlockieren.astro
+const nonce = Astro.props.nonce;
 ---
 <!-- Einbinden des externen Skripts -->
-<script 
+<script
+    nonce={nonce}
     async 
     src="/scripts/manuelles-blockieren.js"
 />

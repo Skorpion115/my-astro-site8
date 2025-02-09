@@ -1,6 +1,9 @@
-<script nonce={Astro.props.nonce} async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6" />
-<script nonce={Astro.props.nonce} async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3" />
-<script nonce={Astro.props.nonce} async>
+---
+const nonce = Astro.props.nonce;
+---
+<script nonce={nonce} async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6" />
+<script nonce={nonce} async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3" />
+<script nonce={nonce} async>
   // Google Tag Manager
   (function (w, d, s, l, i) {
     w[l] = w[l] || [];
