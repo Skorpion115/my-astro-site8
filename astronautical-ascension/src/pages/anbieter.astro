@@ -5,8 +5,11 @@ import ExternalScripts3 from "../components/ExternalScripts3.astro";
 import GoogleScripts from "../components/GoogleScripts.astro";
 import VendorList from "../components/VendorList.astro";
 const pageTitle = "Anbieter";
-// const nonce = Astro.props.nonce;
-// console.log("Astro nonce:", Astro.props.nonce);
+// const nonce = Astro.props.nonce || "";
+// console.log("Astro nonce in VendorList:", nonce);
+
+const nonce = Astro.props.nonce ?? "";
+console.log("Astro nonce:", nonce);
 ---
 
 <!doctype html>
@@ -38,7 +41,9 @@ const pageTitle = "Anbieter";
     <ExternalScripts />
     <ExternalScripts3 />
     <GoogleScripts />
-    <VendorList />
+    <VendorList nonce={Astro.props.nonce ?? ""} />
+    
+
     <!--
     <meta
       http-equiv="Content-Security-Policy"
@@ -47,13 +52,14 @@ const pageTitle = "Anbieter";
 
   </head>
   <body>
-    <h3>Anbieterliste</h3>
+    <!--
+    <h3>Anbieterliste</h3> -->
 
     <!-- Vendorliste von Consentmanager -->
      <!--
     <div id="cmpvendorlist"></div> -->
 
-    <h3>Anbieterliste 2</h3>
+    <h3>Anbieterliste</h3>
 
     <p>Hier finden Sie Informationen über die Verwendung von Cookies auf dieser Website.</p>
 
@@ -87,5 +93,6 @@ const pageTitle = "Anbieter";
     <script src="/scripts/cookie-info.js" defer is:inline></script>
     <script src="/scripts/debug.js" defer is:inline></script>
     <script src="/scripts/document-cookie.js" defer is:inline></script>
+
   </body>
 </html>

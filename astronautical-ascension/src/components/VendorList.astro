@@ -1,6 +1,6 @@
 ---
 const nonce = Astro.props.nonce;
-console.log("Astro nonce:", Astro.props.nonce);
+console.log("Astro nonce:", nonce);
 ---
 
 <script
@@ -8,12 +8,5 @@ console.log("Astro nonce:", Astro.props.nonce);
   type="text/javascript"
   nonce={nonce}
   async
+  is:inline
 />
-
-<!-- Einbinden des externen Skripts -->
- <!--
-<script 
-    async 
-    src="/scripts/vendor-list.js" 
-    nonce={nonce}
-/> -->
