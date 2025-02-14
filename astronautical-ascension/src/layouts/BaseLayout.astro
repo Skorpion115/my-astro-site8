@@ -22,16 +22,12 @@ const {
   twitterUrl,
 } = Astro.props;
 
-
-export let nonce: string;
-
 // Die aktuelle URL-Pfad vom Astro-Objekt erhalten
 // const urlPath = Astro.url.pathname;
 const urlPath = new URL(Astro.request.url).pathname;
-// Netlify setzt automatisch das Nonce, falls nicht über Props übergeben
-const effectiveNonce = nonce || Astro.props.nonce || "";
-
-console.log("Astro nonce:", effectiveNonce);
+// Netlify setzt automatisch das Nonce
+const nonce = Astro.props.nonce || "";
+console.log("Astro nonce:", Astro.props.nonce);
 ---
 
 <html lang="de">
@@ -127,12 +123,12 @@ console.log("Astro nonce:", effectiveNonce);
 
     <!-- Scripte extern einbinden -->
     <script src="/scripts/cookie-banner.js" defer is:inline></script>
-    <script src="/scripts/menu.js" nonce={effectiveNonce} defer is:inline></script>
+    <script src="/scripts/menu.js" nonce={nonce} defer is:inline></script>
     <script src="/scripts/load-iframes.js" defer is:inline></script>
-    <script src="/scripts/document-cookie.js" nonce={effectiveNonce} defer is:inline></script>
+    <script src="/scripts/document-cookie.js" nonce={nonce} defer is:inline></script>
     <script src="/register-service-worker.js" defer is:inline></script>
     
-    <script nonce={effectiveNonce}>
+    <script nonce={nonce}>
       document.addEventListener("DOMContentLoaded", function () {
         const script = document.querySelector('script[src="/scripts/menu.js"]');
         console.log("Body nonce:", script ? script.nonce : "Nicht vorhanden");
@@ -140,6 +136,6 @@ console.log("Astro nonce:", effectiveNonce);
     </script>
 
     <!-- Hier werden die externen Skripte eingefügt -->
-    <ExternalScripts nonce={effectiveNonce} />
+    <ExternalScripts nonce={nonce} />
   </body>
 </html>
