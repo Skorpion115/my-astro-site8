@@ -127,13 +127,22 @@ console.log("Astro nonce:", Astro.props.nonce);
     <script src="/scripts/load-iframes.js" defer is:inline></script>
     <script src="/scripts/document-cookie.js" nonce={nonce} defer is:inline></script>
     <script src="/register-service-worker.js" defer is:inline></script>
-    
+    <!--
     <script nonce={nonce}>
       document.addEventListener("DOMContentLoaded", function () {
         const script = document.querySelector('script[src="/scripts/menu.js"]');
         console.log("Body nonce:", script ? script.nonce : "Nicht vorhanden");
       });
+    </script> -->
+
+    <script nonce={nonce}>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("script").forEach((script, index) => {
+          console.log(`Script ${index + 1}:`, script.src || "[Inline Script]", "Nonce:", script.nonce || "Nicht vorhanden");
+        });
+      });
     </script>
+    
 
     <!-- Hier werden die externen Skripte eingefügt -->
     <ExternalScripts nonce={nonce} />
