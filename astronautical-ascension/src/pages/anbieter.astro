@@ -3,6 +3,7 @@ import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
 import ExternalScripts from "../components/ExternalScripts.astro";
 import ExternalScripts3 from "../components/ExternalScripts3.astro";
 import GoogleScripts from "../components/GoogleScripts.astro";
+import ExternalVendorlist from "../components/ExternalVendorlist.astro";
 const pageTitle = "Anbieter";
 // const nonce = Astro.props.nonce || "";
 // console.log("Astro nonce in VendorList:", nonce);
@@ -40,6 +41,7 @@ console.log("Astro nonce:", nonce);
     <ExternalScripts />
     <ExternalScripts3 />
     <GoogleScripts />
+    <ExternalVendorlist nonce={nonce} />
     
 
     <!--
@@ -67,9 +69,10 @@ console.log("Astro nonce:", nonce);
     <br />
 
     <!-- Externe Skripte für Event Handling -->
-    <script src="/scripts/cookie-info.js" defer is:inline></script>
-    <script src="/scripts/debug.js" defer is:inline></script>
-    <script src="/scripts/document-cookie.js" defer is:inline></script>
-    <script src="/scripts/external-script.js" nonce={nonce} defer></script>
+    <script src="/scripts/cookie-info.js" defer nonce={nonce}></script>
+    <script src="/scripts/debug.js" defer nonce={nonce}></script>
+    <script src="/scripts/document-cookie.js" defer nonce={nonce}></script>
+    <!--
+    <script src="/scripts/external-script.js" nonce={nonce} defer></script> -->
   </body>
 </html>
