@@ -28,4 +28,3 @@ for = "/anbieter"
 
 [headers.values]
 Content-Security-Policy = "default-src 'self'; script-src 'strict-dynamic' 'self' https://cdn.consentmanager.net https://www.musicstudio-ziebart.de/scripts https://www.googletagmanager.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://cdn.consentmanager.net; img-src 'self' https://cdn.consentmanager.net https://d.delivery.consentmanager.net https://www.google.com https://www.google.de; font-src 'self' https://cdn.consentmanager.net; connect-src 'self' https://cdn.consentmanager.net https://www.google.com https://www.google-analytics.com https://region1.analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net; frame-src 'self' https://cdn.consentmanager.net https://www.googletagmanager.com https://td.doubleclick.net; object-src 'self';"
-
