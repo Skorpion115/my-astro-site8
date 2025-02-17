@@ -27,4 +27,4 @@ X-Content-Type-Options = "nosniff"
 for = "/anbieter"
 
 [headers.values]
-Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.musicstudio-ziebart.de;"
+Content-Security-Policy = "default-src 'self'; img-src 'self' https://cdn.consentmanager.net https://d.delivery.consentmanager.net; style-src 'self' 'unsafe-inline' https://cdn.consentmanager.net; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.consentmanager.net; frame-src 'self' https://cdn.consentmanager.net; connect-src 'self' https://cdn.consentmanager.net https://d.delivery.consentmanager.net;"
