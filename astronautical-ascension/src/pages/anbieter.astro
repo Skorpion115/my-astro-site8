@@ -58,7 +58,11 @@ console.log("Astro nonce:", nonce);
         : `script-src 'self' 'unsafe-inline' http: https:;`
   }> -->
 
+    
+    <!--
     <meta http-equiv="Content-Security-Policy" content={`script-src 'nonce-${nonce}' 'strict-dynamic' 'self' https: http: 'unsafe-hashes';`}>
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.musicstudio-ziebart.de;"> -->
 
     
 

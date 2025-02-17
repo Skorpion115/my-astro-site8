@@ -22,3 +22,9 @@ Access-Control-Allow-Credentials = "true"
 X-Content-Type-Options = "nosniff"
 
 
+# CSP nur für anbieter.astro
+[[headers]]
+for = "/anbieter"
+
+[headers.values]
+Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.musicstudio-ziebart.de;"
