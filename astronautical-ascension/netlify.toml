@@ -27,6 +27,6 @@ X-Content-Type-Options = "nosniff"
 for = "/anbieter"
 
 [headers.values]
-Content-Security-Policy = "default-src 'self'; script-src 'strict-dynamic' 'self' https://cdn.consentmanager.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://cdn.consentmanager.net; img-src 'self' https://cdn.consentmanager.net https://d.delivery.consentmanager.net https://www.google.com;; font-src 'self' https://cdn.consentmanager.net; connect-src 'self' https://cdn.consentmanager.net https://www.google.com https://region1.analytics.google.com https://region1.google-analytics.com;; frame-src 'self' https://cdn.consentmanager.net https://www.googletagmanager.com;; object-src 'self';"
+Content-Security-Policy = "default-src 'self'; script-src 'strict-dynamic' 'self' https://cdn.consentmanager.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://cdn.consentmanager.net; img-src 'self' https://cdn.consentmanager.net https://d.delivery.consentmanager.net https://www.google.com https://www.google.de; font-src 'self' https://cdn.consentmanager.net; connect-src 'self' https://cdn.consentmanager.net https://www.google.com https://region1.analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net; frame-src 'self' https://cdn.consentmanager.net https://www.googletagmanager.com https://td.doubleclick.net; object-src 'self';"
 
 
