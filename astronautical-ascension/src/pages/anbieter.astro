@@ -49,6 +49,18 @@ console.log("Astro nonce:", nonce);
       http-equiv="Content-Security-Policy"
       content="script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://delivery.consentmanager.net https://d.delivery.consentmanager.net https://cdn.consentmanager.net https://www.musicstudio-ziebart.de/scripts/ https://googleads.g.doubleclick.net https://www.googleadservices.com; script-src-attr 'unsafe-inline';"
     /> -->
+    <!--
+    <meta http-equiv="Content-Security-Policy" content={`script-src 'nonce-${nonce}' 'strict-dynamic' 'self' https: http: 'unsafe-hashes';`}> -->
+    <!--
+    <meta http-equiv="Content-Security-Policy" content={
+      import.meta.env.PROD 
+        ? `script-src 'nonce-${nonce}' 'strict-dynamic' 'self' https: http: 'unsafe-hashes';`
+        : `script-src 'self' 'unsafe-inline' http: https:;`
+  }> -->
+
+    <meta http-equiv="Content-Security-Policy" content={`script-src 'nonce-${nonce}' 'strict-dynamic' 'self' https: http: 'unsafe-hashes';`}>
+
+    
 
   </head>
   <body>
