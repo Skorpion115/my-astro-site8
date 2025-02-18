@@ -5,6 +5,8 @@ import ExternalScripts3 from "../components/ExternalScripts3.astro";
 import GoogleScripts from "../components/GoogleScripts.astro";
 import ExternalVendorlist from "../components/ExternalVendorlist.astro";
 import MenuScript from "../components/MenuScript.astro";
+const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = `${SITE_URL}/anbieter/`;
 const pageTitle = "Anbieter";
 // const nonce = Astro.props.nonce || "";
 // console.log("Astro nonce in VendorList:", nonce);
@@ -44,30 +46,6 @@ console.log("Astro nonce:", nonce);
     <GoogleScripts />
     <ExternalVendorlist nonce={nonce} />
     <MenuScript nonce={nonce} />
-    
-
-    <!--
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://delivery.consentmanager.net https://d.delivery.consentmanager.net https://cdn.consentmanager.net https://www.musicstudio-ziebart.de/scripts/ https://googleads.g.doubleclick.net https://www.googleadservices.com; script-src-attr 'unsafe-inline';"
-    /> -->
-    <!--
-    <meta http-equiv="Content-Security-Policy" content={`script-src 'nonce-${nonce}' 'strict-dynamic' 'self' https: http: 'unsafe-hashes';`}> -->
-    <!--
-    <meta http-equiv="Content-Security-Policy" content={
-      import.meta.env.PROD 
-        ? `script-src 'nonce-${nonce}' 'strict-dynamic' 'self' https: http: 'unsafe-hashes';`
-        : `script-src 'self' 'unsafe-inline' http: https:;`
-  }> -->
-
-    
-    <!--
-    <meta http-equiv="Content-Security-Policy" content={`script-src 'nonce-${nonce}' 'strict-dynamic' 'self' https: http: 'unsafe-hashes';`}>
-
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.musicstudio-ziebart.de;"> -->
-
-    
-
   </head>
   <body>
     <h3>Anbieterliste</h3>
