@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 }); */
-
+/*
 document.addEventListener("DOMContentLoaded", function() {
   const vendorList = document.getElementById("cmpvendorlist");
   
@@ -43,5 +43,17 @@ document.addEventListener("DOMContentLoaded", function() {
       // Weitere Logik kann hier hinzugefügt werden
     });
   }
+}); */
+
+document.addEventListener("DOMContentLoaded", function() {
+  const vendorList = document.getElementById("cmpvendorlist");
+  
+  if (vendorList) {
+    vendorList.addEventListener("click", function() {
+      // Deine Logik zum Aufklappen des Menüs oder der Liste
+      alert("Vendorlist wurde angeklickt!");
+    });
+  }
 });
+
 
