@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 }); */
 
-
+/*
 document.addEventListener("DOMContentLoaded", function() {
   const vendorList = document.getElementById("cmpvendorlist");
   
@@ -28,4 +28,20 @@ document.addEventListener("DOMContentLoaded", function() {
       alert("Vendorlist wurde angeklickt!");
     });
   }
+}); */
+
+document.addEventListener("DOMContentLoaded", function() {
+  const vendorList = document.getElementById("cmpvendorlist");
+  
+  if (vendorList) {
+    vendorList.addEventListener("click", function() {
+      // Beispiel: Menü anzeigen oder ausblenden
+      const menu = document.getElementById("menu");
+      if (menu) {
+        menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
+      }
+      // Weitere Logik kann hier hinzugefügt werden
+    });
+  }
 });
+
