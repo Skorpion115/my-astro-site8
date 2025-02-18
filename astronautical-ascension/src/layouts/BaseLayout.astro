@@ -40,7 +40,7 @@ console.log("Astro nonce:", Astro.props.nonce);
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
     <meta name="Language" content="de_DE" />
-    <meta name="date" content={new Date().toISOString().split('T')[0]} />
+    <meta name="date" content={new Date().toISOString().split("T")[0]} />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <link rel="canonical" href={href} />
@@ -75,7 +75,7 @@ console.log("Astro nonce:", Astro.props.nonce);
     <meta name="robots" content="max-snippet:-1, INDEX, FOLLOW" />
     <meta name="theme-color" content="#191919" />
     <!-- Another Components or scripts -->
-    
+
     <ManuellesBlockieren />
     <ExternalScripts />
     <ExternalScripts3 />
@@ -83,16 +83,56 @@ console.log("Astro nonce:", Astro.props.nonce);
     <ClientRouter />
     <Header />
     <!-- Bedingte CSS-Dateien für spezifische Seiten -->
-    {urlPath === '/gitarrenunterricht/' && <link rel="stylesheet" href="/styles/gitarrenunterricht.css" />}
-    {urlPath === '/e-gitarrenunterricht/' && <link rel="stylesheet" href="/styles/e-gitarrenunterricht.css" />}
-    {urlPath === '/e-bassunterricht/' && <link rel="stylesheet" href="/styles/e-bassunterricht.css" />}
-    {urlPath === '/banjounterricht/' && <link rel="stylesheet" href="/styles/banjounterricht.css" />}
-    {urlPath === '/klavierunterricht/' && <link rel="stylesheet" href="/styles/klavierunterricht.css" />}
-    {urlPath === '/keyboardunterricht/' && <link rel="stylesheet" href="/styles/keyboardunterricht.css" />}
-    {urlPath === '/akkordeonunterricht/' && <link rel="stylesheet" href="/styles/akkordeonunterricht.css" />}
-    {urlPath === '/saxophonunterricht/' && <link rel="stylesheet" href="/styles/saxophonunterricht.css" />}
-    {urlPath === '/klarinettenunterricht/' && <link rel="stylesheet" href="/styles/klarinettenunterricht.css" />}
-    {urlPath === '/querfloetenunterricht/' && <link rel="stylesheet" href="/styles/querfloetenunterricht.css" />}
+    {
+      urlPath === "/gitarrenunterricht/" && (
+        <link rel="stylesheet" href="/styles/gitarrenunterricht.css" />
+      )
+    }
+    {
+      urlPath === "/e-gitarrenunterricht/" && (
+        <link rel="stylesheet" href="/styles/e-gitarrenunterricht.css" />
+      )
+    }
+    {
+      urlPath === "/e-bassunterricht/" && (
+        <link rel="stylesheet" href="/styles/e-bassunterricht.css" />
+      )
+    }
+    {
+      urlPath === "/banjounterricht/" && (
+        <link rel="stylesheet" href="/styles/banjounterricht.css" />
+      )
+    }
+    {
+      urlPath === "/klavierunterricht/" && (
+        <link rel="stylesheet" href="/styles/klavierunterricht.css" />
+      )
+    }
+    {
+      urlPath === "/keyboardunterricht/" && (
+        <link rel="stylesheet" href="/styles/keyboardunterricht.css" />
+      )
+    }
+    {
+      urlPath === "/akkordeonunterricht/" && (
+        <link rel="stylesheet" href="/styles/akkordeonunterricht.css" />
+      )
+    }
+    {
+      urlPath === "/saxophonunterricht/" && (
+        <link rel="stylesheet" href="/styles/saxophonunterricht.css" />
+      )
+    }
+    {
+      urlPath === "/klarinettenunterricht/" && (
+        <link rel="stylesheet" href="/styles/klarinettenunterricht.css" />
+      )
+    }
+    {
+      urlPath === "/querfloetenunterricht/" && (
+        <link rel="stylesheet" href="/styles/querfloetenunterricht.css" />
+      )
+    }
   </head>
   <body>
     <cookie-banner>
@@ -113,7 +153,7 @@ console.log("Astro nonce:", Astro.props.nonce);
     >
 
     <h1 transition:animate="slide" class="page-title">{pageTitle}</h1>
-    
+
     <main>
       <slot />
     </main>
@@ -125,24 +165,10 @@ console.log("Astro nonce:", Astro.props.nonce);
     <script src="/scripts/cookie-banner.js" defer is:inline></script>
     <script src="/scripts/menu.js" nonce={nonce} defer is:inline></script>
     <script src="/scripts/load-iframes.js" defer is:inline></script>
-    <script src="/scripts/document-cookie.js" nonce={nonce} defer is:inline></script>
+    <script src="/scripts/document-cookie.js" nonce={nonce} defer is:inline
+    ></script>
+    <script src="/scripts/script-check.js" nonce={nonce} defer is:inline></script>
     <script src="/register-service-worker.js" defer is:inline></script>
-    <!--
-    <script nonce={nonce}>
-      document.addEventListener("DOMContentLoaded", function () {
-        const script = document.querySelector('script[src="/scripts/menu.js"]');
-        console.log("Body nonce:", script ? script.nonce : "Nicht vorhanden");
-      });
-    </script> -->
-
-    <script nonce={nonce}>
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll("script").forEach((script, index) => {
-          console.log(`Script ${index + 1}:`, script.src || "[Inline Script]", "Nonce:", script.nonce || "Nicht vorhanden");
-        });
-      });
-    </script>
-    
 
     <!-- Hier werden die externen Skripte eingefügt -->
     <ExternalScripts nonce={nonce} />
