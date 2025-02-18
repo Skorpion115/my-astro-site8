@@ -81,7 +81,7 @@ console.log("Astro nonce:", Astro.props.nonce);
     <ExternalScripts3 />
     <GoogleScripts />
     <ClientRouter />
-    <Header />
+    <Header nonce={nonce} />
     <!-- Bedingte CSS-Dateien für spezifische Seiten -->
     {
       urlPath === "/gitarrenunterricht/" && (

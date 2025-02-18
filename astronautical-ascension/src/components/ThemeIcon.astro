@@ -1,5 +1,5 @@
 ---
-
+const {nonce} = Astro.props;
 ---
 <button id="themeToggle" title="Darkmode Schalter" aria-label="Darkmode Schalter">
   <svg width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -17,5 +17,5 @@
 </button>
 
 <!-- Einbinden der externen Skripte -->
-<script src="/scripts/theme-initialization.js" is:inline async></script>
-<script src="/scripts/theme-toggle.js" is:inline async></script>
+<script src="/scripts/theme-initialization.js" nonce={nonce} async></script>
+<script src="/scripts/theme-toggle.js" nonce={nonce} async></script>
