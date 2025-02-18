@@ -1,6 +1,5 @@
 ---
 // const nonce = Astro.locals.runtime?.nonce;
-const nonce = Math.random().toString(36).substring(2); // Erzeugt eine zufällige nonce
 ---
 
-<script src="/scripts/menu2.js" nonce={nonce}></script>
+<script src="/scripts/menu2.js" defer></script>
