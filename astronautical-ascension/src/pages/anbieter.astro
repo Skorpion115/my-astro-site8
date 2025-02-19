@@ -1,8 +1,8 @@
 ---
-// import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
-// import ExternalScripts from "../components/ExternalScripts.astro";
-// import ExternalScripts3 from "../components/ExternalScripts3.astro";
-// import GoogleScripts from "../components/GoogleScripts.astro";
+import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
+import ExternalScripts from "../components/ExternalScripts.astro";
+import ExternalScripts3 from "../components/ExternalScripts3.astro";
+import GoogleScripts from "../components/GoogleScripts.astro";
 // import ExternalVendorlist from "../components/ExternalVendorlist.astro";
 const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
 const pageUrl = `${SITE_URL}/anbieter/`;
@@ -39,14 +39,11 @@ console.log("Astro nonce:", nonce);
       name="DC.Publisher"
       content="Musicstudio Ziebart, postmaster@musicstudio-ziebart.de"
     />
-    <!--
-    <ManuellesBlockieren /> -->
-    <!--
-    <ExternalScripts /> -->
-    <!--
-    <ExternalScripts3 /> -->
-    <!--
-    <GoogleScripts /> -->
+    
+    <ManuellesBlockieren />
+    <ExternalScripts />
+    <ExternalScripts3 />
+    <GoogleScripts />
     <!--
     <ExternalVendorlist nonce={nonce} /> -->
   </head>
@@ -58,7 +55,15 @@ console.log("Astro nonce:", nonce);
     <!-- Consentmanager Vendorlist Code -->
      
     <div id="cmpvendorlist"></div>
+    <div class="cmpvendorlistheader" data-vendor="s23">...</div>
+    <div class="cmpvendorlistheader" data-vendor="s1">...</div>
+    <div class="cmpvendorlistheader" data-vendor="s26">...</div>
     <div class="cmpvendorlistb018a967f10b6 cmpstyleroot"></div>
+    <div class="cmpvendorlistheader" data-vendor="s2612">...</div>
+    <div class="cmpvendorlistheader" data-vendor="s135">...</div>
+    <div class="cmpvendorlistheader" data-vendor="s905">...</div>
+    <div class="cmpvendorlistheader" data-vendor="s30">...</div>
+
 
     <h4>Cookie Info Liste</h4>
     

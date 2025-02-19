@@ -37,8 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
 }); */
 
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("menu2.js wurde geladen!");
-
   const vendorList1 = document.getElementById("cmpvendorlist");
   const vendorList2 = document.querySelector(".cmpvendorlistb018a967f10b6");
 
@@ -52,13 +50,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (vendorList1) {
     vendorList1.addEventListener("click", toggleMenu);
+    console.log("menu2.js wurde geladen!");
   }
 
   if (vendorList2) {
     vendorList2.addEventListener("click", toggleMenu);
+    console.log("menu2.js wurde geladen!");
   }
-});
 
+  // Neue Event-Listener für cmpvendorlistheader-Elemente
+  document.querySelectorAll(".cmpvendorlistheader").forEach(header => {
+    header.addEventListener("click", function () {
+      const vendorId = this.dataset.vendor; // Holt den Wert aus data-vendor
+      cmp_expandvendor(vendorId);
+    });
+  });
+});
 
 
 
