@@ -1,5 +1,5 @@
 ---
-// const nonce = Astro.locals.runtime?.nonce;
+const {nonce} = Astro.props;
 ---
 
-<script src="/scripts/menu2.js" is:inline></script>
+<script src="/scripts/menu2.js" nonce={nonce} defer></script>
