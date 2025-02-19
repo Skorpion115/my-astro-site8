@@ -4,7 +4,6 @@ import ExternalScripts from "../components/ExternalScripts.astro";
 import ExternalScripts3 from "../components/ExternalScripts3.astro";
 import GoogleScripts from "../components/GoogleScripts.astro";
 import ExternalVendorlist from "../components/ExternalVendorlist.astro";
-import MenuScript from "../components/MenuScript.astro";
 const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
 const pageUrl = `${SITE_URL}/anbieter/`;
 const pageTitle = "Anbieter";
@@ -45,7 +44,6 @@ console.log("Astro nonce:", nonce);
     <ExternalScripts3 />
     <GoogleScripts />
     <ExternalVendorlist nonce={nonce} />
-    <MenuScript nonce={nonce} />
   </head>
   <body>
     <h3>Anbieterliste</h3>
@@ -66,6 +64,7 @@ console.log("Astro nonce:", nonce);
     <br />
 
     <!-- Externe Skripte für Event Handling -->
+    <script src="/scripts/menu2.js" nonce={nonce} defer></script>
     <script src="/scripts/cookie-info.js" defer nonce={nonce}></script>
     <script src="/scripts/debug.js" defer nonce={nonce}></script>
     <script src="/scripts/document-cookie.js" defer nonce={nonce}></script>
