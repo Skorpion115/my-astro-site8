@@ -69,8 +69,17 @@ console.log("Astro nonce:", nonce);
     <div class="cmpvendorlistheader" data-vendor="s30">...</div> -->
 
     <h3>Anbieterliste 2</h3>
-
+    <div id="cmpvendorlist"></div>
     <div class="cmpvendorlistb018a967f10b6 cmpstyleroot"></div>
+
+    <div class="cmpvendorlistheader" data-vendor="s23">...</div>
+    <div class="cmpvendorlistheader" data-vendor="s1">...</div>
+    <div class="cmpvendorlistheader" data-vendor="s26">...</div>
+    <div class="cmpvendorlistb018a967f10b6 cmpstyleroot"></div>
+    <div class="cmpvendorlistheader" data-vendor="s2612">...</div>
+    <div class="cmpvendorlistheader" data-vendor="s135">...</div>
+    <div class="cmpvendorlistheader" data-vendor="s905">...</div>
+    <div class="cmpvendorlistheader" data-vendor="s30">...</div>
 
     <h4>Cookie Info Liste</h4>
 
@@ -84,11 +93,10 @@ console.log("Astro nonce:", nonce);
      <!--
     <script src="/scripts/menu2.js" nonce={nonce} defer></script> -->
     <script src="/scripts/anbieter-list.js" nonce={nonce} defer></script>
+    <script src="/scripts/vendorlist-loader.js" defer nonce={nonce}></script>
     <script src="/scripts/cookie-info.js" defer nonce={nonce}></script>
     <script src="/scripts/debug.js" defer nonce={nonce}></script>
-    <script src="/scripts/document-cookie.js" defer nonce={nonce}></script>
-    <!-- 
-    <script src="/scripts/vendorlist-loader.js" defer nonce={nonce}></script> -->
+    <script src="/scripts/document-cookie.js" defer nonce={nonce}></script> 
     <!--
     <script src="/scripts/external-script.js" nonce={nonce} defer></script> -->
   </body>
