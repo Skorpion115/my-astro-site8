@@ -1,8 +1,8 @@
 ---
-import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
-import ExternalScripts from "../components/ExternalScripts.astro";
-import ExternalScripts3 from "../components/ExternalScripts3.astro";
-import GoogleScripts from "../components/GoogleScripts.astro";
+// import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
+// import ExternalScripts from "../components/ExternalScripts.astro";
+// import ExternalScripts3 from "../components/ExternalScripts3.astro";
+// import GoogleScripts from "../components/GoogleScripts.astro";
 // import ExternalVendorlist from "../components/ExternalVendorlist.astro";
 const SITE_URL =
   import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
@@ -40,11 +40,13 @@ console.log("Astro nonce:", nonce);
       name="DC.Publisher"
       content="Musicstudio Ziebart, postmaster@musicstudio-ziebart.de"
     />
-
-    <ManuellesBlockieren />
+    <!--
+    <ManuellesBlockieren /> -->
+    <!--
     <ExternalScripts />
     <ExternalScripts3 />
     <GoogleScripts />
+    -->
     <!--
     <ExternalVendorlist nonce={nonce} /> -->
   </head>
@@ -82,6 +84,7 @@ console.log("Astro nonce:", nonce);
     <script src="/scripts/vendorlist-loader.js" defer nonce={nonce}></script>
     <script src="/scripts/cookie-info.js" defer nonce={nonce}></script>
     <script src="/scripts/debug.js" defer nonce={nonce}></script>
-    <script src="/scripts/document-cookie.js" defer nonce={nonce}></script> 
+    <script src="/scripts/document-cookie.js" defer nonce={nonce}></script>
+    <script src="/scripts/vendorlist-loader.js" defer nonce={nonce}></script> 
   </body>
 </html>
