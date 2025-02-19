@@ -57,29 +57,16 @@ console.log("Astro nonce:", nonce);
     </p>
 
     <!-- Consentmanager Vendorlist Code -->
-    <!--
-    <div id="cmpvendorlist"></div>
-    <div class="cmpvendorlistheader" data-vendor="s23">...</div>
-    <div class="cmpvendorlistheader" data-vendor="s1">...</div>
-    <div class="cmpvendorlistheader" data-vendor="s26">...</div>
-    <div class="cmpvendorlistb018a967f10b6 cmpstyleroot"></div>
-    <div class="cmpvendorlistheader" data-vendor="s2612">...</div>
-    <div class="cmpvendorlistheader" data-vendor="s135">...</div>
-    <div class="cmpvendorlistheader" data-vendor="s905">...</div>
-    <div class="cmpvendorlistheader" data-vendor="s30">...</div> -->
-
-    <h3>Anbieterliste 2</h3>
+    
     <div id="cmpvendorlist"></div>
     <div class="cmpvendorlistb018a967f10b6 cmpstyleroot"></div>
-
-    <div class="cmpvendorlistheader" data-vendor="s23">...</div>
-    <div class="cmpvendorlistheader" data-vendor="s1">...</div>
-    <div class="cmpvendorlistheader" data-vendor="s26">...</div>
-    <div class="cmpvendorlistb018a967f10b6 cmpstyleroot"></div>
-    <div class="cmpvendorlistheader" data-vendor="s2612">...</div>
-    <div class="cmpvendorlistheader" data-vendor="s135">...</div>
-    <div class="cmpvendorlistheader" data-vendor="s905">...</div>
-    <div class="cmpvendorlistheader" data-vendor="s30">...</div>
+    <div class="cmpvendorlistheader" data-vendor="s23">consentmanager</div>
+    <div class="cmpvendorlistheader" data-vendor="s1">Google Ads</div>
+    <div class="cmpvendorlistheader" data-vendor="s26">Google Analytics</div>
+    <div class="cmpvendorlistheader" data-vendor="s2612">Google Fonts</div>
+    <div class="cmpvendorlistheader" data-vendor="s135">Google General</div>
+    <div class="cmpvendorlistheader" data-vendor="s905">Google Tag Manager</div>
+    <div class="cmpvendorlistheader" data-vendor="s30">YouTube</div>
 
     <h4>Cookie Info Liste</h4>
 
@@ -90,14 +77,11 @@ console.log("Astro nonce:", nonce);
     <br />
 
     <!-- Externe Skripte für Event Handling -->
-     <!--
-    <script src="/scripts/menu2.js" nonce={nonce} defer></script> -->
-    <script src="/scripts/anbieter-list.js" nonce={nonce} defer></script>
+     
+    <script src="/scripts/menu2.js" nonce={nonce} defer></script>
     <script src="/scripts/vendorlist-loader.js" defer nonce={nonce}></script>
     <script src="/scripts/cookie-info.js" defer nonce={nonce}></script>
     <script src="/scripts/debug.js" defer nonce={nonce}></script>
     <script src="/scripts/document-cookie.js" defer nonce={nonce}></script> 
-    <!--
-    <script src="/scripts/external-script.js" nonce={nonce} defer></script> -->
   </body>
 </html>
