@@ -1,9 +1,9 @@
 ---
-// import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
-// import ExternalScripts from "../components/ExternalScripts.astro";
-// import ExternalScripts3 from "../components/ExternalScripts3.astro";
-// import GoogleScripts from "../components/GoogleScripts.astro";
-// import ExternalVendorlist from "../components/ExternalVendorlist.astro";
+import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
+import ExternalScripts from "../components/ExternalScripts.astro";
+import ExternalScripts3 from "../components/ExternalScripts3.astro";
+import GoogleScripts from "../components/GoogleScripts.astro";
+
 const SITE_URL =
   import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
 const pageUrl = `${SITE_URL}/anbieter/`;
@@ -40,15 +40,11 @@ console.log("Astro nonce:", nonce);
       name="DC.Publisher"
       content="Musicstudio Ziebart, postmaster@musicstudio-ziebart.de"
     />
-    <!--
-    <ManuellesBlockieren /> -->
-    <!--
+    
+    <ManuellesBlockieren />
     <ExternalScripts />
     <ExternalScripts3 />
     <GoogleScripts />
-    -->
-    <!--
-    <ExternalVendorlist nonce={nonce} /> -->
   </head>
   <body>
     <h3>Anbieterliste</h3>
