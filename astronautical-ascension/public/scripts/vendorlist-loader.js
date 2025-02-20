@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Vendor list container not found");
   }
 }); */
-/*
+
 document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector('script[src*="vendorlist.php"]')) {
     console.log("vendorlist.php wird bereits geladen. Abbruch.");
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     console.error("Vendor list container nicht gefunden");
   }
-}); */
+});
 /*
 document.addEventListener("DOMContentLoaded", function () {
   // Prüfen, ob bereits ein `vendorlist.php`-Script existiert
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Vendor list container nicht gefunden");
   }
 }); */
-
+/*
 document.addEventListener("DOMContentLoaded", function () {
   // Prüfen, ob ConsentManager bereits läuft
   if (document.querySelector('script[src*="cmp.php"]')) {
@@ -131,7 +131,18 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   console.warn("ConsentManager wurde nicht geladen! Bitte prüfen, ob 'cmp.php' korrekt eingebunden ist.");
-});
+}); */
+/*
+document.addEventListener("DOMContentLoaded", function () {
+  // ConsentManager prüfen, aber keine manuelle Vendorlist-Ladung
+  if (document.querySelector('script[src*="cmp.php"]')) {
+    console.log("ConsentManager (cmp.php) ist bereits eingebunden.");
+    return;
+  }
+
+  console.warn("ConsentManager wurde nicht geladen! Bitte prüfen, ob 'cmp.php' korrekt eingebunden ist.");
+}); */
+
 
 
 
