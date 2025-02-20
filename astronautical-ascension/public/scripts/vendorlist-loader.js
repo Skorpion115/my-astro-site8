@@ -73,13 +73,42 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Vendor list container not found");
   }
 }); */
-
+/*
 document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector('script[src*="vendorlist.php"]')) {
     console.log("vendorlist.php wird bereits geladen. Abbruch.");
     return;
   }
 
+  const vendorListContainer = document.getElementById("cmpvendorlist");
+  if (vendorListContainer) {
+    const script = document.createElement("script");
+    script.src = "https://delivery.consentmanager.net/delivery/vendorlist.php?cdid=b018a967f10b6&l=automatic&h=musicstudio-ziebart.de";
+    script.type = "text/javascript";
+    script.nonce = "";
+    script.async = true;
+    vendorListContainer.appendChild(script);
+    console.log("vendorlist.php wurde durch vendorlist-loader.js geladen.");
+  } else {
+    console.error("Vendor list container nicht gefunden");
+  }
+}); */
+/*
+document.addEventListener("DOMContentLoaded", function () {
+  // Prüfen, ob bereits ein `vendorlist.php`-Script existiert
+  if (document.querySelector('script[src*="vendorlist.php"]')) {
+    console.log("vendorlist.php wird bereits geladen. Abbruch.");
+    return;
+  }
+
+  // Prüfen, ob ConsentManager bereits die Vendorliste lädt
+  const cmpScript = document.querySelector('script[src*="cmp.php"]');
+  if (cmpScript) {
+    console.log("ConsentManager cmp.php ist bereits eingebunden, daher kein manuelles Laden von vendorlist.php.");
+    return;
+  }
+
+  // Manuelles Laden nur, wenn noch nicht vorhanden
   const vendorListContainer = document.getElementById("cmpvendorlist");
   if (vendorListContainer) {
     const script = document.createElement("script");
@@ -92,7 +121,19 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     console.error("Vendor list container nicht gefunden");
   }
+}); */
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Prüfen, ob ConsentManager bereits läuft
+  if (document.querySelector('script[src*="cmp.php"]')) {
+    console.log("ConsentManager (cmp.php) ist bereits eingebunden. Vendorlist wird nicht manuell geladen.");
+    return;
+  }
+
+  console.warn("ConsentManager wurde nicht geladen! Bitte prüfen, ob 'cmp.php' korrekt eingebunden ist.");
 });
+
+
 
 
 
