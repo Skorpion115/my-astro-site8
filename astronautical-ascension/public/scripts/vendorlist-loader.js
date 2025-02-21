@@ -93,6 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Vendor list container nicht gefunden");
   }
 });
+
+
 /*
 document.addEventListener("DOMContentLoaded", function () {
   // Prüfen, ob bereits ein `vendorlist.php`-Script existiert

@@ -1,0 +1,22 @@
+.cmpvendorlistheadertext {
+    display: none;
+}
+
+/* Versteckt alle SVG-Pfeile innerhalb der cmpvendorlistheader */
+/*
+.cmpvendorlistheader svg {
+    display: none;
+} */
+
+/* Beispiel, um nur die Pfeile in der ersten Liste auszublenden */
+
+/*
+.cmpvendorlistheader:first-child svg {
+    display: none;
+} */
+
+/* Versteckt das path-Element in allen SVGs innerhalb der cmpvendorlistheader */
+.cmpvendorlistheader svg path {
+    display: none;
+}
+
