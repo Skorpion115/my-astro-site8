@@ -557,6 +557,13 @@ img {
   flex: 1;
 }
 
+/* strong Tag für den Ferienplan kleiner machen auf 0.95 rem*/
+
+.ferien-liste strong {
+  font-size: 0.95em; /* Etwas kleiner als der Standardtext */
+  font-weight: bold; /* Beibehaltung der Fettschrift */
+}
+
 /* ANCHOR Card Position und Style*/
 
 .marchandise-2 .link-card-grid {
