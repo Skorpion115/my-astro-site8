@@ -1,3 +1,4 @@
+/* Überschrift versteckt genommen */
 .cmpvendorlistheadertext {
     display: none;
 }
@@ -15,7 +16,7 @@
     display: none;
 } */
 
-/* Versteckt das path-Element in allen SVGs innerhalb der cmpvendorlistheader */
+/* Versteckt das path-Element in allen SVGs innerhalb der cmpvendorlistheader genommen */
 .cmpvendorlistheader svg path {
     display: none;
 }
