@@ -4,7 +4,7 @@ export let nonce: string;
 console.log("Nonce in ExternalScripts:", nonce);
 ---
 
-<GoogleScripts />
+<GoogleScripts nonce={nonce} />
 
 <script nonce={nonce} async
     is:inline
