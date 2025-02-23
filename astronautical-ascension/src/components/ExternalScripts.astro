@@ -1,12 +1,12 @@
 ---
 import GoogleScripts from "./GoogleScripts.astro";
-export let nonce: string;
-console.log("Nonce in ExternalScripts:", nonce);
+// export let nonce: string;
+// console.log("Nonce in ExternalScripts:", nonce);
 ---
 
-<GoogleScripts nonce={nonce} />
+<GoogleScripts />
 
-<script nonce={nonce} async
+<script async
     is:inline
     type="text/plain"
     class="cmplazyload"
