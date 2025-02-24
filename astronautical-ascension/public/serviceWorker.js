@@ -46,6 +46,21 @@ self.addEventListener("install", (event) => {
   );
 });
 
+self.addEventListener("activate", (event) => {
+  const cacheWhitelist = [cacheVersion];
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (!cacheWhitelist.includes(cacheName)) {
+            return caches.delete(cacheName); // Lösche veraltete Caches
+          }
+        })
+      );
+    })
+  );
+});
+
 self.addEventListener("fetch", (event) => {
   // Verhindere das Caching und die Bearbeitung von nicht unterstützten Schemas wie 'chrome-extension://'
   if (event.request.url.startsWith("chrome-extension://") || event.request.url.startsWith("chrome://")) {
@@ -75,4 +90,3 @@ self.addEventListener("fetch", (event) => {
     })
   );
 });
-

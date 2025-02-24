@@ -168,7 +168,7 @@ console.log("Astro nonce:", Astro.props.nonce);
     <script src="/scripts/document-cookie.js" nonce={nonce} defer is:inline
     ></script>
     <script src="/scripts/script-check.js" nonce={nonce} defer is:inline></script>
-    <script src="/register-service-worker.js" defer is:inline></script>
+    <script src="/register-service-worker.js" defer></script>
 
     <!-- Hier werden die externen Skripte eingefügt -->
     <ExternalScripts />
