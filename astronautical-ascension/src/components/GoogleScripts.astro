@@ -53,7 +53,12 @@
 
   function initializeGoogleAdWords() {
     gtag("config", "AW-1000620606", {
-      "anonymize_ip": true
+      "anonymize_ip": true,
+      "currency": "EUR",
+      "region": "EU",
+      "linker": {
+        "domains": ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"]
+      }
     });
   }
 
