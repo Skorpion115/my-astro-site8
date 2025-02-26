@@ -1,5 +1,7 @@
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"
+></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"
+></script>
 <script async>
   // Google Tag Manager - Initialisierung
   (function (w, d, s, l, i) {
@@ -21,11 +23,11 @@
 
   // Default consent configuration
   gtag("consent", "default", {
-    "ad_user_data": "denied",
-    "ad_personalization": "denied",
-    "ad_storage": "denied",
-    "analytics_storage": "denied",
-    "wait_for_update": 500
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    ad_storage: "denied",
+    analytics_storage: "denied",
+    wait_for_update: 500,
   });
 
   gtag("js", new Date());
@@ -33,60 +35,69 @@
   // Google Analytics und Google Ads Initialisierung nach Einwilligung
   function initializeGoogleAnalytics() {
     gtag("config", "GT-MR4MFC6", {
-      "anonymize_ip": true,  // IP anonymisieren
-      "currency": "EUR",
-      "region": "EU",
-      "linker": {
-        "domains": ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"]
-      }
+      anonymize_ip: true, // IP anonymisieren
+      currency: "EUR",
+      region: "EU",
+      linker: {
+        domains: ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"],
+      },
     });
-    gtag("config", "G-CXBFDX52C7", {"anonymize_ip": true}); // GA4 Tracking
+    gtag("config", "G-CXBFDX52C7", { anonymize_ip: true }); // GA4 Tracking
   }
 
   function initializeGoogleAdWords() {
     gtag("config", "GT-5TG3DK3", {
-      "anonymize_ip": true,
-      "currency": "EUR",
-      "region": "EU",
-      "linker": {
-        "domains": ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"]
-      }
+      anonymize_ip: true,
+      currency: "EUR",
+      region: "EU",
+      linker: {
+        domains: ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"],
+      },
     });
-    gtag("config", "AW-1000620606", {"anonymize_ip": true}); // Ads Tracking
+    gtag("config", "AW-1000620606", { anonymize_ip: true }); // Ads Tracking
   }
 
   // Google Tag Manager Consent Management
   function setConsent() {
     gtag("consent", "update", {
-      "ad_user_data": "denied",
-      "ad_personalization": "denied",
-      "ad_storage": "denied",
-      "analytics_storage": "denied"
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      ad_storage: "denied",
+      analytics_storage: "denied",
     });
   }
 
   // Event listener für die Zustimmung des Nutzers
-  document.addEventListener('cmpEvent', function(event) {
-    console.log('Einwilligungs-Event:', event);
-    if (event.detail.cmpConsentVendors) {
-      console.log('Einwilligungsdaten:', event.detail);
+  document.addEventListener("cmpEvent", function (event) {
+    console.log("Einwilligungs-Event:", event);
+
+    // Überprüfung, ob der Anbieter in den zugestimmten Listen enthalten ist
+    if (
+      (event.detail.cmpConsentVendors &&
+        event.detail.cmpConsentVendors.includes("s1498")) ||
+      (event.detail.cmpLIVendors && event.detail.cmpLIVendors.includes("s1498"))
+    ) {
+      console.log("Einwilligungsdaten:", event.detail);
+
       gtag("consent", "update", {
-        "ad_user_data": "granted",
-        "ad_personalization": "granted",
-        "ad_storage": "granted",
-        "analytics_storage": "granted"
+        ad_user_data: "granted",
+        ad_personalization: "granted",
+        ad_storage: "granted",
+        analytics_storage: "granted",
       });
+
+      // Initialisiere Google Analytics und Google Ads nur, wenn die Zustimmung erteilt wurde
       initializeGoogleAnalytics();
       initializeGoogleAdWords();
     }
   });
 
-  document.addEventListener('consentGiven', function() {
+  document.addEventListener("consentGiven", function () {
     gtag("consent", "update", {
-      "ad_user_data": "granted",
-      "ad_personalization": "granted",
-      "ad_storage": "granted",
-      "analytics_storage": "granted"
+      ad_user_data: "granted",
+      ad_personalization: "granted",
+      ad_storage: "granted",
+      analytics_storage: "granted",
     });
     initializeGoogleAnalytics();
     initializeGoogleAdWords();
