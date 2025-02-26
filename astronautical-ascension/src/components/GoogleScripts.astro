@@ -1,34 +1,32 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script>
 <script async>
-  // Google Tag Manager (Nur nach Zustimmung aktivieren)
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
+  // Google Tag Manager - Initialisierung
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-PWK4LSL"); // Stelle sicher, dass du deine GTM-ID verwendest
 
-  // Standard Consent-Konfiguration (mit "denied" für alles)
-  gtag("consent", "default", {
-    "ad_user_data": "denied",
-    "ad_personalization": "denied",
-    "ad_storage": "denied",
-    "analytics_storage": "denied",
-    "wait_for_update": 500
-  });
-
-  // Führe dies nur aus, wenn der Benutzer seine Zustimmung erteilt hat
-  function initializeGoogleTags() {
-    // Google Analytics initialisieren
+  // Google Analytics und Google Ads Initialisierung nach Einwilligung
+  function initializeGoogleAnalytics() {
     gtag("config", "GT-MR4MFC6", {
-      "anonymize_ip": true,
+      "anonymize_ip": true,  // IP anonymisieren
       "currency": "EUR",
       "region": "EU",
       "linker": {
         "domains": ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"]
       }
     });
+    gtag("config", "G-CXBFDX52C7", {"anonymize_ip": true}); // GA4 Tracking
+  }
 
-    // Google Ads initialisieren
+  function initializeGoogleAdWords() {
     gtag("config", "GT-5TG3DK3", {
       "anonymize_ip": true,
       "currency": "EUR",
@@ -37,25 +35,33 @@
         "domains": ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"]
       }
     });
+    gtag("config", "AW-1000620606", {"anonymize_ip": true}); // Ads Tracking
   }
 
-  // Event-Listener für die Einwilligung
+  // Google Tag Manager Consent Management
+  function setConsent() {
+    gtag("consent", "update", {
+      "ad_user_data": "denied",
+      "ad_personalization": "denied",
+      "ad_storage": "denied",
+      "analytics_storage": "denied"
+    });
+  }
+
+  // Event listener für die Zustimmung des Nutzers
   document.addEventListener('cmpEvent', function(event) {
-    const consentData = event.detail;
-    if (consentData && consentData.cmpGDPR === 1) {
+    if (event.detail.cmpConsentVendors.includes("s26")) {
       gtag("consent", "update", {
         "ad_user_data": "granted",
         "ad_personalization": "granted",
         "ad_storage": "granted",
         "analytics_storage": "granted"
       });
-
-      // Nach der Zustimmung, Google Tags initialisieren
-      initializeGoogleTags();
+      initializeGoogleAnalytics();
+      initializeGoogleAdWords();
     }
   });
 
-  // Fallback, wenn die Einwilligung bereits erteilt wurde
   document.addEventListener('consentGiven', function() {
     gtag("consent", "update", {
       "ad_user_data": "granted",
@@ -63,7 +69,7 @@
       "ad_storage": "granted",
       "analytics_storage": "granted"
     });
-
-    initializeGoogleTags();
+    initializeGoogleAnalytics();
+    initializeGoogleAdWords();
   });
 </script>
