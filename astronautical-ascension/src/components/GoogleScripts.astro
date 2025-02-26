@@ -50,7 +50,9 @@
 
   // Event listener für die Zustimmung des Nutzers
   document.addEventListener('cmpEvent', function(event) {
-    if (event.detail.cmpConsentVendors.includes("s26")) {
+    console.log('Einwilligungs-Event:', event);
+    if (event.detail.cmpConsentVendors) {
+      console.log('Einwilligungsdaten:', event.detail);
       gtag("consent", "update", {
         "ad_user_data": "granted",
         "ad_personalization": "granted",
