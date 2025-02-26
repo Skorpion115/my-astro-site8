@@ -72,12 +72,8 @@
     console.log("Einwilligungs-Event:", event);
 
     // Überprüfung, ob der Anbieter in den zugestimmten Listen enthalten ist
-    if (
-      (event.detail.cmpConsentVendors &&
-        event.detail.cmpConsentVendors.includes("s1498")) ||
-      (event.detail.cmpLIVendors && event.detail.cmpLIVendors.includes("s1498"))
-    ) {
-      console.log("Einwilligungsdaten:", event.detail);
+    if (event.detail.cmpConsentVendors) {
+      console.log('Einwilligungsdaten:', event.detail);
 
       gtag("consent", "update", {
         ad_user_data: "granted",
