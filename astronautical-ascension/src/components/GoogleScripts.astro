@@ -32,15 +32,6 @@
 
   gtag("js", new Date());
 
-  // Überprüfen, ob das Cookie für Statistik-Zustimmung gesetzt ist
-  if (document.cookie.includes("cookie.banner.statistics=true")) {
-    gtag("consent", "update", { analytics_storage: "granted" });
-    gtag("js", new Date());
-    gtag("config", "G-CXBFDX52C7"); // GA4 Tracking nur nach Zustimmung
-  } else {
-    gtag("consent", "default", { analytics_storage: "denied" });
-  }
-
   // Google Analytics und Google Ads Initialisierung nach Einwilligung
   function initializeGoogleAnalytics() {
     gtag("config", "GT-MR4MFC6", {
