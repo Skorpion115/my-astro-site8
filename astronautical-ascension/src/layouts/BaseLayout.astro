@@ -3,7 +3,7 @@ import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
 import ExternalScripts from "../components/ExternalScripts.astro";
 import ExternalScripts3 from "../components/ExternalScripts3.astro";
 import GoogleScripts from "../components/GoogleScripts.astro";
-import Banner from "../components/Banner.astro";
+// import Banner from "../components/Banner.astro";
 import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer1 from "../components/Footer1.astro";
@@ -79,7 +79,8 @@ console.log("Astro nonce:", Astro.props.nonce);
 
     <ManuellesBlockieren />
     <GoogleScripts />
-    <Banner />
+    <!--
+    <Banner /> -->
     <ClientRouter />
     <Header nonce={nonce} />
     <!-- Bedingte CSS-Dateien für spezifische Seiten -->
@@ -135,6 +136,7 @@ console.log("Astro nonce:", Astro.props.nonce);
     }
   </head>
   <body>
+    <!--
     <cookie-banner>
       <h2 slot="title">Music Lessons</h2>
       <div slot="text">Wir verwenden Cookies weil das so ist</div>
@@ -142,7 +144,7 @@ console.log("Astro nonce:", Astro.props.nonce);
 
     <template>
       <div class="foo">Das ist ein Template das siehst du nicht in HTML</div>
-    </template>
+    </template> -->
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
