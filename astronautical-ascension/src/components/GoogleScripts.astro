@@ -1,13 +1,5 @@
-<script>
-  // Lösche die Google Analytics Cookies sofort beim Laden der Seite
-  document.cookie = "_ga=; Max-Age=0; path=/;";
-  document.cookie = "_gid=; Max-Age=0; path=/;";
-  document.cookie = "_gat=; Max-Age=0; path=/;";
-</script>
-
-
 <script async>
-  // Google Tag Manager - Initialisierung
+  // Google Tag Manager
   (function (w, d, s, l, i) {
     w[l] = w[l] || [];
     w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
@@ -17,7 +9,7 @@
     j.async = true;
     j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
     f.parentNode.insertBefore(j, f);
-  })(window, document, "script", "dataLayer", "GTM-PWK4LSL"); // Stelle sicher, dass du deine GTM-ID verwendest
+  })(window, document, "script", "dataLayer", "GTM-PWK4LSL");
 
   // Gtag Configuration
   window.dataLayer = window.dataLayer || [];
@@ -27,76 +19,60 @@
 
   // Default consent configuration
   gtag("consent", "default", {
-    ad_user_data: "denied",
-    ad_personalization: "denied",
-    ad_storage: "denied",
-    analytics_storage: "denied",
-    wait_for_update: 500,
+    "ad_user_data": "denied",
+    "ad_personalization": "denied",
+    "ad_storage": "denied",
+    "analytics_storage": "denied",
+    "wait_for_update": 500
   });
 
   gtag("js", new Date());
-
-  // Google Analytics und Google Ads Initialisierung nach Einwilligung orginal
-  /*
+/*
+  // Function to initialize Google Analytics
   function initializeGoogleAnalytics() {
-    gtag("config", "GT-MR4MFC6", {
-      anonymize_ip: true, // IP anonymisieren
-      currency: "EUR",
-      region: "EU",
-      linker: {
-        domains: ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"],
-      },
+    gtag("config", "GT-MR4MFC6", { 
+      "anonymize_ip": true,
+      "currency": "EUR",
+      "region": "EU",
+      "linker": {
+        "domains": ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"]
+      }
     });
-    // gtag("config", "G-CXBFDX52C7", { anonymize_ip: true }); // GA4 Tracking
+  }
+
+  // Function to initialize Google AdWords
+  function initializeGoogleAdWords() {
+    gtag("config", "GT-5TG3DK3", {
+      "anonymize_ip": true,
+      "currency": "EUR",
+      "region": "EU",
+      "linker": {
+        "domains": ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"]
+      }
+    });
   } */
-  
-  
 
-  // Consent-Update-Funktion
-  function setConsent() {
-    gtag("consent", "update", {
-      ad_user_data: "denied",
-      ad_personalization: "denied",
-      ad_storage: "denied",
-      analytics_storage: "denied",
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Listen for the custom consent event
+    document.addEventListener('cmpEvent', function(event) {
+      if (checkUserConsentFromEvent(event)) {
+        gtag("consent", "update", {
+          "ad_user_data": "granted",
+          "ad_personalization": "granted",
+          "ad_storage": "granted",
+          "analytics_storage": "granted"
+        });
+      }
     });
-  }
+  });
 
-    // Event listener für die Zustimmung des Nutzers
-document.addEventListener("cmpEvent", function (event) {
-  console.log("Einwilligungs-Event:", event);
-
-  // Überprüfung, ob der Anbieter in den zugestimmten Listen enthalten ist
-  if (event.detail.cmpConsentVendors) {
-    console.log("Einwilligungsdaten:", event.detail);
-
-    // Nur wenn der Nutzer zugestimmt hat, werden die Cookies gesetzt
-    if (event.detail.cmpConsentStatus === "granted") {
-      // Update der Einwilligung für Analytics und Werbung
-      gtag("consent", "update", {
-        ad_user_data: "granted",
-        ad_personalization: "granted",
-        ad_storage: "granted",
-        analytics_storage: "granted",
-      });
-
-      console.log("Einwilligung erteilt. Cookies werden gesetzt.");
-    } else {
-      // Wenn keine Einwilligung erteilt wurde, Cookies manuell löschen
-      document.cookie = "_ga=; Max-Age=0; path=/;";
-      document.cookie = "_gid=; Max-Age=0; path=/;";
-      document.cookie = "_gat=; Max-Age=0; path=/;";
-      console.log("Einwilligung verweigert. Cookies wurden gelöscht.");
-    }
-  }
-});
-    
-  document.addEventListener("consentGiven", function () {
+  document.addEventListener('consentGiven', function() {
     gtag("consent", "update", {
-      ad_user_data: "granted",
-      ad_personalization: "granted",
-      ad_storage: "granted",
-      analytics_storage: "granted",
+      "ad_user_data": "granted",
+      "ad_personalization": "granted",
+      "ad_storage": "granted",
+      "analytics_storage": "granted"
     });
   });
 </script>
