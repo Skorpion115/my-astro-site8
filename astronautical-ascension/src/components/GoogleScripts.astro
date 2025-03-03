@@ -4,6 +4,8 @@
 // Konsolenausgabe, um zu überprüfen, ob die Nonce korrekt geladen wir
 // console.log("Nonce aus Astro.props:", nonce);
 ---
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3" />
 <script async>
   // Google Tag Manager
   (function (w, d, s, l, i) {
@@ -59,11 +61,8 @@
     });
     // gtag("config", "AW-1000620606", {"anonymize_ip": false}); // Ads tracking
   }
-
-
-
-  // Check for consent status from cmpEvent
   /*
+  // Check for consent status from cmpEvent
   function checkUserConsentFromEvent(event) {
     var consentData = event.detail;
     // Hypothetical structure of event.detail; adjust as necessary
@@ -87,6 +86,8 @@
           "ad_storage": "granted",
           "analytics_storage": "granted"
         });
+        initializeGoogleAnalytics();
+        initializeGoogleAdWords();
       }
     });
   });
@@ -98,5 +99,7 @@
       "ad_storage": "granted",
       "analytics_storage": "granted"
     });
+    initializeGoogleAnalytics();
+    initializeGoogleAdWords();
   });
 </script>
