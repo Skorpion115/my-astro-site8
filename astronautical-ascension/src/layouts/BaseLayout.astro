@@ -1,6 +1,7 @@
 ---
-// import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
+import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
 import GoogleScripts from "../components/GoogleScripts.astro";
+import ExternalScripts3 from "../components/ExternalScripts3.astro";
 import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer1 from "../components/Footer1.astro";
@@ -74,9 +75,9 @@ console.log("Astro nonce:", Astro.props.nonce);
     <meta name="theme-color" content="#191919" />
     
     <!-- Client-Side Navigation -->
-    
+    <ManuellesBlockieren />
     <GoogleScripts />  
-
+    <ExternalScripts3 />
     <ClientRouter />
     
     <!-- Bedingte CSS-Dateien fuer spezifische Seiten -->
