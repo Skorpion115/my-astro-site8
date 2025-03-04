@@ -74,6 +74,9 @@ console.log("Astro nonce:", Astro.props.nonce);
     <meta name="theme-color" content="#191919" />
     
     <!-- Client-Side Navigation -->
+    <ManuellesBlockieren />
+    <GoogleScripts />  
+
     <ClientRouter />
     
     <!-- Bedingte CSS-Dateien für spezifische Seiten -->
@@ -148,17 +151,11 @@ console.log("Astro nonce:", Astro.props.nonce);
     <Footer1 />
     <br />
     <Footer2 />
-
-    <!-- Manuelles Blockieren (damit CMP alles abfangen kann) -->
-    <ManuellesBlockieren />
-
+    
     <!-- Scripte extern einbinden -->
     <script src="/scripts/menu.js" nonce={nonce} defer></script>
     <script src="/scripts/load-iframes.js" defer is:inline></script>
     <script src="/scripts/document-cookie.js" defer is:inline></script>
-    <script src="/scripts/script-check.js" defer is:inline></script>
-
-    <!-- Google Skripte ans Ende -->
-    <GoogleScripts />   
+    <script src="/scripts/script-check.js" defer is:inline></script> 
   </body>
 </html>
