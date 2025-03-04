@@ -5,9 +5,6 @@
 // console.log("Nonce aus Astro.props:", nonce);
 ---
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"
-></script>
-
 <script async>
   // Google Tag Manager
   (function (w, d, s, l, i) {
@@ -27,6 +24,8 @@
     dataLayer.push(arguments);
   }
 
+  gtag("js", new Date());
+
   // Default consent configuration
   gtag("consent", "default", {
     ad_user_data: "denied",
@@ -35,8 +34,6 @@
     analytics_storage: "denied",
     wait_for_update: 500,
   });
-
-  gtag("js", new Date());
 
   // Function to initialize Google Analytics
   function initializeGoogleAnalytics() {
@@ -78,6 +75,7 @@
   } */
 
   // Listen for the custom consent event
+  
   document.addEventListener("cmpEvent", function (event) {
     if (checkUserConsentFromEvent(event)) {
       gtag("consent", "update", {
@@ -89,7 +87,8 @@
       initializeGoogleAnalytics();
     }
   });
-
+  // Starte Analytics, wenn Consent gegeben wurde
+  /*
   document.addEventListener("consentGiven", function () {
     gtag("consent", "update", {
       ad_user_data: "granted",
@@ -98,5 +97,5 @@
       analytics_storage: "granted",
     });
     initializeGoogleAnalytics();
-  });
+  }); */
 </script>
