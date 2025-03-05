@@ -5,7 +5,6 @@
 // console.log("Nonce aus Astro.props:", nonce);
 ---
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script>
 <script async>
   (function (w, d, s, l, i) {
     w[l] = w[l] || [];
@@ -47,7 +46,8 @@
     });
   }
   
-  // Function to initialize Google AdWords 
+  // Function to initialize Google AdWords
+  /* 
   function initializeGoogleAdWords() {
     gtag("config", "GT-5TG3DK3", {
       "anonymize_ip": false,
@@ -57,7 +57,7 @@
         "domains": ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"]
       }
     });
-  }
+  } */
   /*
   // Check for consent status from cmpEvent
   function checkUserConsentFromEvent(event) {
@@ -84,7 +84,6 @@
         analytics_storage: "granted",
       });
       initializeGoogleAnalytics();
-      initializeGoogleAdWords();
     }
   });
   // Starte Analytics, wenn Consent gegeben wurde
