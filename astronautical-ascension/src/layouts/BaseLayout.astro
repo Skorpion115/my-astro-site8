@@ -1,6 +1,6 @@
 ---
 import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
-import ExternalScripts from "../components/ExternalScripts.astro";
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 import GoogleScripts from "../components/GoogleScripts.astro";
 import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
@@ -76,7 +76,7 @@ console.log("Astro nonce:", Astro.props.nonce);
     
     <!-- Client-Side Navigation -->
     <ManuellesBlockieren />
-    <ExternalScripts />
+    <GoogleAnalytics />
     <GoogleScripts />
     <ClientRouter />
     
