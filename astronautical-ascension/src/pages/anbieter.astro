@@ -1,0 +1,86 @@
+---
+// import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
+// import ExternalScripts3 from "../components/ExternalScripts3.astro";
+// import GoogleScripts from "../components/GoogleScripts.astro";
+
+const SITE_URL =
+  import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = `${SITE_URL}/anbieter/`;
+const pageTitle = "Anbieter";
+// const nonce = Astro.props.nonce || "";
+// console.log("Astro nonce in VendorList:", nonce);
+
+const nonce = Astro.props.nonce ?? "";
+console.log("Astro nonce:", nonce);
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/anbieter.css" />
+    <!--
+  <link rel="manifest" href="/manifest.json" /> -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="robots" content="max-snippet:-1, INDEX, FOLLOW" />
+    <title>{pageTitle}</title>
+    <meta name="description" content="Liste der Anbieter und deren Details" />
+    <link rel="canonical" href="https://www.musicstudio-ziebart.de/anbieter/" />
+    <meta
+      name="google-site-verification"
+      content="Zitul6WICKD7zrzgptxGVrh2GEhozasdEM_d1tGi2aw"
+    />
+    <meta
+      name="author"
+      content="Musicstudio Ziebart, postmaster@musicstudio-ziebart.de"
+    />
+    <meta
+      name="DC.Publisher"
+      content="Musicstudio Ziebart, postmaster@musicstudio-ziebart.de"
+    />
+    <!--
+    <ManuellesBlockieren />
+    <ExternalScripts3 />
+    <GoogleScripts />
+    -->
+  </head>
+  <body>
+    <h3>Anbieterliste</h3>
+
+    <p>
+      Hier finden Sie Informationen über die Verwendung von Cookies auf dieser
+      Website.
+    </p>
+
+    <!-- Consentmanager Vendorlist Code -->
+    
+    <div id="cmpvendorlist"></div>
+    <div class="cmpvendorlistb018a967f10b6 cmpstyleroot"></div>
+    <div class="cmpvendorlistheader" data-vendor="s23">consentmanager</div>
+    <div class="cmpvendorlistheader" data-vendor="s1">Google Ads</div>
+    <div class="cmpvendorlistheader" data-vendor="s1498">Google Advertising Products</div>
+    <div class="cmpvendorlistheader" data-vendor="s26">Google Analytics</div>
+    <div class="cmpvendorlistheader" data-vendor="s2612">Google Fonts</div>
+    <div class="cmpvendorlistheader" data-vendor="s135">Google General</div>
+    <div class="cmpvendorlistheader" data-vendor="s905">Google Tag Manager</div>
+    <div class="cmpvendorlistheader" data-vendor="s30">YouTube</div>
+    
+    <h4>Cookie Info Liste</h4>
+
+    <div id="cmpcookieinfo"></div>
+
+    <p><a href="/" class="normal-links">Zurück zur Startseite</a></p>
+
+    <br />
+
+    <!-- Externe Skripte für Event Handling -->
+     
+    <script src="/scripts/menu2.js" nonce={nonce} defer></script>
+    <script src="/scripts/vendorlist-loader.js" defer nonce={nonce}></script>
+    <script src="/scripts/cookie-info.js" defer nonce={nonce}></script>
+    <script src="/scripts/debug.js" defer is:inline></script>
+    <script src="/scripts/document-cookie.js" defer is:inline></script>
+  </body>
+</html>
