@@ -4,8 +4,19 @@
 // Konsolenausgabe, um zu überprüfen, ob die Nonce korrekt geladen wir
 // console.log("Nonce aus Astro.props:", nonce);
 ---
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script>
+
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script> -->
+<script
+  async
+  type="text/plain"
+  class="cmplazyload"
+  data-cmp-vendor="s26"
+  data-cmp-src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"
+></script>
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3" -->
+></script>
 <script async>
   (function (w, d, s, l, i) {
     w[l] = w[l] || [];
@@ -45,16 +56,16 @@
       },
     });
   }
-  
+
   // Function to initialize Google AdWords
-  
+
   function initializeGoogleAdWords() {
     gtag("config", "GT-5TG3DK3", {
-      "currency": "EUR",
-      "region": "EU",
-      "linker": {
-        "domains": ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"]
-      }
+      currency: "EUR",
+      region: "EU",
+      linker: {
+        domains: ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"],
+      },
     });
   }
   /*
@@ -73,7 +84,7 @@
   } */
 
   // Listen for the custom consent event
-  
+
   document.addEventListener("cmpEvent", function (event) {
     if (checkUserConsentFromEvent(event)) {
       gtag("consent", "update", {
