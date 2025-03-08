@@ -149,6 +149,8 @@ console.log("Astro nonce:", Astro.props.nonce);
     <Footer1 />
     <br />
     <Footer2 />
+
+    <GoogleScripts />
     
     <!-- Scripte extern einbinden -->
     <script src="/scripts/menu.js" nonce={nonce} defer></script>
@@ -156,8 +158,5 @@ console.log("Astro nonce:", Astro.props.nonce);
     <script src="/scripts/document-cookie.js" defer is:inline></script>
     <script src="/scripts/script-check.js" defer is:inline></script>
     <script src="/scripts/consentmanager.js" defer is:inline></script>
-    
-    <GoogleScripts />
-
   </body>
 </html>
