@@ -5,8 +5,6 @@
 // console.log("Nonce aus Astro.props:", nonce);
 ---
 
-<!--
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script> -->
 <script
   async
   type="text/plain"
@@ -52,18 +50,6 @@
     wait_for_update: 500,
   });
 
-  // Function to initialize Google Analytics
-  /*
-  function initializeGoogleAnalytics() {
-    gtag("config", "GT-MR4MFC6", {
-      currency: "EUR",
-      region: "EU",
-      linker: {
-        domains: ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"],
-      },
-    });
-  } */
-
   // Function to initialize Google AdWords
   /*
   function initializeGoogleAdWords() {
@@ -75,7 +61,7 @@
       },
     });
   } */
-  
+
   // Listen for the custom consent event
 
   document.addEventListener("cmpEvent", function (event) {
@@ -87,7 +73,7 @@
         analytics_storage: "granted",
       });
       // Laden Sie Google Analytics erst nach der Zustimmung
-      const script = document.createElement('script');
+      const script = document.createElement("script");
       script.src = "https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6";
       document.head.appendChild(script);
       // initializeGoogleAnalytics();
