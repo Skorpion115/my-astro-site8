@@ -5,6 +5,7 @@
 // console.log("Nonce aus Astro.props:", nonce);
 ---
 
+
 <script async>
   (function (w, d, s, l, i) {
     w[l] = w[l] || [];
@@ -66,7 +67,7 @@
     }
   });
   // Starte Analytics, wenn Consent gegeben wurde
-  /*
+  
   document.addEventListener("consentGiven", function () {
     gtag("consent", "update", {
       ad_user_data: "granted",
@@ -74,8 +75,8 @@
       ad_storage: "granted",
       analytics_storage: "granted",
     });
-    initializeGoogleAnalytics();
-  }); */
+    // initializeGoogleAnalytics();
+  });
 </script>
 
 <script
