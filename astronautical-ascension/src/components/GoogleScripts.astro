@@ -1,14 +1,31 @@
-<script>
-  // Sicherstellen, dass die DataLayer vorhanden ist
-  window.dataLayer = window.dataLayer || [];
+---
+// Hole die Nonce von Astro.props
+// const nonce = Astro.props.nonce;
+// Konsolenausgabe, um zu überprüfen, ob die Nonce korrekt geladen wir
+// console.log("Nonce aus Astro.props:", nonce);
+---
 
-  // gtag() mit korrektem Typ definieren
-  function gtag(...args: any[]) {
-    window.dataLayer.push(args);
+<script async>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-PWK4LSL");
+
+  // Gtag Configuration
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
   }
 
   gtag("js", new Date());
 
+  // Default consent configuration
   gtag("consent", "default", {
     ad_user_data: "denied",
     ad_personalization: "denied",
@@ -17,13 +34,21 @@
     wait_for_update: 500,
   });
 
-  // Consent-Check Funktion korrekt definieren
-  function checkUserConsentFromEvent(event: any): boolean {
-    return event?.detail?.consents?.["s26"] === true;
-  }
+  // Function to initialize Google AdWords
+  /*
+  function initializeGoogleAdWords() {
+    gtag("config", "GT-5TG3DK3", {
+      currency: "EUR",
+      region: "EU",
+      linker: {
+        domains: ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"],
+      },
+    });
+  } */
 
-  // Consent Event Listener hinzufügen
-  document.addEventListener("cmpEvent", function (event: any) {
+  // Listen for the custom consent event
+
+  document.addEventListener("cmpEvent", function (event) {
     if (checkUserConsentFromEvent(event)) {
       gtag("consent", "update", {
         ad_user_data: "granted",
@@ -31,6 +56,41 @@
         ad_storage: "granted",
         analytics_storage: "granted",
       });
+      // Laden Sie Google Analytics erst nach der Zustimmung
+      /*
+      const script = document.createElement("script");
+      script.src = "https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6";
+      document.head.appendChild(script); */
+      // initializeGoogleAnalytics();
+      // initializeGoogleAdWords();
     }
   });
+  // Starte Analytics, wenn Consent gegeben wurde
+  
+  document.addEventListener("consentGiven", function () {
+    gtag("consent", "update", {
+      ad_user_data: "granted",
+      ad_personalization: "granted",
+      ad_storage: "granted",
+      analytics_storage: "granted",
+    });
+    // initializeGoogleAnalytics();
+  });
 </script>
+
+<script
+  async
+  type="text/plain"
+  class="cmplazyload"
+  data-cmp-vendor="s26"
+  data-cmp-src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"
+></script>
+
+<script
+  async
+  type="text/plain"
+  class="cmplazyload"
+  data-cmp-vendor="s1"
+  data-cmp-src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"
+></script>
+
