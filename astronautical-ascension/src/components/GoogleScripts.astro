@@ -86,6 +86,10 @@
         ad_storage: "granted",
         analytics_storage: "granted",
       });
+      // Laden Sie Google Analytics erst nach der Zustimmung
+      const script = document.createElement('script');
+      script.src = "https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6";
+      document.head.appendChild(script);
       // initializeGoogleAnalytics();
       // initializeGoogleAdWords();
     }
