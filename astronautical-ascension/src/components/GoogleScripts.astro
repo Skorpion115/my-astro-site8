@@ -53,6 +53,7 @@
   });
 
   // Function to initialize Google Analytics
+  /*
   function initializeGoogleAnalytics() {
     gtag("config", "GT-MR4MFC6", {
       currency: "EUR",
@@ -61,10 +62,10 @@
         domains: ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"],
       },
     });
-  }
+  } */
 
   // Function to initialize Google AdWords
-
+  /*
   function initializeGoogleAdWords() {
     gtag("config", "GT-5TG3DK3", {
       currency: "EUR",
@@ -73,7 +74,7 @@
         domains: ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"],
       },
     });
-  }
+  } */
   
   // Listen for the custom consent event
 
@@ -85,8 +86,8 @@
         ad_storage: "granted",
         analytics_storage: "granted",
       });
-      initializeGoogleAnalytics();
-      initializeGoogleAdWords();
+      // initializeGoogleAnalytics();
+      // initializeGoogleAdWords();
     }
   });
   // Starte Analytics, wenn Consent gegeben wurde
