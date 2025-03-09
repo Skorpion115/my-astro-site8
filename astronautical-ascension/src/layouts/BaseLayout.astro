@@ -25,7 +25,8 @@ const {
 const urlPath = new URL(Astro.request.url).pathname;
 // Netlify setzt automatisch das Nonce
 const nonce = Astro.props.nonce || "";
-console.log("Astro nonce:", Astro.props.nonce);
+// console.log("[SERVER] Astro nonce:", Astro.props.nonce);
+console.log("[SERVER] Astro nonce:", nonce);
 ---
 
 <html lang="de">
@@ -129,6 +130,7 @@ console.log("Astro nonce:", Astro.props.nonce);
         <link rel="stylesheet" href="/styles/querfloetenunterricht.css" />
       )
     }
+
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -153,6 +155,15 @@ console.log("Astro nonce:", Astro.props.nonce);
 
     <GoogleScripts />
     
+    <script nonce={nonce}>
+      console.log("[BROWSER] Astro nonce:", "{nonce}");
+    </script>
+
+    <script nonce={nonce}>
+      console.log("[BROWSER] Nonce:", "{nonce}");
+    </script>
+
+
     <!-- Scripte extern einbinden -->
     <script src="/scripts/menu.js" nonce={nonce} defer></script>
     <script src="/scripts/load-iframes.js" nonce={nonce} defer is:inline></script>
