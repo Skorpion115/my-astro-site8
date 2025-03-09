@@ -1,5 +1,6 @@
 ---
-// const {nonce} = Astro.props;
+const {nonce} = Astro.props;
+console.log("[SERVER] them-toggle.js click Event wird auf dem Server verarbeitet!"); 
 ---
 <button id="themeToggle" title="Darkmode Schalter" aria-label="Darkmode Schalter">
   <svg width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -18,4 +19,8 @@
 
 <!-- Einbinden der externen Skripte -->
 <script src="/scripts/theme-initialization.js" defer></script>
-<script src="/scripts/theme-toggle.js" defer></script>
+<script src="/scripts/theme-toggle.js" nonce={nonce} defer></script>
+
+<script nonce={Astro.props.nonce}>
+  console.log("[BROWSER] theme-toggle.js click Event läuft!");
+</script>

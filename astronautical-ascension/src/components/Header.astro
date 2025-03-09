@@ -3,7 +3,8 @@ import Hamburger from "./Hamburger.astro";
 import ThemeIcon from "./ThemeIcon.astro";
 import Navigation from "./Navigation.astro";
 import SecondaryNavigation from "./SecondaryNavigation.astro"; 
-// const {nonce} = Astro.props; 
+const {nonce} = Astro.props;
+console.log("[SERVER] ThemeIcon wird auf dem Server verarbeitet!"); 
 ---
 <header>
   <div class="author">
@@ -11,8 +12,12 @@ import SecondaryNavigation from "./SecondaryNavigation.astro";
   </div>
   <nav>
     <Hamburger /> 
-    <ThemeIcon /> 
+    <ThemeIcon nonce={nonce}/> 
     <Navigation />
     <SecondaryNavigation />
   </nav>
 </header>
+
+<script nonce={Astro.props.nonce}>
+  console.log("[BROWSER] ThemeIcon Inline-Skript läuft!");
+</script>

@@ -32,7 +32,8 @@ console.log("Astro nonce:", Astro.props.nonce);
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
+    <!--
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" /> -->
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="/styles/global.css" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -154,9 +155,9 @@ console.log("Astro nonce:", Astro.props.nonce);
     
     <!-- Scripte extern einbinden -->
     <script src="/scripts/menu.js" nonce={nonce} defer></script>
-    <script src="/scripts/load-iframes.js" defer is:inline></script>
-    <script src="/scripts/document-cookie.js" defer is:inline></script>
-    <script src="/scripts/script-check.js" defer is:inline></script>
-    <script src="/scripts/consentmanager.js" defer is:inline></script>
+    <script src="/scripts/load-iframes.js" nonce={nonce} defer is:inline></script>
+    <script src="/scripts/document-cookie.js" nonce={nonce} defer is:inline></script>
+    <script src="/scripts/script-check.js" nonce={nonce} defer is:inline></script>
+    <script src="/scripts/consentmanager.js" nonce={nonce} defer is:inline></script>
   </body>
 </html>

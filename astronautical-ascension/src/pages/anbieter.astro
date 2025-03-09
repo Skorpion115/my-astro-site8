@@ -74,11 +74,11 @@ console.log("Astro nonce:", nonce);
 
     <!-- Externe Skripte für Event Handling -->
      
-    <script src="/scripts/menu2.js" nonce={nonce} defer></script>
-    <script src="/scripts/vendorlist-loader.js" defer nonce={nonce}></script>
-    <script src="/scripts/cookie-info.js" defer nonce={nonce}></script>
-    <script src="/scripts/debug.js" defer is:inline></script>
-    <script src="/scripts/document-cookie.js" defer is:inline></script>
-    <script src="/scripts/consentmanager.js" defer is:inline></script>
+    <script src="/scripts/menu2.js" defer></script>
+    <script src="/scripts/vendorlist-loader.js" defer></script>
+    <script src="/scripts/cookie-info.js" defer></script>
+    <script src="/scripts/debug.js" defer nonce={nonce} is:inline></script>
+    <script src="/scripts/document-cookie.js" nonce={nonce} defer is:inline></script>
+    <script src="/scripts/consentmanager.js" nonce={nonce} defer></script>
   </body>
 </html>
