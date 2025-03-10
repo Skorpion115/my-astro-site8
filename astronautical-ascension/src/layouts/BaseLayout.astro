@@ -141,8 +141,6 @@ console.log("[SERVER] Astro nonce:", nonce);
         style="display:none;visibility:hidden"></iframe></noscript
     >
 
-    <Header nonce={nonce} />
-
     <h1 transition:animate="slide" class="page-title">{pageTitle}</h1>
 
     <main>
@@ -157,6 +155,8 @@ console.log("[SERVER] Astro nonce:", nonce);
     <script nonce={nonce}>
       console.log("[BROWSER] Nonce:", "{nonce}");
     </script>
+
+    <Header nonce={nonce} />
 
 
     <!-- Scripte extern einbinden -->
