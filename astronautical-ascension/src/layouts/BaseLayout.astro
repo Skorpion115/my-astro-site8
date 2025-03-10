@@ -84,11 +84,6 @@ console.log("[SERVER] Astro nonce:", nonce);
     <script nonce={nonce}>
       console.log("[BROWSER] Nonce GoogleScripts läuft!", "{nonce}");
     </script>
-    
-    <Header nonce={nonce} />
-    <script nonce={nonce}>
-      console.log("[BROWSER] Nonce Header läuft!", "{nonce}");
-    </script>
 
     <ClientRouter />
     
@@ -154,6 +149,11 @@ console.log("[SERVER] Astro nonce:", nonce);
         width="0"
         style="display:none;visibility:hidden"></iframe></noscript
     >
+
+    <Header nonce={nonce} />
+    <script nonce={nonce}>
+      console.log("[BROWSER] Nonce Header läuft!", "{nonce}");
+    </script>
 
     <h1 transition:animate="slide" class="page-title">{pageTitle}</h1>
 
