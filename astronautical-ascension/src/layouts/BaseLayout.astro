@@ -32,9 +32,8 @@ console.log("[SERVER] Astro nonce:", nonce);
 <html lang="de">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <!--
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" /> -->
+    <link rel="icon" href="/favicon.ico" sizes="16x16">
+    <link rel="apple-touch-icon" sizes="16x16" href="/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="/styles/global.css" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -155,10 +154,6 @@ console.log("[SERVER] Astro nonce:", nonce);
 
     <GoogleScripts />
     
-    <script nonce={nonce}>
-      console.log("[BROWSER] Astro nonce:", "{nonce}");
-    </script>
-
     <script nonce={nonce}>
       console.log("[BROWSER] Nonce:", "{nonce}");
     </script>
