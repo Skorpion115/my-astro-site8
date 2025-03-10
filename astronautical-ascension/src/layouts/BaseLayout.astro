@@ -1,5 +1,4 @@
 ---
-import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
 import GoogleScripts from "../components/GoogleScripts.astro";
 import Header from "../components/Header.astro";
 import { ClientRouter } from "astro:transitions";
@@ -75,10 +74,6 @@ console.log("[SERVER] Astro nonce:", nonce);
     <meta name="theme-color" content="#191919" />
     
     <!-- Client-Side Navigation -->
-    <ManuellesBlockieren nonce={nonce} />
-    <script nonce={nonce}>
-      console.log("[BROWSER] Nonce ManuellesBlockieren läuft!", "{nonce}");
-    </script>
     
     <GoogleScripts nonce={nonce} />
     <script nonce={nonce}>
@@ -173,6 +168,5 @@ console.log("[SERVER] Astro nonce:", nonce);
     <script src="/scripts/load-iframes.js" nonce={nonce} defer is:inline></script>
     <script src="/scripts/document-cookie.js" nonce={nonce} defer is:inline></script>
     <script src="/scripts/script-check.js" nonce={nonce} defer is:inline></script>
-    <script src="/scripts/consentmanager.js" nonce={nonce} defer is:inline></script>
   </body>
 </html>

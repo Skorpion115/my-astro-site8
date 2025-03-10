@@ -4,22 +4,8 @@
 // Konsolenausgabe, um zu überprüfen, ob die Nonce korrekt geladen wir
 // console.log("Nonce aus Astro.props:", nonce);
 ---
-
-<script
-  async
-  type="text/plain"
-  class="cmplazyload"
-  data-cmp-vendor="s26"
-  data-cmp-src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"
-></script>
-
-<script
-  async
-  type="text/plain"
-  class="cmplazyload"
-  data-cmp-vendor="s26"
-  data-cmp-src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"
-></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script>
 
 <script async>
   (function (w, d, s, l, i) {
@@ -41,56 +27,8 @@
 
   gtag("js", new Date());
 
-  // Default consent configuration
-  gtag("consent", "default", {
-    ad_user_data: "denied",
-    ad_personalization: "denied",
-    ad_storage: "denied",
-    analytics_storage: "denied",
-    wait_for_update: 500,
-  });
+  gtag("config", "GT-MR4MFC6");
+  gtag('config', 'GT-5TG3DK3');
 
-  // Function to initialize Google AdWords
-  /*
-  function initializeGoogleAdWords() {
-    gtag("config", "GT-5TG3DK3", {
-      currency: "EUR",
-      region: "EU",
-      linker: {
-        domains: ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"],
-      },
-    });
-  } */
-
-  // Listen for the custom consent event
-
-  document.addEventListener("cmpEvent", function (event) {
-    if (checkUserConsentFromEvent(event)) {
-      gtag("consent", "update", {
-        ad_user_data: "granted",
-        ad_personalization: "granted",
-        ad_storage: "granted",
-        analytics_storage: "granted",
-      });
-      // Laden Sie Google Analytics erst nach der Zustimmung
-      /*
-      const script = document.createElement("script");
-      script.src = "https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6";
-      document.head.appendChild(script); */
-      // initializeGoogleAnalytics();
-      // initializeGoogleAdWords();
-    }
-  });
-  // Starte Analytics, wenn Consent gegeben wurde
-  
-  document.addEventListener("consentGiven", function () {
-    gtag("consent", "update", {
-      ad_user_data: "granted",
-      ad_personalization: "granted",
-      ad_storage: "granted",
-      analytics_storage: "granted",
-    });
-    // initializeGoogleAnalytics();
-  });
 </script>
 
