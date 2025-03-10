@@ -1,8 +1,8 @@
 ---
 import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
 import GoogleScripts from "../components/GoogleScripts.astro";
-import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
+import { ClientRouter } from "astro:transitions";
 import Footer1 from "../components/Footer1.astro";
 import Footer2 from "../components/Footer2.astro";
 
@@ -75,7 +75,21 @@ console.log("[SERVER] Astro nonce:", nonce);
     <meta name="theme-color" content="#191919" />
     
     <!-- Client-Side Navigation -->
-    <ManuellesBlockieren />
+    <ManuellesBlockieren nonce={nonce} />
+    <script nonce={nonce}>
+      console.log("[BROWSER] Nonce ManuellesBlockieren läuft!", "{nonce}");
+    </script>
+    
+    <GoogleScripts nonce={nonce} />
+    <script nonce={nonce}>
+      console.log("[BROWSER] Nonce GoogleScripts läuft!", "{nonce}");
+    </script>
+    
+    <Header nonce={nonce} />
+    <script nonce={nonce}>
+      console.log("[BROWSER] Nonce Header läuft!", "{nonce}");
+    </script>
+
     <ClientRouter />
     
     <!-- Bedingte CSS-Dateien fuer spezifische Seiten -->
@@ -149,15 +163,10 @@ console.log("[SERVER] Astro nonce:", nonce);
     <Footer1 />
     <br />
     <Footer2 />
-
-    <GoogleScripts />
     
     <script nonce={nonce}>
       console.log("[BROWSER] Nonce:", "{nonce}");
     </script>
-
-    <Header nonce={nonce} />
-
 
     <!-- Scripte extern einbinden -->
     <script src="/scripts/menu.js" nonce={nonce} defer></script>

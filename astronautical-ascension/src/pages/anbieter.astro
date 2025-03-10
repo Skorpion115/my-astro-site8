@@ -1,6 +1,6 @@
 ---
-import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
-import GoogleScripts from "../components/GoogleScripts.astro";
+// import ManuellesBlockieren from "../components/ManuellesBlockieren.astro";
+// import GoogleScripts from "../components/GoogleScripts.astro";
 
 const SITE_URL =
   import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
@@ -39,9 +39,18 @@ console.log("Astro nonce:", nonce);
       name="DC.Publisher"
       content="Musicstudio Ziebart, postmaster@musicstudio-ziebart.de"
     />
-    
-    <ManuellesBlockieren />
-    <GoogleScripts />
+    <!--
+    <ManuellesBlockieren nonce={nonce} /> -->
+    <!--
+    <script nonce={nonce}>
+      console.log("[BROWSER] Anbieter ManuellesBlockieren läuft!", "{nonce}");
+    </script> -->
+    <!--
+    <GoogleScripts nonce{nonce} /> -->
+    <!--
+    <script nonce={nonce}>
+      console.log("[BROWSER] Anbieter GoogleScripts läuft!", "{nonce}");
+    </script> -->
   </head>
   <body>
     <h3>Anbieterliste</h3>
