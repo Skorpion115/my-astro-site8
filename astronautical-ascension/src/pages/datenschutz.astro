@@ -4,6 +4,7 @@ const pageTitle = "Datenschutzerklärung";
 const SITE_URL =
   import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
 const pageUrl = `${SITE_URL}/datenschutz/`;
+const {nonce} = Astro.props;
 ---
 
 <BaseLayout
@@ -26,7 +27,7 @@ const pageUrl = `${SITE_URL}/datenschutz/`;
       title="Cookie-Richtlinie">Cookie-Richtlinie</a
     >
 
-    <script type="text/javascript" src="/scripts/iubenda.js"></script>
+    <script type="text/javascript" nonce={nonce} src="/scripts/iubenda.js"></script>
     <h2>1. Einleitung</h2>
     <p>
       Wir freuen uns über Ihr Interesse an unserer Website. Der Schutz Ihrer

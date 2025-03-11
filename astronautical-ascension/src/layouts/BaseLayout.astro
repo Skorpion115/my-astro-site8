@@ -1,5 +1,5 @@
 ---
-import JubendaScript from "../components/JubendaScript.astro"
+import IubendaScript from "../components/IubendaScript.astro"
 import GoogleScripts from "../components/GoogleScripts.astro";
 import Header from "../components/Header.astro";
 import { ClientRouter } from "astro:transitions";
@@ -27,6 +27,7 @@ const urlPath = new URL(Astro.request.url).pathname;
 const nonce = Astro.props.nonce || "";
 // console.log("[SERVER] Astro nonce:", Astro.props.nonce);
 console.log("[SERVER] Astro nonce:", nonce);
+console.log("[SERVER] IubendaScript läuft!");
 ---
 
 <html lang="de">
@@ -74,14 +75,20 @@ console.log("[SERVER] Astro nonce:", nonce);
     <meta name="robots" content="max-snippet:-1, INDEX, FOLLOW" />
     <meta name="theme-color" content="#191919" />
     
-    <!-- Client-Side Navigation -->
-    <JubendaScript />
+    <!-- Iubenda Blockierung -->
+    <IubendaScript />
     
+    <!-- Log im Browser -->
+    <script nonce={nonce}>
+      console.log("[BROWSER] IubendaScript läuft!", nonce);
+    </script>
+
     <GoogleScripts nonce={nonce} />
     <script nonce={nonce}>
       console.log("[BROWSER] Nonce GoogleScripts läuft!", "{nonce}");
     </script>
 
+    <!-- Client-Side Navigation -->
     <ClientRouter />
     
     <!-- Bedingte CSS-Dateien fuer spezifische Seiten -->
