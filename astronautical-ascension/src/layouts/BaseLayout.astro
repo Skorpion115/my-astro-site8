@@ -1,4 +1,5 @@
 ---
+import JubendaScript from "../components/JubendaScript.astro"
 import GoogleScripts from "../components/GoogleScripts.astro";
 import Header from "../components/Header.astro";
 import { ClientRouter } from "astro:transitions";
@@ -74,6 +75,7 @@ console.log("[SERVER] Astro nonce:", nonce);
     <meta name="theme-color" content="#191919" />
     
     <!-- Client-Side Navigation -->
+    <JubendaScript />
     
     <GoogleScripts nonce={nonce} />
     <script nonce={nonce}>
