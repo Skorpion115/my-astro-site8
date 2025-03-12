@@ -1,9 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Datenschutzerklärung";
-const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const SITE_URL =
+import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
 const pageUrl = `${SITE_URL}/datenschutz/`;
-const {nonce} = Astro.props;
+// const nonce = Astro.props.nonce || "";
 ---
 
 <BaseLayout
@@ -13,133 +14,41 @@ const {nonce} = Astro.props;
   href={pageUrl}
 >
   <section>
-    <a
-      href="https://www.iubenda.com/privacy-policy/80237852"
-      class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
-      title="Datenschutzerklärung"
-    >
-      Datenschutzerklärung
-    </a>
-    <a
-      href="https://www.iubenda.com/privacy-policy/80237852/cookie-policy"
-      class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
-      title="Cookie-Richtlinie">Cookie-Richtlinie</a
-    >
-
-    <script type="text/javascript" nonce={nonce} src="/scripts/iubenda.js"></script>
-    <h2>1. Einleitung</h2>
     <p>
-      Wir freuen uns über Ihr Interesse an unserer Website. Der Schutz Ihrer
-      persönlichen Daten ist uns ein wichtiges Anliegen. Nachfolgend informieren
-      wir Sie über die Verarbeitung Ihrer personenbezogenen Daten und Ihre
-      Rechte gemäß der Datenschutz-Grundverordnung (DSGVO).
-    </p>
-
-    <h2>2. Verantwortlicher</h2>
-    <p>
-      Rudolf Ziebart<br />Musiklehrer <br />Gunzenhausener Str. 20<br />90441
-      Nürnberg<br />Deutschland<br />Email:&nbsp;<a
-        href="mailto:postmaster@musicstudio-ziebart.de"
-        class="normal-links">postmaster@musicstudio-ziebart.de</a
+      Lesen Sie unsere vollständige Datenschutzerklärung und Cookie-Richtlinien
+      hier:
+      <br />
+      <br />
+      <a
+        href="https://www.iubenda.com/privacy-policy/80237852"
+        class="iubenda-white iubenda-noiframe iubenda-embed normal-links iubenda-noiframe"
+        title="Datenschutzerklärung"
       >
-      <br />Telefon: +49 (0)911&nbsp;6320890 <br />
-      <b
-        ><a
-          href="https://www.musicstudio-ziebart.de/"
-          class="normal-links"
-          rel="nofollow"
-          target="_blank">www.musicstudio-ziebart.de</a
-        ></b
+        Datenschutzerklärung
+      </a>
+    </p>
+    <br />
+    <p>
+      <a
+        href="https://www.iubenda.com/privacy-policy/80237852/cookie-policy"
+        class="iubenda-white iubenda-noiframe iubenda-embed normal-links iubenda-noiframe"
+        title="Cookie-Richtlinie"
       >
+        Cookie-Richtlinie
+      </a>
     </p>
 
-    <h2>3. Erhebung und Speicherung personenbezogener Daten</h2>
-    <p>
-      Beim Besuch unserer Website werden automatisch Informationen durch den
-      Server erfasst, die Ihr Browser an uns übermittelt (z. B. IP-Adresse,
-      besuchte Seiten, Browsertyp, Betriebssystem, Datum und Uhrzeit des
-      Zugriffs).
-    </p>
-
-    <h2>4. Verwendung von Cookies</h2>
-    <p>
-      Wir verwenden Cookies, um die Nutzung unserer Website zu analysieren und
-      Ihnen ein besseres Nutzererlebnis zu bieten. Sie können Ihre
-      Cookie-Einstellungen jederzeit über unseren <a
-        href="#"
-        class="normal-links"
-        onclick="window.cmp_showPrivacySettings(); return false;"
-        >Consentmanager</a
-      > anpassen.
-    </p>
-
-    <h2>5. Google Analytics</h2>
-    <p>
-      Unsere Website nutzt Google Analytics, einen Webanalysedienst der Google
-      Ireland Limited. Google verwendet Cookies, um die Nutzung der Website zu
-      analysieren. Die dadurch erzeugten Informationen werden in der Regel an
-      einen Google-Server übertragen und dort gespeichert. Sie können die
-      Erfassung Ihrer Daten durch Google Analytics <a
-        href="https://tools.google.com/dlpage/gaoptout?hl=de"
-        class="normal-links"
-        target="_blank">hier deaktivieren</a
-      >.
-    </p>
-
-    <h2>6. Google Ads</h2>
-    <p>
-      Wir nutzen Google Ads, um Anzeigen zu schalten. Dabei kann es zur
-      Verarbeitung personenbezogener Daten durch Google kommen. Mehr
-      Informationen finden Sie in den <a
-        href="https://policies.google.com/privacy?hl=de"
-        class="normal-links"
-        target="_blank">Datenschutzbestimmungen von Google</a
-      >.
-    </p>
-
-    <h2>7. Einbindung von YouTube-Videos</h2>
-    <p>
-      Unsere Website bindet Videos über die YouTube-Plattform ein. Beim
-      Abspielen eines Videos kann es zur Übertragung personenbezogener Daten an
-      Google kommen. Details dazu finden Sie in der <a
-        href="https://policies.google.com/privacy?hl=de"
-        class="normal-links"
-        target="_blank">Datenschutzerklärung von Google</a
-      >.
-    </p>
-
-    <h2>8. Ihre Rechte</h2>
-    <p>
-      Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung
-      der Verarbeitung, Datenübertragbarkeit sowie ein Widerspruchsrecht.
-      Kontaktieren Sie uns hierfür unter postmaster@musicstudio-ziebart.de.
-    </p>
-
-    <h2>9. Änderungen dieser Datenschutzerklärung</h2>
-    <p>
-      Wir behalten uns das Recht vor, diese Datenschutzerklärung jederzeit zu
-      ändern, um sie an neue rechtliche Anforderungen anzupassen.
-    </p>
-
-    <h2>10. Google Advertising Products</h2>
-    <p>
-      Wir nutzen Google Advertising Products, um Werbeanzeigen zu schalten und
-      deren Leistung zu analysieren. Dabei kann es zur Verarbeitung
-      personenbezogener Daten durch Google kommen. Weitere Informationen finden
-      Sie in den <a
-        href="https://policies.google.com/privacy?hl=de"
-        class="normal-links"
-        target="_blank">Datenschutzbestimmungen von Google</a
-      >.
-    </p>
+     <!-- Iubenda Skript für Datenschutzerklärung & Cookie-Richtlinie -->
+    <script type="text/javascript" src="/scripts/iubenda.js" defer></script>
   </section>
 
   <!--
   <h3>
     <a href="/anbieter/" class="normal-links">Anbieterliste</a>
   </h3> -->
-
+  <br />
   <p>
     <a href="/" class="normal-links">go back!</a>
   </p>
+  <br />
 </BaseLayout>
