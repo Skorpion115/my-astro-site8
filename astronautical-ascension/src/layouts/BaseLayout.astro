@@ -27,7 +27,6 @@ const urlPath = new URL(Astro.request.url).pathname;
 const nonce = Astro.props.nonce || "";
 // console.log("[SERVER] Astro nonce:", Astro.props.nonce);
 console.log("[SERVER] Astro nonce:", nonce);
-console.log("[SERVER] IubendaScript läuft!", nonce || "KEIN NONCE");
 console.log("[SERVER] Nonce GoogleScripts läuft!", "{nonce}");
 ---
 
@@ -78,11 +77,6 @@ console.log("[SERVER] Nonce GoogleScripts läuft!", "{nonce}");
     
     <!-- Iubenda Blockierung -->
     <IubendaScript />
-    
-    <!-- Log im Browser -->
-    <script nonce={nonce}>
-      console.log("[BROWSER] IubendaScript läuft!", nonce);
-    </script>
 
     <GoogleScripts nonce={nonce} />
     <script nonce={nonce}>
