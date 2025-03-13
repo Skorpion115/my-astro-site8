@@ -27,7 +27,8 @@ const urlPath = new URL(Astro.request.url).pathname;
 const nonce = Astro.props.nonce || "";
 // console.log("[SERVER] Astro nonce:", Astro.props.nonce);
 console.log("[SERVER] Astro nonce:", nonce);
-console.log("[SERVER] IubendaScript läuft!");
+console.log("[SERVER] IubendaScript läuft!", nonce || "KEIN NONCE");
+console.log("[SERVER] Nonce GoogleScripts läuft!", "{nonce}");
 ---
 
 <html lang="de">
