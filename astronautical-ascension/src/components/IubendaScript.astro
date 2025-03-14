@@ -1,1 +1,23 @@
-<script type="text/javascript" src="//embeds.iubenda.com/widgets/f5afeba5-d3e6-4d9c-a520-aaec4ed44601.js"></script>
+---
+const nonce = Astro.props.nonce || "";
+---
+
+<script type="text/javascript" nonce={nonce}>
+  var _iub = _iub || [];
+  _iub.csConfiguration = {
+    siteId: 3958477,
+    cookiePolicyId: 80237852,
+    lang: "de",
+    storage: { useSiteId: true },
+  };
+</script>
+<script
+  type="text/javascript"
+  src="https://cs.iubenda.com/autoblocking/3958477.js"
+  nonce={nonce}></script>
+<script
+  type="text/javascript"
+  src="//cdn.iubenda.com/cs/iubenda_cs.js"
+  charset="UTF-8"
+  async
+  nonce={nonce}></script>
