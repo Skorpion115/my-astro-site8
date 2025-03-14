@@ -1,13 +1,16 @@
 ---
 // Hole die Nonce von Astro.props
 const nonce = Astro.props.nonce;
+
+// Konsolenausgabe, um zu überprüfen, ob die Nonce korrekt geladen wird
+console.log("Nonce aus Astro.props:", nonce);
 // Konsolenausgabe, um zu überprüfen, ob die Nonce korrekt geladen wir
 // console.log("Nonce aus Astro.props:", nonce);
 ---
 <!--
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script> -->
-<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PWK4LSL"></script>
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PWK4LSL" nonce={nonce}></script>
 
 <script async nonce={nonce}>
   console.log("Google Tag Manager wird mit Nonce geladen:", { nonce });

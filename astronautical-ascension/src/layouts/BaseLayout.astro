@@ -24,7 +24,9 @@ const {
 // const urlPath = Astro.url.pathname;
 const urlPath = new URL(Astro.request.url).pathname;
 // Netlify setzt automatisch das Nonce
-const nonce = Astro.props.nonce || "";
+// const nonce = Astro.props.nonce || "";
+const nonce = Astro.props.nonce || undefined;
+
 // console.log("[SERVER] Astro nonce:", Astro.props.nonce);
 console.log("[SERVER] Astro nonce:", nonce);
 console.log("[SERVER] Nonce GoogleScripts läuft!", "{nonce}");
