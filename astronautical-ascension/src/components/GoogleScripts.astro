@@ -10,7 +10,7 @@ console.log("Nonce aus Astro.props:", nonce);
 <!--
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script> -->
-<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PWK4LSL" nonce={nonce}></script>
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PWK4LSL"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
 
 <script async nonce={nonce}>
@@ -33,6 +33,9 @@ console.log("Nonce aus Astro.props:", nonce);
   }
 
   gtag("js", new Date());
+
+  
+
 
   // gtag("config", "GT-MR4MFC6");
   // gtag("config", "GT-5TG3DK3");
