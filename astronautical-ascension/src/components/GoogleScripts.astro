@@ -2,11 +2,8 @@
 const nonce = Astro.props.nonce;
 ---
 
-<!-- Gtag.js für Google Analytics oder Google Ads -->
-<script async nonce={nonce} src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
-
+<!-- Google Tag Manager (GTM) -->
 <script async nonce={nonce}>
-  // Google Tag Manager Initialisierung
   (function (w, d, s, l, i) {
     w[l] = w[l] || [];
     w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
@@ -17,9 +14,17 @@ const nonce = Astro.props.nonce;
     j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
     f.parentNode.insertBefore(j, f);
   })(window, document, "script", "dataLayer", "GTM-PWK4LSL");
+</script>
 
+<!-- Google Analytics Tag -->
+<script async nonce={nonce} src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
+
+<!-- Consent Mode Initialisierung -->
+<script async nonce={nonce}>
   // Initiale Consent Mode Werte auf "denied" setzen
-  gtag("consent", "default", {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "consent_init",
     ad_storage: "denied",
     analytics_storage: "denied",
     ad_personalization: "denied",
@@ -29,7 +34,8 @@ const nonce = Astro.props.nonce;
 
   // Event Listener für Consent-Update nach der Zustimmung
   window.addEventListener("iubenda_consents_updated", function () {
-    gtag("consent", "update", {
+    window.dataLayer.push({
+      event: "consent_update",
       ad_storage: "granted",
       analytics_storage: "granted",
       ad_personalization: "granted",
@@ -37,16 +43,4 @@ const nonce = Astro.props.nonce;
       ad_user_data: "granted"
     });
   });
-
-  // Gtag.js Initialisierung
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-
-  gtag("js", new Date());
-
-  // Optional: Konfiguration von Google Analytics oder Google Ads
-  gtag("config", "GT-MR4MFC6");  // Google Analytics Tag
-  gtag("config", "GT-5TG3DK3");  // Google Ads Tag (falls benötigt)
 </script>
