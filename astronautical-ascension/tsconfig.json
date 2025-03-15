@@ -10,8 +10,6 @@
     "src",
     "src/env.d.ts",
     "astro.config.mjs",
-    "src/types/vendor.d.ts",
-    "src/types/global.d.ts",
     ".astro/types.d.ts" 
   ],
   "exclude": ["dist"]
