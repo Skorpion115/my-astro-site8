@@ -3,44 +3,32 @@
 const nonce = Astro.props.nonce;
 ---
 
+<!-- 1. Google Tag Manager Script -->
 <script async nonce={nonce}>
-  // Funktion, um das GTM-Skript zu laden, wenn Zustimmung erteilt wurde
-  function loadGTM() {
-    var script = document.createElement("script");
-    script.async = true;
-    script.src = "https://www.googletagmanager.com/gtm.js?id=GTM-PWK4LSL";
-    document.head.appendChild(script);
+  (function(w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-PWK4LSL");
+</script>
 
-    script.onload = function() {
-      // Hier nach dem Laden des GTM-Skripts Google Analytics und Ads aktivieren
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+<!-- 2. Google Analytics und Google Ads Script -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script>
 
-      gtag("js", new Date());
-
-      // Zustimmung für Analytics und Ads nach Einwilligung setzen
-      gtag("consent", "update", {
-        ad_storage: "granted",
-        analytics_storage: "granted",
-        ad_personalization: "granted",
-        personalization_storage: "granted",
-        ad_user_data: "granted"
-      });
-
-      // Konfigurationen von Google Analytics und Ads laden
-      gtag("config", "GT-MR4MFC6");
-      gtag("config", "GT-5TG3DK3");
-    };
+<!-- 3. Gtag-Konfiguration und Consent Mode -->
+<script nonce={nonce}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
   }
 
-  // Warten auf die Änderung der Einwilligung und dann GTM laden
-  window.addEventListener("iubenda_consents_updated", function () {
-    loadGTM();  // Lade GTM nach Einwilligung
-  });
-
-  // Standardmäßig keine Zustimmung setzen
+  gtag("js", new Date());
   gtag("consent", "default", {
     ad_storage: "denied",
     analytics_storage: "denied",
@@ -48,4 +36,18 @@ const nonce = Astro.props.nonce;
     personalization_storage: "denied",
     ad_user_data: "denied"
   });
+
+  window.addEventListener("iubenda_consents_updated", function() {
+    gtag("consent", "update", {
+      ad_storage: "granted",
+      analytics_storage: "granted",
+      ad_personalization: "granted",
+      personalization_storage: "granted",
+      ad_user_data: "granted"
+    });
+  });
+
+  gtag("config", "GT-MR4MFC6");  // Google Analytics
+  gtag("config", "GT-5TG3DK3");  // Google Ads
 </script>
+
