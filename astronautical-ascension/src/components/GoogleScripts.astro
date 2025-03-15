@@ -33,7 +33,11 @@ const nonce = Astro.props.nonce;
 
   gtag("js", new Date());
 
-  
+  // Consent Mode Standardwerte setzen
+  gtag("consent", "default", {
+    "ad_storage": "denied",
+    "analytics_storage": "denied"
+  });
 
 
   // gtag("config", "GT-MR4MFC6");
