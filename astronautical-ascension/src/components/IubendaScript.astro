@@ -1,7 +1,5 @@
 ---
-
 const nonce = Astro.props.nonce ?? "";
-
 ---
 
 <script type="text/javascript" nonce={nonce}>
@@ -10,50 +8,50 @@ const nonce = Astro.props.nonce ?? "";
     lang: "de",
     siteId: 3958477, //use your siteId
     cookiePolicyId: 80237852, //use your cookiePolicyId
+    enableCcpa: true,
+    ccpaApplies: true,
+
+    enableGdpr: true,
+    gdprAppliesGlobally: false,
+    gdprApplies: true,
+    perPurposeConsent: true,
+
+    timeoutLoadConfiguration: 30000,
+    consentOnScroll: false, //avoid consent to be given when the user scrolls the page
+
     banner: {
       position: "float-top-center",
       acceptButtonDisplay: true,
       customizeButtonDisplay: true,
+      rejectButtonDisplay: true,
     },
+
     callback: {
       onPreferenceExpressedOrNotNeeded: function (preference) {
         dataLayer.push({
           iubenda_ccpa_opted_out: _iub.cs.api.isCcpaOptedOut(),
         });
-        // preferences parameter may be undefined if both GDPR and LGPD do not apply
-        // we may need the line below to find USPR preferences instead of relying
-        // on preferences parameter
-        var otherPreferences = _iub.cs.api.getPreferences();
-        if (otherPreferences) {
-          var usprPreferences = otherPreferences.uspr;
-          if (usprPreferences) {
-            for (var purposeName in usprPreferences) {
-              if (usprPreferences[purposeName]) {
-                dataLayer.push({
-                  event: "iubenda_consent_given_purpose_" + purposeName,
-                });
-              }
-            }
-          }
-        }
+
         if (!preference) {
           dataLayer.push({
             event: "iubenda_preference_not_needed",
           });
-        } else if (preference.consent === true) {
-          dataLayer.push({
-            event: "iubenda_consent_given",
-          });
-        } else if (preference.consent === false) {
-          dataLayer.push({
-            event: "iubenda_consent_rejected",
-          });
-        } else if (preference.purposes) {
-          for (var purposeId in preference.purposes) {
-            if (preference.purposes[purposeId]) {
-              dataLayer.push({
-                event: "iubenda_consent_given_purpose_" + purposeId,
-              });
+        } else {
+          if (preference.consent === true) {
+            dataLayer.push({
+              event: "iubenda_consent_given",
+            });
+          } else if (preference.consent === false) {
+            dataLayer.push({
+              event: "iubenda_consent_rejected",
+            });
+          } else if (preference.purposes) {
+            for (var purposeId in preference.purposes) {
+              if (preference.purposes[purposeId]) {
+                dataLayer.push({
+                  event: "iubenda_consent_given_purpose_" + purposeId,
+                });
+              }
             }
           }
         }
@@ -61,8 +59,4 @@ const nonce = Astro.props.nonce ?? "";
     },
   };
 </script>
-<script
-  type="text/javascript"
-  src="//cdn.iubenda.com/cs/iubenda_cs.js"
-  charset="UTF-8"
-  async></script>
+<script async src="//cdn.iubenda.com/cs/iubenda_cs.js"></script>
