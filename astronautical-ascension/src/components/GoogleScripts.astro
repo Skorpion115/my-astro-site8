@@ -3,7 +3,7 @@
 const nonce = Astro.props.nonce;
 
 // Konsolenausgabe, um zu überprüfen, ob die Nonce korrekt geladen wird
-console.log("Nonce aus Astro.props:", nonce);
+// console.log("Nonce aus Astro.props:", nonce);
 // Konsolenausgabe, um zu überprüfen, ob die Nonce korrekt geladen wir
 // console.log("Nonce aus Astro.props:", nonce);
 ---
@@ -14,7 +14,6 @@ console.log("Nonce aus Astro.props:", nonce);
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
 
 <script async nonce={nonce}>
-  console.log("Google Tag Manager wird mit Nonce geladen:", { nonce });
   (function (w, d, s, l, i) {
     w[l] = w[l] || [];
     w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
