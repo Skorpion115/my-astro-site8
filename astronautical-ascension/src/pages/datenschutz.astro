@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Datenschutzerklärung";
 const SITE_URL =
-import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+  import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
 const pageUrl = `${SITE_URL}/datenschutz/`;
 // const nonce = Astro.props.nonce || "";
 ---
@@ -38,21 +38,111 @@ const pageUrl = `${SITE_URL}/datenschutz/`;
       </a>
     </p>
 
-     <!-- Iubenda Skript für Datenschutzerklärung & Cookie-Richtlinie -->
+    <!-- Iubenda Skript für Datenschutzerklärung & Cookie-Richtlinie -->
     <script type="text/javascript" src="/scripts/iubenda.js" defer></script>
   </section>
-
-  <!--
-  <h3>
-    <a href="/anbieter/" class="normal-links">Anbieterliste</a>
-  </h3> -->
   <br />
-  <section>
-    <div class="wrapper">
-      <h3>iubenda Cookie Solution</h3>
-      <p>Google Tag Manager integration for CCPA, GDPR and per-category consent</p>
+  <div class="wrapper">
+    <h3>iubenda Cookie Lösung</h3>
+    <p>
+      Google Tag Manager Integration für CCPA, GDPR und Einwilligung pro
+      Kategorie
+    </p>
   </div>
+  <section class="wrapper">
+    <p>
+      💡 Klicken Sie auf "Akzeptieren", "Ablehnen", "Mehr erfahren und anpassen" und "Meine persönlichen Daten nicht verkaufen" um Ihre Einwilligungseinstellungen für Cookies anzupassen.
+    </p>
+
+    <div class="scripts">
+      <div class="script" id="no-purpose">
+        <p>
+          Keine Zwecke
+        </p>
+      </div>
+      <div class="script" id="no-purpose-sells">
+        <p>
+          Kein Zweck - Verkauf (wird blockiert wenn der CCPA opted out)
+        </p>
+      </div>
+      <div class="script" id="purpose-1">
+        <p>
+          Unbedingt erforderlich (Keine Einwilligung erforerlich)
+        </p>
+      </div>
+      <div class="script" id="purpose-2">
+        <p>
+          Grundlegende Interaktionen und Funktionalitäten
+        </p>
+      </div>
+      <div class="script" id="purpose-3">
+        <p>
+          Verbesserung der Erfahrung
+        </p>
+      </div>
+      <div class="script" id="purpose-4">
+        <p>Analytics</p>
+      </div>
+      <div class="script" id="purpose-4-sells">
+       <p>
+        Analytics - Verkauf (wird blockiert wenn der CCPA opted out)
+       </p>
+      </div>
+      <div class="script" id="purpose-5">
+        <p>
+          Targeting & Werbung
+        </p>
+      </div>
+    </div>
+
+    <div class="note">
+      <ul>
+        <li>
+          Denken Sie daran Ihre eigenen Anmeldungsdaten zur verwenden <a
+            href="https://www.iubenda.com/en/dashboard"
+            target="_blank">Ihr iubenda account</a>
+        </li>
+        <li>
+          Dies ist ein Beispiel zur reinen Demostrationszwecken, <strong
+            >Es werden keine Einwilligungen gespeichert</strong
+          > (Ergebnis von <code>_iub.csConfiguration.skipSaveConsent = true</code
+          >). Aktualisieren Sie einfach die Seite damit der Cookie Banner wieder angezeigt wird.
+        </li>
+      </ul>
+    </div>
+
+    <h3>Lerne mehr</h3>
+    <div class="tip">
+      <p>
+        Lese die Bedienungsanleitung <a
+          href="https://www.iubenda.com/en/help/1235"
+          target="_blank"
+          >So verwenden Sie den GoogleTagManager um das blockieren von Cookies zu vereinfachen</a
+        > um weitere Informationen zu zusätzlichen Einstellungen zu erhalten.
+      </p>
+    </div>
+
+    <p>Andere hilfreiche Ressourcen:</p>
+    <ul class="guides">
+      <li>
+        <a href="https://www.iubenda.com/en/help/1177" target="_blank"
+          >Cookie Lösung - Erste Schritte</a>
+      </li>
+      <li>
+        <a href="https://www.iubenda.com/en/help/3831" target="_blank"
+          >So passen Sie das Aussehen und Verhalten des Banners an (Leitfaden für Anfänger)</a>
+      </li>
+      <li>
+        <a href="https://www.iubenda.com/en/help/1205" target="_blank"
+          >So konfigurieren Sie ihre Cookie Lösung (Anleitung)</a>
+      </li>
+      <li>
+        <a href="https://www.iubenda.com/en/help/21165" target="_blank"
+          >CCPA: So fügen Sie eine Inkasso Benachrichtigung ein "verkaufe nicht" Link</a>
+      </li>
+    </ul>
   </section>
+
   <p>
     <a href="/" class="normal-links">go back!</a>
   </p>
