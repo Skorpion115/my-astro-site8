@@ -1,7 +1,11 @@
 ---
-// Astro-Props für Nonce abrufen
 const nonce = Astro.props.nonce;
 ---
+<!-- Google Tag Manager und Google Analytics Skripte -->
+ <!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script> -->
+
 <script async nonce={nonce}>
   (function (w, d, s, l, i) {
     w[l] = w[l] || [];
@@ -13,40 +17,36 @@ const nonce = Astro.props.nonce;
     j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
     f.parentNode.insertBefore(j, f);
   })(window, document, "script", "dataLayer", "GTM-PWK4LSL");
-</script>
 
-<script nonce={nonce}>
-  // Initialisierung des dataLayer und der gtag-Funktion
+  
+
+  // Gtag-Konfiguration für Analytics
   window.dataLayer = window.dataLayer || [];
   function gtag() {
     dataLayer.push(arguments);
   }
 
-  // Initialisierung des Consent Mode mit Standardwerten (alle abgelehnt)
   gtag("js", new Date());
+
+  // Consent Mode Standardwerte setzen
   gtag("consent", "default", {
     ad_storage: "denied",
     analytics_storage: "denied",
     ad_personalization: "denied",
-    personalization_storage: "denied",
     ad_user_data: "denied"
   });
 
-  // Event Listener für die Einwilligung, um die Tags nur nach Zustimmung auszuführen
-  window.addEventListener("iubenda_consents_updated", function() {
-    const consentStatus = window.iubendaConsent; // Hier bekommst du den aktuellen Status von Iubenda
-    if (consentStatus && consentStatus.granted) {
-      gtag("consent", "update", {
-        ad_storage: "granted",
-        analytics_storage: "granted",
-        ad_personalization: "granted",
-        personalization_storage: "granted",
-        ad_user_data: "granted"
-      });
-
-      // Gtag-Config nur nach Zustimmung ausführen
-      gtag("config", "GT-MR4MFC6");  // Google Analytics
-      gtag("config", "GT-5TG3DK3");  // Google Ads
-    }
+  // Consent Mode Update nach Einwilligung
+  window.addEventListener("iubenda_consents_updated", function () {
+    gtag("consent", "update", {
+      ad_storage: "granted",
+      analytics_storage: "granted",
+      ad_personalization: "granted",
+      ad_user_data: "granted"
+    });
   });
+
+  // Google Analytics Konfiguration (optional)
+  gtag("config", "GT-MR4MFC6");
+  gtag("config", "GT-5TG3DK3");
 </script>
