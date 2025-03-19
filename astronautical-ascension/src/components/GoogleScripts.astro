@@ -36,20 +36,24 @@ const nonce = Astro.props.nonce;
   // Consent Mode Standardwerte setzen
   gtag("consent", "default", {
     ad_storage: "denied",
-    analytics_storage: "denied",
     ad_personalization: "denied",
+    ad_user_data: "denied",
+    analytics_storage: "denied",
+    functionality_storage: "denied",
     personalization_storage: "denied",
-    ad_user_data: "denied"
+    security_storage: "denied"
   });
 
   // Consent Mode Update nach Einwilligung
   window.addEventListener("iubenda_consents_updated", function () {
     gtag("consent", "update", {
       ad_storage: "granted",
-      analytics_storage: "granted",
       ad_personalization: "granted",
+      ad_user_data: "granted",
+      analytics_storage: "granted",
+      functionality_storage: "granted",
       personalization_storage: "granted",
-      ad_user_data: "granted"
+      security_storage: "granted"
     });
   });
 
