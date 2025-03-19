@@ -39,9 +39,7 @@ const nonce = Astro.props.nonce;
     ad_personalization: "denied",
     ad_user_data: "denied",
     analytics_storage: "denied",
-    functionality_storage: "denied",
-    personalization_storage: "denied",
-    security_storage: "denied"
+    personalization_storage: "denied"
   });
 
   // Consent Mode Update nach Einwilligung
@@ -51,9 +49,7 @@ const nonce = Astro.props.nonce;
       ad_personalization: "granted",
       ad_user_data: "granted",
       analytics_storage: "granted",
-      functionality_storage: "granted",
-      personalization_storage: "granted",
-      security_storage: "granted"
+      personalization_storage: "granted"
     });
   });
 
