@@ -1,5 +1,5 @@
 ---
-import IubendaScript from "../components/IubendaScript.astro"
+import IubendaScript from "../components/IubendaScript.astro";
 import GoogleScripts from "../components/GoogleScripts.astro";
 import Header from "../components/Header.astro";
 import { ClientRouter } from "astro:transitions";
@@ -35,8 +35,8 @@ console.log("[SERVER] Nonce GoogleScripts läuft!", "{nonce}");
 <html lang="de">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.ico" sizes="16x16">
-    <link rel="apple-touch-icon" sizes="16x16" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.ico" sizes="16x16" />
+    <link rel="apple-touch-icon" sizes="16x16" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="/styles/global.css" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -76,9 +76,9 @@ console.log("[SERVER] Nonce GoogleScripts läuft!", "{nonce}");
     <meta name="DC.rights" content="Alle Rechte liegen beim Author" />
     <meta name="robots" content="max-snippet:-1, INDEX, FOLLOW" />
     <meta name="theme-color" content="#191919" />
-    
+
     <!-- Iubenda Blockierung -->
-    <IubendaScript nonce={nonce}/>
+    <IubendaScript nonce={nonce} />
 
     <GoogleScripts nonce={nonce} />
     <script nonce={nonce}>
@@ -87,7 +87,7 @@ console.log("[SERVER] Nonce GoogleScripts läuft!", "{nonce}");
 
     <!-- Client-Side Navigation -->
     <ClientRouter />
-    
+
     <!-- Bedingte CSS-Dateien fuer spezifische Seiten -->
     {
       urlPath === "/gitarrenunterricht/" && (
@@ -139,18 +139,17 @@ console.log("[SERVER] Nonce GoogleScripts läuft!", "{nonce}");
         <link rel="stylesheet" href="/styles/querfloetenunterricht.css" />
       )
     }
-
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
-     <!--
+
     <noscript
       ><iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-PWK4LSL"
         height="0"
         width="0"
         style="display:none;visibility:hidden"></iframe></noscript
-  > -->
+    >
 
     <Header nonce={nonce} />
     <script nonce={nonce}>
@@ -165,16 +164,19 @@ console.log("[SERVER] Nonce GoogleScripts läuft!", "{nonce}");
     <Footer1 />
     <br />
     <Footer2 />
-    
+
     <script nonce={nonce}>
       console.log("[BROWSER] Nonce:", "{nonce}");
     </script>
 
     <!-- Scripte extern einbinden -->
     <script src="/scripts/menu.js" nonce={nonce} defer></script>
-    <script src="/scripts/load-iframes.js" nonce={nonce} defer is:inline></script>
-    <script src="/scripts/document-cookie.js" nonce={nonce} defer is:inline></script>
-    <script src="/scripts/script-check.js" nonce={nonce} defer is:inline></script>
+    <script src="/scripts/load-iframes.js" nonce={nonce} defer is:inline
+    ></script>
+    <script src="/scripts/document-cookie.js" nonce={nonce} defer is:inline
+    ></script>
+    <script src="/scripts/script-check.js" nonce={nonce} defer is:inline
+    ></script>
     <script src="/scripts/delete-gacookies.js" defer></script>
   </body>
 </html>
