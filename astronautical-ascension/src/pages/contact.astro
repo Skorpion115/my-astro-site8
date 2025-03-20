@@ -5,7 +5,7 @@ const pageTitle = "Kontakt";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <form action="/.netlify/functions/contact" method="POST">
+    <form action="/.netlify/functions/contact" method="POST" enctype="application/json">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required />
   
