@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Netlify Form Test";
+const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = `${SITE_URL}/form-test/`;
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description="Testformular für Netlify"
+  href={pageUrl}
+>
+  <h2>Testformular</h2>
+  <form
+    name="test_form"
+    method="POST"
+    action="/danke-seite/"
+    data-netlify="true"
+  >
+    <input type="hidden" name="form-name" value="test_form" />
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="email" required />
+
+    <button type="submit">Absenden</button>
+  </form>
+</BaseLayout>
