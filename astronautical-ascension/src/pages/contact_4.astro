@@ -1,7 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Ich rufe Sie zurück!";
-const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const SITE_URL =
+  import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
 const pageUrl = `${SITE_URL}/contact_4/`;
 ---
 
@@ -11,7 +12,7 @@ const pageUrl = `${SITE_URL}/contact_4/`;
   keywords="ich rufe sie zurück, rückruf"
   href={pageUrl}
 >
-<br />
+  <br />
   <div class="container4">
     <form
       name="contact_4"
@@ -87,6 +88,15 @@ const pageUrl = `${SITE_URL}/contact_4/`;
           name="email"
           class="form-control form-control-lg"
         />
+      </div>
+
+      <div>
+        <label>
+          <input type="checkbox" name="consent" required />
+          Ich stimme der Verarbeitung meiner Daten gemäß der
+          <a href="/datenschutz/" target="_blank">Datenschutzerklärung</a>
+          zu.
+        </label>
       </div>
 
       <br />
