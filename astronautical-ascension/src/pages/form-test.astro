@@ -1,22 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "Netlify Form Test";
-const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
-const pageUrl = `${SITE_URL}/form-test/`;
+const pageTitle = "Form Test";
 ---
 
-<BaseLayout
-  pageTitle={pageTitle}
-  description="Testformular für Netlify"
-  href={pageUrl}
->
-  <h2>Testformular</h2>
-  <form
-    name="test_form"
-    method="POST"
-    action="/danke-seite/"
-    data-netlify="true"
-  >
+<BaseLayout pageTitle={pageTitle}>
+  <h2>Form Test</h2>
+  <form name="test_form" method="POST" action="/danke-seite/" data-netlify="true">
     <input type="hidden" name="form-name" value="test_form" />
 
     <label for="name">Name:</label>
@@ -28,3 +17,5 @@ const pageUrl = `${SITE_URL}/form-test/`;
     <button type="submit">Absenden</button>
   </form>
 </BaseLayout>
+
+
