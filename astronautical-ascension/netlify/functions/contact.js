@@ -1,35 +1,59 @@
-const nodemailer = require('nodemailer');
+const nodemailer = require("nodemailer");
 
-exports.handler = async (event) => {
-  if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' };
+exports.handler = async function(event, context) {
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ error: "Method not allowed" }),
+    };
   }
 
-  try {
-    const data = JSON.parse(event.body);
+  const { name, email, message } = JSON.parse(event.body);
 
-    // E-Mail Konfiguration mit Outlook SMTP
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.office365.com',
-      port: 587,
-      secure: false,
-      auth: {
-        user: process.env.EMAIL_USER, // Aus Netlify Environment Variables
-        pass: process.env.EMAIL_PASS
-      }
-    });
-
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: 'musikstudio-ziebart@outlook.de',
-      subject: 'Neue Nachricht vom Kontaktformular',
-      text: `Name: ${data.name}\nE-Mail: ${data.email}\nNachricht:\n${data.message}`
+  if (!name || !email || !message) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ error: "All fields are required" }),
     };
+  }
 
+  // Umgebungsvariablen verwenden
+  const EMAIL_USER = process.env.EMAIL_USER;
+  const EMAIL_PASS = process.env.EMAIL_PASS;
+
+  if (!EMAIL_USER || !EMAIL_PASS) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: "E-Mail-Konfiguration fehlt!" }),
+    };
+  }
+
+  // Transporter für den Versand der E-Mail
+  const transporter = nodemailer.createTransport({
+    service: "Outlook", // Alternativ: "Gmail" oder SMTP-Daten deines Providers
+    auth: {
+      user: EMAIL_USER,
+      pass: EMAIL_PASS,
+    },
+  });
+
+  const mailOptions = {
+    from: EMAIL_USER,
+    to: EMAIL_USER, // Du bekommst die Nachricht
+    subject: `Neue Kontaktanfrage von ${name}`,
+    text: `Name: ${name}\nE-Mail: ${email}\nNachricht:\n${message}`,
+  };
+
+  try {
     await transporter.sendMail(mailOptions);
-
-    return { statusCode: 200, body: JSON.stringify({ message: 'E-Mail gesendet!' }) };
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ success: "E-Mail wurde gesendet!" }),
+    };
   } catch (error) {
-    return { statusCode: 500, body: JSON.stringify({ error: 'Fehler beim Senden der E-Mail' }) };
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: "E-Mail konnte nicht gesendet werden", details: error.message }),
+    };
   }
 };
