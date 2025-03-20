@@ -1,11 +1,10 @@
 ---
-
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Kontakt";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <form action="/.netlify/functions/contact" method="POST" enctype="application/json">
+    <form action="/.netlify/functions/contact" method="POST">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required />
   
@@ -17,4 +16,5 @@ const pageTitle = "Kontakt";
   
       <button type="submit">Absenden</button>
     </form>
+    <script src="/scripts/recall.js" defer></script>
 </BaseLayout>
