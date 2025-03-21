@@ -1,31 +1,146 @@
 ---
-import Layout from '../layouts/BaseLayout.astro';
+import Layout from "../layouts/BaseLayout.astro";
 ---
 
 <Layout>
-    <h2>Jetzt zum kostenlosen Probeunterricht anmelden!</h2>
+  <h2>Jetzt zum kostenlosen Probeunterricht anmelden!</h2>
 
-    <form action="https://formsubmit.co/a7f052e0376799b4e2582093f684876f" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://www.musicstudio-ziebart.de/thankyou/">
-    
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-    
-        <label for="email">E-Mail:</label>
-        <input type="email" id="email" name="email" required>
+  <form
+    action="https://formsubmit.co/a7f052e0376799b4e2582093f684876f"
+    method="POST"
+  >
+    <!-- Honeypot field (invisible to users) -->
+    <p style="display:none">
+      <label
+        >Don’t fill this out if you're human: <input name="bot-field" /></label
+      >
+    </p>
+    <input type="hidden" name="_captcha" value="false" />
+    <input
+      type="hidden"
+      name="_next"
+      value="https://www.musicstudio-ziebart.de/thankyou/"
+    />
 
-        <label>
-            <input type="checkbox" name="consent" required />
-            Ich stimme der Verarbeitung meiner Daten gemäß der 
-            <a href="/datenschutz/" target="_blank">Datenschutzerklärung</a>
-            zu.
-        </label>
-    
-        <label for="message">Nachricht oder Terminwunsch:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-    
-        <button type="submit">Absenden</button>
-    </form>
-    
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="email" required />
+
+    <label>
+      <input type="checkbox" name="consent" required />
+      Ich stimme der Verarbeitung meiner Daten gemäß der
+      <a href="/datenschutz/" target="_blank">Datenschutzerklärung</a>
+      zu.
+    </label>
+
+    <label for="message">Nachricht oder Terminwunsch:</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+
+    <button type="submit">Absenden</button>
+  </form>
+
+  <h2>Freie Termine</h2>
+
+  <div>
+    <!-- Tabelle für freie Termine-->
+    <br />
+
+    <table class="table2">
+      <thead>
+        <tr>
+          <th>Tag</th>
+          <th>Uhrzeit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Montag</td>
+          <td>14:00</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>14:45</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>15:30</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>16:15</td>
+        </tr>
+        <tr>
+          <td>Dienstag</td>
+          <td>14:00</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>14:45</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>15:30</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>16:15</td>
+        </tr>
+        <tr>
+          <td>Mittwoch</td>
+          <td>14:00</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>14:45</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>15:30</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>16:15</td>
+        </tr>
+        <tr>
+          <td>Donnerstag</td>
+          <td>14:00</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>14:45</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>15:30</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>16:15</td>
+        </tr>
+        <tr>
+          <td>Freitag</td>
+          <td>13:00</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>17:30</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>18:15</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>19:00</td>
+        </tr>
+        <!-- Füge die anderen Tage ähnlich hinzu -->
+      </tbody>
+    </table>
+  </div>
+  <p>
+    <a href="../index.html" class="normal-links">zurück</a>
+  </p>
+  <br />
 </Layout>
