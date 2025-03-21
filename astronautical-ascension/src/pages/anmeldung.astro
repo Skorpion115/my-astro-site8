@@ -5,7 +5,7 @@ import Layout from '../layouts/BaseLayout.astro';
 <Layout>
     <h2>Jetzt zum kostenlosen Probeunterricht anmelden!</h2>
 
-    <form action="https://formsubmit.co/a7f052e0376799b4e2582093f684876f" method="POST"></form>
+    <form action="https://formsubmit.co/a7f052e0376799b4e2582093f684876f" method="POST">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" value="https://www.musicstudio-ziebart.de/thankyou/">
     
@@ -14,6 +14,13 @@ import Layout from '../layouts/BaseLayout.astro';
     
         <label for="email">E-Mail:</label>
         <input type="email" id="email" name="email" required>
+
+        <label>
+            <input type="checkbox" name="consent" required />
+            Ich stimme der Verarbeitung meiner Daten gemäß der 
+            <a href="/datenschutz/" target="_blank">Datenschutzerklärung</a>
+            zu.
+        </label>
     
         <label for="message">Nachricht oder Terminwunsch:</label>
         <textarea id="message" name="message" rows="4" required></textarea>
