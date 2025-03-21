@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/BaseLayout.astro';
+---
+
+<Layout>
+    <h2>Jetzt zum kostenlosen Probeunterricht anmelden!</h2>
+
+    <form action="https://formsubmit.co/musikstudio-ziebart@outlook.de" method="POST">
+        <input type="hidden" name="_captcha" value="false"> 
+        <input type="hidden" name="_next" value="https://www.musicstudio-ziebart.de/thankyou/"> 
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-Mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Nachricht oder Terminwunsch:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Absenden</button>
+    </form>
+</Layout>
