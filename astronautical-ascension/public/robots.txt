@@ -1,3 +1,2 @@
 User-agent: *
 Sitemap: https://www.musicstudio-ziebart.de/sitemap.xml
-Allow: https://cdn.consentmanager.net/
