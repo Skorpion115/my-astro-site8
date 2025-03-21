@@ -46,7 +46,7 @@ exports.handler = async function(event, context) {
   }
 
   const transporter = nodemailer.createTransport({
-    service: "Outlook",
+    service: "gmail",
     auth: {
       user: EMAIL_USER,
       pass: EMAIL_PASS,
