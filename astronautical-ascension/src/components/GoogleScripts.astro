@@ -2,7 +2,7 @@
 const nonce = Astro.props.nonce ?? "";
 ---
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
 <script nonce={nonce}>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -17,18 +17,14 @@ const nonce = Astro.props.nonce ?? "";
     ad_user_data: "denied"
   });
 
-  // Google Ads Konfiguration für das Ziel
-  gtag("config", "AW-1000620606");
+  // Google Analytics Konfiguration für GA4 Property
+  gtag("config", "G-CXBFDX52C7", { "anonymize_ip": true });
 </script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script>
 <script nonce={nonce}>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  // Google Analytics Konfiguration für das Ziel
-  gtag("config", "G-CXBFDX52C7", { "anonymize_ip": true });
+  // Google Ads Konfiguration für das Tag (mit der Ziel-ID)
+  gtag("config", "GT-5TG3DK3", { 'send_page_view': false });
 </script>
 
 <script nonce={nonce}>
