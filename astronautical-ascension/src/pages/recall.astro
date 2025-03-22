@@ -1,8 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Ich rufe Sie zurück!";
-const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
-const pageUrl = `${SITE_URL}/contact_4/`;
+const SITE_URL =
+  import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageUrl = `${SITE_URL}/recall/`;
 ---
 
 <BaseLayout
@@ -11,27 +12,28 @@ const pageUrl = `${SITE_URL}/contact_4/`;
   keywords="ich rufe sie zurück, rückruf"
   href={pageUrl}
 >
+  <p>
+    Das Absenden des Formulars kann bis zu 20 sec dauern. Bitte haben sie etwas
+    Geduld!
+  </p>
   <br />
   <div class="container4">
     <form
-      name="contact_4"
+      action="https://formsubmit.co/a7f052e0376799b4e2582093f684876f"
       method="POST"
-      action="/danke-seite/"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      data-iub-no-block
     >
-      <!-- Honeypot field (invisible to users) -->
+      <!-- Honeypot field (versteckt für Nutzer, sichtbar für Bots) -->
       <p style="display:none">
         <label
-          >Don’t fill this out if you're human: <input
-            name="bot-field"
-          /></label
+          >Bitte nicht ausfüllen: <input type="text" name="bot-field" /></label
         >
       </p>
-
-      <input type="hidden" name="form-name" value="contact_4" />
-
+      <input type="hidden" name="_captcha" value="false" />
+      <input
+        type="hidden"
+        name="_next"
+        value="https://www.musicstudio-ziebart.de/danke-seite/"
+      />
       <div>
         <label for="name">Name:</label>
         <input
@@ -44,7 +46,6 @@ const pageUrl = `${SITE_URL}/contact_4/`;
           required
         />
       </div>
-
       <div>
         <label for="subject">Betreff:</label>
         <input
@@ -56,7 +57,6 @@ const pageUrl = `${SITE_URL}/contact_4/`;
           class="form-control form-control-lg"
         />
       </div>
-
       <div>
         <label for="message">Nachricht:</label>
         <textarea
@@ -66,7 +66,6 @@ const pageUrl = `${SITE_URL}/contact_4/`;
           rows="10"
           placeholder="Bitte um Rückruf"></textarea>
       </div>
-
       <div>
         <label for="phone">Telefonnummer:</label>
         <input
@@ -78,7 +77,6 @@ const pageUrl = `${SITE_URL}/contact_4/`;
           required
         />
       </div>
-
       <div>
         <label for="email">E-Mail:</label>
         <input
@@ -89,7 +87,6 @@ const pageUrl = `${SITE_URL}/contact_4/`;
           class="form-control form-control-lg"
         />
       </div>
-      <!--
       <div>
         <label>
           <input type="checkbox" name="consent" required />
@@ -97,23 +94,9 @@ const pageUrl = `${SITE_URL}/contact_4/`;
           <a href="/datenschutz/" target="_blank">Datenschutzerklärung</a>
           zu.
         </label>
-      </div> -->
-
+      </div>
       <br />
-      <!--
-        <div
-          class="g-recaptcha"
-          data-sitekey="6LdRPP0pAAAAAPoJR0Z6iRH_HFqnJBE4rNpKdLuP"
-        >
-        </div> -->
-      <!--
-        <script src="/scripts/form-handler.js" type="module" defer></script>
-        <br />
-        <div> -->
       <button type="submit" class="btn btn-lg btn-primary">Absenden</button>
     </form>
   </div>
 </BaseLayout>
-<p>
-  <a href="../index.html" class="normal-links">Zurück</a>
-</p>
