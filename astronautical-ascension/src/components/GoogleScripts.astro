@@ -28,7 +28,7 @@ const nonce = Astro.props.nonce ?? "";
   });
 
   // Google Analytics Konfiguration für GA4 Property
-  gtag("config", "GT-MR4MFC6", { "anonymize_ip": true, "send_page_view": false });
+  gtag("config", "GT-MR4MFC6", { "anonymize_ip": true });
 </script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script>
@@ -48,4 +48,7 @@ const nonce = Astro.props.nonce ?? "";
       ad_user_data: "granted"
     });
   });
+
+  // Seitenaufruf auslösen, nachdem die Einwilligung gegeben wurde
+  gtag("event", "page_view");
 </script>
