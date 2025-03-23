@@ -28,7 +28,7 @@ const nonce = Astro.props.nonce ?? "";
   });
 
   // Google Analytics Konfiguration für GA4 Property, aber ohne Seitenaufruf
-  gtag("config", "GT-MR4MFC6", { "anonymize_ip": true, "send_page_view": false });
+  gtag("config", "GT-MR4MFC6", { "anonymize_ip": true, "send_page_view": true });
 
   // Google Ads Konfiguration für das Tag, aber ohne Seitenaufruf
   gtag("config", "GT-5TG3DK3", { "send_page_view": false });
