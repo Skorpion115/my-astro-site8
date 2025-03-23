@@ -38,6 +38,7 @@ const nonce = Astro.props.nonce ?? "";
       anonymize_ip: true,
       currency: "EUR",
       region: "EU",
+      send_page_view: true,  // <- WICHTIG: Page View senden
       linker: {
         domains: ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"],
       },
@@ -51,6 +52,7 @@ const nonce = Astro.props.nonce ?? "";
       "anonymize_ip": true,
       "currency": "EUR",
       "region": "EU",
+      "send_page_view": true,  // <- WICHTIG: Page View senden
       "linker": {
         "domains": ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"]
       }
@@ -66,12 +68,13 @@ const nonce = Astro.props.nonce ?? "";
   
   document.addEventListener("iubenda_consents_updated", function (event) {
     if (checkUserConsentFromEvent(event)) {
+      console.log("Iubenda Consent Event getriggert:", event);
       gtag("consent", "update", {
-        ad_storage: "denied",
-        analytics_storage: "denied",
-        personalization_storage: "denied",
-        ad_personalization: "denied",
-        ad_user_data: "denied"
+        ad_storage: "granted",
+        analytics_storage: "granted",
+        personalization_storage: "granted",
+        ad_personalization: "granted",
+        ad_user_data: "granted"
       });
       initializeGoogleAnalytics();
       initializeGoogleAdWords();
