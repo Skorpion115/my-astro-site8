@@ -49,12 +49,12 @@ const nonce = Astro.props.nonce ?? "";
    
   function initializeGoogleAdWords() {
     gtag("config", "GT-5TG3DK3", {
-      "anonymize_ip": true,
-      "currency": "EUR",
-      "region": "EU",
-      "send_page_view": true,  // <- WICHTIG: Page View senden
-      "linker": {
-        "domains": ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"]
+      anonymize_ip: true,
+      currency: "EUR",
+      region: "EU",
+      send_page_view: true,  // <- WICHTIG: Page View senden
+      linker: {
+        domains: ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"]
       }
     });
   }
