@@ -27,28 +27,35 @@ const nonce = Astro.props.nonce ?? "";
     ad_user_data: "denied"
   });
 
-  // Google Analytics Konfiguration für GA4 Property
-  gtag("config", "GT-MR4MFC6", { "anonymize_ip": true });
+  // Google Analytics Konfiguration für GA4 Property, aber ohne Seitenaufruf
+  gtag("config", "GT-MR4MFC6", { "anonymize_ip": true, "send_page_view": false });
+
+  // Google Ads Konfiguration für das Tag, aber ohne Seitenaufruf
+  gtag("config", "GT-5TG3DK3", { 'send_page_view': false });
 </script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script>
-<script nonce={nonce}>
-  // Google Ads Konfiguration für das Tag (mit der Ziel-ID)
-  gtag("config", "GT-5TG3DK3", { "send_page_view": false });
-</script>
 
 <script nonce={nonce}>
-  // Wenn der Benutzer seine Einwilligung gibt, aktualisieren wir den Consent Mode auf "granted"
+  // Flag setzen, um sicherzustellen, dass der Seitenaufruf nur einmal ausgelöst wird
+  let consentGiven = false;
+
   window.addEventListener("iubenda_consents_updated", function () {
-    gtag("consent", "update", {
-      ad_storage: "granted",
-      analytics_storage: "granted",
-      personalization_storage: "granted",
-      ad_personalization: "granted",
-      ad_user_data: "granted"
-    });
-  });
+    if (!consentGiven) {
+      // Einwilligung für Analytics und Ads wird erteilt
+      gtag("consent", "update", {
+        ad_storage: "granted",
+        analytics_storage: "granted",
+        personalization_storage: "granted",
+        ad_personalization: "granted",
+        ad_user_data: "granted"
+      });
 
-  // Seitenaufruf auslösen, nachdem die Einwilligung gegeben wurde
-  gtag("event", "page_view");
+      // Seitenaufruf für Google Analytics und Google Ads auslösen, nachdem die Einwilligung gegeben wurde
+      gtag("event", "page_view");
+
+      // Flag auf true setzen, damit der Seitenaufruf nur einmal erfolgt
+      consentGiven = true;
+    }
+  });
 </script>
