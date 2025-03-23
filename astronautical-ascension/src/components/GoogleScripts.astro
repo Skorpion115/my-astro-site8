@@ -24,7 +24,7 @@ const nonce = Astro.props.nonce ?? "";
     ad_storage: "denied",
     analytics_storage: "denied",
     personalization_storage: "denied",
-    // ad_personalization: "denied",
+    ad_personalization: "denied",
     ad_user_data: "denied"
   });
 
@@ -67,10 +67,11 @@ const nonce = Astro.props.nonce ?? "";
   document.addEventListener("iubenda_consents_updated", function (event) {
     if (checkUserConsentFromEvent(event)) {
       gtag("consent", "update", {
-        ad_user_data: "granted",
-        ad_personalization: "granted",
-        ad_storage: "granted",
-        analytics_storage: "granted",
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        personalization_storage: "denied",
+        ad_personalization: "denied",
+        ad_user_data: "denied"
       });
       initializeGoogleAnalytics();
       initializeGoogleAdWords();
