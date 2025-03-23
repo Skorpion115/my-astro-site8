@@ -34,16 +34,27 @@ const nonce = Astro.props.nonce ?? "";
   //gtag("config", "GT-MR4MFC6", { "anonymize_ip": true, "send_page_view": true });
   // Function to initialize Google Analytics
   function initializeGoogleAnalytics() {
-    gtag("config", "GT-MR4MFC6", {
-      anonymize_ip: true,
-      currency: "EUR",
-      region: "EU",
-      send_page_view: true,  // <- WICHTIG: Page View senden
-      linker: {
-        domains: ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"],
-      },
-    });
-  }
+  gtag("config", "GT-MR4MFC6", {
+    anonymize_ip: true,
+    currency: "EUR",
+    region: "EU",
+    send_page_view: true,  // Sollte eigentlich reichen
+    linker: {
+      domains: ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"],
+    },
+  });
+
+  // Falls GA4 das `send_page_view` ignoriert, einmal manuell auslösen:
+  gtag("event", "page_view", {
+    page_location: window.location.href,
+    page_path: window.location.pathname,
+    page_title: document.title
+  });
+
+  console.log("Google Analytics wurde geladen und Page View gesendet.");
+}
+
+  
 
   // Function to initialize Google AdWords
    
