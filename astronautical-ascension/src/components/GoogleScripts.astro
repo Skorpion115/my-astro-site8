@@ -4,16 +4,15 @@ const nonce = Astro.props.nonce ?? "";
 
 <!-- Google Tag Manager -->
 <script nonce={nonce}>
-  (function(w,d,s,l,i){
-    w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-    var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
-    j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-    f.parentNode.insertBefore(j,f);
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-PWK4LSL');
 </script>
 <!-- End Google Tag Manager -->
 
-<!-- Google Tag (gtag.js) für GA4 & Google Ads -->
+<!-- Google Tag -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script>
 
@@ -21,7 +20,9 @@ const nonce = Astro.props.nonce ?? "";
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
 
-  // Consent Mode: Standardwerte setzen (alles auf "denied")
+  gtag('js', new Date());
+
+  // Standardwerte für Consent Mode setzen (Alles auf "denied")
   gtag("consent", "default", {
     ad_storage: "denied",
     analytics_storage: "denied",
@@ -30,24 +31,16 @@ const nonce = Astro.props.nonce ?? "";
     ad_user_data: "denied"
   });
 
-  // Google Analytics & Google Ads initialisieren
+  // Google Analytics & Google Ads Konfiguration
   function initializeGoogleAnalytics() {
     console.log("🔵 Google Analytics wird geladen...");
     gtag("config", "GT-MR4MFC6", {
       anonymize_ip: true,
-      currency: "EUR",
-      region: "EU",
-      send_page_view: true,
-      linker: { domains: ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"] },
+      send_page_view: true,  // <- WICHTIG: Automatisches PageView
+      linker: {
+        domains: ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"],
+      }
     });
-
-    // Falls `send_page_view` nicht funktioniert, manuelles Page View senden
-    gtag("event", "page_view", {
-      page_location: window.location.href,
-      page_path: window.location.pathname,
-      page_title: document.title
-    });
-
     console.log("✅ Page View wurde gesendet.");
   }
 
@@ -55,18 +48,18 @@ const nonce = Astro.props.nonce ?? "";
     console.log("🔵 Google Ads wird geladen...");
     gtag("config", "GT-5TG3DK3", {
       anonymize_ip: true,
-      currency: "EUR",
-      region: "EU",
-      send_page_view: true,
-      linker: { domains: ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"] },
+      send_page_view: true,  // <- WICHTIG: Automatisches PageView
+      linker: {
+        domains: ["musicstudio-ziebart.de", "www.musicstudio-ziebart.de"],
+      }
     });
   }
+</script>
 
-  // Consent Event Listener (wird von Iubenda getriggert)
+<script nonce={nonce}>
+  // Warten auf das Iubenda Consent-Event
   document.addEventListener("iubenda_consents_updated", function (event) {
-    console.log("🟢 Iubenda Consent Event getriggert:", event);
-
-    // Falls Iubenda die Zustimmung erteilt hat, Consent Mode updaten
+    console.log("⚡ Iubenda Consent Event getriggert:", event);
     gtag("consent", "update", {
       ad_storage: "granted",
       analytics_storage: "granted",
@@ -75,7 +68,9 @@ const nonce = Astro.props.nonce ?? "";
       ad_user_data: "granted"
     });
 
-    // GA4 & Google Ads nach Einwilligung starten
+    console.log("✅ Consent wurde geupdated!");
+
+    // Google-Dienste starten
     initializeGoogleAnalytics();
     initializeGoogleAdWords();
   });
