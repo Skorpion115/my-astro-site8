@@ -2,40 +2,48 @@
 const nonce = Astro.props.nonce ?? "";
 ---
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
-<script nonce={nonce}>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  // Consent Mode Standardwerte setzen (alle auf "denied", wenn der Benutzer noch nicht zugestimmt hat)
-  gtag("consent", "default", {
-    ad_storage: "denied",
-    analytics_storage: "denied",
-    personalization_storage: "denied",
-    ad_personalization: "denied",
-    ad_user_data: "denied"
-  });
-
-  // Google Analytics Konfiguration für GA4 Property
-  gtag("config", "G-CXBFDX52C7", { "anonymize_ip": true });
-</script>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script>
-<script nonce={nonce}>
-  // Google Ads Konfiguration für das Tag (mit der Ziel-ID)
-  gtag("config", "GT-5TG3DK3", { 'send_page_view': false });
-</script>
-
-<script nonce={nonce}>
-  // Wenn der Benutzer seine Einwilligung gibt, aktualisieren wir den Consent Mode auf "granted"
-  window.addEventListener("iubenda_consents_updated", function () {
-    gtag("consent", "update", {
-      ad_storage: "granted",
-      analytics_storage: "granted",
-      personalization_storage: "granted",
-      ad_personalization: "granted",
-      ad_user_data: "granted"
+<!-- Google Tag Manager -->
+<script nonce={nonce}>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PWK4LSL');</script>
+  <!-- End Google Tag Manager -->
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
+  <script nonce={nonce}>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    // Consent Mode Standardwerte setzen (alle auf "denied", wenn der Benutzer noch nicht zugestimmt hat)
+    gtag("consent", "default", {
+      ad_storage: "denied",
+      analytics_storage: "denied",
+      personalization_storage: "denied",
+      ad_personalization: "denied",
+      ad_user_data: "denied"
     });
-  });
-</script>
+  
+    // Google Analytics Konfiguration für GA4 Property
+    gtag("config", "G-CXBFDX52C7", { "anonymize_ip": true });
+  </script>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script>
+  <script nonce={nonce}>
+    // Google Ads Konfiguration für das Tag (mit der Ziel-ID)
+    gtag("config", "GT-5TG3DK3", { 'send_page_view': false });
+  </script>
+  
+  <script nonce={nonce}>
+    // Wenn der Benutzer seine Einwilligung gibt, aktualisieren wir den Consent Mode auf "granted"
+    window.addEventListener("iubenda_consents_updated", function () {
+      gtag("consent", "update", {
+        ad_storage: "granted",
+        analytics_storage: "granted",
+        personalization_storage: "granted",
+        ad_personalization: "granted",
+        ad_user_data: "granted"
+      });
+    });
+  </script>
