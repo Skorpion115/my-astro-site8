@@ -27,18 +27,16 @@ const pageUrl = `${SITE_URL}/anmeldung/`;
       method="POST"
     >
       <!-- Honeypot field (versteckt für Nutzer, sichtbar für Bots) -->
-      <p style="display:none">
-        <label
-          >Bitte nicht ausfüllen: <input type="text" name="bot-field" /></label
-        >
-      </p>
 
-      <input type="hidden" name="_captcha" value="false" />
+      <input type="text" name="_honey" style="display:none">
+
+      <input type="hidden" name="_captcha" value="false">
+      
       <input
         type="hidden"
         name="_next"
         value="https://www.musicstudio-ziebart.de/thankyou/"
-      />
+      > 
 
       <fieldset>
         <legend>Data</legend>
@@ -47,14 +45,14 @@ const pageUrl = `${SITE_URL}/anmeldung/`;
         <div>
           <label for="subject">Betreff:</label>
           <input
-            name="subject"
+            name="_subject"
             type="text"
             id="subject"
             maxlength="40"
             placeholder="Hier den Betreff eintragen"
             class="form-control form-control-lg"
             required
-          />
+          >
         </div>
         <br />
         <div class="form-element">
@@ -65,7 +63,7 @@ const pageUrl = `${SITE_URL}/anmeldung/`;
             name="born"
             id="born"
             class="form-control form-control-lg"
-          />
+          >
         </div>
         <br />
         <div class="form-element">
@@ -76,7 +74,7 @@ const pageUrl = `${SITE_URL}/anmeldung/`;
             id="desired_date"
             class="form-control form-control-lg"
             required
-          />
+          >
         </div>
         <br />
         <div class="form-element">
@@ -88,7 +86,7 @@ const pageUrl = `${SITE_URL}/anmeldung/`;
             id="phone"
             class="form-control form-control-lg"
             required
-          />
+          >
         </div>
         <br />
         <div>
@@ -99,20 +97,18 @@ const pageUrl = `${SITE_URL}/anmeldung/`;
             id="instrument"
             class="form-control form-control-lg"
             required
-          />
+          >
         </div>
         <div>
           <label for="email">Email:</label>
           <input
             type="email"
-            autocomplete="email"
-            name="email"
-            Reply-to
+            name="replyto"
             id="email"
             class="form-control form-control-lg"
             required
-          />
-        </div>
+          >
+        </div>    
         <div>
           <br />
           <label for="message">Nachricht:</label>
@@ -137,7 +133,7 @@ const pageUrl = `${SITE_URL}/anmeldung/`;
             id="fname"
             class="form-control form-control-lg"
             required
-          />
+          >
         </div>
         <br />
         <div>
@@ -149,7 +145,7 @@ const pageUrl = `${SITE_URL}/anmeldung/`;
             id="lname"
             class="form-control form-control-lg"
             required
-          />
+          >
         </div>
         <br />
         <div>
@@ -162,7 +158,7 @@ const pageUrl = `${SITE_URL}/anmeldung/`;
             maxlength="22"
             class="form-control form-control-lg"
             required
-          />
+          >
         </div>
         <br />
         <div>
@@ -175,7 +171,7 @@ const pageUrl = `${SITE_URL}/anmeldung/`;
             maxlength="20"
             class="form-control form-control-lg"
             required
-          />
+          >
         </div>
         <br />
         <div>
@@ -187,7 +183,7 @@ const pageUrl = `${SITE_URL}/anmeldung/`;
             id="postal_code"
             class="form-control form-control-lg"
             required
-          />
+          >
         </div>
       </fieldset>
       <fieldset>
@@ -198,17 +194,17 @@ const pageUrl = `${SITE_URL}/anmeldung/`;
             name="parents"
             id="parents"
             class="form-control form-control-lg"
-          />
+          >
         </div>
         <br />
         <div>
           <label>
-            <input type="checkbox" name="consent" required />
+            <input type="checkbox" name="consent" value="accepted" required>
             Ich stimme der Verarbeitung meiner Daten gemäß der
             <a href="/datenschutz/" target="_blank">Datenschutzerklärung</a>
             zu.
           </label>
-        </div>
+        </div>     
       </fieldset>
       <button type="submit" class="btn btn-lg btn-primary">Absenden</button>
     </form>
