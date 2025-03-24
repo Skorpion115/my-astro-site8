@@ -39,6 +39,7 @@ const nonce = Astro.props.nonce ?? "";
   // Warten auf das Iubenda Consent-Event
   document.addEventListener("iubenda_consents_updated", function (event) {
     console.log("⚡ Iubenda Consent Event getriggert:", event);
+    console.log("Einwilligung wurde aktualisiert:", event);
     gtag("consent", "update", {
       ad_storage: "granted",
       analytics_storage: "granted",
@@ -46,7 +47,7 @@ const nonce = Astro.props.nonce ?? "";
       ad_personalization: "granted",
       ad_user_data: "granted"
     });
-
+    // Loggt, dass die Einwilligung erfolgreich geupdated wurde
     console.log("✅ Consent wurde geupdated!");
   });
 </script>
