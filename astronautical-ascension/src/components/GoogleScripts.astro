@@ -12,7 +12,7 @@ const nonce = Astro.props.nonce ?? "";
 </script>
 <!-- End Google Tag Manager -->
 
-<!-- Google Tag -->
+<!-- Google Tag (nur einmal laden) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
 
 <script nonce={nonce}>
@@ -30,14 +30,10 @@ const nonce = Astro.props.nonce ?? "";
     ad_user_data: "denied"
   });
 
-  // Google Analytics Konfiguration für GA4 Property, aber ohne Seitenaufruf
+  // Google Analytics & Google Ads Konfiguration (ohne Seitenaufruf)
   gtag("config", "GT-MR4MFC6", { "anonymize_ip": true, "send_page_view": false });
-  // Google Ads Konfiguration für das Tag, aber ohne Seitenaufruf
   gtag("config", "GT-5TG3DK3", { "send_page_view": false });
 </script>
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script>
 
 <script nonce={nonce}>
   // Warten auf das Iubenda Consent-Event
@@ -52,9 +48,5 @@ const nonce = Astro.props.nonce ?? "";
     });
 
     console.log("✅ Consent wurde geupdated!");
-    // Seitenaufruf für Google Analytics und Google Ads auslösen, nachdem die Einwilligung gegeben wurde
-    gtag("event", "page_view");
-    // Flag auf true setzen, damit der Seitenaufruf nur einmal erfolgt
-    consentGiven = true;
   });
 </script>

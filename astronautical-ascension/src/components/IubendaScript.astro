@@ -1,7 +1,7 @@
 ---
 const nonce = Astro.props.nonce ?? "";
 ---
-
+<!-- Konfigurations Script -->
 <script type="text/javascript" nonce={nonce}>
   var _iub = _iub || [];
   _iub.csConfiguration = {
@@ -11,9 +11,13 @@ const nonce = Astro.props.nonce ?? "";
     storage: { useSiteId: true },
   };
 </script>
+<!-- Automatisches Blockieren -->
+ <!--
 <script
   type="text/javascript"
-  src="https://cs.iubenda.com/autoblocking/3958477.js"></script>
+  src="https://cs.iubenda.com/autoblocking/3958477.js"></script> -->
+
+<!-- Hauptscript steuert den Consent Mode -->
 <script
   type="text/javascript"
   src="//cdn.iubenda.com/cs/iubenda_cs.js"
