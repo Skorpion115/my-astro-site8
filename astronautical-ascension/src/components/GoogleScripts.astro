@@ -2,52 +2,12 @@
 const nonce = Astro.props.nonce ?? "";
 ---
 
-<!-- Google Tag Manager -->
-<script nonce={nonce}>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PWK4LSL');
-</script>
-<!-- End Google Tag Manager -->
-
-<!-- Google Tag (nur einmal laden) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
-
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PWK4LSL"></script>
 <script nonce={nonce}>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-
   gtag('js', new Date());
-
-  // Standardwerte für Consent Mode setzen (Alles auf "denied")
-  gtag("consent", "default", {
-    ad_storage: "denied",
-    analytics_storage: "denied",
-    personalization_storage: "denied",
-    ad_personalization: "denied",
-    ad_user_data: "denied"
-  });
-
-  // Google Analytics & Google Ads Konfiguration (ohne Seitenaufruf)
-  gtag("config", "GT-MR4MFC6", { "anonymize_ip": true, "send_page_view": false });
-  gtag("config", "GT-5TG3DK3", { "send_page_view": false });
 </script>
 
-<script nonce={nonce}>
-  // Warten auf das Iubenda Consent-Event
-  document.addEventListener("iubenda_consents_updated", function (event) {
-    console.log("⚡ Iubenda Consent Event getriggert:", event);
-    console.log("Einwilligung wurde aktualisiert:", event);
-    gtag("consent", "update", {
-      ad_storage: "granted",
-      analytics_storage: "granted",
-      personalization_storage: "granted",
-      ad_personalization: "granted",
-      ad_user_data: "granted"
-    });
-    // Loggt, dass die Einwilligung erfolgreich geupdated wurde
-    console.log("✅ Consent wurde geupdated!");
-  });
-</script>
+
+
