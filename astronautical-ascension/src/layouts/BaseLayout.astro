@@ -1,6 +1,6 @@
 ---
-import IubendaScript from "../components/IubendaScript.astro";
 import GoogleScripts from "../components/GoogleScripts.astro";
+import IubendaScript from "../components/IubendaScript.astro";
 import Header from "../components/Header.astro";
 import { ClientRouter } from "astro:transitions";
 import Footer1 from "../components/Footer1.astro";
@@ -76,10 +76,6 @@ console.log("[SERVER] Nonce GoogleScripts läuft!", "{nonce}");
     <meta name="DC.rights" content="Alle Rechte liegen beim Author" />
     <meta name="robots" content="max-snippet:-1, INDEX, FOLLOW" />
     <meta name="theme-color" content="#191919" />
-
-    <!-- Iubenda Blockierung -->
-     
-    <IubendaScript nonce={nonce} />
 
     <GoogleScripts nonce={nonce} />
     <script nonce={nonce}>
@@ -179,5 +175,6 @@ console.log("[SERVER] Nonce GoogleScripts läuft!", "{nonce}");
     <script src="/scripts/script-check.js" nonce={nonce} defer is:inline
     ></script>
     <script src="/scripts/delete-gacookies.js" defer></script>
+    <IubendaScript nonce={nonce} />
   </body>
 </html>

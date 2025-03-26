@@ -2,15 +2,20 @@
 const nonce = Astro.props.nonce ?? "";
 ---
 
-<!-- Google Tag Manager -->
 <script nonce={nonce}>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PWK4LSL');
+  if (typeof window !== "undefined" && typeof document !== "undefined") {
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l !== "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-PWK4LSL");
+  }
 </script>
-<!-- End Google Tag Manager -->
 
 <!-- Google Tag (Google Analytics & Google Ads) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
@@ -37,19 +42,20 @@ const nonce = Astro.props.nonce ?? "";
 </script>
 
 <script nonce={nonce}>
-  // Warten auf das Iubenda Consent-Event
   document.addEventListener("iubenda_consents_updated", function (event) {
     console.log("⚡ Iubenda Consent Event getriggert:", event);
-    console.log("Einwilligung wurde aktualisiert:", event);
-    
-    gtag("consent", "update", {
-      ad_storage: "granted",
-      analytics_storage: "granted",
-      personalization_storage: "granted",
-      ad_personalization: "granted",
-      ad_user_data: "granted"
-    });
 
-    console.log("✅ Consent wurde geupdated!");
+    if (typeof gtag === "function") {
+      gtag("consent", "update", {
+        ad_storage: "granted",
+        analytics_storage: "granted",
+        personalization_storage: "granted",
+        ad_personalization: "granted",
+        ad_user_data: "granted"
+      });
+      console.log("✅ Consent wurde geupdated!");
+    } else {
+      console.warn("⚠️ gtag ist nicht definiert. Warten auf Laden.");
+    }
   });
 </script>
