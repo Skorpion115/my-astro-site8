@@ -43,27 +43,6 @@ const { nonce = "" } = Astro.props;
   // Google Analytics & Google Ads Konfiguration (ohne Seitenaufruf)
   // gtag("config", "GT-MR4MFC6", { "anonymize_ip": true });
   // gtag("config", "GT-5TG3DK3");
- /*
-  if (window.iubenda && window.iubenda.consents.given) {
-    gtag("config", "GT-MR4MFC6");
-    gtag("config", "GT-5TG3DK3");
-  } */
-  // Hier prüfen wir, ob der Nutzer für Google Analytics (Zweck 4) und Google Ads (Zweck 3) zugestimmt hat
-document.addEventListener('DOMContentLoaded', function() {
-  // Google Analytics (Zweck 4)
-  if (window.iubenda && window.iubenda.consents.purpose_4) {
-    gtag("config", "GT-MR4MFC6");
-  } else {
-    console.log("Google Analytics Tracking wartet auf Zustimmung.");
-  }
-
-  // Google Ads (Zweck 3)
-  if (window.iubenda && window.iubenda.consents.purpose_3) {
-    gtag("config", "GT-5TG3DK3");
-  } else {
-    console.log("Google Ads Tracking wartet auf Zustimmung.");
-  }
-});
 </script>
 
 <script nonce={nonce}>
