@@ -56,8 +56,11 @@ const { nonce = "" } = Astro.props;
       });
       console.log("✅ Consent wurde geupdated!");
 
-      // Jetzt den Seitenaufruf manuell senden, falls Consent gegeben wurde
-      gtag("event", "page_view", { page_path: window.location.pathname });
+      // Warten, bis gtag verfügbar ist, um den Seitenaufruf zu senden
+      setTimeout(() => {
+        console.log("📌 Sende Seitenaufruf nach Einwilligung");
+        gtag("event", "page_view", { page_path: window.location.pathname });
+      }, 1000); // 1 Sekunde Verzögerung, um sicherzustellen, dass alles geladen ist
     } else {
       console.warn("⚠️ gtag ist nicht definiert. Warten auf Laden.");
     }
