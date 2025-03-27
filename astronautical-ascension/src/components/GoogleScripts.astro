@@ -18,7 +18,7 @@ const { nonce = "" } = Astro.props;
   }
 </script>
 
-<!-- Google Tag (Google Analytics & Google Ads) -->
+<!-- Google Tag (Google Analytics) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
 
 <script nonce={nonce}>
@@ -38,7 +38,7 @@ const { nonce = "" } = Astro.props;
     ad_user_data: "denied",
   });
 
-  // Google Analytics & Google Ads Konfiguration (kein automatischer Seitenaufruf)
+  // Google Analytics (kein automatischer Seitenaufruf)
   gtag("config", "GT-MR4MFC6", { anonymize_ip: true, send_page_view: false });
 </script>
 
@@ -56,11 +56,15 @@ const { nonce = "" } = Astro.props;
       });
       console.log("✅ Consent wurde geupdated!");
 
-      // Warten, bis gtag verfügbar ist, um den Seitenaufruf zu senden
+      // Warte bis gtag wirklich verfügbar ist
       setTimeout(() => {
-        console.log("📌 Sende Seitenaufruf nach Einwilligung");
-        gtag("event", "page_view", { page_path: window.location.pathname });
-      }, 1000); // 1 Sekunde Verzögerung, um sicherzustellen, dass alles geladen ist
+        if (typeof gtag === "function") {
+          console.log("📌 Sende Seitenaufruf nach Einwilligung");
+          gtag("event", "page_view", { page_path: window.location.pathname });
+        } else {
+          console.warn("⚠️ gtag ist nicht verfügbar. Seitenaufruf nicht gesendet.");
+        }
+      }, 1000);
     } else {
       console.warn("⚠️ gtag ist nicht definiert. Warten auf Laden.");
     }
