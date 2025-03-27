@@ -18,8 +18,9 @@ const { nonce = "" } = Astro.props;
   }
 </script>
 
-<!-- Google Tag (Google Analytics) -->
+<!-- Google Tag (Google Analytics & Google Ads) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script>
 
 <script nonce={nonce}>
   window.dataLayer = window.dataLayer || [];
@@ -38,8 +39,9 @@ const { nonce = "" } = Astro.props;
     ad_user_data: "denied",
   });
 
-  // Google Analytics (kein automatischer Seitenaufruf)
-  gtag("config", "GT-MR4MFC6", { anonymize_ip: true, send_page_view: false });
+  // Google Analytics & Google Ads Konfiguration
+  gtag("config", "GT-MR4MFC6", { anonymize_ip: true });
+  gtag("config", "GT-5TG3DK3");
 </script>
 
 <script nonce={nonce}>
@@ -55,16 +57,6 @@ const { nonce = "" } = Astro.props;
         ad_user_data: "granted",
       });
       console.log("✅ Consent wurde geupdated!");
-
-      // Warte bis gtag wirklich verfügbar ist
-      setTimeout(() => {
-        if (typeof gtag === "function") {
-          console.log("📌 Sende Seitenaufruf nach Einwilligung");
-          gtag("event", "page_view", { page_path: window.location.pathname });
-        } else {
-          console.warn("⚠️ gtag ist nicht verfügbar. Seitenaufruf nicht gesendet.");
-        }
-      }, 1000);
     } else {
       console.warn("⚠️ gtag ist nicht definiert. Warten auf Laden.");
     }
