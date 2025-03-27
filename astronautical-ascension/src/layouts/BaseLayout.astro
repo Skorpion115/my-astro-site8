@@ -1,8 +1,8 @@
 ---
-import GoogleScripts from "../components/GoogleScripts.astro";
 import IubendaScript from "../components/IubendaScript.astro";
-import Header from "../components/Header.astro";
+import GoogleScripts from "../components/GoogleScripts.astro";
 import { ClientRouter } from "astro:transitions";
+import Header from "../components/Header.astro";
 import Footer1 from "../components/Footer1.astro";
 import Footer2 from "../components/Footer2.astro";
 
@@ -29,6 +29,7 @@ const nonce = Astro.props.nonce || undefined;
 
 // console.log("[SERVER] Astro nonce:", Astro.props.nonce);
 console.log("[SERVER] Astro nonce:", nonce);
+console.log("[SERVER] Nonce IubendaScript läuft!", "{nonce}");
 console.log("[SERVER] Nonce GoogleScripts läuft!", "{nonce}");
 ---
 
@@ -76,11 +77,6 @@ console.log("[SERVER] Nonce GoogleScripts läuft!", "{nonce}");
     <meta name="DC.rights" content="Alle Rechte liegen beim Author" />
     <meta name="robots" content="max-snippet:-1, INDEX, FOLLOW" />
     <meta name="theme-color" content="#191919" />
-
-    <GoogleScripts nonce={nonce} />
-    <script nonce={nonce}>
-      console.log("[BROWSER] Nonce GoogleScripts läuft!", "{nonce}");
-    </script>
 
     <!-- Client-Side Navigation -->
     <ClientRouter />
@@ -162,8 +158,16 @@ console.log("[SERVER] Nonce GoogleScripts läuft!", "{nonce}");
     <br />
     <Footer2 />
 
+    <!-- IubendaScript kommt hier nach den Inhalten, aber vor GoogleScripts -->
+    <IubendaScript nonce={nonce} />
     <script nonce={nonce}>
-      console.log("[BROWSER] Nonce:", "{nonce}");
+      console.log("[BROWSER] Nonce IubendaScript läuft!", "{nonce}");
+    </script>
+
+    <!-- GoogleScripts kommt nach IubendaScript -->
+    <GoogleScripts nonce={nonce} />
+    <script nonce={nonce}>
+      console.log("[BROWSER] Nonce GoogleScripts läuft!", "{nonce}");
     </script>
 
     <!-- Scripte extern einbinden -->
@@ -175,6 +179,5 @@ console.log("[SERVER] Nonce GoogleScripts läuft!", "{nonce}");
     <script src="/scripts/script-check.js" nonce={nonce} defer is:inline
     ></script>
     <script src="/scripts/delete-gacookies.js" defer></script>
-    <IubendaScript nonce={nonce} />
   </body>
 </html>
