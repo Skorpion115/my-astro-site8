@@ -4,12 +4,12 @@ const { nonce = "" } = Astro.props;
 
 <script nonce={nonce}>
   if (typeof window !== "undefined" && typeof document !== "undefined") {
-    (function(w, d, s, l, i) {
+    (function (w, d, s, l, i) {
       w[l] = w[l] || [];
       w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
       var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l !== "dataLayer" ? "&l=" + l : "";
+        j = d.createElement(s),
+        dl = l !== "dataLayer" ? "&l=" + l : "";
       j.async = true;
       j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
       f.parentNode.insertBefore(j, f);
@@ -18,14 +18,18 @@ const { nonce = "" } = Astro.props;
 </script>
 
 <!-- Google Tag (Google Analytics & Google Ads) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"
+></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"
+></script>
 
 <script nonce={nonce}>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() {
+    dataLayer.push(arguments);
+  }
 
-  gtag('js', new Date());
+  gtag("js", new Date());
 
   // Standardwerte für Consent Mode setzen (Alles auf "denied")
   gtag("consent", "default", {
@@ -33,12 +37,33 @@ const { nonce = "" } = Astro.props;
     analytics_storage: "denied",
     personalization_storage: "denied",
     ad_personalization: "denied",
-    ad_user_data: "denied"
+    ad_user_data: "denied",
   });
 
   // Google Analytics & Google Ads Konfiguration (ohne Seitenaufruf)
-  gtag("config", "GT-MR4MFC6", { "anonymize_ip": true });
-  gtag("config", "GT-5TG3DK3");
+  // gtag("config", "GT-MR4MFC6", { "anonymize_ip": true });
+  // gtag("config", "GT-5TG3DK3");
+ /*
+  if (window.iubenda && window.iubenda.consents.given) {
+    gtag("config", "GT-MR4MFC6");
+    gtag("config", "GT-5TG3DK3");
+  } */
+  // Hier prüfen wir, ob der Nutzer für Google Analytics (Zweck 4) und Google Ads (Zweck 3) zugestimmt hat
+document.addEventListener('DOMContentLoaded', function() {
+  // Google Analytics (Zweck 4)
+  if (window.iubenda && window.iubenda.consents.purpose_4) {
+    gtag("config", "GT-MR4MFC6");
+  } else {
+    console.log("Google Analytics Tracking wartet auf Zustimmung.");
+  }
+
+  // Google Ads (Zweck 3)
+  if (window.iubenda && window.iubenda.consents.purpose_3) {
+    gtag("config", "GT-5TG3DK3");
+  } else {
+    console.log("Google Ads Tracking wartet auf Zustimmung.");
+  }
+});
 </script>
 
 <script nonce={nonce}>
@@ -51,7 +76,7 @@ const { nonce = "" } = Astro.props;
         analytics_storage: "granted",
         personalization_storage: "granted",
         ad_personalization: "granted",
-        ad_user_data: "granted"
+        ad_user_data: "granted",
       });
       console.log("✅ Consent wurde geupdated!");
     } else {
@@ -59,4 +84,3 @@ const { nonce = "" } = Astro.props;
     }
   });
 </script>
-
