@@ -16,7 +16,6 @@ const nonce = Astro.props.nonce || "KEIN NONCE";
   src="https://cdn.iubenda.com/cookie_solution/iubenda_cs/1.76.2/core-de.js"
   charset="UTF-8"
   async
-  nonce={nonce}
 ></script>
 
 <!-- Hauptscript steuert den Consent Mode -->
@@ -25,7 +24,6 @@ const nonce = Astro.props.nonce || "KEIN NONCE";
   src="//cdn.iubenda.com/cs/iubenda_cs.js"
   charset="UTF-8"
   async
-  nonce={nonce}
   ></script>
 
   <script type="text/javascript" nonce={nonce}>
