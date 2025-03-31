@@ -10,6 +10,14 @@ const nonce = Astro.props.nonce || "KEIN NONCE";
   }
 </script>
 
+<!-- Iubenda Core Script (MUSS vor iubenda_cs.js geladen werden) -->
+<script
+  type="text/javascript"
+  src="https://cdn.iubenda.com/cookie_solution/iubenda_cs/1.76.2/core-de.js"
+  charset="UTF-8"
+  async
+  nonce={nonce}
+></script>
 
 <!-- Hauptscript steuert den Consent Mode -->
 <script
@@ -17,6 +25,7 @@ const nonce = Astro.props.nonce || "KEIN NONCE";
   src="//cdn.iubenda.com/cs/iubenda_cs.js"
   charset="UTF-8"
   async
+  nonce={nonce}
   ></script>
 
   <script type="text/javascript" nonce={nonce}>
@@ -79,4 +88,3 @@ const nonce = Astro.props.nonce || "KEIN NONCE";
         }
     };
 </script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
