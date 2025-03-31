@@ -145,9 +145,7 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
     >
 
     <Header nonce={nonce} />
-    <script nonce={nonce}>
-      console.log("[BROWSER] Nonce Header läuft!", {nonce});
-    </script>
+
     
     <h1 transition:animate="slide" class="page-title">{pageTitle}</h1>
 
@@ -160,15 +158,9 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
 
     <!-- IubendaScript kommt hier nach den Inhalten, aber vor GoogleScripts -->
     <IubendaScript nonce={nonce} />
-    <script nonce={nonce}>
-      console.log("[BROWSER] Nonce Iubenda läuft!", {nonce});
-    </script>
 
     <!-- GoogleScripts kommt nach IubendaScript -->
     <GoogleScripts nonce={nonce} />
-    <script nonce={nonce}>
-      console.log("[BROWSER] Nonce GoogleScripts läuft!", {nonce});
-    </script>
 
     <!-- Scripte extern einbinden -->
     <script src="/scripts/menu.js" nonce={nonce} defer></script>
