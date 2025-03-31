@@ -13,7 +13,7 @@ const nonce = Astro.props.nonce || "KEIN NONCE";
         dl = l !== "dataLayer" ? "&l=" + l : "";
       j.async = true;
       j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-      j.setAttribute("nonce", "{nonce}"); // Hier nonce setzen
+      j.setAttribute("nonce", nonce); // Hier nonce setzen
       f.parentNode.insertBefore(j, f);
     })(window, document, "script", "dataLayer", "GTM-PWK4LSL");
   }
