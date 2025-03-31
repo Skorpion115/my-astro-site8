@@ -1,8 +1,8 @@
 ---
-// Dein vorhandener Code, inklusive des Nonce-Werts.
-const { nonce = "" } = Astro.props;
+const nonce = Astro.props.nonce || "KEIN NONCE";
 ---
 
+<!-- Google Tag Manager -->
 <script nonce={nonce}>
   if (typeof window !== "undefined" && typeof document !== "undefined") {
     (function (w, d, s, l, i) {
@@ -13,6 +13,7 @@ const { nonce = "" } = Astro.props;
         dl = l !== "dataLayer" ? "&l=" + l : "";
       j.async = true;
       j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      j.setAttribute("nonce", "{nonce}"); // Hier nonce setzen
       f.parentNode.insertBefore(j, f);
     })(window, document, "script", "dataLayer", "GTM-PWK4LSL");
   }
@@ -22,6 +23,7 @@ const { nonce = "" } = Astro.props;
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-MR4MFC6"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script>
 
+<!-- Google Analytics Tracking -->
 <script nonce={nonce}>
   window.dataLayer = window.dataLayer || [];
   function gtag() {
@@ -44,6 +46,7 @@ const { nonce = "" } = Astro.props;
   gtag("config", "GT-5TG3DK3");
 </script>
 
+<!-- Iubenda Consent Update -->
 <script nonce={nonce}>
   document.addEventListener("iubenda_consents_updated", function (event) {
     console.log("⚡ Iubenda Consent Event getriggert:", event);
