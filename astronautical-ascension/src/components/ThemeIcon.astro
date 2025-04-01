@@ -22,6 +22,6 @@ const nonce = Astro.props.nonce || "";
 <script src="/scripts/theme-initialization.js" defer></script>
 <script src="/scripts/theme-toggle.js" nonce={nonce} defer></script>
 
-<script nonce={nonce}> // Der nonce-Wert wird korrekt in das Inline Script übergeben
+<script nonce={nonce}>
   console.log("[BROWSER] theme-toggle.js click Event läuft!");
 </script>
