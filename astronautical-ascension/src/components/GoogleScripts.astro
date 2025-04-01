@@ -1,10 +1,5 @@
 ---
-// Dein vorhandener Code, inklusive des Nonce-Werts.
-// const { nonce = "" } = Astro.props;
-// const nonce = Astro.props.nonce ?? "";
-// const nonce = Astro.props.nonce || "KEIN NONCE";
-// Nonce setzen
-const nonce = Astro.props.nonce || ""; // Nonce wird extrahiert
+const nonce = Astro.props.nonce || "";
 ---
 <!-- Google Tag Manager - mit Nonce -->
 <script nonce={nonce}>

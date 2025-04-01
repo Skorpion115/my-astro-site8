@@ -13,12 +13,12 @@ console.log("[SERVER] ThemeIcon wird auf dem Server verarbeitet!");
   </div>
   <nav>
     <Hamburger /> 
-    <ThemeIcon nonce={nonce}/> // Die nonce wird an ThemeIcon-Komponente weiter gegeben
+    <ThemeIcon nonce={nonce}/>
     <Navigation />
     <SecondaryNavigation />
   </nav>
 </header>
 
-<script nonce={nonce}> // Der nonce-Wert wird korrekt in das Inline Script übergeben
+<script nonce={nonce}>
   console.log("[BROWSER] ThemeIcon Inline-Skript läuft!");
 </script>
