@@ -145,6 +145,9 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
     >
 
     <Header nonce={nonce} />
+    <script nonce={nonce}>
+      console.log("[BROWSER] Nonce Header läuft!", {nonce});
+    </script>
 
     
     <h1 transition:animate="slide" class="page-title">{pageTitle}</h1>
