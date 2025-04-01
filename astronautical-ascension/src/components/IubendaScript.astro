@@ -5,25 +5,24 @@ console.log("[SERVER] IubendaScript: Nonce-Wert:", nonce);
 
 <script type="text/javascript" nonce={nonce}>
   console.log("[BROWSER] Nonce im Iubenda Config-Skript:", "{nonce}"); // Debug-Ausgabe
-  
+
   var _iub = _iub || [];
   _iub.csConfiguration = {
-    lang: "de",
-    siteId: 3958477, //use your siteId
-    cookiePolicyId: 80237852, //use your cookiePolicyId
+    lang: "de", // Die Sprache auf Deutsch setzen
+    siteId: "3958477", // Deine siteId hier einfügen
+    cookiePolicyId: "80237852", // Deine cookiePolicyId hier einfügen
     banner: {
-      position: "float-top-center",
-      acceptButtonDisplay: true,
-      customizeButtonDisplay: true,
+      position: "float-top-center", // Position des Banners
+      acceptButtonDisplay: true, // Akzeptieren Button anzeigen
+      customizeButtonDisplay: true, // Anpassen Button anzeigen
     },
     callback: {
       onPreferenceExpressedOrNotNeeded: function (preference) {
+        // Pushen der CCPA-Opt-out Information
         dataLayer.push({
           iubenda_ccpa_opted_out: _iub.cs.api.isCcpaOptedOut(),
         });
-        // preferences parameter may be undefined if both GDPR and LGPD do not apply
-        // we may need the line below to find USPR preferences instead of relying
-        // on preferences parameter
+        // Überprüfen der USPR-Präferenzen
         var otherPreferences = _iub.cs.api.getPreferences();
         if (otherPreferences) {
           var usprPreferences = otherPreferences.uspr;
@@ -37,19 +36,26 @@ console.log("[SERVER] IubendaScript: Nonce-Wert:", nonce);
             }
           }
         }
+        // Falls keine Präferenz gegeben wurde
         if (!preference) {
           dataLayer.push({
             event: "iubenda_preference_not_needed",
           });
-        } else if (preference.consent === true) {
+        }
+        // Falls die Zustimmung gegeben wurde
+        else if (preference.consent === true) {
           dataLayer.push({
             event: "iubenda_consent_given",
           });
-        } else if (preference.consent === false) {
+        }
+        // Falls die Zustimmung abgelehnt wurde
+        else if (preference.consent === false) {
           dataLayer.push({
             event: "iubenda_consent_rejected",
           });
-        } else if (preference.purposes) {
+        }
+        // Falls Präferenzen für spezifische Zwecke gesetzt wurden
+        else if (preference.purposes) {
           for (var purposeId in preference.purposes) {
             if (preference.purposes[purposeId]) {
               dataLayer.push({
@@ -62,5 +68,8 @@ console.log("[SERVER] IubendaScript: Nonce-Wert:", nonce);
     },
   };
 </script>
-<!-- Hauptscript steuert den Consent Mode -->
-<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+<script
+  type="text/javascript"
+  src="//cdn.iubenda.com/cs/iubenda_cs.js"
+  charset="UTF-8"
+  async></script>
