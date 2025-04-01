@@ -1,5 +1,6 @@
 ---
-const {nonce} = Astro.props;
+const nonce = Astro.props.nonce || "";
+
 // console.log("[SERVER] them-toggle.js click Event wird auf dem Server verarbeitet!"); 
 ---
 <button id="themeToggle" title="Darkmode Schalter" aria-label="Darkmode Schalter">
