@@ -3,20 +3,6 @@ const nonce = Astro.props.nonce || "";
 console.log("[SERVER] IubendaScript: Nonce-Wert:", nonce);
 ---
 
-<!-- Debugging: Logge den Nonce-Wert -->
-<script nonce={nonce}>
-  if (window.location.hostname.includes("musicstudio-ziebart.de")) {
-    console.log("[BROWSER] Nonce in IubendaScript musicstudio-ziebart.de");
-  }
-</script>
-
-<!-- Hauptscript steuert den Consent Mode -->
-<script
-  type="text/javascript"
-  src="//cdn.iubenda.com/cs/iubenda_cs.js"
-  charset="UTF-8"
-  async></script>
-
 <script type="text/javascript" nonce={nonce}>
   console.log("[BROWSER] Nonce im Iubenda Config-Skript:", "{nonce}"); // Debug-Ausgabe
   
@@ -76,3 +62,5 @@ console.log("[SERVER] IubendaScript: Nonce-Wert:", nonce);
     },
   };
 </script>
+<!-- Hauptscript steuert den Consent Mode -->
+<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
