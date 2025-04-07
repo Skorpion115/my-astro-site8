@@ -6,12 +6,10 @@ pubDate: "2022-07-01"
 author: Rudi Ziebart
 visibility: "draft" # Setze dies auf "draft" für Entwürfe oder "public" für veröffentlichte Seiten
 image:
-    url: "https://docs.astro.build/assets/rose.webp"
+    url: "/images/Tuner_230x181.webp"
     alt: "The Astro logo on a dark background with a pink glow."
 ---
 <!-- Das ist der Slot -->
-
-![Alt-Stimmgerät](/images/Tuner_230x181.webp "Tuner")
 
 ## Thomann CTM Metronom/Stimmgerät
 **Geeignet für Gitarre, Bass, Ukulele, Banjo und Violine** 

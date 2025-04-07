@@ -441,14 +441,6 @@ hamburger,
   color: #f7f7f7; /* Hellere Schriftfarbe für Links im Dark Mode */
 }
 
-/* ANCHOR blog-post img */
-
-.blog-post img {
-  max-width: 300px;
-  /* gewünschte maximale Breite */
-  width: auto;
-  height: auto;
-}
 
 /* ANCHOR Videos Einstellungen */
 
@@ -1205,11 +1197,12 @@ table.basis-table tbody tr.active {
   background-color: #0056b3;
 }
 
-/* Bilder in Markdown */
+/* Bilder in Markdown blog-post img */
 
 .blog-post img {
-  margin-left: 1.25rem; /* oder padding-left: 1rem; */
-  max-width: 100%; /* sorgt dafür, dass das Bild responsiv bleibt */
+  margin-left: 1.25rem;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  max-width: 300px; /* Bild wird nicht größer als 300px */
 }
-
-
