@@ -514,7 +514,7 @@ hamburger,
 
 /* ANCHOR css für index.astro */
 
-/* Überschrift */
+/* Überschrift Staatlich anerkanter Musiklehrer */
 .firmenname {
   text-align: center;
   font-size: 0.9rem;
@@ -582,7 +582,7 @@ img {
   margin-right: 3rem;
 }
 
-/* ANCHOR contact_4 */
+/* ANCHOR anmeldung + recall Formular */
 
 .container4 {
   margin: 0 auto;
@@ -660,124 +660,7 @@ textarea {
   color: black;
 }
 
-/* ANCHOR contact_2 */
-
-.container1 {
-  margin: 0 auto;
-  padding: 5%;
-  box-sizing: border-box;
-  background-color: #f9f9f9;
-  /* Hellgrauer Hintergrund für das Formular */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Schatten um das Formular */
-}
-
-label {
-  display: block;
-  font-size: 1.125rem;
-  padding: 0.625rem;
-  color: #555;
-}
-
-
-/* Formular */
-
-fieldset legend {
-  color: #333;
-  font-size: 1.5rem;
-  padding: 0.625rem;
-}
-
-fieldset {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 1rem;
-  margin-bottom: 1.25rem;
-  background-color: #def7de;
-}
-
-/* ganze Formular */
-
-.form-element {
-  color: #828282;
-}
-
-/* Der Rand um die Felder */
-.form-control {
-  border-radius: 4px;
-  border: 1px solid #ddd;
-  background-color: #fff;
-  color: #333;
-}
-
-/* Die Breite der Felder */
-.form-control.form-control-lg {
-  height: calc(3.5rem + 2px);
-  padding: 1rem 0.75rem;
-  font-size: 1.125rem;
-}
-
-form {
-  max-width: 31.25rem;
-  margin: 0 auto;
-  text-align: left;
-  padding: 1.25rem 0;
-  font-size: 1.125rem;
-}
-
-select,
-option {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  color: #333;
-  text-align: center;
-  font-size: 1.125rem;
-}
-
-textarea {
-  resize: vertical;
-}
-
-/* Größe der Platzhalter */
-.form-control::placeholder {
-  font-size: 1.125rem;
-}
-
-/* Schriftgröße im Ausfüllbereich */
-input,
-textarea {
-  /*background-color: #1b1c1e; */
-  font-family: "Poppins", sans-serif;
-  font-size: 1.125rem;
-  /*color: #fff; */
-  font-size: 1.125rem;
-  padding: 0.625rem;
-}
-
-.btn {
-  border-radius: 0;
-  border: 0;
-  color: white;
-}
-
-.btn.btn-primary {
-  background-color: #545557;
-  padding: 0.94rem 7rem;
-  font-size: 1.125rem;
-  margin-top: 1.875rem;
-  cursor: pointer;
-  transition: all 0.3 ease;
-  text-align: center;
-}
-
-.btn.btn-primary:hover {
-  background-color: rgb(140, 236, 134);
-  color: black;
-}
-
-/* Tabelle */
+/* ANCHOR Tabelle für anmeldung */
 .table2 {
   width: 90%;
   border-collapse: collapse;
