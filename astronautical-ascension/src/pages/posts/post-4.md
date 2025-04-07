@@ -6,7 +6,7 @@ pubDate: "2023-10-21"
 author: Rudi Ziebart
 visibility: "draft"
 image:
-    url: "https://www.musicstudio-ziebart.de/images/gold_tone_300x300.webp"
+    url: "../../images/gold_tone_300x300.webp"
     alt: "Banjo Dämpfer"
 ---
 ## Gold Tone Dämpfer
