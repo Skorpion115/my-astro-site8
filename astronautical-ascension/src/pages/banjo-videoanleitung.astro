@@ -89,7 +89,45 @@ const videoData = [
                 </lite-youtube>
               </div>
               <h2>{video.title}</h2>
-              <p>{video.description}</p>
+              <p>
+                {video.description}
+                {video.title.includes("Flint Hill Special - Banjo Lesson") && (
+                  <>
+                    {" "}
+                    <a
+                      href="/bilder/Flint_Hill.pdf"
+                      target="_blank"
+                      class="normal-links"
+                    >
+                      <br />Tabulatur ansehen
+                    </a>
+                  </>
+                )}
+                {video.title.includes("Train 45 - Bluegrass Banjo") && (
+                  <>
+                    {" "}
+                    <a
+                      href="/bilder/Train_45.pdf"
+                      target="_blank"
+                      class="normal-links"
+                    >
+                      <br />Tabulatur ansehen
+                    </a>
+                  </>
+                )}
+                {video.title.includes("Banjo Beginner Lesson 2") && (
+                  <>
+                    {" "}
+                    <a
+                      href="/images/Cripple-Creek.pdf"
+                      target="_blank"
+                      class="normal-links"
+                    >
+                      <br />Tabulatur ansehen
+                    </a>
+                  </>
+                )}
+              </p>
             </div>
           </div>
         ))
