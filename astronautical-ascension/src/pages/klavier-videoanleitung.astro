@@ -24,7 +24,7 @@ const videoData = [
   {
     loc: `${SITE_URL}/klavier-videoanleitung/`,
     title: "Aus der neuen Welt - Antonin Dvorak",
-    description: "Klavier Tutorial für das klassische Stück von Antonin Dvorak. Ich spiele hier nur der zweiten Satz das 'Largo'. Antonin Dvorak hat es für Orchester aber auch für Klavier zu vier Händen geschrieben. Ich habe es für 2 Händen umgeschrieben.",
+    description: "Klavier Tutorial für das klassische Stück von Antonin Dvorak. Ich spiele hier nur der zweiten Satz das 'Largo'. Antonin Dvorak hat es für Orchester aber auch für Klavier zu 4 Hände geschrieben. Ich habe es für 2 Hände umgeschrieben.",
     content_loc: "https://www.youtube.com/embed/ytcQ-I1BTNk",
     thumbnail_loc: "https://i.ytimg.com/vi/ytcQ-I1BTNk/hqdefault.jpg",
     publication_date: "2021-04-21T00:00:00+02:00",
@@ -76,7 +76,21 @@ const videoData = [
             </lite-youtube>
           </div>
           <h2>{video.title}</h2>
-          <p>{video.description}</p>
+          <p>
+            {video.description}
+            {video.title.includes("Aus der neuen Welt - Antonin Dvorak") && (
+              <>
+                {" "}
+                <a
+                  href="/bilder/Largo%20-%20Antonin%20Dvorak.pdf"
+                  target="_blank"
+                  class="normal-links"
+                >
+                  <br />Noten ansehen
+                </a>
+              </>
+            )}
+          </p>
         </div>
       </div>
     ))
