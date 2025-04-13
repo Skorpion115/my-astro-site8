@@ -4,7 +4,7 @@ title: Banjo dämpfen!
 description: "Darf ich in meiner Wohnung ein Instrument wie z.B. Banjo oder Klavier spielen?"
 pubDate: "2023-10-21"
 author: Rudi Ziebart
-visibility: "draft"
+visibility: "public"
 image:
     url: "../../images/gold_tone_300x300.webp"
     alt: "Banjo Dämpfer"

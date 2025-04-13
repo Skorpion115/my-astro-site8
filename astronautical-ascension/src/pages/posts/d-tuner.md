@@ -4,7 +4,7 @@ title: D-Tuner für Banjo
 description: "Wie benutzt man einen D-Tuner für das Banjo?"
 pubDate: "2023-08-15"
 author: Rudi Ziebart
-visibility: "draft"
+visibility: "public"
 image:
     url: "../../images/B4_300x141.webp"
     alt: "B4 D-Tuner von Schaller"

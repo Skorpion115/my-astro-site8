@@ -4,7 +4,7 @@ title: Wie spielt man eine Hohner Blues Harp Mundharmonika
 description: "Wie spielt man eine Hohner Blues Harp Mundharmonika?"
 pubDate: "2025-04-05"
 author: Rudi Ziebart
-visibility: "draft"
+visibility: "public"
 image:
     url: "/images/Blues_Harp_300.jpg"
     alt: "Hohner Blues Harp Mundharmonika"
@@ -19,5 +19,3 @@ Die Blues Harp ist eine diatonische Mundharmonika. Das bedeutet das beim rein bl
     PDF „Mundharmonika in Eb“ ansehen
   </a>
 </p>
-
-

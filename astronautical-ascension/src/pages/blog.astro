@@ -10,19 +10,27 @@ interface PostFrontmatter {
   pubDate: string;
   author: string;
   image: { url: string; alt: string };
+  visibility: "public" | "draft"; // ← DAS HINZUFÜGEN
   /*
   tags: string[]; */
 }
 
 // Sammeln aller Blog-Posts
+
 const posts = Object.values(
-  import.meta.glob<MarkdownInstance<PostFrontmatter>>('./posts/*.md', { eager: true })
-);
+  import.meta.glob<MarkdownInstance<PostFrontmatter>>("./posts/*.md", { eager: true })
+)
+  .filter((post) => post.frontmatter.visibility === "public")
+  .sort((a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime());
+console.log(posts);
 
 const pageTitle = "Meine Blog Seite";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  <p>
+    Wie spielt eine Blues Harp Mundharmonika?
+  </p>
   <p>
     Ich möchte einige gute Ratschläge für Musiker und Musikerinnen geben. Viele
     Gitarren Anfänger wissen nicht wie man eine Gitarre stimmt. Hier zu habe ich
