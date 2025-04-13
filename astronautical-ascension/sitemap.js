@@ -36,11 +36,11 @@ const pages = [
   { url: `${SITE_URL}/saxophonunterricht/`, changefreq: "weekly", lastmod: new Date() },
   { url: `${SITE_URL}/querfloetenunterricht/`, changefreq: "weekly", lastmod: new Date() },
   { url: `${SITE_URL}/klarinettenunterricht/`, changefreq: "weekly", lastmod: new Date() },
-  { url: `${SITE_URL}/blog/post-1/`, changefreq: "monthly", lastmod: new Date() },
-  { url: `${SITE_URL}/blog/post-2/`, changefreq: "monthly", lastmod: new Date() },
-  { url: `${SITE_URL}/blog/post-3/`, changefreq: "monthly", lastmod: new Date() },
-  { url: `${SITE_URL}/blog/post-4/`, changefreq: "monthly", lastmod: new Date() },
-  { url: `${SITE_URL}/blog/post-5/`, changefreq: "monthly", lastmod: new Date() },
+  { url: `${SITE_URL}/blog/banjo-daempfer/`, changefreq: "monthly", lastmod: new Date() },
+  { url: `${SITE_URL}/blog/d-tuner`, changefreq: "monthly", lastmod: new Date() },
+  { url: `${SITE_URL}/blog/gitarre-stimmen/`, changefreq: "monthly", lastmod: new Date() },
+  { url: `${SITE_URL}/blog/mundharmonika/`, changefreq: "monthly", lastmod: new Date() },
+  { url: `${SITE_URL}/blog/website-erstellen/`, changefreq: "monthly", lastmod: new Date() },
 ];
 
 // Video-Informationen
