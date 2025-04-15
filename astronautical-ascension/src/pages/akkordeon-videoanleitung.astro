@@ -4,8 +4,7 @@ import YouTube from "../components/YouTube.astro";
 import "../styles/lite-yt-embed.css";
 const pageTitle = "Weiterführende Lektionen für das Akkordeonspiel";
 const description = "Lerne das Stück L'akkordeon von Sergio Castelli!";
-const keywords =
-  "akkordeonunterricht, l'akkordeon triste - sergio castelli, akkordeonlehrer in nuernberg";
+const keywords = "akkordeonunterricht, l'akkordeon triste - sergio castelli, akkordeonlehrer in nuernberg";
 const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
 const pageUrl = `${SITE_URL}/akkordeon-videoanleitung/`;
 
@@ -29,10 +28,11 @@ const videoData = [
   pageTitle={pageTitle}
   description={description}
   keywords={keywords}
-  href={pageUrl}
+  pageUrl={pageUrl}
   ogTitle={pageTitle}
   ogDescription={description}
   ogUrl={pageUrl}
+  ogType="website"
   twitterTitle={pageTitle}
   twitterDescription={description}
   twitterUrl={pageUrl}

@@ -10,7 +10,7 @@ const {
   pageTitle,
   description,
   keywords,
-  href,
+  pageUrl,
   ogTitle,
   ogDescription,
   ogUrl,
@@ -25,6 +25,7 @@ const {
 const urlPath = new URL(Astro.request.url).pathname;
 // Netlify setzt automatisch das Nonce
 const nonce = Astro.props.nonce || "";
+
 
 // console.log("[SERVER] Astro nonce:", Astro.props.nonce);
 console.log("[SERVER] Astro nonce:", nonce);
@@ -45,12 +46,12 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
     <meta name="date" content={new Date().toISOString().split("T")[0]} />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
-    <link rel="canonical" href={href} />
+    <link rel="canonical" href={pageUrl} />
     <title>{pageTitle}</title>
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content={ogTitle || pageTitle} />
     <meta property="og:description" content={ogDescription || description} />
-    <meta property="og:url" content={ogUrl || href} />
+    <meta property="og:url" content={ogUrl || pageUrl} />
     <meta property="og:type" content={ogType || "website"} />
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -59,7 +60,7 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
       name="twitter:description"
       content={twitterDescription || description}
     />
-    <meta name="twitter:url" content={twitterUrl || href} />
+    <meta name="twitter:url" content={twitterUrl || pageUrl} />
     <meta
       name="google-site-verification"
       content="Zitul6WICKD7zrzgptxGVrh2GEhozasdEM_d1tGi2aw"
