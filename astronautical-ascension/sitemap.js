@@ -47,7 +47,7 @@ const videos = [
     thumbnailLoc: "https://i.ytimg.com/vi/R75ZetEwmtw/hqdefault.jpg",
     contentLoc: "https://www.youtube.com/embed/R75ZetEwmtw",
     publicationDate: "2023-06-17T14:00:00+02:00",
-    duration: "PT13M32S"
+    duration: "812"
   },
   {
     url: "/banjo-videoanleitung/",
@@ -56,7 +56,7 @@ const videos = [
     thumbnailLoc: "https://i.ytimg.com/vi/uo5ojnmRHPo/hqdefault.jpg",
     contentLoc: "https://www.youtube.com/embed/uo5ojnmRHPo",
     publicationDate: "2023-05-26T14:00:00+02:00",
-    duration: "PT2M42S"
+    duration: "391"
   },
   {
     url: "/banjo-videoanleitung/",
@@ -65,7 +65,7 @@ const videos = [
     thumbnailLoc: "https://i.ytimg.com/vi/WmYlSqvpUkw/hqdefault.jpg",
     contentLoc: "https://www.youtube.com/embed/WmYlSqvpUkw",
     publicationDate: "2023-04-05T14:00:00+02:00",
-    duration: "PT2M47S"
+    duration: "167"
   },
   {
     url: "/klavier-videoanleitung/",
@@ -74,7 +74,7 @@ const videos = [
     thumbnailLoc: "https://i.ytimg.com/vi/vxX0WiQhSUE/hqdefault.jpg",
     contentLoc: "https://www.youtube.com/embed/vxX0WiQhSUE",
     publicationDate: "2021-05-20T14:00:00+02:00",
-    duration: "PT02M34S"
+    duration: "154"
   },
   {
     url: "/klavier-videoanleitung/",
@@ -83,7 +83,7 @@ const videos = [
     thumbnailLoc: "https://i.ytimg.com/vi/ytcQ-I1BTNk/hqdefault.jpg",
     contentLoc: "https://www.youtube.com/embed/ytcQ-I1BTNk",
     publicationDate: "2021-04-21T00:00:00+02:00",
-    duration: "PT12M59S"
+    duration: "779"
   },
   {
     url: "/e-gitarre-videoanleitung/",
@@ -92,7 +92,7 @@ const videos = [
     thumbnailLoc: "https://i.ytimg.com/vi/8ucTzPOBzAo/hqdefault.jpg",
     contentLoc: "https://www.youtube.com/embed/8ucTzPOBzAo",
     publicationDate: "2021-07-17T14:00:00+02:00",
-    duration: "PT3M59S"
+    duration: "239"
   },
   {
     url: "/e-gitarre-videoanleitung2/",
@@ -101,16 +101,15 @@ const videos = [
     thumbnailLoc: "https://i.ytimg.com/vi/nUC_b1L_IM4/hqdefault.jpg",
     contentLoc: "https://www.youtube.com/embed/nUC_b1L_IM4",
     publicationDate: "2025-01-04T14:00:00+02:00",
-    duration: "PT17M52S"
+    duration: "1072"
   },
   {
     url: "/gitarre-videoanleitung/",
     title: "Catch The Wind - Donovan",
     description: "Ein besonders schönes Gitarrenstück ist 'Catch The Wind' von Donovan. Es eignet sich sehr gut, um es alleine auf der Gitarre zu spielen. Im Video hörst du die Originalaufnahme von Donavan. Du möchtest das Stück gerne selbst lernen? Dann schreib mir! Ich helfe dir gerne beim Einstieg und gebe dir Tipps zum Nachspielen!",
-    thumbnailLoc: "",
     contentLoc: "https://www.youtube.com/embed/9yQKDj_V4Gk",
     publicationDate: "2018-04-18T14:00:00+02:00",
-    duration: "PT03M03S"
+    duration: "183"
   },
   {
     url: "/gitarre-videoanleitung/",
@@ -119,7 +118,7 @@ const videos = [
     thumbnailLoc: "https://i.ytimg.com/vi/oqko5Mk_UBk/hqdefault.jpg",
     contentLoc: "https://www.youtube.com/embed/oqko5Mk_UBk",
     publicationDate: "2023-07-01T14:00:00+02:00",
-    duration: "PT12M41S"
+    duration: "761"
   },
   {
     url: "/gitarre-videoanleitung/",
@@ -128,7 +127,7 @@ const videos = [
     thumbnailLoc: "https://i.ytimg.com/vi/yEF6e2ZSZ0k/hqdefault.jpg",
     contentLoc: "https://www.youtube.com/embed/yEF6e2ZSZ0k",
     publicationDate: "2021-08-26T14:00:00+02:00",
-    duration: "PT4M49S"
+    duration: "289"
   },
   {
     url: "/keyboard-videoanleitung/",
@@ -137,7 +136,7 @@ const videos = [
     thumbnailLoc: "https://i.ytimg.com/vi/y2KtSx3-W3w/hqdefault.jpg",
     contentLoc: "https://www.youtube.com/embed/vxX0WiQhSUE?si=244HlpB3JoA",
     publicationDate: "2021-07-08T14:00:00+02:00",
-    duration: "PT3M6S"
+    duration: "186"
   },
   {
     url: "/keyboard-videoanleitung/",
@@ -146,7 +145,7 @@ const videos = [
     thumbnailLoc: "https://i.ytimg.com/vi/y2KtSx3-W3w/hqdefault.jpg",
     contentLoc: "https://www.youtube.com/embed/vxX0WiQhSUE?si=y2KtSx3-W3w",
     publicationDate: "2023-05-19T14:00:00+02:00",
-    duration: "PT4M16S"
+    duration: "256"
   },
   {
     url: "/keyboard-videoanleitung/",
@@ -155,7 +154,7 @@ const videos = [
     thumbnailLoc: "https://i.ytimg.com/vi/t0tOQfL2qSE/hqdefault.jpg",
     contentLoc: "https://www.youtube.com/embed/t0tOQfL2qSE",
     publicationDate: "2023-04-12T14:00:00+02:00",
-    duration: "PT5M38S"
+    duration: "338"
   },
   {
     url: "/harmonielehre/",
@@ -164,7 +163,7 @@ const videos = [
     thumbnailLoc: "https://i.ytimg.com/vi/Hu4ef1IkuG0/hqdefault.jpg",
     contentLoc: "https://www.youtube.com/embed/vxX0WiQhSUE?si=Hu4ef1IkuG0",
     publicationDate: "2021-04-19T00:00:00+02:00",
-    duration: "PT13M52S"
+    duration: "832"
   },
   {
     url: "/harmonielehre/",
@@ -173,7 +172,7 @@ const videos = [
     thumbnailLoc: "https://i.ytimg.com/vi/804rrOOFzAQ/hqdefault.jpg",
     contentLoc: "https://www.youtube.com/embed/vxX0WiQhSUE?si=804rrOOFzAQ",
     publicationDate: "2023-04-27T00:00:00+02:00",
-    duration: "PT17M55S"
+    duration: "1075"
   },
   {
     url: "/harmonielehre/",
@@ -182,7 +181,7 @@ const videos = [
     thumbnailLoc: "https://i.ytimg.com/vi/fgzboODvlQ4/hqdefault.jpg",
     contentLoc: "https://www.youtube.com/embed/vxX0WiQhSUE?si=fgzboODvlQ4",
     publicationDate: "2021-05-05T00:00:00+02:00",
-    duration: "PT20M44S"
+    duration: "1244"
   },
   {
     url: "/akkordeon-videoanleitung/",
@@ -191,7 +190,7 @@ const videos = [
     thumbnailLoc: "https://i.ytimg.com/vi/Va-gkuUp1KI/hqdefault.jpg",
     contentLoc: "https://www.youtube.com/embed/Va-gkuUp1KI",
     publicationDate: "2024-11-10T10:00:00+02:00",
-    duration: "PT4M18S"
+    duration: "258"
   },
 ];
 
