@@ -3,8 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Banjounterricht für 5-string Banjo";
 const description = "Ich gebe Banjounterricht in Nürnberg. Ich nehme dazu die Schule von Rüdiger Helbig. Sie heißt Beginner Banjo. 🪕";
 const keywords = "banjounterricht für 5-string banjo, banjounterricht, flint hill special - earl scruggs, train 45, cripple creek, beginner banjo, 5-string banjo, bluegrass banjo, ruediger helbig, banjo lernen deutsch, banjo unterricht, banjo workshop, banjounterricht in eibach, banjolehrer nürnberg, banjo spielen ohne noten, banjo kurs, bluegrass banjo lernen, banjounterricht für anfänger, banjo lernen, banjo für anfänger, banjolehrer, banjo workshop, 5-string banjo lernen, banjo anfaenger, banjo picker, banjo lessons, banjo open back";
-const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
-const pageUrl = `${SITE_URL}/banjounterricht/`;
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BaseLayout
@@ -15,6 +14,7 @@ const pageUrl = `${SITE_URL}/banjounterricht/`;
   ogTitle={pageTitle}
   ogDescription={description}
   ogUrl={pageUrl}
+  ogType="website"
   twitterTitle={pageTitle}
   twitterDescription={description}
   twitterUrl={pageUrl}  
