@@ -18,9 +18,9 @@ const videoData = [
     title: "Catch The Wind - Donovan",
     description:
       "Ein besonders schönes Gitarrenstück ist 'Catch The Wind' von Donovan. Es eignet sich sehr gut, um es alleine auf der Gitarre zu spielen. Im Video hörst du die Originalaufnahme von Donavan. Du möchtest das Stück gerne selbst lernen? Dann schreib mir! Ich helfe dir gerne beim Einstieg und gebe dir Tipps zum Nachspielen!",
-    content_loc: "https://www.youtube.com/embed/9yQKDj_V4Gk",
+    contentLoc: "https://www.youtube.com/embed/9yQKDj_V4Gk",
     thumbnailLoc: "https://www.musicstudio-ziebart.de/images/thumbnail-catch-the-wind.png",
-    publication_date: "2018-04-18T14:00:00+02:00",
+    publicationDate: "2018-04-18T14:00:00+02:00",
     duration: "183",
   },
   {
@@ -28,18 +28,18 @@ const videoData = [
     title: "Beatles - Yesterday Gitarre Tutorial",
     description:
       "Lernvideo und Gitarren Tutorial für das Gitarrenstück 'Yesterday von den Beatles'. Dieses Stück kann man wunderbar alleine spielen, also ohne Bass, Drums usw. Die Gitarre wird in einer Double Flatstimmung umgestimmt.",
-    content_loc: "https://www.youtube.com/embed/oqko5Mk_UBk",
+    contentLoc: "https://www.youtube.com/embed/oqko5Mk_UBk",
     thumbnailLoc: "https://i.ytimg.com/vi/oqko5Mk_UBk/hqdefault.jpg",
-    publication_date: "2023-07-01T14:00:00+02:00",
+    publicationDate: "2023-07-01T14:00:00+02:00",
     duration: "761",
   },
   {
     loc: `${SITE_URL}/gitarrenunterricht/`,
     title: "City Of New Orleans - Arlo Guthrie",
     description: "Ein schönes Beispiel für ein Fingerpicking mit Gitarre und Gesang: Ich habe mir damals den Song von Arlo Guthrie rausgesucht. Es heißt 'City Of New Orleans'. Er selbst spielt übrigens bei diesem Song ein Klavier. Es ist ein Lernvideo und Gitarren Tutorial. Dieses Stück war Arlo Guthries einziger Welthit. Als damals Steve Goodman, der Komponist des berühmten Songs zu ihm sagte: Ich hätte da einen guten Hit für dich, sagte Arlo Guthrie: 'Ich hasse Hits!'. Warum das weiß ich nicht.",
-    content_loc: "https://www.youtube.com/embed/yEF6e2ZSZ0k",
+    contentLoc: "https://www.youtube.com/embed/yEF6e2ZSZ0k",
     thumbnailLoc: "https://i.ytimg.com/vi/yEF6e2ZSZ0k/hqdefault.jpg",
-    publication_date: "2021-08-26T14:00:00+02:00",
+    publicationDate: "2021-08-26T14:00:00+02:00",
     duration: "289",
   },
 ];
@@ -64,21 +64,21 @@ twitterUrl={pageUrl}
         <meta property="name" content={video.title} />
         <meta property="description" content={video.description} />
         <meta property="thumbnailUrl" content={video.thumbnailLoc} />
-        <meta property="uploadDate" content={video.publication_date} />
+        <meta property="uploadDate" content={video.publicationDate} />
         <meta property="duration" content={video.duration} />
-        <meta property="contentUrl" content={video.content_loc} />
-        <meta property="embedUrl" content={video.content_loc} />
+        <meta property="contentUrl" content={video.contentLoc} />
+        <meta property="embedUrl" content={video.contentLoc} />
 
         <div class="video-container-wrapper">
           <div class="video-container">
             <lite-youtube
-              videoid={video.content_loc.split("/").pop()}
+              videoid={video.contentLoc.split("/").pop()}
               style={
                 "background-image: url('" + video.thumbnailLoc + "');"
               }
             >
               <a
-                href={video.content_loc}
+                href={video.contentLoc}
                 class="lty-playbtn"
                 title={video.title}
               >
