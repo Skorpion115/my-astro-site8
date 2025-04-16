@@ -25,9 +25,26 @@ const posts = Object.values(
 console.log(posts);
 
 const pageTitle = "Meine Blog Seite";
+const pageDescription = "Blogbeiträge rund um Musik, Instrumente und Unterricht vom Musicstudio Ziebart.";
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  <Fragment slot="head">
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={pageUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={pageUrl} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+  </Fragment>
   <p>
     Wie spielt eine Blues Harp Mundharmonika?
   </p>
