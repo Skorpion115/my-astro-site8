@@ -3,8 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Die meistgestellten Fragen";
 const description = "Die meistgestellten Fragen! 🤓. Wie alt muss mein Kind sein, um ein Instrument zu erlernen?";
 const keywords = "haefig gestellte Fragen"
-const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
-const pageUrl = `${SITE_URL}/faq/`;
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BaseLayout

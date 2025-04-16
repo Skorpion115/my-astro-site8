@@ -3,8 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Klarinettenunterricht für Böhm und Deutsches System";
 const description = "Ich gebe Klarinettenunterricht 🎼 in Nürnberg. Ich benutze sowohl das Böhmsystem als auch das deutsche System";
 const keywords = "klarinettenunterricht f&uuml;r boem und deutsche system, klarinettenunterricht, neue schule für klarinette ewald koch, klarinette lernen, klarinettenunterricht n&uuml;rnberg, klarinettenschule, klarinette lernen, klarinettenschule für anfaenger, musikschule klarinette, klarinettenunterricht in n&uuml;rnberg, klarinettenunterricht in eibach, klarinette, klarinettenunterricht, klarinette für anfaenger, klarinettenkurs, musikschule für klarinette, klarinettenunterricht eibach, unterricht klarinette, musikunterricht klarinette, klarinettenlehrer, Klarinette lernen für anfaenger";
-const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
-const pageUrl = `${SITE_URL}/klarinettenunterricht/`;
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BaseLayout

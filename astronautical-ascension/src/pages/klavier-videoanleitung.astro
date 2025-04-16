@@ -16,18 +16,18 @@ const videoData = [
     loc: `${SITE_URL}/klavier-videoanleitung/`,
     title: "PRAELUDIUM BMV 927 - Johann Sebastian Bach",
     description: "Klassisches Klavierstück auswendig lernen! Für mich ist dies eins der schwierigsten Dinge. Dieses Stück hat nur eine Seite, da geht es noch einigermaßen.",
-    content_loc: "https://www.youtube.com/embed/vxX0WiQhSUE",
-    thumbnail_loc: "https://i.ytimg.com/vi/vxX0WiQhSUE/hqdefault.jpg",
-    publication_date: "2021-05-20T14:00:00+02:00",
+    contentLoc: "https://www.youtube.com/embed/vxX0WiQhSUE",
+    thumbnailLoc: "https://i.ytimg.com/vi/vxX0WiQhSUE/hqdefault.jpg",
+    publicationDate: "2021-05-20T14:00:00+02:00",
     duration: "154",
   },
   {
     loc: `${SITE_URL}/klavier-videoanleitung/`,
     title: "Aus der neuen Welt - Antonin Dvorak",
     description: "Klavier Tutorial für das klassische Stück von Antonin Dvorak. Ich spiele hier nur der zweiten Satz das 'Largo'. Antonin Dvorak hat es für Orchester aber auch für Klavier zu 4 Hände geschrieben. Ich habe es für 2 Hände umgeschrieben.",
-    content_loc: "https://www.youtube.com/embed/ytcQ-I1BTNk",
-    thumbnail_loc: "https://i.ytimg.com/vi/ytcQ-I1BTNk/hqdefault.jpg",
-    publication_date: "2021-04-21T00:00:00+02:00",
+    contentLoc: "https://www.youtube.com/embed/ytcQ-I1BTNk",
+    thumbnailLoc: "https://i.ytimg.com/vi/ytcQ-I1BTNk/hqdefault.jpg",
+    publicationDate: "2021-04-21T00:00:00+02:00",
     duration: "779",
   },
 ];
@@ -52,20 +52,19 @@ const videoData = [
       <div vocab="http://schema.org/" typeof="VideoObject">
         <meta property="name" content={video.title} />
         <meta property="description" content={video.description} />
-        <meta property="contentUrl" content={video.content_loc} />
-        <meta property="thumbnailUrl" content={video.thumbnail_loc} />
-        <meta property="uploadDate" content={video.publication_date} />
+        <meta property="thumbnailUrl" content={video.thumbnailLoc} />
+        <meta property="uploadDate" content={video.publicationDate} />
         <meta property="duration" content={video.duration} />
-        <meta property="embedUrl" content={video.content_loc} />
+        <meta property="embedUrl" content={video.contentLoc} />
 
         <div class="video-container-wrapper">
           <div class="video-container">
             <lite-youtube
-              videoid={video.content_loc.split("/").pop()}
-              style={"background-image: url('" + video.thumbnail_loc + "');"}
+              videoid={video.contentLoc.split("/").pop()}
+              style={"background-image: url('" + video.thumbnailLoc + "');"}
             >
               <a
-                href={video.content_loc}
+                href={video.contentLoc}
                 class="lty-playbtn"
                 title={video.title}
               >

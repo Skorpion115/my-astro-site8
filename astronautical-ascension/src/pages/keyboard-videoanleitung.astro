@@ -17,18 +17,18 @@ const videoData = [
     loc: `${SITE_URL}/keyboard-videoanleitung/`,
     title: "Hammond Organ - Hammond Flip - Klaus Wunderlich",
     description: "Keyboard Tutorial über eine Klaus Wunderlich Komposition. Das Stück heißt 'Hammond Flip'.",
-    content_loc: "https://www.youtube.com/embed/244HlpB3JoA",
-    thumbnail_loc: "https://i.ytimg.com/vi/244HlpB3JoA/hqdefault.jpg",
-    publication_date: "2021-07-08T14:00:00+02:00",
+    contentLoc: "https://www.youtube.com/embed/244HlpB3JoA",
+    thumbnailLoc: "https://i.ytimg.com/vi/244HlpB3JoA/hqdefault.jpg",
+    publicationDate: "2021-07-08T14:00:00+02:00",
     duration: "186",
   },
   {
     loc: `${SITE_URL}/keyboard-videoanleitung/`,
     title: "Hammond Organ Komponist: Klaus Wunderlich Titel: H-schisch",
     description: "Ein Keyboard Tutorial über den Komponist Klaus Wunderlich. Das Stück das ich spiele heißt 'H-schisch'. Das ist in einem Notenheft von ihm mit 12 Kompositionen. Klaus Wunderlich brachte ein Notenbuch heraus mit 12 Kompositionen von ihm. Für jede Tonart komponierte er ein Stück. Ich habe das Stück in H Durgewählt. Ich habe es mit einem HAMMOND XM-1 Expander aufgenommen.",
-    content_loc: "https://www.youtube.com/embed/y2KtSx3-W3w",
-    thumbnail_loc: "https://i.ytimg.com/vi/y2KtSx3-W3w/hqdefault.jpg",
-    publication_date: "2023-05-19T14:00:00+02:00",
+    contentLoc: "https://www.youtube.com/embed/y2KtSx3-W3w",
+    thumbnailLoc: "https://i.ytimg.com/vi/y2KtSx3-W3w/hqdefault.jpg",
+    publicationDate: "2023-05-19T14:00:00+02:00",
     duration: "256",
   },
   {
@@ -36,8 +36,8 @@ const videoData = [
     title: "Hammond Organ Komponist: Klaus Wunderlich Titel: E-Hering",
     description:
       "Noch ein Stück aus dem Heft 12 Kompositionen von Klaus Wunderlich. Ein Keyboard Tutorial über den Komponisten Klaus Wunderlich. Titel: E-Hering.",
-    content_loc: "https://www.youtube.com/embed/t0tOQfL2qSE",
-    thumbnail_loc: "https://i.ytimg.com/vi/t0tOQfL2qSE/hqdefault.jpg",
+    contentLoc: "https://www.youtube.com/embed/t0tOQfL2qSE",
+    thumbnailLoc: "https://i.ytimg.com/vi/t0tOQfL2qSE/hqdefault.jpg",
     publication_date: "2023-04-12T14:00:00+02:00",
     duration: "338",
   },
@@ -62,22 +62,21 @@ twitterUrl={pageUrl}
       <div vocab="http://schema.org/" typeof="VideoObject">
         <meta property="name" content={video.title} />
         <meta property="description" content={video.description} />
-        <meta property="thumbnailUrl" content={video.thumbnail_loc} />
-        <meta property="uploadDate" content={video.publication_date} />
+        <meta property="thumbnailUrl" content={video.thumbnailLoc} />
+        <meta property="uploadDate" content={video.publicationDate} />
         <meta property="duration" content={video.duration} />
-        <meta property="contentUrl" content={video.content_loc} />
-        <meta property="embedUrl" content={video.content_loc} />
+        <meta property="embedUrl" content={video.contentLoc} />
 
         <div class="video-container-wrapper">
           <div class="video-container">
             <lite-youtube
-              videoid={video.content_loc.split("/").pop()}
+              videoid={video.contentLoc.split("/").pop()}
               style={
-                "background-image: url('" + video.thumbnail_loc + "');"
+                "background-image: url('" + video.thumbnailLoc + "');"
               }
             >
               <a
-                href={video.content_loc}
+                href={video.contentLoc}
                 class="lty-playbtn"
                 title={video.title}
               >

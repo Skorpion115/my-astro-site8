@@ -16,18 +16,18 @@ const videoData = [
     title: "Flint Hill Special - Banjo Lesson",
     description:
       "Lerne das Banjostück 'Flint Hill Special von Earl Scruggs'. Es wird in dem Stück ein sogenannter D-Tuner verwendet. Ich erkläre genau wie man so einen D-Tuner benutzt und einstellt.",
-    content_loc: "https://www.youtube.com/embed/R75ZetEwmtw",
-    thumbnail_loc: "https://i.ytimg.com/vi/R75ZetEwmtw/hqdefault.jpg",
-    publication_date: "2023-06-17T14:00:00+02:00",
+    contentLoc: "https://www.youtube.com/embed/R75ZetEwmtw",
+    thumbnailLoc: "https://i.ytimg.com/vi/R75ZetEwmtw/hqdefault.jpg",
+    publicationDate: "2023-06-17T14:00:00+02:00",
     duration: "812",
   },
   {
     loc: `${SITE_URL}/banjo-videoanleitung/`,
     title: "Train 45 - Bluegrass Banjo",
     description: "Lerne das Banjostück Train 45 - Bluegrass Banjo.",
-    content_loc: "https://www.youtube.com/embed/uo5ojnmRHPo",
-    thumbnail_loc: "https://i.ytimg.com/vi/uo5ojnmRHPo/hqdefault.jpg",
-    publication_date: "2023-05-26T14:00:00+02:00",
+    contentLoc: "https://www.youtube.com/embed/uo5ojnmRHPo",
+    thumbnailLoc: "https://i.ytimg.com/vi/uo5ojnmRHPo/hqdefault.jpg",
+    publicationDate: "2023-05-26T14:00:00+02:00",
     duration: "391",
   },
   {
@@ -35,9 +35,9 @@ const videoData = [
     title: "Banjo Beginner Lesson 2",
     description:
       "Lerne das Banjostück 'Cripple Creek'. Mit diesem Stück hat Earl Scruggs als kleiner Junge schon einen Preis gewonnen.",
-    content_loc: "https://www.youtube.com/embed/WmYlSqvpUkw",
-    thumbnail_loc: "https://i.ytimg.com/vi/WmYlSqvpUkw/hqdefault.jpg",
-    publication_date: "2023-04-05T14:00:00+02:00",
+    contentLoc: "https://www.youtube.com/embed/WmYlSqvpUkw",
+    thumbnailLoc: "https://i.ytimg.com/vi/WmYlSqvpUkw/hqdefault.jpg",
+    publicationDate: "2023-04-05T14:00:00+02:00",
     duration: "167",
   },
 ];
@@ -63,22 +63,21 @@ const videoData = [
           <div vocab="http://schema.org/" typeof="VideoObject">
             <meta property="name" content={video.title} />
             <meta property="description" content={video.description} />
-            <meta property="contentUrl" content={video.content_loc} />
-            <meta property="thumbnailUrl" content={video.thumbnail_loc} />
-            <meta property="uploadDate" content={video.publication_date} />
+            <meta property="thumbnailUrl" content={video.thumbnailLoc} />
+            <meta property="uploadDate" content={video.publicationDate} />
             <meta property="duration" content={video.duration} />
-            <meta property="embedUrl" content={video.content_loc} />
+            <meta property="embedUrl" content={video.contentLoc} />
 
             <div class="video-container-wrapper">
               <div class="video-container">
                 <lite-youtube
-                  videoid={video.content_loc.split("/").pop()}
+                  videoid={video.contentLoc.split("/").pop()}
                   style={
-                    "background-image: url('" + video.thumbnail_loc + "');"
+                    "background-image: url('" + video.thumbnailLoc + "');"
                   }
                 >
                   <a
-                    href={video.content_loc}
+                    href={video.contentLoc}
                     class="lty-playbtn"
                     title={video.title}
                   >

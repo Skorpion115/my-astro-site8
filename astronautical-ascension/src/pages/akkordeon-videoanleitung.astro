@@ -15,9 +15,9 @@ const videoData = [
     loc: `${SITE_URL}/akkordeon-videoanleitung/`, // URL der Seite, auf der das Video eingebettet ist
     title: "L'accordeon Triste - Französische Akkordeonmusik",
     description: "Lerne das Akkordeonstück 'L'accordeon Triste' von Sergio Castelli. Das steht rechts unten auf YouTube ansehen. Darauf klicken dann kann man unten bei der Videobeschreibung die Noten downloaden",
-    content_loc: "https://www.youtube.com/embed/Va-gkuUp1KI", // URL des eingebetteten Videos
-    thumbnail_loc: "https://i.ytimg.com/vi/Va-gkuUp1KI/hqdefault.jpg", // URL des Vorschaubildes
-    publication_date: "2024-11-10T10:00:00+02:00", // Veröffentlichungsdatum im ISO 8601 Format
+    contentLoc: "https://www.youtube.com/embed/Va-gkuUp1KI", // URL des eingebetteten Videos
+    thumbnailLoc: "https://i.ytimg.com/vi/Va-gkuUp1KI/hqdefault.jpg", // URL des Vorschaubildes
+    publicationDate: "2024-11-10T10:00:00+02:00", // Veröffentlichungsdatum im ISO 8601 Format
     duration: "258", // Dauer des Videos im ISO 8601 Format
   },
 ];
@@ -44,20 +44,19 @@ const videoData = [
       <div vocab="http://schema.org/" typeof="VideoObject">
         <meta property="name" content={video.title} />
         <meta property="description" content={video.description} />
-        <meta property="contentUrl" content={video.content_loc} />
-        <meta property="thumbnailUrl" content={video.thumbnail_loc} />
-        <meta property="uploadDate" content={video.publication_date} />
-        <meta property="duration" content={video.duration} />
-        <meta property="embedUrl" content={video.content_loc} />
+        <meta property="contentUrl" content={video.contentLoc} />
+        <meta property="thumbnailUrl" content={video.thumbnailLoc} />
+        <meta property="uploadDate" content={video.publicationDate} />
+        <meta property="embedUrl" content={video.contentLoc} />
 
         <div class="video-container-wrapper">
           <div class="video-container">
             <lite-youtube
-              videoid={video.content_loc.split("/").pop()}
-              style={"background-image: url('" + video.thumbnail_loc + "');"}
+              videoid={video.contentLoc.split("/").pop()}
+              style={"background-image: url('" + video.thumbnailLoc + "');"}
             >
               <a
-                href={video.content_loc}
+                href={video.contentLoc}
                 class="lty-playbtn"
                 title={video.title}
               >

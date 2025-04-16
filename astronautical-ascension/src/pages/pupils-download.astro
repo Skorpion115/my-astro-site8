@@ -3,8 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Schülermaterial";
 const description = "Schüler download";
 const keywords = "Songs für Schüler";
-const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
-const pageUrl = `${SITE_URL}/pupils-download/`;
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BaseLayout 

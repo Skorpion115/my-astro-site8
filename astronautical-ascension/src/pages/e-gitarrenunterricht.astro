@@ -3,8 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "E-Gitarrenunterricht für Rockgitarre";
 const description = "Ich gebe E-Gitarrenunterricht 🎸 in Nürnberg Eibach. E-Gitarre für Anfaenger. Gerne auch weiterführende Techniken.";
 const keywords = "e-gitarrenunterricht für rockgitarre, ten words - joe satriani, schule der rockgitarre, elektrische gitarre lernen, e-gitarre lernen, e gitarrenunterricht, gitarrenlehrer, e gitarrenunterricht nürnberg, e gitarre für anfänger, e gitarrenlehrer in nuernberg";
-const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
-const pageUrl = `${SITE_URL}/e-gitarrenunterricht/`;
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BaseLayout

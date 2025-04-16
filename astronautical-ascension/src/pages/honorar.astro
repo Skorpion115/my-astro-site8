@@ -4,8 +4,7 @@ const pageTitle = "Honorar für Musikunterricht";
 const description =
   "Was kostet heutzutage ein guter Musikunterricht? 🤑, Monatshonorar bei 45 min 65,- EUR";
 const keywords = "honorar, günstige preise, gruppenunterricht, einzelunterricht";
-const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
-const pageUrl = `${SITE_URL}/honorar/`;
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BaseLayout

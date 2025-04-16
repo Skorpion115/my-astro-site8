@@ -14,9 +14,9 @@ const videoData = [
     title: "Notenschrift",
     description:
       "Ich möchte mit diesem Video die Notenschrift erklären die ja doch so wichtig für die Musik ist! Ich möchte den Schülern, Musikinteressierte oder Hobbymusiker auf diese Weise das Noten lesen und die Harmonielehre ein bisschen näher bringen! Die Videos sind so aufgebaut das man zuerst die Noten lesen kann, dann kommen die Intervalle, dann die Dreiklänge und zuletzt die Funktiontheorie. Also bitte nach der Reihenfolge lernen! Ich werde mit dem ersten Video das Noten lesen erklären.",
-    content_loc: "https://www.youtube.com/embed/vxX0WiQhSUE?si=Hu4ef1IkuG0",
-    thumbnail_loc: "https://i.ytimg.com/vi/Hu4ef1IkuG0/hqdefault.jpg",
-    publication_date: "2021-04-19T00:00:00+01:00",
+    contentLoc: "https://www.youtube.com/embed/vxX0WiQhSUE?si=Hu4ef1IkuG0",
+    thumbnailLoc: "https://i.ytimg.com/vi/Hu4ef1IkuG0/hqdefault.jpg",
+    publicationDate: "2021-04-19T00:00:00+01:00",
     duration: "832",
   },
   {
@@ -24,9 +24,9 @@ const videoData = [
     title: "Intervalle",
     description:
       "Ich werde in diesem Video versuchen die Intervalle zu erklären und zu bestimmen. Ein Intervall ist der Tonabstand zweier Töne. Also Prime, Sekunde, Terz, Quarte, Quinte, Sexte, Septime und Oktave.",
-    content_loc: "https://www.youtube.com/embed/vxX0WiQhSUE?si=804rrOOFzAQ",
-    thumbnail_loc: "https://i.ytimg.com/vi/804rrOOFzAQ/hqdefault.jpg",
-    publication_date: "2021-04-27T00:00:00+01:00",
+    contentLoc: "https://www.youtube.com/embed/vxX0WiQhSUE?si=804rrOOFzAQ",
+    thumbnailLoc: "https://i.ytimg.com/vi/804rrOOFzAQ/hqdefault.jpg",
+    publicationDate: "2021-04-27T00:00:00+01:00",
     duration: "1075",
   },
   {
@@ -34,9 +34,9 @@ const videoData = [
     title: "Dreiklänge",
     description:
       "Ich werde in diesem Video versuchen die Dreiklänge besser zu verstehen. Sie sind wichtig da diese zum Beispiel eintscheiden ob ein Akkord ein Durakkord ist oder ein Mollakkord und noch vieles mehr.",
-    content_loc: "https://www.youtube.com/embed/vxX0WiQhSUE?si=fgzboODvlQ4",
-    thumbnail_loc: "https://i.ytimg.com/vi/fgzboODvlQ4/hqdefault.jpg",
-    publication_date: "2021-05-05T00:00:00+01:00",
+    contentLoc: "https://www.youtube.com/embed/vxX0WiQhSUE?si=fgzboODvlQ4",
+    thumbnailLoc: "https://i.ytimg.com/vi/fgzboODvlQ4/hqdefault.jpg",
+    publicationDate: "2021-05-05T00:00:00+01:00",
     duration: "1244",
   },
   {
@@ -44,9 +44,9 @@ const videoData = [
     title: "Funktionsthorie",
     description:
       "Bei der Funktionstheorie geht es haupsächlich darum auf welchen Stufen die Akkorde stehen. Die drei Haupdreiklänge heißen zum Beispiel Tonika, Dominante und Subdominante. Sie liegen auf der I., IV. und V. Stufe.",
-    content_loc: "https://www.youtube.com/embed/vxX0WiQhSUE?si=tCkpok099xw",
-    thumbnail_loc: "https://i.ytimg.com/vi/tCkpok099xw/hqdefault.jpg",
-    publication_date: "2021-05-10T00:00:00+01:00",
+    contentLoc: "https://www.youtube.com/embed/vxX0WiQhSUE?si=tCkpok099xw",
+    thumbnailLoc: "https://i.ytimg.com/vi/tCkpok099xw/hqdefault.jpg",
+    publicationDate: "2021-05-10T00:00:00+01:00",
     duration: "PT12M22S",
   },
 ];
@@ -71,22 +71,21 @@ const videoData = [
           <div vocab="http://schema.org/" typeof="VideoObject">
             <meta property="name" content={video.title} />
             <meta property="description" content={video.description} />
-            <meta property="thumbnailUrl" content={video.thumbnail_loc} />
-            <meta property="uploadDate" content={video.publication_date} />
+            <meta property="thumbnailUrl" content={video.thumbnailLoc} />
+            <meta property="uploadDate" content={video.publicationDate} />
             <meta property="duration" content={video.duration} />
-            <meta property="contentUrl" content={video.content_loc} />
-            <meta property="embedUrl" content={video.content_loc} />
+            <meta property="embedUrl" content={video.contentLoc} />
 
             <div class="video-container-wrapper">
               <div class="video-container">
                 <lite-youtube
-                  videoid={video.content_loc.split("/").pop()}
+                  videoid={video.contentLoc.split("/").pop()}
                   style={
-                    "background-image: url('" + video.thumbnail_loc + "');"
+                    "background-image: url('" + video.thumbnailLoc + "');"
                   }
                 >
                   <a
-                    href={video.content_loc}
+                    href={video.contentLoc}
                     class="lty-playbtn"
                     title={video.title}
                   >

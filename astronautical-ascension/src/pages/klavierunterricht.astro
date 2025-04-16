@@ -3,8 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Klavierunterricht Nürnberg - Musicstudio Ziebart";
 const description = "Ich gebe Klavierunterricht 🎹 in Eibach. Alle Stilrichtungen: Klassik, Unterhaltungsmusik, Ragtime, Film Musik und Popmusik.";
 const keywords = "klavierunterricht nürnberg - musicstudio ziebart, klavierunterricht, klavierunterricht nürnberg, klavier spielen lernen, klavier lernen nürnberg, klavierlehrer nürnberg, klavierschule nürnberg, klavierunterricht in der naehe, klavierstücke schnell spielen";
-const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
-const pageUrl = `${SITE_URL}/klavierunterricht/`;
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BaseLayout
@@ -144,25 +143,6 @@ const pageUrl = `${SITE_URL}/klavierunterricht/`;
           >Mehr Info über das Klavier</a
         >
       </p>
-      <!--
-      <div class="container">
-        <h2>PRAELUDIUM BMV 927 - Johann Sebastian Bach</h2>
-        <p>
-          Klavierstücke schnell spielen ist hier das Thema. Dies funktioniert
-          nur dann wenn man das Stück auswendig lernt. Es ist nur eine Seite
-          lang.
-        </p>
-        <div class="iframe-container">
-          <iframe style="border: none;"
-            data-cmp-vendor="s30"
-            class="cmplazyload"
-            data-cmp-src="https://www.youtube-nocookie.com/embed/vxX0WiQhSUE?rel=0&enablejsapi=1"
-            width="560"
-            height="315"
-            data-cmp-vendor="s30"
-            allowfullscreen></iframe>
-        </div>
-      </div> -->
       <p>
         Weiterführende Lektionen <a
         href="/klavier-videoanleitung/"

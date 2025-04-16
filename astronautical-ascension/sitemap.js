@@ -215,11 +215,11 @@ urls.forEach((url) => {
   const video = videos.find((v) => v.url === url);
   if (video) {
     const videoEle = urlEle.ele("video:video");
-    videoEle.ele("video:thumbnail_loc").txt(video.thumbnailLoc);
+    videoEle.ele("video:thumbnailLoc").txt(video.thumbnailLoc);
     videoEle.ele("video:title").txt(video.title);
     videoEle.ele("video:description").txt(video.description);
-    videoEle.ele("video:content_loc").txt(video.contentLoc);
-    videoEle.ele("video:publication_date").txt(video.publicationDate);
+    videoEle.ele("video:contentLoc").txt(video.contentLoc);
+    videoEle.ele("video:publicationDate").txt(video.publicationDate);
     videoEle.ele("video:duration").txt(video.duration);
   }
 });

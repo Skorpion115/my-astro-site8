@@ -3,8 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Download für Noten und GM Files";
 const description = "Midi Files und Noten bekannter Werke komplett zu downloaden! 🎼, Mondschein Sonate, Eine kleine Nachtmusik usw.";
 const keywords = "Download, Midi Files und Noten bekannter Werke zum downloaden";
-const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
-const pageUrl = `${SITE_URL}/download/`;
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BaseLayout
