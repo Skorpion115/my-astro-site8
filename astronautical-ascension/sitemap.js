@@ -53,7 +53,7 @@ const videos = [
     url: "/banjo-videoanleitung/",
     title: "Train 45 - Bluegrass Banjo",
     description: "Lerne das Banjostück Train 45 - Bluegrass Banjo.",
-    thumbnai_loc: "https://i.ytimg.com/vi/uo5ojnmRHPo/hqdefault.jpg",
+    thumbnail_loc: "https://i.ytimg.com/vi/uo5ojnmRHPo/hqdefault.jpg",
     content_loc: "https://www.youtube.com/embed/uo5ojnmRHPo",
     publication_date: "2023-05-26T14:00:00+02:00",
     duration: "391"
