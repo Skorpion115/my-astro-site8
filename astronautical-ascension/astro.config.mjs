@@ -11,6 +11,9 @@ const __dirname = dirname(__filename);
 
 // https://astro.build/config
 export default defineConfig({
+    //site: import.meta.env.SITE_URL,
+    site: "https://www.musicstudio-ziebart.de",
+
   devToolbar: {
     enabled: false,
   },
@@ -40,8 +43,7 @@ export default defineConfig({
   
   publicDir: "public",
   
-  //site: import.meta.env.SITE_URL,
-  site: "https://www.musicstudio-ziebart.de",
+  // site: "https://www.musicstudio-ziebart.de",
 
   trailingSlash: "always",
 
