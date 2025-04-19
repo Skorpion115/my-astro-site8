@@ -1,23 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Keyboardunterricht für jung und alt";
-const description =
-  "Ich gebe Keyboardunterricht 🎹 in Nürnberg Eibach. Zuerst lernt man die Akkordbegleitung. Später kommt die linke Hand dazu.";
+const description = "Ich gebe Keyboardunterricht 🎹 in Nürnberg Eibach. Zuerst lernt man die Akkordbegleitung. Später kommt die linke Hand dazu.";
 const keywords = "keyboardunterricht für jung und alt, hammond flip - klaus wunderlich, hschisch - klaus wunderlich, e-hering - klaus wunderlich, der neue weg zum keyboardspiel, keyboardschule, keyboardunterricht in der naehe, keyboardlehrer, keyboard unterricht erwachsene, keyboardunterricht in eibach, keyboard anfänger, keyboardnoten für anfaenger, einsteiger keyboard, keyboard spielen lernen, keyboard unterricht, keyboard kurs, keyboard für anfänger, keyboardunterricht nürnberg, keyboard lernen, keyboard spielen, keyboard lessons";
-const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
   keywords={keywords}
-  href={pageUrl}
   ogTitle={pageTitle}
   ogDescription={description}
-  ogUrl={pageUrl}
   twitterTitle={pageTitle}
   twitterDescription={description}
-  twitterUrl={pageUrl}
 >
   <section>
     <article>

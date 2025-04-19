@@ -3,22 +3,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Meisterhaftes Akkordeonspiel erlernen: Die ultinative Anleitung für Akkordeonunterricht";
 const description = "ch gebe Akkordeonunterricht in Eibach. Benutze dazu die Akkordeonschule von Alfons Holzschuh Band 1 und 2. 🎹";
 const keywords = "meisterhaftes akkordeonspiel erlernen, akkordeonunterricht, alfons holzschuh, akkordeonunterricht n&uuml;rnberg, akkordeon lernen online, akkordeon privatunterricht, akkordeon lernen n&uuml;rnberg, akkordeon lernen, akkordeon spielen lernen, akkordeon lernen anfaenger, akkordeon, akkordeon kurs, akkordeon spielen, akkordeonunterricht für erwachsene, accordion lesson";
-const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
   keywords={keywords}
-  href={pageUrl}
   ogTitle={pageTitle}
   ogDescription={description}
-  ogUrl={pageUrl}
-  ogType="website"
   twitterTitle={pageTitle}
   twitterDescription={description}
-  twitterUrl={pageUrl}
->
+  >
   <article>
     <section>
       <h2>Akkordeonschule von Alfons Holzschuh</h2>

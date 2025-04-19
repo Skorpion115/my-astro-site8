@@ -2,13 +2,11 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "ThankYou";
 const description = "Kostenloser Probeunterricht";
-const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
   keywords="kontakt"
-  href={pageUrl}
 >
 <h2>Dankeschön</h2>
 <p>

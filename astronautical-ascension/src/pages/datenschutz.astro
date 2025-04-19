@@ -1,15 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Datenschutzerklärung";
-const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
-// const nonce = Astro.props.nonce || "";
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
   description="Datenschutz"
   keywords="datenschutz"
-  href={pageUrl}
 >
   <section>
     <p>

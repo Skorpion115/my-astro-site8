@@ -3,20 +3,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Saxophonunterricht für jung und alt";
 const description = "Ich gebe Saxophonunterricht 🎷 in N&uuml;rnberg. Ich benutze daszu die Klaus Dapper Saxophonschule Band 1 und 2.";
 const keywords = "saxophonunterricht f&uuml;r jung und alt, saxophonunterricht, das saxophonbuch klaus dapper, saxophon lernen, saxophon f&uuml;r kinder, saxophon f&uuml;r erwachsene, professioneller saxophonunterricht, saxophon unterricht, saxophon unterricht in eibach, saxophon unterricht n&uuml;rnberg, saxophon spielen lernen, saxophon online lernen, altsaxophon lernen, saxophon schnupperkurs, tenorsaxophon lernen, saxophon lernen anfaenger, saxophon f&uuml;r anfaenger, saxophonlehrer n&uuml;rnberg, saxophon lessons";
-const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
   keywords={keywords}
-  href={pageUrl}
   ogTitle={pageTitle}
   ogDescription={description}
-  ogUrl={pageUrl}
   twitterTitle={pageTitle}
   twitterDescription={description}
-  twitterUrl={pageUrl}
 >
   <article>
     <section>

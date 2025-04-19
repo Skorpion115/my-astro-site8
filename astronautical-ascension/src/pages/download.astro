@@ -3,19 +3,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Download für Noten und GM Files";
 const description = "Midi Files und Noten bekannter Werke komplett zu downloaden! 🎼, Mondschein Sonate, Eine kleine Nachtmusik usw.";
 const keywords = "Download, Midi Files und Noten bekannter Werke zum downloaden";
-const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
   keywords={keywords}
-  href={pageUrl}
+  ogTitle={pageTitle}
   ogDescription={description}
-  ogUrl={pageUrl}
   twitterTitle={pageTitle}
   twitterDescription={description}
-  twitterUrl={pageUrl}
 >
   <section id="download">
     <h2>GM Midi Files mit Noten zum downloaden</h2>

@@ -2,14 +2,12 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Danke für die kurze Mitteilung!";
 const description = "Erfolgsmeldung";
-const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
   keywords="Rueckruf"
-  href={pageUrl}
 >
   <p>Ihre kurze Mitteilung ist auf dem Weg! Ich werde mich sobald wie möglich bei Ihnen melden.</p>
   <br>

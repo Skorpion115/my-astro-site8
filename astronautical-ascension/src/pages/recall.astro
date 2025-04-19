@@ -1,14 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Ich rufe Sie zurück!";
-const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
   description="Falls die Fragen haben können sie mir gerne eine kurze Mitteilung schicken. Ich werde sie zurück rufen! 😀"
   keywords="ich rufe sie zurück, rückruf"
-  href={pageUrl}
 >
   <div class="container4">
     <form

@@ -3,11 +3,17 @@ import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 // Automatisch die vollständige URL generieren
 const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
+
+// Fallback für das Bild, falls es nicht existiert
+const imageUrl = frontmatter.image?.url || '/default-image.jpg';  // Beispiel-Fallback
+const imageAlt = frontmatter.image?.alt || 'Standardbild';  // Beispiel-Fallback
 ---
 
 <BaseLayout>
   <Fragment slot="head">
     <title>{frontmatter.title}</title>
+
+    <link rel="canonical" href={pageUrl} />
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content={frontmatter.title} />

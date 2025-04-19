@@ -10,7 +10,7 @@ const {
   pageTitle,
   description,
   keywords,
-  pageUrl,
+  href,
   ogTitle,
   ogDescription,
   ogUrl,
@@ -21,11 +21,13 @@ const {
 } = Astro.props;
 
 // Die aktuelle URL-Pfad vom Astro-Objekt erhalten
-// const urlPath = Astro.url.pathname;
 const urlPath = new URL(Astro.request.url).pathname;
+
+// Canonical URL berechnen
+const canonicalUrl = href || `${Astro.site}${urlPath}`;
+
 // Netlify setzt automatisch das Nonce
 const nonce = Astro.props.nonce || "";
-
 
 // console.log("[SERVER] Astro nonce:", Astro.props.nonce);
 console.log("[SERVER] Astro nonce:", nonce);
@@ -36,6 +38,7 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
 <html lang="de">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- ✨ Slot für Seitenspezifisches aus MarkdownPostLayout etc. -->
     <slot name="head" />
     <link rel="icon" href="/favicon.ico" sizes="16x16" />
@@ -46,23 +49,27 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
     <meta name="generator" content={Astro.generator} />
     <meta name="Language" content="de_DE" />
     <meta name="date" content={new Date().toISOString().split("T")[0]} />
-    <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
-    <link rel="canonical" href={pageUrl} />
+    {description && <meta name="description" content={description} />}
+    {keywords && <meta name="keywords" content={keywords} />}
+
+    {/* Canonical URL einfügen, wenn `href` übergeben wurde */}
+    {href && <link rel="canonical" href={href} />}
+    {/* Fallback, wenn `href` nicht übergeben wurde */}
+    {!href && <link rel="canonical" href={canonicalUrl} />}
+
     <title>{pageTitle}</title>
+
+    {pageTitle && <title>{pageTitle}</title>}
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content={ogTitle || pageTitle} />
-    <meta property="og:description" content={ogDescription || description} />
-    <meta property="og:url" content={ogUrl || pageUrl} />
-    <meta property="og:type" content={ogType || "website"} />
+    {ogTitle && <meta property="og:title" content={ogTitle} />}
+    {ogDescription && <meta property="og:description" content={ogDescription} />}
+    {ogUrl && <meta property="og:url" content={ogUrl} />}
+    {ogType && <meta property="og:type" content={ogType} />}
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={twitterTitle || pageTitle} />
-    <meta
-      name="twitter:description"
-      content={twitterDescription || description}
-    />
-    <meta name="twitter:url" content={twitterUrl || pageUrl} />
+    {twitterTitle && <meta name="twitter:title" content={twitterTitle} />}
+    {twitterDescription && <meta name="twitter:description" content={twitterDescription} />}
+    {twitterUrl && <meta name="twitter:url" content={twitterUrl} />}
     <meta
       name="google-site-verification"
       content="Zitul6WICKD7zrzgptxGVrh2GEhozasdEM_d1tGi2aw"
@@ -79,6 +86,8 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
     <meta name="DC.rights" content="Alle Rechte liegen beim Author" />
     <meta name="robots" content="max-snippet:-1, INDEX, FOLLOW" />
     <meta name="theme-color" content="#191919" />
+
+    <slot name="head" />
 
     <!-- Client-Side Navigation -->
     <ClientRouter />
@@ -137,7 +146,7 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
-    
+
     <noscript
       ><iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-PWK4LSL"
@@ -151,7 +160,6 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
       console.log("[BROWSER] Nonce Header läuft!");
     </script>
 
-    
     <h1 transition:animate="slide" class="page-title">{pageTitle}</h1>
 
     <main>

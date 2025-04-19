@@ -3,20 +3,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Impressum";
 const description = "Impressum";
 const keywords = "impressum, musicstudio ziebart, gunzenhausener str. 20, 90451 nürnberg";
-const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
   keywords={keywords}
-  href={pageUrl}
   ogTitle={pageTitle}
   ogDescription={description}
-  ogUrl={pageUrl}
   twitterTitle={pageTitle}
   twitterDescription={description}
-  twitterUrl={pageUrl}
 >
   <h2>Adresse</h2>
   <div>

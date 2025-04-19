@@ -3,19 +3,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Querfloetenunterricht mit geschlossenen Klappen";
 const description = "Ich gebe Querfloetenunterricht 🎼 in Nürnberg. Es gibt Querfloeten mit offenen oder geschlossenen Klappen.";
 const keywords = "querfloetenunterricht mit geschlossenen klappen, querfloetenunterricht, querfloetenunterricht in eibach, querfloete, querfloetenunterricht n&uuml;rnberg, querfloetenunterricht in der nähe, querfloete spielen lernen, querfloetenkurs, querfloetenunterricht für kinder, querfloeten lehrer, querfloeteunterricht";
-const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
   keywords={keywords}
-  href={pageUrl}
+  ogTitle={pageTitle}
   ogDescription={description}
-  ogUrl={pageUrl}
   twitterTitle={pageTitle}
   twitterDescription={description}
-  twitterUrl={pageUrl}
 >
   <article id="querfloete">
     <section>

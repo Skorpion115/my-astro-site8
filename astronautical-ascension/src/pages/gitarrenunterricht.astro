@@ -3,20 +3,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Gitarrenunterricht für akustische Gitarre";
 const description = "Ich gebe Gitarrenunterricht 🎸 in Nürnberg eibach aller Altersklassen. Klassik, Begleitung und Fingerpicking.";
 const keywords = "gitarrenunterricht für akustische gitarre, gitarrenunterricht, gitarre spielen lernen nürnberg, fingerpicking, city of neworleans - arlo guthrie, fingerpicking, fridolin, fernando sor opus 35 opus 31, gitarrenunterricht eibach, westerngitarre für anfaenger und erwachsene, gitarre anfaengerkurs, gitarrenschule in nürnberg, jetzt anmelden, gitarrenlehrer, gitarrenschule, guitar unterricht, gitarrenunterricht nürnberg, gitarre online, gitarren unterricht, gitarre zum lernen, gitarre lernen in nürnberg, gitarrenunterricht in der nähe, online gitarrenkurs, gitarre anfaenger, gitarre lernen, gitarre lernen akkorde, gitarrenlehrer nürnberg, gitarren kurse, spanische gitarre lernen, klassische gitarre lernen, gitarre fingerpicking, gitarrenunterricht für anfaenger, gitarre spielen, gitarre spielen lernen, unterricht gitarre, musikunterricht gitarre, gitarre spielen lernen, gitarrenkurs, guitar lessons";
-const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
+// const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
   keywords={keywords}
-  href={pageUrl}
   ogTitle={pageTitle}
   ogDescription={description}
-  ogUrl={pageUrl}
   twitterTitle={pageTitle}
   twitterDescription={description}
-  twitterUrl={pageUrl}
 >
   <article>
     <p>

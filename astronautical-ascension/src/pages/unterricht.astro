@@ -3,20 +3,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Unterrichtsangebot von Musicstudio Ziebart";
 const description = "Unter Musikunterricht habe ich alle Instrumente aufgelistet die unterrichtet werden. 🤓";
 const keywords = "unterrichtsangebot von Musicstudio Ziebart, klavier, keyboard, gitarre, e-bass, e-gitarre, banjo, akkordeon, saxophon, klarinette, querfloete";
-const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
   keywords={keywords}
-  href={pageUrl}
   ogTitle={pageTitle}
   ogDescription={description}
   ogImage="https://www.musicstudio-ziebart.de/images/money-125x125.png"
-  ogUrl={pageUrl}
   twitterTitle={pageTitle}
   twitterDescription={description}
-  twitterUrl={pageUrl}
   
 >
 <article>
