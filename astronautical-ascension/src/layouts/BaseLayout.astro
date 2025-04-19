@@ -89,6 +89,58 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
 
     <!-- Client-Side Navigation -->
     <ClientRouter />
+
+    <!-- Bedingte CSS-Dateien fuer spezifische Seiten -->
+    {
+      urlPath === "/gitarrenunterricht/" && (
+        <link rel="stylesheet" href="/styles/gitarrenunterricht.css" />
+      )
+    }
+    {
+      urlPath === "/e-gitarrenunterricht/" && (
+        <link rel="stylesheet" href="/styles/e-gitarrenunterricht.css" />
+      )
+    }
+    {
+      urlPath === "/e-bassunterricht/" && (
+        <link rel="stylesheet" href="/styles/e-bassunterricht.css" />
+      )
+    }
+    {
+      urlPath === "/banjounterricht/" && (
+        <link rel="stylesheet" href="/styles/banjounterricht.css" />
+      )
+    }
+    {
+      urlPath === "/klavierunterricht/" && (
+        <link rel="stylesheet" href="/styles/klavierunterricht.css" />
+      )
+    }
+    {
+      urlPath === "/keyboardunterricht/" && (
+        <link rel="stylesheet" href="/styles/keyboardunterricht.css" />
+      )
+    }
+    {
+      urlPath === "/akkordeonunterricht/" && (
+        <link rel="stylesheet" href="/styles/akkordeonunterricht.css" />
+      )
+    }
+    {
+      urlPath === "/saxophonunterricht/" && (
+        <link rel="stylesheet" href="/styles/saxophonunterricht.css" />
+      )
+    }
+    {
+      urlPath === "/klarinettenunterricht/" && (
+        <link rel="stylesheet" href="/styles/klarinettenunterricht.css" />
+      )
+    }
+    {
+      urlPath === "/querfloetenunterricht/" && (
+        <link rel="stylesheet" href="/styles/querfloetenunterricht.css" />
+      )
+    }
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
