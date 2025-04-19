@@ -1,12 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPageUrl } from "../utils/getPageUrl.js";
 const pageTitle = "Jetzt zum kostenlosen Probeunterricht anmelden!";
+const description = "Formular zu einer Anmeldung für einen kostenlosen Probeunterricht";
+const keywords = "anmeldung, kostenloser Probeunterricht, Schnupperstunde";
+const pageUrl = getPageUrl(Astro);
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
-  description="Kostenloase Probestunde"
-  keywords="Probestunde"
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
 >
   <p>
     Aus hygienischen Gründen können bei Blasinstrumente keine Instrumente zur
@@ -109,7 +121,7 @@ const pageTitle = "Jetzt zum kostenlosen Probeunterricht anmelden!";
             id="message"
             cols="23"
             rows="10"
-            class="form-control"
+            class="form-control form-control-lg"
             placeholder="Wenn Sie wollen schreiben Sie hier eine Nachricht..."
           ></textarea>
         </div>

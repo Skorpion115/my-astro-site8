@@ -1,19 +1,25 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPageUrl } from "../utils/getPageUrl.js";
 const pageTitle = "E-Gitarrenunterricht für Rockgitarre";
 const description = "Ich gebe E-Gitarrenunterricht 🎸 in Nürnberg Eibach. E-Gitarre für Anfaenger. Gerne auch weiterführende Techniken.";
 const keywords = "e-gitarrenunterricht für rockgitarre, ten words - joe satriani, schule der rockgitarre, elektrische gitarre lernen, e-gitarre lernen, e gitarrenunterricht, gitarrenlehrer, e gitarrenunterricht nürnberg, e gitarre für anfänger, e gitarrenlehrer in nuernberg";
+const pageUrl = getPageUrl(Astro);
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
   keywords={keywords}
+  href={pageUrl}
   ogTitle={pageTitle}
   ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
   twitterTitle={pageTitle}
   twitterDescription={description}
->
+  twitterUrl={pageUrl}
+  >
   <article>
     <p>
       <img
@@ -105,4 +111,6 @@ const keywords = "e-gitarrenunterricht für rockgitarre, ten words - joe satrian
       <a href="/unterricht/" class="normal-links">zurück</a>
     </p>
   </article>
+  <!-- Nur auf dieser Seite eingebunden -->
+  <script src="/scripts/load-page-style.js" defer></script>
 </BaseLayout>

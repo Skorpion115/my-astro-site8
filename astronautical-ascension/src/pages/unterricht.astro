@@ -1,19 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPageUrl } from "../utils/getPageUrl.js";
 const pageTitle = "Unterrichtsangebot von Musicstudio Ziebart";
 const description = "Unter Musikunterricht habe ich alle Instrumente aufgelistet die unterrichtet werden. 🤓";
 const keywords = "unterrichtsangebot von Musicstudio Ziebart, klavier, keyboard, gitarre, e-bass, e-gitarre, banjo, akkordeon, saxophon, klarinette, querfloete";
+const pageUrl = getPageUrl(Astro);
 ---
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
   keywords={keywords}
+  href={pageUrl}
   ogTitle={pageTitle}
   ogDescription={description}
-  ogImage="https://www.musicstudio-ziebart.de/images/money-125x125.png"
+  ogUrl={pageUrl}
+  ogType="website"
   twitterTitle={pageTitle}
   twitterDescription={description}
-  
+  twitterUrl={pageUrl}
 >
 <article>
   <h2>Musikunterricht in Nürnberg der viel Freude bereitet!</h2>

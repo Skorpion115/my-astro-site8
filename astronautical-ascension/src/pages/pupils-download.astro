@@ -1,18 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPageUrl } from "../utils/getPageUrl.js";
 const pageTitle = "Schülermaterial";
 const description = "Schüler download";
 const keywords = "Songs für Schüler";
+const pageUrl = getPageUrl(Astro);
 ---
 
 <BaseLayout 
   pageTitle={pageTitle}
   description={description}
   keywords={keywords}
+  href={pageUrl}
   ogTitle={pageTitle}
   ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
   twitterTitle={pageTitle}
   twitterDescription={description}
+  twitterUrl={pageUrl}
 >
   <section id="download2">
     <h2 transition:animate="slide">Gespielte Titel</h2>

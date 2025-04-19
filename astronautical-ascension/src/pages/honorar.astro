@@ -1,19 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPageUrl } from "../utils/getPageUrl.js";
 const pageTitle = "Honorar für Musikunterricht";
-const description =
-  "Was kostet heutzutage ein guter Musikunterricht? 🤑, Monatshonorar bei 45 min 65,- EUR";
+const description = "Was kostet heutzutage ein guter Musikunterricht? 🤑, Monatshonorar bei 45 min 65,- EUR";
 const keywords = "honorar, günstige preise, gruppenunterricht, einzelunterricht";
+const pageUrl = getPageUrl(Astro);
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
   keywords={keywords}
+  href={pageUrl}
   ogTitle={pageTitle}
   ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
   twitterTitle={pageTitle}
   twitterDescription={description}
+  twitterUrl={pageUrl}
 >
   <h2>Günstige Preise für Ihren Musikunterricht</h2>
 

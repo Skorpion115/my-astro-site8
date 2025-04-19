@@ -1,18 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPageUrl } from "../utils/getPageUrl.js";
 const pageTitle = "Bassunterricht für Slap und Pop Technik";
 const description = "Ich gebe Bassunterricht in Eibach 🎸. Bass für Anfänger aber auch Pop und Slaptechnick steht auf dem Programm.";
 const keywords = "bassunterricht f&uuml;r slap und pop technik, bassunterricht, rock bass jaecki reznicek, e-bassunterricht, e-bass unterricht, e-bassunterricht n&uuml;rnberg, e-bassunterricht in eibach, unterricht bassgitarre, bass lehrer, bassgitarre lernen, bassgitarre lernen, bass unterricht, bass gitarre anfarnger, bass unterricht in der naehe, e-bass lernen, e-bass für anfaenger, bassnoten für anfaenger, e-bass lehrer, noten lernen bass";
+const pageUrl = getPageUrl(Astro);
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
   keywords={keywords}
+  href={pageUrl}
   ogTitle={pageTitle}
   ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
   twitterTitle={pageTitle}
   twitterDescription={description}
+  twitterUrl={pageUrl}
 >
   <article>
     <section>
@@ -47,4 +53,6 @@ const keywords = "bassunterricht f&uuml;r slap und pop technik, bassunterricht, 
       </p>
     </section>
   </article>
+  <!-- Nur auf dieser Seite eingebunden -->
+  <script src="/scripts/load-page-style.js" defer></script>
 </BaseLayout>

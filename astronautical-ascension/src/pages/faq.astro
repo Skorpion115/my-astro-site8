@@ -1,18 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPageUrl } from "../utils/getPageUrl.js";
 const pageTitle = "Die meistgestellten Fragen";
 const description = "Die meistgestellten Fragen! 🤓. Wie alt muss mein Kind sein, um ein Instrument zu erlernen?";
 const keywords = "haefig gestellte Fragen"
+const pageUrl = getPageUrl(Astro);
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
   keywords={keywords}
+  href={pageUrl}
   ogTitle={pageTitle}
   ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
   twitterTitle={pageTitle}
   twitterDescription={description}
+  twitterUrl={pageUrl}
 >
   <article>  
     <section id="faq">

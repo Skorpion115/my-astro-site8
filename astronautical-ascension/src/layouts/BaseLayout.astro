@@ -20,10 +20,10 @@ const {
   twitterUrl,
 } = Astro.props;
 
-// Die aktuelle URL-Pfad vom Astro-Objekt erhalten
+// FallBack wird nicht genutzt da mit href übergeben wird
 const urlPath = new URL(Astro.request.url).pathname;
 
-// Canonical URL berechnen
+// Canonical URL berechnen und übergeben
 const canonicalUrl = href || `${Astro.site}${urlPath}`;
 
 // Netlify setzt automatisch das Nonce
@@ -49,27 +49,27 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
     <meta name="generator" content={Astro.generator} />
     <meta name="Language" content="de_DE" />
     <meta name="date" content={new Date().toISOString().split("T")[0]} />
-    {description && <meta name="description" content={description} />}
-    {keywords && <meta name="keywords" content={keywords} />}
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
 
-    {/* Canonical URL einfügen, wenn `href` übergeben wurde */}
-    {href && <link rel="canonical" href={href} />}
-    {/* Fallback, wenn `href` nicht übergeben wurde */}
-    {!href && <link rel="canonical" href={canonicalUrl} />}
+    <!-- Canonical URL einfügen, wenn `href` übergeben wurde -->
+    <link rel="canonical" href={canonicalUrl} />
 
     <title>{pageTitle}</title>
 
-    {pageTitle && <title>{pageTitle}</title>}
     <!-- Open Graph Meta Tags -->
-    {ogTitle && <meta property="og:title" content={ogTitle} />}
-    {ogDescription && <meta property="og:description" content={ogDescription} />}
-    {ogUrl && <meta property="og:url" content={ogUrl} />}
-    {ogType && <meta property="og:type" content={ogType} />}
+    <meta property="og:title" content={ogTitle || pageTitle} />
+    <meta property="og:description" content={ogDescription || description} />
+    <meta property="og:url" content={ogUrl || href} />
+    <meta property="og:type" content={ogType || "website"} />
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    {twitterTitle && <meta name="twitter:title" content={twitterTitle} />}
-    {twitterDescription && <meta name="twitter:description" content={twitterDescription} />}
-    {twitterUrl && <meta name="twitter:url" content={twitterUrl} />}
+    <meta name="twitter:title" content={twitterTitle || pageTitle} />
+    <meta
+      name="twitter:description"
+      content={twitterDescription || description}
+    />
+    <meta name="twitter:url" content={twitterUrl || href} />
     <meta
       name="google-site-verification"
       content="Zitul6WICKD7zrzgptxGVrh2GEhozasdEM_d1tGi2aw"
@@ -87,62 +87,8 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
     <meta name="robots" content="max-snippet:-1, INDEX, FOLLOW" />
     <meta name="theme-color" content="#191919" />
 
-    <slot name="head" />
-
     <!-- Client-Side Navigation -->
     <ClientRouter />
-
-    <!-- Bedingte CSS-Dateien fuer spezifische Seiten -->
-    {
-      urlPath === "/gitarrenunterricht/" && (
-        <link rel="stylesheet" href="/styles/gitarrenunterricht.css" />
-      )
-    }
-    {
-      urlPath === "/e-gitarrenunterricht/" && (
-        <link rel="stylesheet" href="/styles/e-gitarrenunterricht.css" />
-      )
-    }
-    {
-      urlPath === "/e-bassunterricht/" && (
-        <link rel="stylesheet" href="/styles/e-bassunterricht.css" />
-      )
-    }
-    {
-      urlPath === "/banjounterricht/" && (
-        <link rel="stylesheet" href="/styles/banjounterricht.css" />
-      )
-    }
-    {
-      urlPath === "/klavierunterricht/" && (
-        <link rel="stylesheet" href="/styles/klavierunterricht.css" />
-      )
-    }
-    {
-      urlPath === "/keyboardunterricht/" && (
-        <link rel="stylesheet" href="/styles/keyboardunterricht.css" />
-      )
-    }
-    {
-      urlPath === "/akkordeonunterricht/" && (
-        <link rel="stylesheet" href="/styles/akkordeonunterricht.css" />
-      )
-    }
-    {
-      urlPath === "/saxophonunterricht/" && (
-        <link rel="stylesheet" href="/styles/saxophonunterricht.css" />
-      )
-    }
-    {
-      urlPath === "/klarinettenunterricht/" && (
-        <link rel="stylesheet" href="/styles/klarinettenunterricht.css" />
-      )
-    }
-    {
-      urlPath === "/querfloetenunterricht/" && (
-        <link rel="stylesheet" href="/styles/querfloetenunterricht.css" />
-      )
-    }
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->

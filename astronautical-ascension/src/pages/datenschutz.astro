@@ -1,12 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPageUrl } from "../utils/getPageUrl.js";
 const pageTitle = "Datenschutzerklärung";
+const description = "Datenschutz";
+const keywords = "datenschutz richtlinien"
+const pageUrl = getPageUrl(Astro);
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
-  description="Datenschutz"
-  keywords="datenschutz"
+  description={description}
+  keywords={keywords}
+  href={pageUrl} 
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
 >
   <section>
     <p>

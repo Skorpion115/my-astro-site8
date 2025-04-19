@@ -1,18 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPageUrl } from "../utils/getPageUrl.js";
 const pageTitle = "Klarinettenunterricht für Böhm und Deutsches System";
 const description = "Ich gebe Klarinettenunterricht 🎼 in Nürnberg. Ich benutze sowohl das Böhmsystem als auch das deutsche System";
 const keywords = "klarinettenunterricht f&uuml;r boem und deutsche system, klarinettenunterricht, neue schule für klarinette ewald koch, klarinette lernen, klarinettenunterricht n&uuml;rnberg, klarinettenschule, klarinette lernen, klarinettenschule für anfaenger, musikschule klarinette, klarinettenunterricht in n&uuml;rnberg, klarinettenunterricht in eibach, klarinette, klarinettenunterricht, klarinette für anfaenger, klarinettenkurs, musikschule für klarinette, klarinettenunterricht eibach, unterricht klarinette, musikunterricht klarinette, klarinettenlehrer, Klarinette lernen für anfaenger";
+const pageUrl = getPageUrl(Astro);
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
   keywords={keywords}
+  href={pageUrl}
   ogTitle={pageTitle}
   ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
   twitterTitle={pageTitle}
   twitterDescription={description}
+  twitterUrl={pageUrl}
 >
   <article>
     <section>
@@ -40,4 +46,6 @@ const keywords = "klarinettenunterricht f&uuml;r boem und deutsche system, klari
       </p>
     </section>
   </articel>
+  <!-- Nur auf dieser Seite eingebunden -->
+  <script src="/scripts/load-page-style.js" defer></script>
 </BaseLayout>

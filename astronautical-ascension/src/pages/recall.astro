@@ -1,12 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPageUrl } from "../utils/getPageUrl.js";
 const pageTitle = "Ich rufe Sie zurück!";
+const description = "Falls die Fragen haben können Sie mir gerne eine kurze Mitteilung schicken. Ich werde sie zurück rufen! 😀";
+const keywords = "rueckruf, callback, telephon rueckruf";
+const pageUrl = getPageUrl(Astro);
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
-  description="Falls die Fragen haben können sie mir gerne eine kurze Mitteilung schicken. Ich werde sie zurück rufen! 😀"
-  keywords="ich rufe sie zurück, rückruf"
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
 >
   <div class="container4">
     <form
@@ -55,6 +67,7 @@ const pageTitle = "Ich rufe Sie zurück!";
           name="message"
           cols="23"
           rows="10"
+          class="form-control form-control-lg"
           placeholder="Bitte um Rückruf"></textarea>
       </div>
       <div>

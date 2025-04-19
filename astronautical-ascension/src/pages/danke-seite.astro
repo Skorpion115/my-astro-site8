@@ -1,13 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPageUrl } from "../utils/getPageUrl.js";
 const pageTitle = "Danke für die kurze Mitteilung!";
 const description = "Erfolgsmeldung";
+const keywords = "erfolgsmeldung, bestätigung fuer rueckruf";
+const pageUrl = getPageUrl(Astro);
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
-  keywords="Rueckruf"
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
 >
   <p>Ihre kurze Mitteilung ist auf dem Weg! Ich werde mich sobald wie möglich bei Ihnen melden.</p>
   <br>

@@ -1,18 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPageUrl } from "../utils/getPageUrl.js";
 const pageTitle = "Tips für Ihren Instrumentenkauf";
 const description = "Gute Tips zum Instrumetenkauf! 🎸 Auf was muss ich beim Kauf eines Instruments achten? 🪕";
 const keywords = "e-gitarre, klarinette, querfloete, saxophon, klavier, keyboard, akkordeon, banjo";
+const pageUrl = getPageUrl(Astro);
 ---
 
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
   keywords={keywords}
+  href={pageUrl}
   ogTitle={pageTitle}
   ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
   twitterTitle={pageTitle}
   twitterDescription={description}
+  twitterUrl={pageUrl}
 >
   <article class="container2">
     <section class="artikel artikel-1">
