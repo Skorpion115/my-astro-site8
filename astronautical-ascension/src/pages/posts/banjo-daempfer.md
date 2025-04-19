@@ -6,8 +6,8 @@ pubDate: "2023-10-21"
 author: Rudi Ziebart
 visibility: "public"
 image:
-    url: "../../images/gold_tone_300x300.webp"
-    alt: "Banjo Dämpfer"
+        url: "../../images/gold_tone_300x300.webp"
+        alt: "Banjo Dämpfer"
 ---
 ## Gold Tone Dämpfer
 **Geeignet für Gitarre und Banjo**

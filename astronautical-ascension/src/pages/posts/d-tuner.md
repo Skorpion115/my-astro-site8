@@ -6,8 +6,8 @@ pubDate: "2023-08-15"
 author: Rudi Ziebart
 visibility: "public"
 image:
-    url: "../../images/B4_300x141.webp"
-    alt: "B4 D-Tuner von Schaller"
+        url: "../../images/B4_300x141.webp"
+        alt: "B4 D-Tuner von Schaller"
 ---
 ## Kann ich die D-Tuner benutzen wenn ein Capotaster gesetzt ist?
 <p>

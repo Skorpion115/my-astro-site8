@@ -18,8 +18,8 @@ const imageAlt = frontmatter.image?.alt || 'Standardbild';  // Beispiel-Fallback
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content={frontmatter.title} />
     <meta property="og:description" content={frontmatter.description} />
-    <meta property="og:image" content={frontmatter.image.url} />
-    <meta property="og:image:alt" content={frontmatter.image.alt} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:alt" content={imageAlt} />
     <meta property="og:type" content="article" />
     <meta property="og:url" content={pageUrl} />
 
@@ -27,8 +27,8 @@ const imageAlt = frontmatter.image?.alt || 'Standardbild';  // Beispiel-Fallback
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={frontmatter.title} />
     <meta name="twitter:description" content={frontmatter.description} />
-    <meta name="twitter:image" content={frontmatter.image.url} />
-    <meta name="twitter:image:alt" content={frontmatter.image.alt} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content={imageAlt} />
   </Fragment>
 
   <div class="blog-post">
@@ -36,7 +36,7 @@ const imageAlt = frontmatter.image?.alt || 'Standardbild';  // Beispiel-Fallback
     <p><em>{frontmatter.description}</em></p>
     <p>Veröffentlicht am: {new Date(frontmatter.pubDate).toLocaleDateString('de-DE')}</p>
     <p>Geschrieben von {frontmatter.author}</p>
-    <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
+    <img src={imageUrl} alt={imageAlt} />
     
     <slot />
   </div>

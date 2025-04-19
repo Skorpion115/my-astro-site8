@@ -178,6 +178,16 @@ button:focus,
   color: #af8848;
 }
 
+.normal-links {
+  color: #1a0dab; /* Google-Blau, kannst du natürlich ändern */
+  text-decoration: underline;
+}
+
+.normal-links:hover {
+  opacity: 0.8;
+}
+
+
 /* Weitere Anpassungen für den Dark Mode */
 .dark h1,
 .dark h2,

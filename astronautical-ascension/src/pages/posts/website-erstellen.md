@@ -6,8 +6,8 @@ pubDate: "2022-07-15"
 author: Rudi Ziebart
 visibility: "public"
 image:
-    url: "https://docs.astro.build/default-og-image.png"
-    alt: "Das vollständige Astro-Logo"
+        url: "https://docs.astro.build/default-og-image.png"
+        alt: "Das vollständige Astro-Logo"
 ---
 ## Eigene responsive Webseite kostenlos erstellen
 
