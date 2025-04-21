@@ -102,9 +102,9 @@ export const videos = [
     loc: "/keyboard-videoanleitung/",
     title: "Hammond Organ Komponist: Klaus Wunderlich Titel: H-schisch",
     description: "Ein Keyboard Tutorial über den Komponist Klaus Wunderlich. Das Stück das ich spiele heißt 'H-schisch'. Das ist in einem Notenheft von ihm mit 12 Kompositionen. Klaus Wunderlich brachte ein Notenbuch heraus mit 12 Kompositionen von ihm. Für jede Tonart komponierte er ein Stück. Ich habe das Stück in H Durgewählt. Ich habe es mit einem HAMMOND XM-1 Expander aufgenommen.",
-    thumbnail_loc: "https://i.ytimg.com/vi/y2KtSx3-W3w/hqdefault.jpg",
-    content_loc: "https://www.youtube.com/embed/y2KtSx3-W3w",
-    publication_date: "2023-05-19T14:00:00+02:00",
+    thumbnail_loc: "https://i.ytimg.com/vi/9cQd9UeneTg/hqdefault.jpg",
+    content_loc: "https://www.youtube.com/embed/9cQd9UeneTg",
+    publication_date: "2025-04-21T14:00:00+02:00",
     duration: "256",
   },
   {
