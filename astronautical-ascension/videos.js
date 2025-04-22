@@ -113,7 +113,7 @@ export const videos = [
     description: "Noch ein Stück aus dem Heft 12 Kompositionen von Klaus Wunderlich. Ein Keyboard Tutorial über den Komponisten Klaus Wunderlich. Titel: E-Hering.",
     thumbnail_loc: "https://i.ytimg.com/vi/dQVFo8bhVSU/hqdefault.jpg",
     content_loc: "https://www.youtube.com/embed/dQVFo8bhVSU",
-    publication_date: "2023-04-12T14:00:00+02:00",
+    publication_date: "2025-04-21T14:00:00+02:00",
     duration: "338",
   },
   {
