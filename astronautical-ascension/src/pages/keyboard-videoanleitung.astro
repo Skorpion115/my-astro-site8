@@ -34,12 +34,20 @@ const videoData = [
   {
     loc: `${SITE_URL}/keyboard-videoanleitung/`,
     title: "Hammond Organ Komponist: Klaus Wunderlich Titel: E-Hering",
-    description:
-      "Noch ein Stück aus dem Heft 12 Kompositionen von Klaus Wunderlich. Ein Keyboard Tutorial über den Komponisten Klaus Wunderlich. Titel: E-Hering.",
+    description: "Noch ein Stück aus dem Heft 12 Kompositionen von Klaus Wunderlich. Ein Keyboard Tutorial über den Komponisten Klaus Wunderlich. Titel: E-Hering.",
     contentLoc: "https://www.youtube.com/embed/dQVFo8bhVSU",
     thumbnailLoc: "https://i.ytimg.com/vi/dQVFo8bhVSU/hqdefault.jpg",
     publicationDate: "2025-04-21T14:00:00+02:00",
     duration: "PT5M38S",
+  },
+  {
+    loc: `${SITE_URL}/keyboard-videoanleitung/`,
+    title: "Hammond Organ - Intermezzo",
+    description: `Ich habe vor langer Zeit einmal eine Studioaufnahme mit einer Hammond Orgel A 100 gemacht und ich wollte einmal ein Video darüber machen. Das Stück ist eine Eigenkomposition und ich habe es "Intermezzo" genannt. <a href="/bilder/Intermezzo.pdf" target="_blank" class="normal-links" rel="noopener">Noten als PDF herunterladen</a>.`,
+    contentLoc: "https://www.youtube.com/embed/D3X3lxcn780",
+    thumbnailLoc: "https://i.ytimg.com/vi/D3X3lxcn780/hqdefault.jpg",
+    publicationDate: "2021-05-16T14:00:00+02:00",
+    duration: "PT1M46S",
   },
 ];
 ---
@@ -87,7 +95,7 @@ twitterUrl={pageUrl}
             </lite-youtube>
           </div>
           <h2>{video.title}</h2>
-          <p>{video.description}</p>
+          <p set:html={video.description}></p>
         </div>
       </div>
     ))

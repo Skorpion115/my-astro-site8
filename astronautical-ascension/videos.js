@@ -117,6 +117,15 @@ export const videos = [
     duration: "338",
   },
   {
+    loc: "/keyboard-videoanleitung/",
+    title: "Hammond Organ - Intermezzo",
+    description: "Ich habe vor langer Zeit einmal eine Studioaufnahme mit einer Hammond Orgel A 100 gemacht und ich wollte einmal ein Video darüber machen. Das Stück ist eine Eigenkomposition und ich habe es 'Intermezzo' genannt. Die Noten sind als PDF verfügbar unter /bilder/Intermezzo.pdf",
+    thumbnail_loc: "https://i.ytimg.com/vi/D3X3lxcn780/hqdefault.jpg",
+    content_loc: "https://www.youtube.com/embed/D3X3lxcn780",
+    publication_date: "2021-05-16T14:00:00+02:00",
+    duration: "106",
+  },
+  {
     loc: "/harmonielehre/",
     title: "Notenschrift",
     description: "Ich möchte mit diesem Video die Notenschrift erklären die ja doch so wichtig für die Musik ist! Ich möchte den Schülern, Musikinteressierte oder Hobbymusiker auf diese Weise das Noten lesen und die Harmonielehre ein bisschen näher bringen! Die Videos sind so aufgebaut das man zuerst die Noten lesen kann, dann kommen die Intervalle, dann die Dreiklänge und zuletzt die Funktiontheorie. Also bitte nach der Reihenfolge lernen! Ich werde mit dem ersten Video das Noten lesen erklären.",
