@@ -1,8 +1,6 @@
-// sitemap.js
 import { create } from "xmlbuilder2";
 import fs from "fs";
 import path from "path";
-//import { glob } from "glob";
 import pkg from "glob";
 const { glob } = pkg;
 import { pages } from "./pages.js"; // deine statischen Seiten
@@ -30,7 +28,6 @@ const urls = [
   })),
 ];
 
-
 // Videos zu URLs zuordnen (z. B. "/gitarre-videoanleitung/" oder "/keyboard-videoanleitung/")
 const videosByUrl = {};
 videos.forEach((video) => {
@@ -45,15 +42,22 @@ const doc = create({ version: "1.0", encoding: "UTF-8" }).ele("urlset", {
   "xmlns:video": "http://www.google.com/schemas/sitemap-video/1.1",
 });
 
+// Hilfsfunktion für die Datumsausgabe
 function formatDate(date) {
   return new Date(date).toISOString();
 }
 
+// Hilfsfunktion für das Entfernen des Site-URLs von einem Pfad
+function toUrlPath(loc) {
+  return loc.replace(SITE_URL, '');
+}
+
+// URLs durchgehen und in XML umwandeln
 urls.forEach((entry) => {
   const urlEle = doc.ele("url");
 
   // Wenn 'entry' ein einfacher String (z. B. von posts) ist
-  const loc = typeof entry === "string" ? `${SITE_URL}${entry}` : entry.loc;
+  const loc = typeof entry === "string" ? `${SITE_URL}${entry}` : (entry.loc || "");
   const changefreq = entry.changefreq || "weekly";
   const lastmod = entry.lastmod || today;
 
@@ -61,10 +65,10 @@ urls.forEach((entry) => {
   urlEle.ele("changefreq").txt(changefreq);
   urlEle.ele("lastmod").txt(lastmod);
 
-  const urlPath = entry.loc
-    ? entry.loc.replace(SITE_URL, "")
-    : entry; // für Markdown-Posts
+  // URL-Pfad extrahieren
+  const urlPath = entry.loc ? toUrlPath(entry.loc) : toUrlPath(entry);
 
+  // Videos für diese URL hinzufügen
   const relatedVideos = videosByUrl[urlPath] || [];
   relatedVideos.forEach((video) => {
     const videoEle = urlEle.ele("video:video");
