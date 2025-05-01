@@ -2,7 +2,9 @@
 import { create } from "xmlbuilder2";
 import fs from "fs";
 import path from "path";
-import { glob } from "glob";
+//import { glob } from "glob";
+import pkg from "glob";
+const { glob } = pkg;
 import { pages } from "./pages.js"; // deine statischen Seiten
 import { videos } from "./videos.js"; // deine Video-Metadaten
 

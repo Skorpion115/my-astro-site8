@@ -10,13 +10,14 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/netlify": "^6.2.5",
-    "astro": "^5.6.1",
+    "@astrojs/netlify": "^6.3.2",
+    "@netlify/functions": "^3.1.2",
+    "astro": "^5.7.10",
     "toml": "^3.0.0",
     "xmlbuilder2": "^3.1.1"
   },
   "devDependencies": {
-    "@types/node": "^22.13.10",
+    "@types/node": "^22.15.3",
     "typescript": "^5.8.3"
   }
 }
