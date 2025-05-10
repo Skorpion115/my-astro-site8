@@ -64,12 +64,12 @@ export const videos = [
   },
   {
     loc: "/gitarre-videoanleitung/",
-    title: "Catch The Wind - Donovan",
-    description: "Ein besonders schönes Gitarrenstück ist 'Catch The Wind' von Donovan. Es eignet sich sehr gut, um es alleine auf der Gitarre zu spielen. Im Video hörst du die Originalaufnahme von Donavan. Du möchtest das Stück gerne selbst lernen? Dann schreib mir! Ich helfe dir gerne beim Einstieg und gebe dir Tipps zum Nachspielen!",
-    thumbnail_loc: "https://www.musicstudio-ziebart.de/images/thumbnail-catch-the-wind.jpg",
-    content_loc: "https://www.youtube.com/embed/9yQKDj_V4Gk",
-    publication_date: "2018-04-18T14:00:00+02:00",
-    duration: "183",
+    title: "Catch The Wind-Donovan | Gitarren-Tutorial",
+    description: "Ein besonders schönes Gitarrenstück ist 'Catch The Wind' von Donovan. Es eignet sich sehr gut, um es alleine auf der Gitarre zu spielen. Du möchtest das Stück gerne selbst lernen? Dann schreib mir! Ich helfe dir gerne beim Einstieg und gebe dir Tipps zum Nachspielen!",
+    thumbnail_loc: "https://i.ytimg.com/vi/RimpDFRYies/hqdefault.jpg",
+    content_loc: "https://www.youtube.com/embed/RimpDFRYies",
+    publication_date: "2025-05-10T14:23:00+02:00",
+    duration: "1488",
   },
   {
     loc: "/gitarre-videoanleitung/",
