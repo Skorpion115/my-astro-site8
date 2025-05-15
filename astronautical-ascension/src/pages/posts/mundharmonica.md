@@ -15,7 +15,7 @@ Die Blues Harp ist eine diatonische Mundharmonika. Das bedeutet das beim rein bl
 </p>
 
 <p>
-  <a href="../../bilder/Mundharmonika%20in%20Eb.pdf" target="_blank" rel="noopener" class="pdf-button">
-    PDF „Mundharmonika in Eb“ ansehen
+  <a href="../../bilder/Blues%20Harp%20in%20Eb.pdf" target="_blank" rel="noopener" class="pdf-button">
+    PDF „Blues Harp in Eb“ ansehen
   </a>
 </p>
