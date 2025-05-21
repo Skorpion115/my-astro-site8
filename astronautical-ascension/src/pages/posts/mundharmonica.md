@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
 title: Wie spielt man eine Hohner Blues Harp Mundharmonika
-description: "Wie spielt man eine Hohner Blues Harp Mundharmonika?"
+description: "Wie spielt man eine Hohner Blues Harp Mundharmonika? Es werden die 3 Positionen auf der Blues Harp erklärt. Welche Blues Harp muß ich bei einem Blues in F nehmen? Ebenso wird die Blues Tonleiter in F genau gezeigt und wo man sie spielen muss."
 pubDate: "2025-04-05"
 author: Rudi Ziebart
 visibility: "public"
