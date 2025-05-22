@@ -43,3 +43,21 @@ Wir nehmen mal eine C-Dur Tonleiter zugrunde. 1. Mode ist C-Dur, 2. Mode ist d d
     PDF „Blues Harp in Bb“ ansehen
   </a>
 </p>
+
+<p>
+  <a href="../../bilder/Blues%20Harp%20in%20C.pdf" target="_blank" rel="noopener" class="pdf-button">
+    PDF „Blues Harp in C“ ansehen
+  </a>
+</p>
+
+<p>
+  <a href="../../bilder/Blues%20Harp%20in%20G.pdf" target="_blank" rel="noopener" class="pdf-button">
+    PDF „Blues Harp in G“ ansehen
+  </a>
+</p>
+
+<p>
+  <a href="../../bilder/Blues%20Harp%20in%20Eb.pdf" target="_blank" rel="noopener" class="pdf-button">
+    PDF „Blues Harp in Eb“ ansehen
+  </a>
+</p>
