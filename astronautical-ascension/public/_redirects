@@ -1,2 +1,20 @@
 # from URL shorterer script
 /astronautical-ascension https://github.com/Skorpion115/my-astro-site8
+
+# Weiterleitungen alter Seiten
+/klarinette/                /klarinettenunterricht/         301
+/saxophon/                  /saxophonunterricht/            301
+/e-gitarre/                 /e-gitarrenunterricht/          301
+/banjo/                     /banjounterricht/               301
+/keyboard/                  /keyboardunterricht/            301
+/akkordeon/                 /akkordeonunterricht/           301
+/querfloeten-unterricht/    /querfloetenunterricht/         301
+/musikunterricht/           /unterricht/                    301
+/klavier/                   /klavierunterricht/             301
+/e-bass/                    /e-bassunterricht/              301
+/webseite%20erstellen/      /webseite-erstellen/            301
+/webseite erstellen/        /webseite-erstellen/            301
+/post-4/                    /webseite-erstellen/            301
+/banjo d-tuner/             /d-tuner/                       301
+/akkordeon/ → /akkordeonunterricht/ ✅ (direkt)
+/akkordeon-unterricht/ → /akkordeonunterricht/ ✅ (direkt)
