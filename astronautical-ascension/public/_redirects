@@ -16,5 +16,6 @@
 /webseite erstellen/        /webseite-erstellen/            301
 /post-4/                    /webseite-erstellen/            301
 /banjo d-tuner/             /d-tuner/                       301
-/akkordeon/ → /akkordeonunterricht/ ✅ (direkt)
-/akkordeon-unterricht/ → /akkordeonunterricht/ ✅ (direkt)
+/akkordeon/                 /akkordeonunterricht/           301
+/akkordeon-unterricht/      /akkordeonunterricht/           301
+
