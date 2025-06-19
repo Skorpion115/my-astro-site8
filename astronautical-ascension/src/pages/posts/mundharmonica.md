@@ -19,6 +19,19 @@ Die Blues Harp ist eine diatonische Mundharmonika. Das bedeutet das beim rein bl
 Dann braucht man eine Bb Blues Harp. Einfach eine reine Quarte hoch rechnen. Die 2. Position gibt und den Grundton. Obwohl es eine Bb Blues Harp ist, ist der Grundton für unseren F Blues ein F. Ich habe es in der PDF Datei so eingetragen. Ürigens das Bending funktioniert nur auf der Kadzelle oder Tonloch von 1 - 6.
 </p>
 
+<h2>🎬 Blues Harp Solo | Minor Blues in Fm (Original Track)</h2>
+
+<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%;">
+  <iframe 
+    src="https://www.youtube.com/embed/UBnLFchsIQY" 
+    title="Blues Harp Solo | Minor Blues in Fm (Original Track)" 
+    style="position:absolute; top:0; left:0; width:100%; height:100%;" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+</div>
+
 ## Was ist die 1. 2. und 3. Position?
 <p>
 Auf unserer Blues Harp in Bb liegt die 1. Position auf Tonloch +4. Das +4 bedeutet wir müssen pußten (blow). Wenn nichts dort steht also nur 4 bedeutet es wir müssen ziehen (draw). Es ist eine Bb Dur Tonleiter.
