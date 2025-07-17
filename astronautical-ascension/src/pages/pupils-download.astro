@@ -7,7 +7,7 @@ const keywords = "Songs für Schüler";
 const pageUrl = getPageUrl(Astro);
 ---
 
-<BaseLayout 
+<BaseLayout
   pageTitle={pageTitle}
   description={description}
   keywords={keywords}
@@ -75,7 +75,10 @@ const pageUrl = getPageUrl(Astro);
             <td>
               <span>anhören</span>
               <audio controls>
-                <source src="/Songs/All You Need Is Love.mp3" type="audio/mpeg" />
+                <source
+                  src="/Songs/All You Need Is Love.mp3"
+                  type="audio/mpeg"
+                />
                 Dein Browser unterstützt das Audio-Element nicht.
               </audio>
             </td>
@@ -87,8 +90,9 @@ const pageUrl = getPageUrl(Astro);
               >
             </td>
             <td>
-              <a href="/zip_download/All You Need Is Love - Beatles.zip" class="normal-links"
-                >download 5.07 MB</a
+              <a
+                href="/zip_download/All You Need Is Love - Beatles.zip"
+                class="normal-links">download 5.07 MB</a
               >
             </td>
           </tr>
@@ -160,10 +164,10 @@ const pageUrl = getPageUrl(Astro);
         <div><span>Komponist:</span> Beatles</div>
         <div><span>Instrument:</span> Gitarre</div>
         <div>
-          <span>anhören</span>        
+          <span>anhören</span>
           <audio controls>
-              <source src="/Songs/All You Need Is Love.mp3" type="audio/mpeg" />
-              Dein Browser unterstützt das Audio-Element nicht.
+            <source src="/Songs/All You Need Is Love.mp3" type="audio/mpeg" />
+            Dein Browser unterstützt das Audio-Element nicht.
           </audio>
         </div>
         <div>
@@ -216,18 +220,17 @@ const pageUrl = getPageUrl(Astro);
       </div>
 
       <!-- OneDrive Präsentation außerhalb der basis-cards -->
-      <div style="margin-top: 2rem; margin-bottom: 2rem;">
-        <h3>Catch The Wind - Tutorial Präsentation</h3>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-          <iframe 
-            src="https://onedrive.live.com/embed?resid=26C82F8CBD14DA48%21107&em=2&wdAr=1.7777777777777777"
-            style="position: absolute; top:0; left:0; width:100%; height:100%;"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
+
+      <p>
+        <a
+          href="https://1drv.ms/p/c/26c82f8cbd14da48/ETc5Pt1TdLNGpO3xsIrFhREBvgAFLjfQsDGBmhtdpOfx-w?e=qzPEAq"
+          target="_blank"
+          class="normal-links"
+        >
+          Tutorial-Präsentation online ansehen
+        </a>
+      </p>
+
       <br />
       <p>
         <a href="/" class="normal-links">home</a>
