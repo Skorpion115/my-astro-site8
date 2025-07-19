@@ -3,8 +3,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getPageUrl } from "../utils/getPageUrl.js";
 import Card from "../components/Card.astro";
 const pageTitle = "Musiklehrer erteilt Musikunterricht | Musicstudio Ziebart";
-const description = "Ich gebe Musikunterricht in Nürnberg 🎹. Individueller Unterricht für Anfänger und Fortgeschrittene 🎼, jetzt anrufen! Tel.: 0911/6320890.";
-const keywords = "musiklehrer erteilt musikunterricht | musicstudio-ziebart, musikunterricht nürnberg, musikschule für alle, musikmachen, musik machen, musikschule nürnberg standorte, musikschule nürnberg lehrer, musikschule nürnberg preise, musikschule eibach, musicstudio ziebart online musikunterricht, privatmusikunterricht, musikunterricht grundschule, musikschule, google search console, günstige Preise, musikausbildung, qualifizierter musiklehrer, online-musikunterricht, kinder musikalisch fördern, musicstudio-ziebart, musikschule nürnberg kinder, klavierunterricht kinder nürnberg, musikschulen nürnberg, musikschule nürnberg, nürnberg musikschule, gitarrenunterricht für kinder nürnberg, gitarre lernen nürnberg, musikschule nürnberg eibach, musikschule nürnberg preise, musikschule in der naehe, musikschule nürnberg kinder, musiklehrer, musiklehrer nürnberg";
+const description =
+  "Ich gebe Musikunterricht in Nürnberg 🎹. Individueller Unterricht für Anfänger und Fortgeschrittene 🎼, jetzt anrufen! Tel.: 0911/6320890.";
+const keywords =
+  "musiklehrer erteilt musikunterricht | musicstudio-ziebart, musikunterricht nürnberg, musikschule für alle, musikmachen, musik machen, musikschule nürnberg standorte, musikschule nürnberg lehrer, musikschule nürnberg preise, musikschule eibach, musicstudio ziebart online musikunterricht, privatmusikunterricht, musikunterricht grundschule, musikschule, google search console, günstige Preise, musikausbildung, qualifizierter musiklehrer, online-musikunterricht, kinder musikalisch fördern, musicstudio-ziebart, musikschule nürnberg kinder, klavierunterricht kinder nürnberg, musikschulen nürnberg, musikschule nürnberg, nürnberg musikschule, gitarrenunterricht für kinder nürnberg, gitarre lernen nürnberg, musikschule nürnberg eibach, musikschule nürnberg preise, musikschule in der naehe, musikschule nürnberg kinder, musiklehrer, musiklehrer nürnberg";
 const pageUrl = getPageUrl(Astro);
 ---
 
@@ -20,7 +22,7 @@ const pageUrl = getPageUrl(Astro);
   twitterTitle={pageTitle}
   twitterDescription={description}
   twitterUrl={pageUrl}
-  >
+>
   <div class="firmenname">Staatl. Anerk. Musiklehrer</div>
   <p>
     <img
@@ -29,6 +31,35 @@ const pageUrl = getPageUrl(Astro);
       aria-label="Bild SEO Musiklehrer erteilt Musikunterricht | Musicstudio-ziebart"
     />
   </p>
+  <br />
+  <p>
+    <a
+      href="https://1drv.ms/p/c/26c82f8cbd14da48/ETc5Pt1TdLNGpO3xsIrFhREBvgAFLjfQsDGBmhtdpOfx-w"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="normal-links"
+    >
+      Tutorial-Präsentation online ansehen
+    </a>
+  </p>
+
+  <h3 class="" normal-links>Hinweis zur Nutzung der Tutorial-Präsentation</h3>
+  <p>
+    Unsere Tutorial-Präsentation können Sie direkt im Browser öffnen – es ist
+    keine zusätzliche Software erforderlich. Unsere Tutorial-Präsentation
+    funktioniert am besten auf einem Desktop-Computer oder Laptop.
+  </p>
+  <p>
+    Dort werden alle Funktionen wie Videos, Animationen und Hyperlinks
+    vollständig unterstützt.
+  </p>
+  <p>
+    Auf Smartphones oder Tablets kann die Präsentation ebenfalls geöffnet
+    werden, allerdings sind manche Funktionen wie Videos oder Links dort oft nur
+    eingeschränkt nutzbar. Wir empfehlen daher, die Präsentation auf einem
+    Desktop-Gerät anzuschauen, um das beste Erlebnis zu haben.
+  </p>
+
   <article class="conteneur">
     <section class="marchandise marchandise-1">
       <h2>Musikunterricht für alle</h2>
@@ -143,7 +174,7 @@ const pageUrl = getPageUrl(Astro);
         90451 Nürnberg
       </p>
       <p>Staatl. anerkannter Musiklehrer</p>
-      
+
       <ul class="link-card-grid">
         <Card
           href="/recall/"
@@ -213,15 +244,21 @@ const pageUrl = getPageUrl(Astro);
       <section>
         <h2>Schulferien in Bayern 2025</h2>
         <ul class="ferien-liste">
-            <li><strong>Faschingsferien:</strong> 3. März bis 7. März 2025</li>
-            <li><strong>Osterferien:</strong> 14. April bis 25. April 2025</li>
-            <li><strong>Pfingstferien:</strong> 10. Juni bis 20. Juni 2025</li>
-            <li><strong>Sommerferien:</strong> 1. August bis 15. September 2025</li>
-            <li><strong>Herbstferien:</strong> 3. November bis 7. November 2025 und 19. November 2025</li>
-            <li><strong>Weihnachtsferien:</strong> 22. Dezember 2025 bis 5. Januar 2026</li>
+          <li><strong>Faschingsferien:</strong> 3. März bis 7. März 2025</li>
+          <li><strong>Osterferien:</strong> 14. April bis 25. April 2025</li>
+          <li><strong>Pfingstferien:</strong> 10. Juni bis 20. Juni 2025</li>
+          <li>
+            <strong>Sommerferien:</strong> 1. August bis 15. September 2025
+          </li>
+          <li>
+            <strong>Herbstferien:</strong> 3. November bis 7. November 2025 und 19.
+            November 2025
+          </li>
+          <li>
+            <strong>Weihnachtsferien:</strong> 22. Dezember 2025 bis 5. Januar 2026
+          </li>
         </ul>
       </section>
-     
     </section>
   </article>
 </BaseLayout>
