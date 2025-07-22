@@ -23,6 +23,12 @@
   font-display: swap;
 }
 
+strong {
+  font-family: "IBM", sans-serif;
+  font-weight: 700; /* nutzt automatisch dein OpenSans-Bold */
+  color: inherit; /* übernimmt die normale Textfarbe */
+}
+
 /* ANCHOR Grundlegende Einstellungen */
 html {
   background-color: #f1f5f9;

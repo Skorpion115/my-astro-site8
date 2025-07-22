@@ -1,9 +1,9 @@
 [build]
 command = "npm run build"
-base = "astronautical-ascension/"
 publish = "dist"
 
 [build.environment]
+NODE_VERSION = "22.13.1"
 SITE_URL = "https://www.musicstudio-ziebart.de"
 
 [[headers]]
