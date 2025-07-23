@@ -119,6 +119,7 @@ p {
   padding: 0rem 1.25rem;
 }
 
+
 /* Wenn das Menü geöffnet ist, den Body nicht scrollen lassen */
 body.menu-open {
   overflow: hidden;
@@ -930,6 +931,19 @@ textarea {
   height: auto;
   margin-left: 1%;
   border-radius: 0.313rem;
+}
+
+/* Listenabstand */
+.instrumenten-liste {
+  margin-bottom: 1.5rem;   /* Abstand unter der gesamten Liste */
+  padding-left: 1.8rem;    /* Einrückung für die Punkte */
+  list-style-type: disc;   /* klassische Punkte (oder 'circle', 'square') */
+}
+
+.instrumenten-liste li {
+  margin-bottom: 0.8rem;   /* Abstand zwischen den Listeneinträgen */
+  line-height: 1.6;        /* bessere Lesbarkeit */
+  font-weight: 500;        /* etwas kräftiger, wirkt wichtiger */
 }
 
 /* ANCHOR faq.astro */
