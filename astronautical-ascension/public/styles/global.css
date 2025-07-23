@@ -935,15 +935,15 @@ textarea {
 
 /* Listenabstand */
 .instrumenten-liste {
-  margin-bottom: 1.5rem;   /* Abstand unter der gesamten Liste */
-  padding-left: 1.8rem;    /* Einrückung für die Punkte */
-  list-style-type: disc;   /* klassische Punkte (oder 'circle', 'square') */
+  margin-bottom: 2rem;        /* etwas mehr Abstand nach unten */
+  padding-left: 1.6rem;       /* etwas enger für kompakteres Layout */
+  list-style-type: square;    /* kleine Quadrate statt Punkte (moderner) */
 }
 
 .instrumenten-liste li {
-  margin-bottom: 0.8rem;   /* Abstand zwischen den Listeneinträgen */
-  line-height: 1.6;        /* bessere Lesbarkeit */
-  font-weight: 500;        /* etwas kräftiger, wirkt wichtiger */
+  margin-bottom: 1rem;        /* noch mehr Luft zwischen den Einträgen */
+  line-height: 1.7;           /* bessere Lesbarkeit */
+  font-weight: 600;           /* etwas kräftiger */
 }
 
 /* ANCHOR faq.astro */
