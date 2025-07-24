@@ -933,6 +933,15 @@ textarea {
   border-radius: 0.313rem;
 }
 
+/* Bilder klavierunterricht heumann */
+.heumann {
+  width: 50%;   /* nur dieses Bild wird halb so breit */
+  height: auto;
+  margin-left: 1%;
+  border-radius: 0.313rem;
+}
+
+
 /* Listenabstand */
 .instrumenten-liste {
   margin-bottom: 2rem;        /* etwas mehr Abstand nach unten */
