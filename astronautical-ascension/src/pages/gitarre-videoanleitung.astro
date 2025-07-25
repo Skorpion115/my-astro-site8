@@ -2,11 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import YouTube from "../components/YouTube.astro";
 import "../styles/lite-yt-embed.css";
-const pageTitle = "Weiterführende Lektionen für Akustische Gitarre";
-const description = "Möchtest du 'Catch The Wind', 'Yesterday' oder 'City of New Orleans' auf der Gitarre spielen? Ich zeige dir, wie du diese Klassiker sicher meistern kannst!";
-
-const keywords = "gitarrenunterricht für akustische gitarre, yesterday - beatles, city of neworleans - arlo guthrie";
-const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
+const pageTitle =
+  "Gitarre Videoanleitungen – Catch The Wind, Yesterday & City of New Orleans";
+const description =
+  "Lerne Gitarre spielen mit kostenlosen Videoanleitungen: Catch The Wind von Donovan, Yesterday von den Beatles und City of New Orleans von Arlo Guthrie.";
+const keywords =
+  "gitarre tutorial, catch the wind gitarre, yesterday gitarre lernen, city of new orleans gitarre arlo guthrie";
+const SITE_URL =
+  import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
 const pageUrl = `${SITE_URL}/gitarre-videoanleitung/`;
 
 // RDFa-Markup für das Video nur auf dieser Seite
@@ -36,7 +39,8 @@ const videoData = [
   {
     loc: `${SITE_URL}/gitarrenunterricht/`,
     title: "City Of New Orleans - Arlo Guthrie",
-    description: "Ein schönes Beispiel für ein Fingerpicking mit Gitarre und Gesang: Ich habe mir damals den Song von Arlo Guthrie rausgesucht. Es heißt 'City Of New Orleans'. Er selbst spielt übrigens bei diesem Song ein Klavier. Es ist ein Lernvideo und Gitarren Tutorial. Dieses Stück war Arlo Guthries einziger Welthit. Als damals Steve Goodman, der Komponist des berühmten Songs zu ihm sagte: Ich hätte da einen guten Hit für dich, sagte Arlo Guthrie: 'Ich hasse Hits!'. Warum das weiß ich nicht. Falls jemand das Stück spielen möchte mir eine E-Mail schicken. Ich helfe dann weiter!",
+    description:
+      "Ein schönes Beispiel für ein Fingerpicking mit Gitarre und Gesang: Ich habe mir damals den Song von Arlo Guthrie rausgesucht. Es heißt 'City Of New Orleans'. Er selbst spielt übrigens bei diesem Song ein Klavier. Es ist ein Lernvideo und Gitarren Tutorial. Dieses Stück war Arlo Guthries einziger Welthit. Als damals Steve Goodman, der Komponist des berühmten Songs zu ihm sagte: Ich hätte da einen guten Hit für dich, sagte Arlo Guthrie: 'Ich hasse Hits!'. Warum das weiß ich nicht. Falls jemand das Stück spielen möchte mir eine E-Mail schicken. Ich helfe dann weiter!",
     contentLoc: "https://www.youtube.com/embed/L70MSOuUiG0",
     thumbnailLoc: "https://i.ytimg.com/vi/L70MSOuUiG0/hqdefault.jpg",
     publicationDate: "2025-04-21T14:00:00+02:00",
@@ -44,54 +48,72 @@ const videoData = [
   },
 ];
 ---
-<BaseLayout
-pageTitle={pageTitle}
-description={description}
-keywords={keywords}
-href={pageUrl}
-ogTitle={pageTitle}
-ogDescription={description}
-ogUrl={pageUrl}
-twitterTitle={pageTitle}
-twitterDescription={description}
-twitterUrl={pageUrl}
->
-<br />
-<!-- RDFa-Markup Struktur für das VideoObject -->
-{
-    videoData.map((video) => (
-      <div vocab="http://schema.org/" typeof="VideoObject">
-        <meta property="name" content={video.title} />
-        <meta property="description" content={video.description} />
-        <meta property="thumbnailUrl" content={video.thumbnailLoc} />
-        <meta property="uploadDate" content={video.publicationDate} />
-        <meta property="duration" content={video.duration} />
-        <meta property="embedUrl" content={video.contentLoc} />
 
-        <div class="video-container-wrapper">
-          <div class="video-container">
-            <lite-youtube
-              videoid={video.contentLoc.split("/").pop()}
-              style={
-                "background-image: url('" + video.thumbnailLoc + "');"
-              }
-            >
-              <a
-                href={video.contentLoc}
-                class="lty-playbtn"
-                title={video.title}
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <br />
+  <section>
+    <h2>Gitarre Videoanleitung</h2>
+    <p>
+      Lerne drei berühmte Klassiker auf der Gitarre: <strong
+        >Catch The Wind</strong
+      >,
+      <strong>Yesterday</strong> und <strong>City of New Orleans</strong>. Die
+      Tutorials sind ideal für Anfänger und fortgeschrittene Gitarristen.
+    </p>
+    <!-- RDFa-Markup Struktur für das VideoObject -->
+    {
+      videoData.map((video) => (
+        <div vocab="http://schema.org/" typeof="VideoObject">
+          <meta property="name" content={video.title} />
+          <meta property="description" content={video.description} />
+          <meta property="thumbnailUrl" content={video.thumbnailLoc} />
+          <meta property="uploadDate" content={video.publicationDate} />
+          <meta property="duration" content={video.duration} />
+          <meta property="embedUrl" content={video.contentLoc} />
+
+          <div class="video-container-wrapper">
+            <div class="video-container">
+              <lite-youtube
+                videoid={video.contentLoc.split("/").pop()}
+                style={"background-image: url('" + video.thumbnailLoc + "');"}
               >
-                <span class="lyt-visually-hidden">
-                  Play Video: {video.title}
-                </span>
-              </a>
-            </lite-youtube>
+                <a
+                  href={video.contentLoc}
+                  class="lty-playbtn"
+                  title={video.title}
+                >
+                  <span class="lyt-visually-hidden">
+                    Play Video: {video.title}
+                  </span>
+                </a>
+              </lite-youtube>
+            </div>
+            <h2>{video.title}</h2>
+            <p>{video.description}</p>
           </div>
-          <h2>{video.title}</h2>
-          <p>{video.description}</p>
         </div>
-      </div>
-    ))
-}
+      ))
+    }
+  </section>
+  <p>
+      <a
+        href="/gitarrenunterricht/"
+        class="normal-links"
+        aria-label="Zurück zu Gitarrenunterricht"
+      >
+        Zurück zu Gitarrenunterricht
+      </a>
+    </p>
   <YouTube />
 </BaseLayout>
