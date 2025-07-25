@@ -151,17 +151,23 @@ const pageUrl = getPageUrl(Astro);
     </ul>
 
     <p>
-      <a href="/instrumentenkauf/#Klavier" class="normal-links"
+      <a
+        href="/instrumentenkauf/#Klavier"
+        class="normal-links"
+        aria-label="Klavier kaufen: Tips für Anfänger"
         >Klavier kaufen: Tipps für Anfänger</a
       >
     </p>
     <p>
-      Weiterführende Lektionen <a
+      Weiterführende Lektionen:
+      <a
         href="/klavier-videoanleitung/"
-        class="normal-links">Zusätzliche Materialien</a
+        class="normal-links"
+        aria-label="Videoanleitungen Bach Präludium und Dvořák – Aus der Neuen Welt"
       >
+        Video-Tutorials: Bach Präludium & Dvořák – Aus der Neuen Welt
+      </a>
     </p>
-
     <p>
       <a
         href="/unterricht/"
@@ -172,8 +178,7 @@ const pageUrl = getPageUrl(Astro);
       </a>
     </p>
   </section>
-</BaseLayout>
-<section>
+  <section>
   <h2>Häufige Fragen zum Klavierunterricht</h2>
   <h3>Wie schnell lerne ich Klavier?</h3>
   <p>
@@ -181,21 +186,22 @@ const pageUrl = getPageUrl(Astro);
     noch kein Virituose. Klavier ist für mich das schwierigste Instrument
     überhaupt aber auch eines der schönsten.
   </p>
-</section>
+  </section>
 
-<section class="cta">
-  <h2>🎸 Jetzt Klavierunterricht starten!</h2>
-  <p>
-    Egal ob Anfänger oder Fortgeschritten – melde dich für eine kostenlose
-    Probestunde an und entdecke, wie viel Spaß Klavier spielen macht.
-  </p>
-  <p>
-    <a
-      href="/anmeldung/"
-      class="cta-button"
-      aria-label="Jetzt kostenlos zum Klavierunterricht in Nürnberg anmelden"
-    >
-      👉 Jetzt zur einer kostenlosen Klavierstunde anmelden!
-    </a>
-  </p>
-</section>
+  <section class="cta">
+    <h2>🎸 Jetzt Klavierunterricht starten!</h2>
+    <p>
+      Egal ob Anfänger oder Fortgeschritten – melde dich für eine kostenlose
+      Probestunde an und entdecke, wie viel Spaß Klavier spielen macht.
+    </p>
+    <p>
+      <a
+        href="/anmeldung/"
+        class="cta-button"
+        aria-label="Jetzt kostenlos zum Klavierunterricht in Nürnberg anmelden"
+      >
+        👉 Jetzt zur einer kostenlosen Klavierstunde anmelden!
+      </a>
+    </p>
+  </section>
+</BaseLayout>

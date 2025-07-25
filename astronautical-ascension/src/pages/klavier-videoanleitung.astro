@@ -2,9 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import YouTube from "../components/YouTube.astro";
 import "../styles/lite-yt-embed.css";
-const pageTitle = "Weiterführende Lektionen für Klavier";
-const description = "Klassisches Klavierstück auswendig lernen!";
-const keywords = "praeludium bmv 927 - Johann Sebastian Bach";
+const pageTitle = "Klavier Videoanleitungen – Bach Präludium & Dvořák Aus der Neuen Welt";
+const description = "Kostenlose Klavier Tutorials: Bach Präludium BWV 927 und Dvořák Aus der Neuen Welt (Largo) mit Noten und Videoanleitung.";
+const keywords = "klavier tutorial bach präludium bmv 927, klavier tutorial dvorak aus der neuen welt, klavier videoanleitung";
 const SITE_URL = import.meta.env.SITE_URL || "https://www.musicstudio-ziebart.de";
 const pageUrl = `${SITE_URL}/klavier-videoanleitung/`;
 
@@ -46,6 +46,9 @@ const videoData = [
   twitterUrl={pageUrl}
 >
   <br />
+  <p>
+    Hier findest du meine kostenlosen Klavier-Tutorials für klassische Werke. Ideal zum Mitspielen!
+  </p>
   <!-- RDFa-Markup Struktur für das VideoObject -->
   {
     videoData.map((video) => (
@@ -84,6 +87,7 @@ const videoData = [
                   href="/bilder/Largo%20-%20Antonin%20Dvorak.pdf"
                   target="_blank"
                   class="normal-links"
+                  aria-label="Noten PDF Largo von Antonín Dvořák ansehen"
                 >
                   <br />Noten ansehen
                 </a>
