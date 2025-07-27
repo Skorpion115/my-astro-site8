@@ -93,6 +93,20 @@ const videoData = [
                 </a>
               </>
             )}
+            {/* ✅ Neu: Notenlink für Bach */}
+              {video.title.includes("PRAELUDIUM BMV 927 - Johann Sebastian Bach") && (
+                <>
+                  {" "}
+                  <a
+                    href="/bilder/BMV_927.pdf"
+                    target="_blank"
+                    class="normal-links"
+                    aria-label="Noten PDF Bach Präludium BMV 927 ansehen"
+                  >
+                    <br />Noten ansehen
+                  </a>
+                </>
+              )}
           </p>
         </div>
       </div>
