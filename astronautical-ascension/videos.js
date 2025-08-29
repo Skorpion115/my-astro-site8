@@ -64,12 +64,12 @@ export const videos = [
   },
   {
     loc: "/gitarre-videoanleitung/",
-    title: "Catch The Wind-Donovan | Gitarren-Tutorial",
-    description: "Ein besonders schönes Gitarrenstück ist 'Catch The Wind' von Donovan. Es eignet sich sehr gut, um es alleine auf der Gitarre zu spielen. Du möchtest das Stück gerne selbst lernen? Dann schreib mir! Ich helfe dir gerne beim Einstieg und gebe dir Tipps zum Nachspielen!",
-    thumbnail_loc: "https://i.ytimg.com/vi/RimpDFRYies/hqdefault.jpg",
-    content_loc: "https://www.youtube.com/embed/RimpDFRYies",
-    publication_date: "2025-05-10T14:23:00+02:00",
-    duration: "1488",
+    title: "Like Ice In The Sunshine – Guitar Lesson / Gitarren-Tutorial (Gitarre lernen)",
+    description: "In diesem Video zeige ich dir, wie du Like Ice In The Sunshine auf der Gitarre spielen kannst. Du lernst Schritt für Schritt die Akkorde, den Rhythmus und den Schlag. Ideal für Anfänger, Fortgeschrittente und alle, die diesen bekannten Popsong auf der Akustikgitarre spielen möchten.",
+    thumbnail_loc: "https://i.ytimg.com/vi/pgQ2ZrlQWeA/hqdefault.jpg",
+    content_loc: "https://www.youtube.com/embed/pgQ2ZrlQWeA",
+    publication_date: "2025-08-25T14:23:00+02:00",
+    duration: "791",
   },
   {
     loc: "/gitarre-videoanleitung/",
