@@ -64,12 +64,12 @@ export const videos = [
   },
   {
     loc: "/gitarre-videoanleitung/",
-    title: "Like Ice In The Sunshine – Guitar Lesson / Gitarren-Tutorial (Gitarre lernen)",
+    title: "Like Ice In The Sunshine – New Mix – Guitar Lesson (Gitarren-Tutorial)",
     description: "In diesem Video zeige ich dir, wie du Like Ice In The Sunshine auf der Gitarre spielen kannst. Du lernst Schritt für Schritt die Akkorde, den Rhythmus und den Schlag. Ideal für Anfänger, Fortgeschrittente und alle, die diesen bekannten Popsong auf der Akustikgitarre spielen möchten.",
-    thumbnail_loc: "https://i.ytimg.com/vi/pgQ2ZrlQWeA/hqdefault.jpg",
-    content_loc: "https://www.youtube.com/embed/pgQ2ZrlQWeA",
-    publication_date: "2025-08-25T14:23:00+02:00",
-    duration: "791",
+    thumbnail_loc: "https://i.ytimg.com/vi/Jk6ECVwJyZk/hqdefault.jpg",
+    content_loc: "https://www.youtube.com/embed/Jk6ECVwJyZk",
+    publication_date: "2025-08-30T14:23:00+02:00",
+    duration: "792",
   },
   {
     loc: "/gitarre-videoanleitung/",
