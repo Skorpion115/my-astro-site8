@@ -73,12 +73,12 @@ export const videos = [
   },
   {
     loc: "/gitarre-videoanleitung/",
-    title: "Beatles - Yesterday Gitarre Tutorial",
+    title: "Beatles – Yesterday | Gitarre Tutorial 🎸",
     description: "Lernevideo und Gitarrentutorial für das Gitarrenstück 'Yesterday von den Beatles'. Dieses Stück kann man wunderbar alleine spielen, also ohne Bass, Drums usw. Die Gitarre wird in einer Double Flatstimmung umgestimmt.",
-    thumbnail_loc: "https://i.ytimg.com/vi/oqko5Mk_UBk/hqdefault.jpg",
-    content_loc: "https://www.youtube.com/embed/oqko5Mk_UBk",
-    publication_date: "2023-07-01T14:00:00+02:00",
-    duration: "761",
+    thumbnail_loc: "https://i.ytimg.com/vi/Jla_18ar1aE/hqdefault.jpg",
+    content_loc: "https://www.youtube.com/embed/Jla_18ar1aE",
+    publication_date: "2025-09-10T14:00:00+02:00",
+    duration: "760",
   },
   {
     loc: "/gitarre-videoanleitung/",
