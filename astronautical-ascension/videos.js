@@ -82,12 +82,12 @@ export const videos = [
   },
   {
     loc: "/gitarre-videoanleitung/",
-    title: "City Of New Orleans - Arlo Guthrie",
-    description: "Ein schönes Beispiel für ein Fingerpicking mit Gitarre und Gesang: Ich habe mir damals den Song von Arlo Guthrie rausgesucht. Es heißt 'City Of New Orleans'. Er selbst spielt übrigens bei diesem Song ein Klavier. Es ist ein Lernvideo und Gitarren Tutorial. Dieses Stück war Arlo Guthries einziger Welthit. Als damals Steve Goodman, der Komponist des berühmten Songs zu ihm sagte: Ich hätte da einen guten Hit für dich, sagte Arlo Guthrie: 'Ich hasse Hits!'. Warum das weiß ich nicht.",
-    thumbnail_loc: "https://i.ytimg.com/vi/L70MSOuUiG0/hqdefault.jpg",
-    content_loc: "https://www.youtube.com/embed/L70MSOuUiG0",
-    publication_date: "2025-04-21T14:00:00+02:00",
-    duration: "289",
+    title: "Catch The Wind – Donovan | Gitarren Tutorial",
+    description: "🎸 Lerne „Catch The Wind“ von Donovan auf der Gitarre – Schritt für Schritt erklärt! In diesem Gitarren-Tutorial spiele ich dir den Song komplett vor – begleitet von einem selbst erstellten Playback. Danach erkläre ich dir alle Akkorde, Schlagmuster und die Struktur, damit du den Song selbst begleiten kannst. 📌 Die Version basiert auf der Aufnahme von Donovan aus dem Jahr 1965 – ich habe sie nach Gehör herausgearbeitet. ✅ Inhalt: • Komplettes Vorspiel mit Playback • Einfache Akkorde & Schlagmuster • Songabschnitte verständlich erklärt",
+    thumbnail_loc: "https://i.ytimg.com/vi/ifJuoPeWBU8/hqdefault.jpg",
+    content_loc: "https://www.youtube.com/embed/ifJuoPeWBU8",
+    publication_date: "2025-09-16T14:00:00+02:00",
+    duration: "1488",
   },
   {
     loc: "/keyboard-videoanleitung/",
