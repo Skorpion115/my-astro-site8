@@ -20,7 +20,7 @@
     "xmlbuilder2": "^3.1.1"
   },
   "devDependencies": {
-    "@types/node": "^24.7.2",
+    "@types/node": "^24.8.1",
     "typescript": "^5.9.3"
   }
 }
