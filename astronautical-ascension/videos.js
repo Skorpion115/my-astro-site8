@@ -64,6 +64,15 @@ export const videos = [
   },
   {
     loc: "/gitarre-videoanleitung/",
+    title: "🎸 The Lion Sleeps Tonight – Gitarren-Tutorial (einfach erklärt)",
+    description: "Lerne den bekannten Song 'The Lion Sleeps Tonight' Schritt für Schritt auf der Gitarre! 🎶 In diesem Gitarren-Tutorial zeige ich dir alle Akkorde, Schlagmuster und Rhythmusvarianten, damit du den Song allein auf der Gitarre spielen kannst – ohne Playback oder Begleitung. Ich spiele den Song zunächst mit meinem eigenen Playback vor, damit du hörst, wie er komplett klingt, und erkläre danach alle Teile einzeln, damit du ihn selbst spielen kannst. 🎧 Hinweis: Das Playback wird nur für die Demonstration verwendet – du lernst den Song so, dass du ihn komplett allein auf der Gitarre spielen kannst.",
+    thumbnail_loc: "https://i.ytimg.com/vi/eFcGadGwenQ/hqdefault.jpg",
+    content_loc: "https://www.youtube.com/embed/eFcGadGwenQ",
+    publication_date: "2025-10-29T14:23:00+02:00",
+    duration: "775",
+  },
+  {
+    loc: "/gitarre-videoanleitung/",
     title: "Like Ice In The Sunshine – New Mix – Guitar Lesson (Gitarren-Tutorial)",
     description: "In diesem Video zeige ich dir, wie du Like Ice In The Sunshine auf der Gitarre spielen kannst. Du lernst Schritt für Schritt die Akkorde, den Rhythmus und den Schlag. Ideal für Anfänger, Fortgeschrittente und alle, die diesen bekannten Popsong auf der Akustikgitarre spielen möchten.",
     thumbnail_loc: "https://i.ytimg.com/vi/Jk6ECVwJyZk/hqdefault.jpg",
