@@ -936,6 +936,7 @@ textarea {
 /* Bilder klavierunterricht heumann */
 .heumann {
   width: 50%;   /* nur dieses Bild wird halb so breit */
+  max-width: 381px;
   height: auto;
   margin-left: 1%;
   border-radius: 0.313rem;
