@@ -40,7 +40,7 @@ const nonce = Astro.props.nonce || "";
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-5TG3DK3"></script>
 
 <!-- Google Analytics & Consent Mode -->
-<script nonce={nonce}>
+<script nonce={nonce} is:inline>
   window.dataLayer = window.dataLayer || [];
   function gtag() {
     dataLayer.push(arguments);
@@ -65,7 +65,7 @@ const nonce = Astro.props.nonce || "";
 </script>
 
 <!-- Consent Mode Listener -->
-<script nonce={nonce}>
+<script nonce={nonce} is:inline>
   document.addEventListener("iubenda_consents_updated", function (event) {
     console.log("⚡ Iubenda Consent Event getriggert:", event);
 

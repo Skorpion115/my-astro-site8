@@ -12,12 +12,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.5",
-    "@astrojs/netlify": "^6.6.2",
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/netlify": "^6.6.3",
     "@netlify/functions": "^5.1.0",
-    "astro": "^5.16.0",
+    "astro": "^5.16.3",
     "toml": "^3.0.0",
-    "xmlbuilder2": "^4.0.0"
+    "xmlbuilder2": "^4.0.3"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",

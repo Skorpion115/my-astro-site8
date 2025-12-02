@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
-import type { MarkdownInstance } from "astro";
 
 // Interface für das Frontmatter jedes Blog-Posts
 interface PostFrontmatter {
@@ -10,19 +9,30 @@ interface PostFrontmatter {
   pubDate: string;
   author: string;
   image: { url: string; alt: string };
-  visibility: "public" | "draft"; // ← DAS HINZUFÜGEN
+  visibility: "public" | "draft";
   /*
   tags: string[]; */
 }
 
-// Sammeln aller Blog-Posts
+// Interface für den Blog-Post mit URL
+interface BlogPostType {
+  url?: string;
+  frontmatter: PostFrontmatter;
+}
 
-const posts = Object.values(
-  import.meta.glob<MarkdownInstance<PostFrontmatter>>("./posts/*.md", { eager: true })
-)
+// Sammeln aller Blog-Posts
+const globFiles = import.meta.glob<{ frontmatter: PostFrontmatter }>("./posts/*.md", { eager: true });
+const posts: BlogPostType[] = Object.entries(globFiles)
+  .map(([path, post]: [string, any]) => {
+    // Extrahiere den Dateinamen aus dem Pfad (z.B. "banjo-daempfer" aus "./posts/banjo-daempfer.md")
+    const filename = path.split('/').pop()?.replace('.md', '') || '';
+    return {
+      url: `/posts/${filename}/`,
+      frontmatter: post.frontmatter,
+    };
+  })
   .filter((post) => post.frontmatter.visibility === "public")
   .sort((a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime());
-console.log(posts);
 
 const pageTitle = "Meine Blog Seite";
 const pageDescription = "Blogbeiträge rund um Musik, Instrumente und Unterricht vom Musicstudio Ziebart.";
