@@ -32,7 +32,7 @@ const pageUrl = getPageUrl(Astro);
     >
       <!-- Honeypot field (versteckt für Nutzer, sichtbar für Bots) -->
 
-      <input type="text" id="honey" name="_honey" style="display:none">
+      <input type="text" name="_honey" style="display:none">
 
       <input type="hidden" name="_captcha" value="false">
       
@@ -202,13 +202,13 @@ const pageUrl = getPageUrl(Astro);
         </div>
         <br />
         <div>
-          <label for="consent">
-            <input type="checkbox" id="consent" name="consent" value="accepted" required>
+          <label>
+            <input type="checkbox" name="consent" value="accepted" required>
             Ich stimme der Verarbeitung meiner Daten gemäß der
             <a href="/datenschutz/" target="_blank">Datenschutzerklärung</a>
             zu.
           </label>
-        </div>     
+        </div>
       </fieldset>
       <button type="submit" class="btn btn-lg btn-primary">Absenden</button>
     </form>

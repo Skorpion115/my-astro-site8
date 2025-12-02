@@ -28,7 +28,7 @@ const pageUrl = getPageUrl(Astro);
       <!-- Honeypot field (versteckt für Nutzer, sichtbar für Bots) -->
       <p style="display:none">
         <label
-          >Bitte nicht ausfüllen: <input type="text" id="bot-field" name="bot-field" /></label
+          >Bitte nicht ausfüllen: <input type="text" name="bot-field" /></label
         >
       </p>
       <input type="hidden" name="_captcha" value="false" />
@@ -92,8 +92,8 @@ const pageUrl = getPageUrl(Astro);
         >
       </div>
       <div>
-        <label for="consent">
-          <input type="checkbox" id="consent" name="consent" required />
+        <label>
+          <input type="checkbox" name="consent" required />
           Ich stimme der Verarbeitung meiner Daten gemäß der
           <a href="/datenschutz/" target="_blank">Datenschutzerklärung</a>
           zu.
