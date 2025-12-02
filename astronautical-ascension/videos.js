@@ -64,6 +64,15 @@ export const videos = [
   },
   {
     loc: "/gitarre-videoanleitung/",
+    title: "Silence Is Golden – The Tremeloes – Guitar Lesson (Gitarren-Tutorial)",
+    description: "Willkommen zu meinem Gitarren-Tutorial zu “Silence Is Golden” von The Tremeloes! In diesem Video zeige ich dir Schritt für Schritt, wie du den Song auf der Akustikgitarre spielen kannst",
+    thumbnail_loc: "https://i.ytimg.com/vi/OxBca9ZfFv8/hqdefault.jpg",
+    content_loc: "https://www.youtube.com/embed/OxBca9ZfFv8",
+    publication_date: "2025-11-25T14:23:00+02:00",
+    duration: "739",
+  },
+  {
+    loc: "/gitarre-videoanleitung/",
     title: "🎸 The Lion Sleeps Tonight – Gitarren-Tutorial (einfach erklärt)",
     description: "Lerne den bekannten Song 'The Lion Sleeps Tonight' Schritt für Schritt auf der Gitarre! 🎶 In diesem Gitarren-Tutorial zeige ich dir alle Akkorde, Schlagmuster und Rhythmusvarianten, damit du den Song allein auf der Gitarre spielen kannst – ohne Playback oder Begleitung. Ich spiele den Song zunächst mit meinem eigenen Playback vor, damit du hörst, wie er komplett klingt, und erkläre danach alle Teile einzeln, damit du ihn selbst spielen kannst. 🎧 Hinweis: Das Playback wird nur für die Demonstration verwendet – du lernst den Song so, dass du ihn komplett allein auf der Gitarre spielen kannst.",
     thumbnail_loc: "https://i.ytimg.com/vi/eFcGadGwenQ/hqdefault.jpg",
