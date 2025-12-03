@@ -1,19 +1,18 @@
-document.addEventListener("astro:page-load", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
 
-  if (hamburger) {
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("expanded");
-      hamburger.classList.toggle("active");
-      document.body.classList.toggle("menu-open");
-    });
-  }
+  if (!hamburger || !navLinks) return;
 
-  // Menü schließen, wenn man außerhalb des Menüs klickt
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("expanded");
+    hamburger.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+  });
+
+  // Klick außerhalb schließt das Menü
   document.addEventListener("click", (event) => {
-    const isClickInside = navLinks.contains(event.target) || hamburger.contains(event.target);
-    if (!isClickInside) {
+    if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
       navLinks.classList.remove("expanded");
       hamburger.classList.remove("active");
       document.body.classList.remove("menu-open");

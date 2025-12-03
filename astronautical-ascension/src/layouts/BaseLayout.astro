@@ -1,7 +1,6 @@
 ---
 import IubendaScript from "../components/IubendaScript.astro";
 import GoogleScripts from "../components/GoogleScripts.astro";
-import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer1 from "../components/Footer1.astro";
 import Footer2 from "../components/Footer2.astro";
@@ -88,7 +87,7 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
     <meta name="theme-color" content="#191919" />
 
     <!-- Client-Side Navigation -->
-    <ClientRouter />
+    
 
     <!-- Bedingte CSS-Dateien fuer spezifische Seiten -->
     {
@@ -157,6 +156,8 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
     <script nonce={nonce}>
       console.log("[BROWSER] Nonce Header läuft!");
     </script>
+    <!--
+    <h1 transition:animate="slide" class="page-title">{pageTitle}</h1> -->
 
     <h1 transition:animate="slide" class="page-title">{pageTitle}</h1>
 
@@ -181,12 +182,13 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
 
     <!-- Scripte extern einbinden -->
     <script src="/scripts/menu.js" nonce={nonce} defer></script>
+    <!--
     <script src="/scripts/load-iframes.js" nonce={nonce} defer is:inline
     ></script>
     <script src="/scripts/document-cookie.js" nonce={nonce} defer is:inline
     ></script>
     <script src="/scripts/script-check.js" nonce={nonce} defer is:inline
     ></script>
-    <script src="/scripts/delete-gacookies.js" defer></script>
+    <script src="/scripts/delete-gacookies.js" defer></script> -->
   </body>
 </html>

@@ -1,4 +1,7 @@
-document.addEventListener("astro:page-load", () => {
+document.addEventListener("DOMContentLoaded", () => {
+  const themeToggle = document.getElementById("themeToggle");
+  if (!themeToggle) return;
+
   const handleToggleClick = () => {
     const element = document.documentElement;
     element.classList.toggle("dark");
@@ -9,10 +12,10 @@ document.addEventListener("astro:page-load", () => {
     } else {
       element.classList.add("light");
     }
+
     localStorage.setItem("theme", isDark ? "dark" : "light");
   };
 
-  document
-    .getElementById("themeToggle")
-    .addEventListener("click", handleToggleClick);
+  themeToggle.addEventListener("click", handleToggleClick);
 });
+

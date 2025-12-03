@@ -33,8 +33,8 @@ export default defineConfig({
     },
   },
 
-  output: "server",
-  adapter: netlify(),
+  output: "static",
+  adapter: netlify(), // Netlify kann auch static deployen
   
     // Project root directory
   root: ".",
