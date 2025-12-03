@@ -27,19 +27,21 @@ const pageUrl = getPageUrl(Astro);
 
   <div class="container4">
     <form
-      name="callback-form"
+      name="anmeldung-form"
+      method="POST"
       data-netlify="true"
       netlify-honeypot="bot-field"
-      action="/.netlify/functions/send-email"
-      method="POST"
       enctype="application/x-www-form-urlencoded"
+      action="/thankyou/"
     >
       <!-- Honeypot field (versteckt für Nutzer, sichtbar für Bots) -->
-
-      <input type="text" name="_honey" style="display:none">
-
-      <input type="hidden" name="_captcha" value="false">
       
+      <p style="display:none">
+        <label>Bitte nicht ausfüllen: <input type="text" name="_honey" /></label>
+      </p>
+
+      
+      <input type="hidden" name="form-name" value="anmeldung-form">   
       <input
         type="hidden"
         name="_next"
