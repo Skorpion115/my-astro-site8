@@ -15,6 +15,7 @@
     "@astrojs/check": "^0.9.6",
     "@astrojs/netlify": "^6.6.3",
     "@netlify/functions": "^5.1.0",
+    "@sendgrid/mail": "^8.1.6",
     "astro": "^5.16.3",
     "toml": "^3.0.0",
     "xmlbuilder2": "^4.0.3"
