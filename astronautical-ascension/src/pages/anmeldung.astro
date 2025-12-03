@@ -27,8 +27,12 @@ const pageUrl = getPageUrl(Astro);
 
   <div class="container4">
     <form
+      name="callback-form"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
       action="/.netlify/functions/send-email"
       method="POST"
+      enctype="application/x-www-form-urlencoded"
     >
       <!-- Honeypot field (versteckt für Nutzer, sichtbar für Bots) -->
 
