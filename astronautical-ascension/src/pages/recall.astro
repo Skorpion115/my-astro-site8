@@ -1,8 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getPageUrl } from "../utils/getPageUrl.js";
+
 const pageTitle = "Ich rufe Sie zurück!";
-const description = "Falls die Fragen haben können Sie mir gerne eine kurze Mitteilung schicken. Ich werde sie zurück rufen! 😀";
+const description = "Falls die Fragen haben, können Sie mir gerne eine kurze Mitteilung schicken. Ich werde sie zurückrufen! 😀";
 const keywords = "rueckruf, callback, telephon rueckruf";
 const pageUrl = getPageUrl(Astro);
 ---
@@ -26,45 +27,42 @@ const pageUrl = getPageUrl(Astro);
       method="POST"
       data-netlify="true"
       netlify-honeypot="bot-field"
-      enctype="application/x-www-form-urlencoded"
       action="/danke-seite/"
     >
-      <!-- Honeypot field (versteckt für Nutzer, sichtbar für Bots) -->
+      <!-- Honeypot field (versteckt für Bots) -->
       <p style="display:none">
-        <label
-          >Bitte nicht ausfüllen: <input type="text" name="bot-field" /></label
-        >
+        <label>Bitte nicht ausfüllen: <input type="text" name="bot-field" /></label>
       </p>
 
-      <input type="hidden" name="form-name" value="callback-form">
-      <input
-        type="hidden"
-        name="_next"
-        value="https://www.musicstudio-ziebart.de/danke-seite/"
-      >
+      <!-- Pflichtfeld für Netlify -->
+      <input type="hidden" name="form-name" value="callback-form" />
+      <input type="hidden" name="_next" value="https://www.musicstudio-ziebart.de/danke-seite/" />
+
       <div>
         <label for="name">Name:</label>
         <input
           type="text"
-          autocomplete="name"
           id="name"
           name="name"
           placeholder="Namen eintragen"
+          autocomplete="name"
           class="form-control form-control-lg"
           required
-        >
+        />
       </div>
+
       <div>
         <label for="subject">Betreff:</label>
         <input
-          name="subject"
           type="text"
           id="subject"
+          name="subject"
           maxlength="30"
           placeholder="Rückruf"
           class="form-control form-control-lg"
-        >
+        />
       </div>
+
       <div>
         <label for="message">Nachricht:</label>
         <textarea
@@ -72,30 +70,36 @@ const pageUrl = getPageUrl(Astro);
           name="message"
           cols="23"
           rows="10"
+          placeholder="Bitte um Rückruf"
           class="form-control form-control-lg"
-          placeholder="Bitte um Rückruf"></textarea>
+        ></textarea>
       </div>
+
       <div>
         <label for="phone">Telefonnummer:</label>
         <input
           type="tel"
           id="phone"
-          autocomplete="tel-national"
           name="phone"
+          placeholder="Telefonnummer"
+          autocomplete="tel-national"
           class="form-control form-control-lg"
           required
-        >
+        />
       </div>
+
       <div>
         <label for="email">E-Mail:</label>
         <input
           type="email"
           id="email"
-          autocomplete="email"
           name="email"
+          placeholder="E-Mail"
+          autocomplete="email"
           class="form-control form-control-lg"
-        >
+        />
       </div>
+
       <div>
         <label>
           <input type="checkbox" name="consent" required />
@@ -104,6 +108,7 @@ const pageUrl = getPageUrl(Astro);
           zu.
         </label>
       </div>
+
       <br />
       <button type="submit" class="btn btn-lg btn-primary">Absenden</button>
     </form>
