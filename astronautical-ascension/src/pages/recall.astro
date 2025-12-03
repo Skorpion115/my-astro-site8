@@ -34,6 +34,29 @@ const pageUrl = getPageUrl(Astro);
       </div>
 
       <div>
+        <label for="subject">Betreff:</label>
+        <input
+          name="subject"
+          type="text"
+          id="subject"
+          maxlength="30"
+          placeholder="Rückruf"
+          class="form-control form-control-lg"
+        >
+      </div>
+
+      <div>
+        <label for="message">Nachricht:</label>
+        <textarea
+          id="message"
+          name="message"
+          cols="23"
+          rows="10"
+          class="form-control form-control-lg"
+          placeholder="Bitte um Rückruf"></textarea>
+      </div>
+
+      <div>
         <label for="phone">Telefonnummer:</label>
         <input type="tel" id="phone" name="phone" placeholder="Telefonnummer" required />
       </div>
