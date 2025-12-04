@@ -54,7 +54,7 @@ export const videos = [
     duration: "239",
   },
   {
-    loc: "/e-gitarre-videoanleitung2/",
+    loc: "/e-gitarre-videoanleitung/",
     title: "Take Good Care Of My Baby - Bobby Vee Cover",
     description: "Lerne das Gitarrenstück 'Take Good Care Of My Baby' von Bobby Vee mit dieser detaillierten Gitarrenstunde.",
     thumbnail_loc: "https://i.ytimg.com/vi/nUC_b1L_IM4/hqdefault.jpg",
@@ -62,6 +62,16 @@ export const videos = [
     publication_date: "2025-01-04T14:00:00+02:00",
     duration: "1072",
   },
+  {
+    loc: "/e-gitarre-videoanleitung/",
+    title: "Christmas Time Is Here – Jazzguitar Lesson (Jazz Gitarren-Tutorial)",
+    description: "Lerne das leichte Jazzgitarrenstück 'Christmas Time Is Here' mit diesem Video. Die Tabulatur kann man unten in der Viedeobeschreibung downloaden.",
+    thumbnail_loc: "https://i.ytimg.com/vi/5StMXBTQGpw/hqdefault.jpg",
+    content_loc: "https://www.youtube.com/embed/5StMXBTQGpw",
+    publication_date: "2025-12-03T14:00:00+02:00",
+    duration: "58",
+  },
+  
   {
     loc: "/gitarre-videoanleitung/",
     title: "Silence Is Golden – The Tremeloes – Guitar Lesson (Gitarren-Tutorial)",
