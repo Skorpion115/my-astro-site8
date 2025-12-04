@@ -156,8 +156,6 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
     <script nonce={nonce}>
       console.log("[BROWSER] Nonce Header läuft!");
     </script>
-    <!--
-    <h1 transition:animate="slide" class="page-title">{pageTitle}</h1> -->
 
     <h1 transition:animate="slide" class="page-title">{pageTitle}</h1>
 
@@ -182,13 +180,12 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
 
     <!-- Scripte extern einbinden -->
     <script src="/scripts/menu.js" nonce={nonce} defer></script>
-    <!--
     <script src="/scripts/load-iframes.js" nonce={nonce} defer is:inline
     ></script>
     <script src="/scripts/document-cookie.js" nonce={nonce} defer is:inline
     ></script>
     <script src="/scripts/script-check.js" nonce={nonce} defer is:inline
     ></script>
-    <script src="/scripts/delete-gacookies.js" defer></script> -->
+    <script src="/scripts/delete-gacookies.js" defer></script>
   </body>
 </html>
