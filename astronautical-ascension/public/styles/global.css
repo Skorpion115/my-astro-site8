@@ -194,7 +194,6 @@ button:focus,
   opacity: 0.8;
 }
 
-
 /* Weitere Anpassungen für den Dark Mode */
 .dark h1,
 .dark h2,
@@ -204,9 +203,6 @@ button:focus,
 .dark h6 {
   color: #ff9776;
 }
-
-
-
 
 /* ANCHOR ThemeToggle Button Styling */
 #themeToggle {
@@ -1306,18 +1302,31 @@ table.basis-table tbody tr.active {
   max-width: 420px;
 }
 
-.price-table th,
-.price-table td {
-  border: 1px solid #ccc;
-  padding: 0.5rem 0.75rem;
-  text-align: left;
+.dark .price-table th {
+  background: #2a2a2a;
+  color: #f0f0f0;
 }
 
-.price-table th {
-  background: #f5f5f5;
+.dark .price-table td {
+  color: #e0e0e0;
+  background: transparent;
 }
 
-.vat-note {
-  margin-top: 0.5rem;
-  color: #555;
+.dark .price-table {
+  border-color: #555;
 }
+
+.dark .price-table th,
+.dark .price-table td {
+  border-color: #555;
+}
+
+.vat-note a.normal-links {
+  color: #1a0dab;
+}
+
+.dark .vat-note a.normal-links {
+  color: #af8848;
+}
+
+
