@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPageUrl } from "../utils/getPageUrl.js";
+
+const pageTitle = "Noten & BackingTrack kaufen";
+const description = "Kaufe jetzt die Noten und das BackingTrack für dein Lieblingslied.";
+const keywords = "Gitarrennoten, BackingTrack, Kauf";
+const pageUrl = getPageUrl(Astro);
+
+// PayPal-Button-Setup
+// Hier dein PayPal-Button-Link (Buy Now / Smart Button)
+// PayPal-Link mit automatischem Return
+const paypalLink = "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=musikstudio.ziebart@gmail.com&item_name=Noten+%2B+BackingTrack&amount=9.95&currency_code=EUR&return=https://www.musicstudio-ziebart.de/produkt-download&rm=2";
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <h2>Jetzt kaufen</h2>
+  <p>
+    Hol dir die **Noten + BackingTrack** für dein Gitarrenspiel.  
+    Sofortiger Download nach Zahlung.
+  </p>
+  <br>
+
+  <p>
+    Preis: <strong>9,95 €</strong>
+  </p>
+
+  <!-- PayPal Button -->
+  <a href={paypalLink} target="_blank" class="paypal-button">
+    Mit PayPal sicher bezahlen
+  </a>
+
+  <br><br>
+  <p>
+    <a href="/" class="normal-links">Zurück zur Startseite</a>
+  </p>
+</BaseLayout>

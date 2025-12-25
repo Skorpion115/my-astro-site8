@@ -1277,3 +1277,20 @@ table.basis-table tbody tr.active {
 .cta-button:hover {
   background: #e68900;
 }
+
+/* produkt Seite*/
+
+.paypal-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #ffc439;
+  color: #111;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+.paypal-button:hover {
+  background-color: #ffb347;
+}
