@@ -1280,6 +1280,14 @@ table.basis-table tbody tr.active {
   margin-left: 1.25rem;
 }
 
+.product-image {
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+  border-radius: 6px;
+}
+
 .paypal-button {
   display: inline-block;
   padding: 12px 24px;
