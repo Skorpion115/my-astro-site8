@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPageUrl } from "../../utils/getPageUrl.js";
+
+const pageTitle = "Download – Rose Room Guitar Solo";
+const description =
+  "Download-Seite für das PDF »Rose Room – Guitar Solo«. Vielen Dank für deinen Kauf.";
+const keywords = "Rose Room, Download, Guitar Solo, PDF";
+const pageUrl = getPageUrl(Astro);
+const downloads = [
+  {
+    label: "Rose Room – Guitar Solo (PDF)",
+    url: "https://www.musicstudio-ziebart.de/downloads/Rose_Room_Solo.pdf",
+  },
+  {
+    label: "Rose Room – Rhythm Guitar (PDF)",
+    url: "https://www.musicstudio-ziebart.de/downloads/Rose_Room_RhythmGuitar.pdf",
+  },
+  {
+    label: "Rose Room – Bass (PDF)",
+    url: "https://www.musicstudio-ziebart.de/downloads/Rose_Room_Bass.pdf",
+  },
+  {
+    label: "Rose Room – BackingTrack (MP3)",
+    url: "https://www.musicstudio-ziebart.de/downloads/Rose_Room_BackingTrack.mp3",
+  },
+  {
+    label: "Rose Room – Mastering (MP3)",
+    url: "https://www.musicstudio-ziebart.de/downloads/Rose_Room_Mastering.mp3",
+  },
+];
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <h1>Vielen Dank für deinen Kauf! 🎸</h1>
+
+  <p>
+    Hier kannst du dein <strong>„Rose Room“</strong> herunterladen.
+  </p>
+
+  <ul>
+    {
+      downloads.map((file) => (
+        <li>
+          <a href={file.url} download class="download-button">
+            👉 {file.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <p class="download-note">
+    Bitte speichere dir die Datei auf deinem Gerät. Der Download-Link steht dir
+    jederzeit wieder zur Verfügung.
+  </p>
+
+  <p style="margin-top:2rem;">
+    <a href="/" class="normal-links">← Zurück zur Startseite</a>
+  </p>
+</BaseLayout>

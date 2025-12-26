@@ -1274,11 +1274,7 @@ table.basis-table tbody tr.active {
   background: #e68900;
 }
 
-/* produkt Seite*/
-
-.content-left {
-  margin-left: 1.25rem;
-}
+/* shop/rose-room.astro */
 
 .product-image {
   max-width: 420px;
@@ -1288,53 +1284,29 @@ table.basis-table tbody tr.active {
   border-radius: 6px;
 }
 
-.paypal-button {
+.download-button {
   display: inline-block;
-  padding: 12px 24px;
-  background-color: #ffc439;
-  color: #111;
-  font-weight: bold;
-  border-radius: 6px;
+  padding: 0.75rem 1.25rem;
+  background-color: #0070ba; /* PayPal-Blau */
+  color: #fff;
   text-decoration: none;
-  font-size: 1rem;
-  transition: all 0.2s;
-}
-.paypal-button:hover {
-  background-color: #ffb347;
+  border-radius: 6px;
+  font-weight: 600;
 }
 
-.price-table {
-  border-collapse: collapse;
-  margin: 1.5rem 0;
-  width: 100%;
-  max-width: 420px;
+.download-button:hover {
+  background-color: #005ea6;
 }
 
-.dark .price-table th {
-  background: #2a2a2a;
-  color: #f0f0f0;
-}
+/* Paypal-buy-button */
 
-.dark .price-table td {
-  color: #e0e0e0;
-  background: transparent;
+.paypal-buy-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #0070ba;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
 }
-
-.dark .price-table {
-  border-color: #555;
-}
-
-.dark .price-table th,
-.dark .price-table td {
-  border-color: #555;
-}
-
-.vat-note a.normal-links {
-  color: #1a0dab;
-}
-
-.dark .vat-note a.normal-links {
-  color: #af8848;
-}
-
 
