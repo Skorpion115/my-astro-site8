@@ -1310,3 +1310,19 @@ table.basis-table tbody tr.active {
   cursor: pointer;
 }
 
+/* download/train45.astro */
+
+.paypal-button {
+  display: inline-block;
+  background: #2e7d32;
+  color: #fff;
+  padding: 0.9rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.paypal-button:hover {
+  background: #256428;
+}
+
