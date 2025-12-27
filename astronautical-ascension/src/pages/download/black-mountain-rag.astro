@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPageUrl } from "../../utils/getPageUrl.js";
+
+const pageTitle = "Download – Black Mountain Rag Banjo Solo";
+const description =
+  "Download der Banjo-Tabulatur »Black Mountain Rag«. Vielen Dank für deinen Kauf.";
+const keywords = "Black Mountain Rag, Banjo Download, Tabulatur PDF";
+const pageUrl = getPageUrl(Astro);
+const downloads = [
+  {
+    label: "Black Mountain Rag – Banjo Solo (PDF)",
+    url: "https://www.musicstudio-ziebart.de/downloads/Black_Mountain_Rag.pdf",
+  },
+  {
+    label: "Black Mountain Rag – BackingTrack (MP3)",
+    url: "https://www.musicstudio-ziebart.de/Songs/Black_Mountain_Rag_BackingTrack.mp3",
+  },
+];
+---
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+>
+  <h1>Vielen Dank für deinen Kauf!</h1>
+
+  <p>
+    Du kannst deine <strong>Banjo-Tabulatur „Black Mountain Rag – Solo + BackingTrack“</strong> jetzt
+    herunterladen.
+  </p>
+  <hr />
+  <ul>
+    {
+      downloads.map((file) => (
+        <li>
+          <a href={file.url} download class="download-button">
+            👉 {file.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <p>
+    👉 <strong>Wichtig:</strong> Bitte speichere die Datei direkt auf deinem
+    Gerät ab.
+  </p>
+
+  <hr />
+
+  <p>
+    Falls es Probleme mit dem Download gibt, schreib mir bitte eine kurze
+    E-Mail:
+    <br />
+    <strong>postmaster@musicstudio-ziebart.de</strong>
+  </p>
+
+  <p class="vat-note">
+    Rechnung mit ausgewiesener MwSt. auf Anfrage per E-Mail erhältlich.
+  </p>
+
+  <p>
+    <a href="/" class="normal-links">← Zurück zur Startseite</a>
+  </p>
+</BaseLayout>
