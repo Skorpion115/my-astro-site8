@@ -14,14 +14,13 @@
   "dependencies": {
     "@astrojs/check": "^0.9.6",
     "@astrojs/netlify": "^6.6.3",
-    "@netlify/functions": "^5.1.0",
-    "@sendgrid/mail": "^8.1.6",
-    "astro": "^5.16.3",
+    "@netlify/functions": "^5.1.2",
+    "astro": "^5.16.6",
     "toml": "^3.0.0",
     "xmlbuilder2": "^4.0.3"
   },
   "devDependencies": {
-    "@types/node": "^24.10.1",
+    "@types/node": "^24.10.4",
     "typescript": "^5.9.3"
   }
 }
