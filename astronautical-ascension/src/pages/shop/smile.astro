@@ -1,0 +1,96 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPageUrl } from "../../utils/getPageUrl.js";
+
+const pageTitle = "Noten & BackingTrack kaufen";
+const description = "Jazz Guitar Solo zu »Smile« als PDF. Ideal für Jazz-Gitarristen. Sofort-Download nach Zahlung.";
+const keywords = "Smile, Guitar Solo, Jazz Gitarre, Gitarrennoten, PDF Download";
+const pageUrl = getPageUrl(Astro);
+
+// Produktdaten (sauber als Zahlen)
+const priceGross = 4.95;
+const priceNet = 4.01;
+const vat = 0.94;
+
+// PayPal-Daten
+const itemName = "Smile – Jazz Guitar Solo (PDF)";
+const returnUrl = "https://www.musicstudio-ziebart.de/download/smile/";
+const paypalBusiness = "musikstudio.ziebart@gmail.com";
+---
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="product"
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <h1>Smile – Jazz Guitar Solo + BackingTrack + Smile Mastering</h1>
+
+  <p>
+    Hol dir die <strong>Noten zu Smile Solo + BackingTrack + Smile Mastering</strong> für deine Jazz-Gitarre.
+    <br />
+    Sofortiger Download nach Zahlung.
+  </p>
+
+  <ul>
+    <li>✔ Klar notiertes Jazz Guitar Solo</li>
+    <li>✔ Für Unterricht & Selbststudium</li>
+    <li>✔ Sofortiger Download nach Zahlung</li>
+  </ul>
+
+  <table class="price-table">
+    <tr>
+      <th>Produkt</th>
+      <td>Smile – Jazz Guitar Solo (PDF) + BackingTrack + Smile Mastering</td>
+    </tr>
+    <tr>
+      <th>Preis netto</th>
+      <td>{priceNet.toFixed(2)} €</td>
+    </tr>
+    <tr>
+      <th>19 % MwSt</th>
+      <td>{vat.toFixed(2)} €</td>
+    </tr>
+    <tr>
+      <th>Gesamtpreis</th>
+      <td><strong>{priceGross.toFixed(2)} €</strong></td>
+    </tr>
+  </table>
+
+  <p class="vat-note">inkl. 19 % MwSt. – digitales Downloadprodukt</p>
+
+  <!-- PayPal Button OHNE Komponente -->
+  <form
+    action="https://www.paypal.com/cgi-bin/webscr"
+    method="post"
+    target="_top"
+  >
+    <input type="hidden" name="cmd" value="_xclick" />
+    <input type="hidden" name="business" value={paypalBusiness} />
+    <input type="hidden" name="item_name" value={itemName} />
+    <input type="hidden" name="amount" value={priceGross} />
+    <input type="hidden" name="currency_code" value="EUR" />
+    <input type="hidden" name="return" value={returnUrl} />
+    <input type="hidden" name="no_shipping" value="1" />
+
+    <button type="submit" class="paypal-button">
+      Jetzt mit PayPal kaufen
+    </button>
+  </form>
+
+  <p class="vat-note">
+    <small>
+      Rechnung mit ausgewiesener MwSt. auf Anfrage per E-Mail erhältlich.
+    </small>
+  </p>
+
+  <p>
+    <a href="/" class="normal-links">← Zurück zur Startseite</a>
+  </p>
+</BaseLayout>
