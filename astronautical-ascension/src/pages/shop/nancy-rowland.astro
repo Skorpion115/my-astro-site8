@@ -2,11 +2,9 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getPageUrl } from "../../utils/getPageUrl.js";
 
-const pageTitle = "Tabulatur kaufen";
-const description =
-  "Banjosolo zu »Nancy Rowland« als PDF. Ideal für Bluegrass Banjo Picker. Sofort-Download nach Zahlung.";
-const keywords =
-  "Nancy Rowland, Banjo Solo, Bluegrass Banjo, Tabulatur, PDF Download";
+const pageTitle = "Nancy Rowland Banjo Solo – Tabulatur kaufen | Musicstudio Ziebart";
+const description = "Banjosolo zu »Nancy Rowland« als PDF. Ideal für Bluegrass Banjo Picker. Sofort-Download nach Zahlung.";
+const keywords = "Nancy Rowland, Banjo Solo, Bluegrass Banjo, Tabulatur, PDF Download";
 const pageUrl = getPageUrl(Astro);
 
 // Produktdaten (sauber als Zahlen)
@@ -80,6 +78,8 @@ const paypalBusiness = "musikstudio.ziebart@gmail.com";
     <input type="hidden" name="currency_code" value="EUR" />
     <input type="hidden" name="return" value={returnUrl} />
     <input type="hidden" name="no_shipping" value="1" />
+    <input type="hidden" name="charset" value="utf-8" />
+    <input type="hidden" name="lc" value="DE" />
 
     <button type="submit" class="paypal-button">
       Jetzt mit PayPal kaufen
