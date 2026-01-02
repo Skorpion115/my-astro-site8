@@ -3,11 +3,21 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getPageUrl } from "../../utils/getPageUrl.js";
 
 const pageTitle = "Download – Intermezzo Orgel Solo";
-const description =
-  "Download der Noten »Intermezzo«. Vielen Dank für deinen Kauf.";
+const description = "Download der Noten »Intermezzo«. Vielen Dank für deinen Kauf.";
 const keywords = "Intermezzo, Orgel Download, Noten PDF";
 const pageUrl = getPageUrl(Astro);
+const downloads = [
+  {
+    label: "Intermezzo – Orgel Solo (PDF)",
+    url: "https://www.musicstudio-ziebart.de/downloads/Intermezzo-Orgel.pdf",
+  },
+  {
+    label: "Intermezzo – Mastering (MP3)",
+    url: "https://www.musicstudio-ziebart.de/downloads/Intermezzo.mp3",
+  },
+];
 ---
+
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
@@ -25,21 +35,22 @@ const pageUrl = getPageUrl(Astro);
   </p>
 
   <p>
-    👉 <strong>Wichtig:</strong> Bitte speichere die Datei direkt auf deinem
-    Gerät ab.
+    👉 <strong>Wichtig:</strong> Bitte speichere die Datei direkt auf deinem Gerät
+    ab.
   </p>
 
   <hr />
-
-  <p>
-    <a
-      href="https://www.musicstudio-ziebart.de/downloads/Intermezzo-Orgel.pdf"
-      class="download-button"
-      download
-    >
-      ⬇ Intermezzo – Orgel Solo (PDF) herunterladen
-    </a>
-  </p>
+  <ul>
+    {
+      downloads.map((file) => (
+        <li>
+          <a href={file.url} download class="download-button">
+            👉 {file.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 
   <hr />
 
