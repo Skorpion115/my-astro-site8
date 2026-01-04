@@ -102,7 +102,23 @@ const videoData = [
             </lite-youtube>
           </div>
           <h2>{video.title}</h2>
-          <p>{video.description}</p>
+          <p>
+            {video.description}
+            {video.title.includes("Smile") && (
+              <>
+                <a href="/shop/smile/" target="_blank" class="normal-links">
+                  <br />Tabulatur kaufen
+                </a>
+              </>
+            )}
+            {video.title.includes("Rose Room") && (
+              <>
+                <a href="/shop/rose-room/" target="_blank" class="normal-links">
+                  <br />Tabulatur kaufen
+                </a>
+              </>
+            )}
+          </p>
         </div>
       </div>
     ))
