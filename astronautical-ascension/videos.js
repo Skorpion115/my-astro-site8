@@ -81,6 +81,15 @@ export const videos = [
     duration: "434",
   },
   {
+    loc: "/e-gitarre-videoanleitung/",
+    title: "🎸 Rose Room – Charlie Christian Guitar Solo (Jazz Guitar Lesson & Transcription)",
+    description: "Lerne das leichte Jazzgitarrenstück 'Rose Room (Charlie Christian)' mit diesem Video. Die Tabulatur kann man unten in der YouTube Viedeobeschreibung downloaden.",
+    thumbnail_loc: "https://i.ytimg.com/vi/gVWldWICw6U/hqdefault.jpg",
+    content_loc: "https://www.youtube.com/embed/gVWldWICw6U",
+    publication_date: "2025-12-31T14:00:00+02:00",
+    duration: "434",
+  },
+  {
     loc: "/gitarre-videoanleitung/",
     title: "Silence Is Golden – The Tremeloes – Guitar Lesson (Gitarren-Tutorial)",
     description: "Willkommen zu meinem Gitarren-Tutorial zu “Silence Is Golden” von The Tremeloes! In diesem Video zeige ich dir Schritt für Schritt, wie du den Song auf der Akustikgitarre spielen kannst",
