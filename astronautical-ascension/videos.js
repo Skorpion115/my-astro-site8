@@ -71,7 +71,15 @@ export const videos = [
     publication_date: "2025-12-03T14:00:00+02:00",
     duration: "58",
   },
-  
+  {
+    loc: "/e-gitarre-videoanleitung/",
+    title: "Smile (Charlie Chaplin) – Jazz Guitar Lesson | Melodic Style",
+    description: "Lerne das leichte Jazzgitarrenstück 'Smile (Charlie Chaplin)' mit diesem Video. Die Tabulatur kann man unten in der YouTube Viedeobeschreibung downloaden.",
+    thumbnail_loc: "https://i.ytimg.com/vi/gVWldWICw6U/hqdefault.jpg",
+    content_loc: "https://www.youtube.com/embed/gVWldWICw6U",
+    publication_date: "2025-12-31T14:00:00+02:00",
+    duration: "434",
+  },
   {
     loc: "/gitarre-videoanleitung/",
     title: "Silence Is Golden – The Tremeloes – Guitar Lesson (Gitarren-Tutorial)",
