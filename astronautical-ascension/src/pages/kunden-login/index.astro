@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPageUrl } from "../../utils/getPageUrl.js";
+const pageTitle =
+  "Notenbücher für Musiker – Einfach, Inspirierend, Spielbereit";
+const description =
+  "Notenbücher, Musiknoten, Gitarrennoten, Download Notenbücher für Musiker aller Art.";
+const keywords = "Notenbücher, Musiknoten, Gitarrennoten, Download Noten";
+const pageUrl = getPageUrl(Astro);
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <h1>Notenbücher für Musiker</h1>
+  <p><strong>Einfach. Inspirierend. Spielbereit.</strong></p>
+  <ul>
+    <li>
+      🎵 Klare, gut lesbare Noten – keine unnötigen Ablenkungen, einfach
+      spielen.
+    </li>
+    <li>🚀 Schneller Zugriff – sofort herunterladen und loslegen.</li>
+    <li>
+      🌟 Von Musikern für Musiker – alle Bücher werden von erfahrenen Musikern
+      geprüft.
+    </li>
+    <li>🎁 Exklusive Inhalte – viele Stücke, die du sonst nirgends findest.</li>
+  </ul>
+  <p>
+    Mach Schluss mit langem Suchen und unklaren Noten. Bei uns bekommst du genau
+    das, was du brauchst, damit deine Musikideen sofort lebendig werden.
+  </p>
+  <p><strong>Jetzt stöbern und direkt losspielen!</strong></p>
+
+  <p>
+    <a href="/kunden-login/registrieren" class="cta-button">
+      Jetzt registrieren & loslegen
+    </a>
+  </p>
+
+
+  <p><a href="/" class="normal-links">Zurück zur Startseite</a></p>
+</BaseLayout>

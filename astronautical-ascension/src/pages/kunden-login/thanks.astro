@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPageUrl } from "../../utils/getPageUrl.js";
+
+const pageTitle = "Danke – Dein Download ist bereit";
+const description =
+  "Vielen Dank für deine Zahlung! Dein Noten- & Tabulaturblatt ‚Yesterday‘ ist jetzt zum Download verfügbar.";
+const keywords = "Yesterday, Noten, Tabulatur, Download Noten, PDF";
+const pageUrl = getPageUrl(Astro);
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <h1>Danke für deine Zahlung!</h1>
+
+  <p>
+    Dein Noten- & Tabulaturblatt (3 Seiten) für den Song <strong>„Yesterday“</strong> 
+    ist jetzt zum Download bereit.
+  </p>
+
+  <p>
+    <a href="/downloads/Yesterday.pdf" class="cta-button" download>
+      PDF herunterladen
+    </a>
+  </p>
+
+  <p>
+    Viel Spaß beim Spielen! 🎵
+  </p>
+
+  <!-- Optional: Link zurück zur Übersicht -->
+  <p>
+    <a href="/kunden-login" class="normal-links">
+      Zurück zur Übersicht
+    </a>
+  </p>
+</BaseLayout>
