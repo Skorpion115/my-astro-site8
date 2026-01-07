@@ -12,7 +12,7 @@ const pageUrl = getPageUrl(Astro);
 const paypalBusiness = "musikstudio.ziebart@gmail.com";
 const itemName = "Yesterday – Noten & Tabulatur";
 const priceGross = "9.90";
-const returnUrl = "/kunden-login/thanks"; // Seite nach erfolgreicher Zahlung
+const returnUrl = "/kunden-login/thanks-yesterday"; // Seite nach erfolgreicher Zahlung
 ---
 
 <BaseLayout
@@ -78,11 +78,4 @@ const returnUrl = "/kunden-login/thanks"; // Seite nach erfolgreicher Zahlung
   </p>
 
   <p>Die Zuordnung erfolgt über die bei PayPal hinterlegte E-Mail-Adresse.</p>
-
-  <!-- Link zurück zur Registrierungs-Seite -->
-  <p>
-    <a href="/kunden-login/registrieren" class="normal-links">
-      Zurück zur Registrierung
-    </a>
-  </p>
 </BaseLayout>
