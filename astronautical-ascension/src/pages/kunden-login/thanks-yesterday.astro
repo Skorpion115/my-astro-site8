@@ -2,36 +2,32 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getPageUrl } from "../../utils/getPageUrl.js";
 
-/* --------------------------------------------------
-   Token aus URL lesen
--------------------------------------------------- */
 const token = Astro.url.searchParams.get("token");
 
-/* --------------------------------------------------
-   Buildzeit verhindern
-   Netlify Blobs nur bei Runtime abrufen
--------------------------------------------------- */
 let valid = false;
 
 if (typeof process.env.NETLIFY !== "undefined" && token) {
+  // @ts-ignore
   const { getStore } = await import("@netlify/blobs");
   const store = getStore("download-tokens");
 
-  const entry = await store.get(token);
+  try {
+    const entry = await store.get(token);
 
-  if (entry) {
-    const text = new TextDecoder().decode(entry);
-    const data = JSON.parse(text);
+    if (entry) {
+      const text = new TextDecoder().decode(entry);
+      const data = JSON.parse(text);
 
-    valid =
-      data.product === "yesterday" &&
-      new Date(data.expires) > new Date();
+      valid =
+        data.product === "yesterday" &&
+        new Date(data.expires) > new Date();
+    }
+  } catch (err) {
+    console.error("Fehler beim Zugriff auf Netlify Blob:", err);
   }
 }
 
-/* --------------------------------------------------
-   SEO / Meta
--------------------------------------------------- */
+/* SEO / Meta */
 const pageTitle = "Danke – Dein Download ist bereit";
 const description =
   "Vielen Dank für deine Zahlung! Dein Noten- & Tabulaturblatt ‚Yesterday‘ ist jetzt zum Download verfügbar.";
