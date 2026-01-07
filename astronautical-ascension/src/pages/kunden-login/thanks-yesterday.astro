@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getPageUrl } from "../../utils/getPageUrl.js";
-import { getStore } from "@netlify/blobs";
 
 /* --------------------------------------------------
    Token aus URL lesen
@@ -9,21 +8,18 @@ import { getStore } from "@netlify/blobs";
 const token = Astro.url.searchParams.get("token");
 
 /* --------------------------------------------------
-   Netlify Blob Store öffnen
--------------------------------------------------- */
-const store = getStore("download-tokens");
-
-/* --------------------------------------------------
-   Token prüfen
-   Hinweis: store.get liefert ArrayBuffer → in String umwandeln
+   Buildzeit verhindern
+   Netlify Blobs nur bei Runtime abrufen
 -------------------------------------------------- */
 let valid = false;
 
-if (token) {
+if (typeof process.env.NETLIFY !== "undefined" && token) {
+  const { getStore } = await import("@netlify/blobs");
+  const store = getStore("download-tokens");
+
   const entry = await store.get(token);
 
   if (entry) {
-    // ArrayBuffer → UTF-8 String
     const text = new TextDecoder().decode(entry);
     const data = JSON.parse(text);
 
