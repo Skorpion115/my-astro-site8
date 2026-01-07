@@ -1,7 +1,41 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getPageUrl } from "../../utils/getPageUrl.js";
+import { getStore } from "@netlify/blobs";
 
+/* --------------------------------------------------
+   Token aus URL lesen
+-------------------------------------------------- */
+const token = Astro.url.searchParams.get("token");
+
+/* --------------------------------------------------
+   Netlify Blob Store öffnen
+-------------------------------------------------- */
+const store = getStore("download-tokens");
+
+/* --------------------------------------------------
+   Token prüfen
+   Hinweis: store.get liefert ArrayBuffer → in String umwandeln
+-------------------------------------------------- */
+let valid = false;
+
+if (token) {
+  const entry = await store.get(token);
+
+  if (entry) {
+    // ArrayBuffer → UTF-8 String
+    const text = new TextDecoder().decode(entry);
+    const data = JSON.parse(text);
+
+    valid =
+      data.product === "yesterday" &&
+      new Date(data.expires) > new Date();
+  }
+}
+
+/* --------------------------------------------------
+   SEO / Meta
+-------------------------------------------------- */
 const pageTitle = "Danke – Dein Download ist bereit";
 const description =
   "Vielen Dank für deine Zahlung! Dein Noten- & Tabulaturblatt ‚Yesterday‘ ist jetzt zum Download verfügbar.";
@@ -24,32 +58,38 @@ const pageUrl = getPageUrl(Astro);
 >
   <h1>Danke für deine Zahlung!</h1>
 
-  <p>
-    Dein Noten- & Tabulaturblatt (3 Seiten) für den Song <strong>„Yesterday“</strong> 
-    ist jetzt zum Download bereit.
-  </p>
+  {valid ? (
+    <>
+      <h2>Dein Download ist bereit</h2>
 
-  <ul>
-    <li>
-      <a href="/downloads/Yesterday.pdf" class="cta-button" download>
-        Yesterday – Noten & Tabulatur (PDF)
-      </a>
-    </li>
-    <li style="margin-top: 1rem;">
-      <a href="/downloads/Yesterday-Strings.pdf" class="cta-button" download>
-        Yesterday – Strings / Streicherstimmen (PDF)
-      </a>
-    </li>
-  </ul>
+      <p>
+        <a href="/downloads/Yesterday.pdf" download class="cta-button">
+          Yesterday – Noten &amp; Tabulatur
+        </a>
+      </p>
 
-  <p>
-    Viel Spaß beim Spielen! 🎵
-  </p>
+      <p>
+        <a href="/downloads/Yesterday-Strings.pdf" download class="cta-button">
+          Yesterday – Strings / Streicherstimmen
+        </a>
+      </p>
+
+      <p>
+        Viel Freude beim Spielen! 🎵
+      </p>
+    </>
+  ) : (
+    <>
+      <h2>Download nicht verfügbar</h2>
+      <p>
+        ❌ Dieser Download-Link ist ungültig oder abgelaufen.
+      </p>
+    </>
+  )}
 
   <p>
     Falls es Probleme mit dem Download gibt, schreib mir bitte eine kurze
-    E-Mail:
-    <br />
+    E-Mail:<br />
     <strong>postmaster@musicstudio-ziebart.de</strong>
   </p>
 </BaseLayout>

@@ -12,7 +12,10 @@ const pageUrl = getPageUrl(Astro);
 const paypalBusiness = "musikstudio.ziebart@gmail.com";
 const itemName = "Yesterday – Noten & Tabulatur";
 const priceGross = "9.90";
-const returnUrl = "/kunden-login/thanks-yesterday"; // Seite nach erfolgreicher Zahlung
+
+const returnUrl = "https://deineseite.netlify.app/.netlify/functions/create-download";
+
+// const returnUrl = "/kunden-login/thanks-yesterday"; // Seite nach erfolgreicher Zahlung
 ---
 
 <BaseLayout
