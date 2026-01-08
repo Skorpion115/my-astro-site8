@@ -10,7 +10,8 @@ const keywords = "Yesterday, Noten, Tabulatur, kaufen, PDF";
 const pageUrl = getPageUrl(Astro);
 
 // URL der Dankeseite nach PayPal-Zahlung
-const returnUrl = "https://musicstudio-ziebart.de/kunden-login/thanks-yesterday/";
+const returnUrl =
+  "https://musicstudio-ziebart.de/kunden-login/thanks-yesterday/";
 ---
 
 <BaseLayout
@@ -26,23 +27,64 @@ const returnUrl = "https://musicstudio-ziebart.de/kunden-login/thanks-yesterday/
   twitterDescription={description}
   twitterUrl={pageUrl}
 >
-
   <p>
-    Sichere dir die offiziellen Noten & Tabulaturblätter für „Yesterday“.  
-    Preis: <strong>5,95 €</strong>
+    Dieses Noten- und Tabulaturblatt ist als
+    <strong>Unterrichtsmaterial für den Gitarrenunterricht</strong>
+    konzipiert und eignet sich ideal zum Lernen und Vertiefen des Songs.
   </p>
 
-  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-    <input type="hidden" name="cmd" value="_xclick">
-    <input type="hidden" name="item_name" value="Yesterday – Noten & Tabulatur">
-    <input type="hidden" name="amount" value="5.95">
-    <input type="hidden" name="currency_code" value="EUR">
-    <input type="hidden" name="return" value={returnUrl}>
-    <input type="hidden" name="rm" value="2">
+  <img
+    src="/bilder/Yesterday_Vorschau.jpg"
+    alt="Yesterday – Vorschau"
+    class="product-image"
+  />
 
-    <button type="submit" class="cta-button">
-      Jetzt mit PayPal kaufen
-    </button>
+  <p>
+    Nach der Zahlung erhältst du sofortigen Zugriff auf die Downloads. <br />
+    Perfekt für Gitarristen, die den Song lernen möchten! <br />
+    Preis: <strong>5,95&nbsp;€</strong>
+  </p>
+
+  <p>
+    Dieses Noten- und Tabulaturblatt ist als
+    <strong
+      >didaktisch aufbereitetes Unterrichtsmaterial für den Gitarrenunterricht</strong
+    >
+    konzipiert und eignet sich ideal zum Lernen und Vertiefen des Songs.
+  </p>
+
+  <p>
+    Sichere dir meine
+    <strong>eigenen Noten- &amp; Tabulaturblätter</strong>
+    zum Song „Yesterday“ – speziell erstellt für den Unterricht und das Selbststudium.
+  </p>
+
+  <p class="small">
+    Preis: <strong>5,95&nbsp;€</strong> (gemäß § 19 UStG umsatzsteuerfrei)
+  </p>
+
+  <p class="small">
+    Hinweis: Bei digitalen Downloads erlischt das Widerrufsrecht mit Beginn des
+    Downloads.
+  </p>
+
+  <form
+    action="https://www.paypal.com/cgi-bin/webscr"
+    method="post"
+    target="_top"
+  >
+    <input type="hidden" name="cmd" value="_xclick" />
+    <input
+      type="hidden"
+      name="item_name"
+      value="Yesterday – Noten & Tabulatur"
+    />
+    <input type="hidden" name="amount" value="5.95" />
+    <input type="hidden" name="currency_code" value="EUR" />
+    <input type="hidden" name="return" value={returnUrl} />
+    <input type="hidden" name="rm" value="2" />
+
+    <button type="submit" class="cta-button"> Jetzt mit PayPal kaufen </button>
   </form>
   <p>
     Falls es Probleme mit dem Download gibt, schreib mir bitte eine kurze

@@ -1326,12 +1326,13 @@ table.basis-table tbody tr.active {
   background: #256428;
 }
 
-/* kauf.astro */
+/* yesterday.astro */
 
-.tax-note {
-  margin-top: 0.8rem;
-  font-size: 0.85rem;
+.small {
+  font-size: 0.9rem;
   color: #666;
-  font-style: italic;
+  line-height: 1.4;
+  margin-top: 0.5rem;
 }
+
 
