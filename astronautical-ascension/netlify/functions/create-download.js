@@ -1,39 +1,33 @@
-import fs from "fs";
-import path from "path";
 import crypto from "crypto";
 
 export async function handler(event) {
-  // 1️⃣ Zufälligen Token erzeugen
-  const token = crypto.randomBytes(16).toString("hex");
+  try {
+    // 1. Eindeutigen Token erzeugen
+    const token = crypto.randomUUID();
 
-  // 2️⃣ Ablaufdatum: 60 Tage
-  const expires = new Date();
-  expires.setDate(expires.getDate() + 60);
+    // 2. Download-URL bauen
+    // WICHTIG: Domain anpassen!
+    const downloadUrl = `https://musicstudio-ziebart.de/.netlify/functions/download?token=${token}`;
 
-  // 3️⃣ Pfad zur Tokens-Datei (das ist die Zeile, die du meintest)
-  const filePath = path.resolve("data/tokens.json");
-
-  // 4️⃣ JSON-Datei einlesen, falls sie existiert
-  let data = [];
-  if (fs.existsSync(filePath)) {
-    data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+    // 3. Erfolgreiche Antwort
+    return {
+      statusCode: 200,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        success: true,
+        downloadUrl,
+      }),
+    };
+  } catch (error) {
+    // Sicherheitsnetz – sollte praktisch nie auftreten
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        success: false,
+        error: "Token konnte nicht erzeugt werden",
+      }),
+    };
   }
-
-  // 5️⃣ Neuen Token hinzufügen
-  data.push({
-    token,
-    product: "yesterday",
-    expires: expires.toISOString()
-  });
-
-  // 6️⃣ Speichern
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-
-  // 7️⃣ Weiterleitung zur Download-Seite
-  return {
-    statusCode: 302,
-    headers: {
-      Location: `/kunden-login/thanks-yesterday?token=${token}`
-    }
-  };
 }
