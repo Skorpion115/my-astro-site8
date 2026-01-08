@@ -1,33 +1,25 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getPageUrl } from "../../utils/getPageUrl.js";
+import fs from "fs";
+import path from "path";
 
 const token = Astro.url.searchParams.get("token");
 
-let valid = false;
-
-if (typeof process.env.NETLIFY !== "undefined" && token) {
-  // @ts-ignore
-  const { getStore } = await import("@netlify/blobs");
-  const store = getStore("download-tokens");
-
-  try {
-    const entry = await store.get(token);
-
-    if (entry) {
-      const text = new TextDecoder().decode(entry);
-      const data = JSON.parse(text);
-
-      valid =
-        data.product === "yesterday" &&
-        new Date(data.expires) > new Date();
-    }
-  } catch (err) {
-    console.error("Fehler beim Zugriff auf Netlify Blob:", err);
-  }
+// JSON-Datei mit Tokens einlesen
+const filePath = path.resolve("netlify/functions/tokens.json");
+let tokens = [];
+if (fs.existsSync(filePath)) {
+  tokens = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 }
 
-/* SEO / Meta */
+const now = new Date();
+
+// Prüfen, ob Token gültig ist
+const valid = tokens.find(
+  t => t.token === token && t.product === "yesterday" && new Date(t.expires) > now
+);
+
 const pageTitle = "Danke – Dein Download ist bereit";
 const description =
   "Vielen Dank für deine Zahlung! Dein Noten- & Tabulaturblatt ‚Yesterday‘ ist jetzt zum Download verfügbar.";
@@ -52,36 +44,23 @@ const pageUrl = getPageUrl(Astro);
 
   {valid ? (
     <>
-      <h2>Dein Download ist bereit</h2>
+      <h2>Download bereit</h2>
 
-      <p>
-        <a href="/downloads/Yesterday.pdf" download class="cta-button">
-          Yesterday – Noten &amp; Tabulatur
-        </a>
-      </p>
+      <a href="/downloads/Yesterday.pdf" download class="cta-button">
+        Yesterday – Noten & Tabulatur
+      </a>
 
-      <p>
-        <a href="/downloads/Yesterday-Strings.pdf" download class="cta-button">
-          Yesterday – Strings / Streicherstimmen
-        </a>
-      </p>
-
-      <p>
-        Viel Freude beim Spielen! 🎵
-      </p>
+      <a href="/downloads/Yesterday-Strings.pdf" download class="cta-button">
+        Yesterday – Strings
+      </a>
     </>
   ) : (
-    <>
-      <h2>Download nicht verfügbar</h2>
-      <p>
-        ❌ Dieser Download-Link ist ungültig oder abgelaufen.
-      </p>
-    </>
+    <p>❌ Download-Link ungültig oder abgelaufen.</p>
   )}
 
   <p>
     Falls es Probleme mit dem Download gibt, schreib mir bitte eine kurze
-    E-Mail:<br />
+    E-Mail: <br />
     <strong>postmaster@musicstudio-ziebart.de</strong>
   </p>
 </BaseLayout>
