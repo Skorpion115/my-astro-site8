@@ -2,14 +2,20 @@ import crypto from "crypto";
 
 export async function handler(event) {
   try {
-    // 1. Eindeutigen Token erzeugen
+    // 1️⃣ Basis-URL aus Netlify Environment Variable
+    const siteUrl = process.env.SITE_URL;
+
+    if (!siteUrl) {
+      throw new Error("SITE_URL ist nicht gesetzt");
+    }
+
+    // 2️⃣ Eindeutigen, sicheren Token erzeugen
     const token = crypto.randomUUID();
 
-    // 2. Download-URL bauen
-    // WICHTIG: Domain anpassen!
-    const downloadUrl = `https://musicstudio-ziebart.de/.netlify/functions/download?token=${token}`;
+    // 3️⃣ Download-URL bauen
+    const downloadUrl = `${siteUrl}/.netlify/functions/download?token=${token}`;
 
-    // 3. Erfolgreiche Antwort
+    // 4️⃣ Erfolgreiche Antwort
     return {
       statusCode: 200,
       headers: {
@@ -17,16 +23,21 @@ export async function handler(event) {
       },
       body: JSON.stringify({
         success: true,
+        token,
         downloadUrl,
       }),
     };
   } catch (error) {
-    // Sicherheitsnetz – sollte praktisch nie auftreten
+    console.error("create-download Fehler:", error);
+
     return {
       statusCode: 500,
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
         success: false,
-        error: "Token konnte nicht erzeugt werden",
+        error: "Download-Link konnte nicht erzeugt werden",
       }),
     };
   }
