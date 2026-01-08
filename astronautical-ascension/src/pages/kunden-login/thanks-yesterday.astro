@@ -1,21 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getPageUrl } from "../../utils/getPageUrl.js";
-import fs from "fs";
-import path from "path";
-
-const token = Astro.url.searchParams.get("token");
-const filePath = path.resolve("data/tokens.json");
-
-let tokens = [];
-if (fs.existsSync(filePath)) {
-  tokens = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-}
-
-const now = new Date();
-const valid = tokens.find(
-  t => t.token === token && t.product === "yesterday" && new Date(t.expires) > now
-);
 
 const pageTitle = "Danke – Dein Download ist bereit";
 const description =
@@ -39,21 +24,20 @@ const pageUrl = getPageUrl(Astro);
 >
   <h1>Danke für deine Zahlung!</h1>
 
-  {valid ? (
-    <>
-      <h2>Download bereit</h2>
+  <h2>Deine Downloads</h2>
 
+  <ul>
+    <li>
       <a href="/downloads/Yesterday.pdf" download class="cta-button">
-        Yesterday – Noten & Tabulatur
+        📄 Yesterday – Noten & Tabulatur
       </a>
-
+    </li>
+    <li>
       <a href="/downloads/Yesterday-Strings.pdf" download class="cta-button">
-        Yesterday – Strings
+        📄 Yesterday – Strings
       </a>
-    </>
-  ) : (
-    <p>❌ Download-Link ungültig oder abgelaufen.</p>
-  )}
+    </li>
+  </ul>
 
   <p>
     Falls es Probleme mit dem Download gibt, schreib mir bitte eine kurze
