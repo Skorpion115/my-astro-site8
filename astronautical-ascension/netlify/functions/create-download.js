@@ -3,33 +3,33 @@ import path from "path";
 import crypto from "crypto";
 
 export async function handler(event) {
-  // Ein zufälliger Token für den Download
+  // 1️⃣ Zufälligen Token erzeugen
   const token = crypto.randomBytes(16).toString("hex");
 
-  // Ablaufdatum: 60 Tage ab jetzt
+  // 2️⃣ Ablaufdatum: 60 Tage
   const expires = new Date();
   expires.setDate(expires.getDate() + 60);
 
-  // Pfad zur JSON-Datei, die die Tokens speichert
-  const filePath = path.resolve("netlify/functions/tokens.json");
+  // 3️⃣ Pfad zur Tokens-Datei (das ist die Zeile, die du meintest)
+  const filePath = path.resolve("data/tokens.json");
 
-  // JSON-Datei einlesen, wenn nicht existiert, leeres Array
+  // 4️⃣ JSON-Datei einlesen, falls sie existiert
   let data = [];
   if (fs.existsSync(filePath)) {
     data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
   }
 
-  // Neuen Token hinzufügen
+  // 5️⃣ Neuen Token hinzufügen
   data.push({
     token,
     product: "yesterday",
     expires: expires.toISOString()
   });
 
-  // Speichern
+  // 6️⃣ Speichern
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 
-  // Weiterleitung zur Download-Seite
+  // 7️⃣ Weiterleitung zur Download-Seite
   return {
     statusCode: 302,
     headers: {

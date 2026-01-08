@@ -7,7 +7,7 @@ import path from "path";
 const token = Astro.url.searchParams.get("token");
 
 // JSON-Datei mit Tokens einlesen
-const filePath = path.resolve("netlify/functions/tokens.json");
+const filePath = path.resolve("data/tokens.json");
 let tokens = [];
 if (fs.existsSync(filePath)) {
   tokens = JSON.parse(fs.readFileSync(filePath, "utf-8"));
