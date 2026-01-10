@@ -3,15 +3,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getPageUrl } from "../../utils/getPageUrl.js";
 
 // Meta-Infos für die Seite
-const pageTitle = "Yesterday – Noten & Tabulatur kaufen";
+const pageTitle = "Catch The Wind – Noten & Tabulatur + Bassnoten + Mundharmonika Solo kaufen";
 const description =
-  "Kaufe die Noten & Tabulatur für ‚Yesterday‘ direkt hier. Nach der Zahlung erhältst du Zugriff auf die Downloads.";
-const keywords = "Yesterday, Noten, Tabulatur, kaufen, PDF";
+  "Kaufe die Noten & Tabulatur für ‚Catch The Wind‘ direkt hier. Nach der Zahlung erhältst du Zugriff auf die Downloads.";
+const keywords = "Catch The Wind, Noten, Tabulatur, kaufen, PDF";
 const pageUrl = getPageUrl(Astro);
 
 // URL der Dankeseite nach PayPal-Zahlung
 const returnUrl =
-  "https://www.musicstudio-ziebart.de/kunden-login/thanks-yesterday/";
+  "https://www.musicstudio-ziebart.de/kunden-login/thanks-catchthewind/";
 ---
 
 <BaseLayout
@@ -28,8 +28,8 @@ const returnUrl =
   twitterUrl={pageUrl}
 >
   <img
-    src="/bilder/Yesterday_Vorschau.jpg"
-    alt="Yesterday – Vorschau"
+    src="/bilder/CatchTheWind_Vorschau.jpg"
+    alt="Catch The Wind – Vorschau"
     class="product-image"
   />
 
@@ -50,7 +50,7 @@ const returnUrl =
   <p>
     Sichere dir meine
     <strong>eigenen Noten- &amp; Tabulaturblätter</strong>
-    zum Song „Yesterday“ – speziell erstellt für den Unterricht und das Selbststudium.
+    zum Song „Catch The Wind“ – speziell erstellt für den Unterricht und das Selbststudium.
   </p>
 
   <p class="small">
@@ -72,7 +72,7 @@ const returnUrl =
     <input
       type="hidden"
       name="item_name"
-      value="Yesterday – Noten & Tabulatur"
+      value="Catch The Wind – Noten & Tabulatur"
     />
     <input type="hidden" name="amount" value="5.95" />
     <input type="hidden" name="currency_code" value="EUR" />
