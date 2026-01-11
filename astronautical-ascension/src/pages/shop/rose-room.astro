@@ -12,8 +12,6 @@ const pageUrl = getPageUrl(Astro);
 
 // Produktdaten
 const priceGross = "4,95";
-const priceNet = "4,01";
-const vat = "0,94";
 ---
 
 <BaseLayout
@@ -58,20 +56,14 @@ const vat = "0,94";
       <td>Rose Room – Guitar Solo (PDF)</td>
     </tr>
     <tr>
-      <th>Preis netto</th>
-      <td>{priceNet} €</td>
-    </tr>
-    <tr>
-      <th>19 % MwSt</th>
-      <td>{vat} €</td>
-    </tr>
-    <tr>
       <th>Gesamtpreis</th>
       <td><strong>{priceGross} €</strong></td>
     </tr>
   </table>
 
-  <p class="vat-note">inkl. 19 % MwSt. – digitales Downloadprodukt</p>
+ <p class="small">
+    Gemäß § 19 Abs. 1 UStG wird keine Umsatzsteuer berechnet.
+  </p>
 
   <PaypalButton
     itemName="Rose Room – Guitar Solo (PDF)"

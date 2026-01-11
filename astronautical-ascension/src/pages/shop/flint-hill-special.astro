@@ -10,8 +10,6 @@ const pageUrl = getPageUrl(Astro);
 
 // Produktdaten (sauber als Zahlen)
 const priceGross = 2.50;
-const priceNet = 2.09;
-const vat = 0.41;
 
 // PayPal-Daten
 const itemName = "Flint Hill Special – Banjo Solo (PDF)";
@@ -51,20 +49,14 @@ const paypalBusiness = "musikstudio.ziebart@gmail.com";
       <td>Flint Hill Special – Banjo Solo (PDF)</td>
     </tr>
     <tr>
-      <th>Preis netto</th>
-      <td>{priceNet.toFixed(2)} €</td>
-    </tr>
-    <tr>
-      <th>19 % MwSt</th>
-      <td>{vat.toFixed(2)} €</td>
-    </tr>
-    <tr>
       <th>Gesamtpreis</th>
       <td><strong>{priceGross.toFixed(2)} €</strong></td>
     </tr>
   </table>
 
-  <p class="vat-note">inkl. 19 % MwSt. – digitales Downloadprodukt</p>
+  <p class="small">
+    Gemäß § 19 Abs. 1 UStG wird keine Umsatzsteuer berechnet.
+  </p>
 
   <!-- PayPal Button OHNE Komponente -->
   <form

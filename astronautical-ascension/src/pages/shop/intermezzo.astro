@@ -11,8 +11,7 @@ const pageUrl = getPageUrl(Astro);
 
 // Produktdaten (sauber als Zahlen)
 const priceGross = 4.95;
-const priceNet = 4.01;
-const vat = 0.94;
+
 
 // PayPal-Daten
 const itemName = "Intermezzo – Orgel Solo (PDF)";
@@ -52,21 +51,14 @@ const paypalBusiness = "musikstudio.ziebart@gmail.com";
       <td>Intermezzo – Orgel Solo (PDF)</td>
     </tr>
     <tr>
-      <th>Preis netto</th>
-      <td>{priceNet.toFixed(2)} €</td>
-    </tr>
-    <tr>
-      <th>19 % MwSt</th>
-      <td>{vat.toFixed(2)} €</td>
-    </tr>
-    <tr>
       <th>Gesamtpreis</th>
       <td><strong>{priceGross.toFixed(2)} €</strong></td>
     </tr>
   </table>
 
-  <p class="vat-note">inkl. 19 % MwSt. – digitales Downloadprodukt</p>
-
+ <p class="small">
+    Gemäß § 19 Abs. 1 UStG wird keine Umsatzsteuer berechnet.
+  </p>
   <!-- PayPal Button OHNE Komponente -->
   <form
     action="https://www.paypal.com/cgi-bin/webscr"
