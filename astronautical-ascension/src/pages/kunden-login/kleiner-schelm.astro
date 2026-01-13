@@ -3,15 +3,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getPageUrl } from "../../utils/getPageUrl.js";
 
 // Meta-Infos für die Seite
-const pageTitle = "L'accordeon Triste – Noten für Akkordeon kaufen";
+const pageTitle = "Kleiner Schelm – Orgelnoten kaufen";
 const description =
-  "Kaufe die Noten für ‚L'accordeon Triste‘ direkt hier. Nach der Zahlung erhältst du Zugriff auf die Downloads.";
-const keywords = "L'accordeon Triste, Noten, kaufen, PDF";
+  "Kaufe die Orgelnoten für ‚Kleiner Schelm‘ direkt hier. Nach der Zahlung erhältst du Zugriff auf die Downloads.";
+const keywords = "Kleiner Schelm, Orgelnoten, kaufen, PDF";
 const pageUrl = getPageUrl(Astro);
 
 // URL der Dankeseite nach PayPal-Zahlung
 const returnUrl =
-  "https://www.musicstudio-ziebart.de/kunden-login/thanks-akkordeon-triste/";
+  "https://www.musicstudio-ziebart.de/kunden-login/thanks-kleiner-schelm/";
 ---
 
 <BaseLayout
@@ -28,8 +28,8 @@ const returnUrl =
   twitterUrl={pageUrl}
 >
   <img
-    src="/bilder/Akkordeon_Triste_Vorschau.jpg"
-    alt="Akkordeon_Triste_Vorschau"
+    src="/bilder/Kleiner_Schelm_Vorschau.jpg"
+    alt="Kleiner_Schelm_Vorschau"
     class="product-image"
   />
 
@@ -72,7 +72,7 @@ const returnUrl =
     <input
       type="hidden"
       name="item_name"
-      value="Akkordeon Triste – Noten"
+      value="Kleiner Schelm – Orgelnoten"
     />
     <input type="hidden" name="amount" value="2.95" />
     <input type="hidden" name="currency_code" value="EUR" />
