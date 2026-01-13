@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPageUrl } from "../../utils/getPageUrl.js";
+
+const pageTitle = "Danke – Dein Download ist bereit";
+const description =
+  "Vielen Dank für deine Zahlung! Deine Noten- & Tabulaturblatt ‚L'accordeon Triste‘ ist jetzt zum Download verfügbar.";
+const keywords = "L'accordeon Triste, Noten, Download Noten, PDF";
+const pageUrl = getPageUrl(Astro);
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <h1>Danke für deine Zahlung!</h1>
+
+  <h2>Deine Downloads</h2>
+
+  <ul>
+    <li>
+      <a href="/downloads/Accordeon_Triste.pdf" download class="cta-button">
+        📄 L'accordeon Triste – Noten
+      </a>
+    </li>
+  </ul>
+
+  <p>
+    Falls es Probleme mit dem Download gibt, schreib mir bitte eine kurze
+    E-Mail: <br />
+    <strong>postmaster@musicstudio-ziebart.de</strong>
+  </p>
+</BaseLayout>
