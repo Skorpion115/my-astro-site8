@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPageUrl } from "../../utils/getPageUrl.js";
+
+const pageTitle = "Danke – Dein Download ist bereit";
+const description =
+  "Vielen Dank für deine Zahlung! Deine Noten- & Tabulaturblatt ‚Like Ice In The Sunshine‘ ist jetzt zum Download verfügbar.";
+const keywords = "Like Ice In The Sunshine, Noten, Tabulatur, Download Noten, PDF";
+const pageUrl = getPageUrl(Astro);
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <h1>Danke für deine Zahlung!</h1>
+
+  <h2>Deine Downloads</h2>
+
+  <ul>
+    <li>
+      <a href="/downloads/Like_Ice_In_The_Sunshine_Guitar.pdf" download class="cta-button">
+        📄 Like Ice In The Sunshine – Noten & Tabulatur
+      </a>
+    </li>
+    <li>
+      <a href="https://drive.google.com/uc?export=download&id=1FStHNYOBZz5WyhRwXl7RZkGcgNAxlhuw"
+        class="cta-button"
+        target="_blank"
+        rel="noopener">
+        🎵 Like Ice In The Sunshine – Play Along
+      </a>
+    </li>
+    <li>
+      <a href="https://drive.google.com/uc?export=download&id=1Gjn5Wg3N2BOdCQNyElayXSqrDAbqyE7_"
+        class="cta-button"
+        target="_blank"
+        rel="noopener">
+        🎵 Like Ice In The Sunshine – BackingTrack
+      </a>
+    </li>
+  </ul>
+
+  <p>
+    Falls es Probleme mit dem Download gibt, schreib mir bitte eine kurze
+    E-Mail: <br />
+    <strong>postmaster@musicstudio-ziebart.de</strong>
+  </p>
+</BaseLayout>
