@@ -3,11 +3,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getPageUrl } from "../../utils/getPageUrl.js";
 const pageTitle = "Inhaltsverzeichnis der Kurse";
 const description =
-  "Schnell registrieren und sofort auf Notenbücher und Musiknoten zugreifen – ohne Abo, ohne automatische Verlängerung.";
+  "Sofort auf Notenbücher und Musiknoten zugreifen – ohne Abo, ohne automatische Verlängerung.";
 const keywords = "Notenbücher, Musiknoten, Gitarrennoten, Download Noten";
 const pageUrl = getPageUrl(Astro);
-
-
 ---
 
 <BaseLayout
@@ -24,12 +22,12 @@ const pageUrl = getPageUrl(Astro);
   twitterUrl={pageUrl}
 >
   <p>
-    Nach dem Kauf erhältst du direkten Zugriff auf deine Noten – ganz ohne Abo.
+    Nach dem Kauf erhalten Sie direkten Zugriff auf alle Noten und Playbacks – ganz ohne Abo.
   </p>
 
   <ul>
     <li>✅ Sicher bezahlen</li>
-    <li>✅ Sofortiger Zugriff auf deine Noten</li>
+    <li>✅ Sofortiger Zugriff auf alle Noten und Playbacks</li>
     <li>✅ Zugang für einen unbegrenzten Zeitraum</li>
   </ul>
 
@@ -43,166 +41,218 @@ const pageUrl = getPageUrl(Astro);
   <p>
     <strong>Jetzt direkt spielen!</strong>
   </p>
- 
+
   <table class="basis-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Titel</th>
-            <th>Komponist</th>
-            <th>Instrument</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td data-label="Titel">Hammond Flip</td>
-            <td data-label="Komponist">Klaus Wunderlich</td>
-            <td data-label="Instrument">Keyboard</td>
-          </tr>
-          <tr>
-            <td data-label="anhören">
-              <a href="https://drive.google.com/file/d/1t78ztmJQ1Qpx6NErVMyF7jJn0zm6cvoX/preview"
-                class="normal-links"
-                target="_blank"
-                rel="noopener">
-                  Hammond Flip – anhören
-              </a>
-            </td>
-            <td data-label="ansehen">
-              <a
-                href="/kunden-login/hammond-flip/"
-                class="normal-links">Kaufen</a
-              >
-            </td>
-            <td data-label="download">
-              <a href="https://www.youtube.com/watch?v=244HlpB3JoA"
-                class="normal-links"
-                target="_blank"
-                rel="noopener"
-                >YouTube Video: Hammond Flip</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td data-label="Titel">Lullaby In Blue</td>
-            <td data-label="Komponist">Klaus Wunderlich</td>
-            <td data-label="Instrument">Keyboard</td>
-          </tr>
-          <tr>
-            <td data-label="anhören">
-              <a
-                href="/Songs/Barcarole.mid"
-                target="_blank"
-                class="normal-links">anhören</a
-              >
-            </td>
-            <td data-label="ansehen">
-              <a
-                href="/bilder/Barcarole.pdf"
-                target="_blank"
-                class="normal-links">ansehen</a
-              >
-            </td>
-            <td data-label="download">
-              <a href="/zip_download/Barcarole.zip" class="normal-links"
-                >download 259 KB</a
-              >
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <!-- Variante A -->
-      <br />
-      <div class="basis-card">
-        <div class="basis-header">ID: 1</div>
-        <div><span>Titel:</span> Hammond Flip</div>
-        <div><span>Komponist:</span> Klaus Wunderlich</div>
-        <div><span>Instrument:</span> Keyboard</div>
-        <div>
-          <span>anhören:</span><a
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Titel</th>
+        <th>Komponist</th>
+        <th>Instrument</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td data-label="Titel">Hammond Flip</td>
+        <td data-label="Komponist">Klaus Wunderlich</td>
+        <td data-label="Instrument">Keyboard</td>
+      </tr>
+      <tr>
+        <td data-label="anhören">
+          <a
             href="https://drive.google.com/file/d/1t78ztmJQ1Qpx6NErVMyF7jJn0zm6cvoX/preview"
             class="normal-links"
             target="_blank"
             rel="noopener"
           >
-            Hammond Flip - Play Along</a
-          >
-        </div>
-        <div>
-          <span>ansehen:</span><a
-            href="/kunden-login/hammond-flip/"
-                class="normal-links"> kaufen</a"
-          >
-        </div>
-        <div>
-          <span>YouTubeVideo:</span><a
+            anhören
+          </a>
+        </td>
+        <td data-label="ansehen">
+          <a href="/kunden-login/hammond-flip/" class="normal-links">Kaufen</a>
+        </td>
+        <td data-label="download">
+          <a
             href="https://www.youtube.com/watch?v=244HlpB3JoA"
-              class="normal-links"
-              target="_blank"
-              rel="noopener"
+            class="normal-links"
+            target="_blank"
+            aria-label="YouTube Video zu Hammond Flip ansehen"
+            rel="noopener">YouTube Video: Hammond Flip</a
           >
-            Hammond Flip2</a
-          >
-        </div>
-      </div>
-      <div class="basis-card">
-        <div class="basis-header">ID: 2</div>
-        <div><span>Titel:</span> Barcarole</div>
-        <div><span>Komponist:</span> Offenbach</div>
-        <div><span>Instrument:</span> Keyboard</div>
-        <div>
-          <span>anhören:</span><a
-            href="/Songs/Barcarole.mid"
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td data-label="Titel">Lullaby In Blue</td>
+        <td data-label="Komponist">Klaus Wunderlich</td>
+        <td data-label="Instrument">Keyboard</td>
+      </tr>
+      <tr>
+        <td data-label="anhören">
+          <a
+            href="https://drive.google.com/file/d/1JTik5UfWYy7zKIvBejyQ2ltiJEyKQvc6/preview"
             class="normal-links"
             target="_blank"
             rel="noopener"
           >
-            anhören</a
+            anhören
+          </a>
+        </td>
+        <td data-label="ansehen">
+          <a href="/kunden-login/lullaby-in-blue/" class="normal-links"
+            >Kaufen</a
           >
-        </div>
-        <div>
-          <span>ansehen:</span><a
-            href="/bilder/Barcarole.pdf"
+        </td>
+        <td data-label="download">
+          <a
+            href="https://www.youtube.com/watch?v=XfIO3ZWqe6g"
+            class="normal-links"
             target="_blank"
+            rel="noopener">YouTube Video: Lullaby In Blue</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td data-label="Titel">Kleiner Schelm</td>
+        <td data-label="Komponist">Klaus Wunderlich</td>
+        <td data-label="Instrument">Keyboard</td>
+      </tr>
+      <tr>
+        <td data-label="anhören">
+          <a
+            href="https://drive.google.com/file/d/1JIfAu3pjlYPAJMRsJos7dcL8qIXkOpqD/preview"
             class="normal-links"
+            target="_blank"
+            rel="noopener"
           >
-            ansehen</a
+            anhören
+          </a>
+        </td>
+        <td data-label="ansehen">
+          <a href="/kunden-login/kleiner-schelm/" class="normal-links"
+            >Kaufen</a
           >
-        </div>
-        <div>
-          <span>Download:</span><a
-            href="/zip_download/Barcarole.zip"
+        </td>
+        <td data-label="download">
+          <a
+            href="https://www.youtube.com/watch?v=dRz-VMVUNlY"
             class="normal-links"
+            target="_blank"
+            rel="noopener">YouTube Video: Kleiner Schelm</a
           >
-            download 189 KB</a
-          >
-        </div>
-      </div>
-      
-      </div>
-      
-      </div>
-      
-      </div>
-      
-      
-      </div>
-      
-      
-      </div>
-   
-  <p>
-      <a
-        href="/gitarrenunterricht/"
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Variante A gefaltet -->
+  <br />
+  <div class="basis-card">
+    <div class="basis-header">ID: 1</div>
+    <div><span>Titel:</span> Hammond Flip</div>
+    <div><span>Komponist:</span> Klaus Wunderlich</div>
+    <div><span>Instrument:</span> Keyboard</div>
+    <div>
+      <span>anhören:</span><a
+        href="https://drive.google.com/file/d/1JTik5UfWYy7zKIvBejyQ2ltiJEyKQvc6/preview"
         class="normal-links"
-        aria-label="Zurück zu Gitarrenunterricht"
+        target="_blank"
+        rel="noopener"
       >
-        Zurück zu Gitarrenunterricht
-      </a>
-    </p>
+        Play Along</a
+      >
+    </div>
+    <div>
+      <span>ansehen:</span><a
+        href="/kunden-login/hammond-flip/"
+        class="normal-links"
+      >
+        kaufen</a
+      >
+    </div>
+    <div>
+      <span>YouTubeVideo:</span><a
+        href="https://www.youtube.com/watch?v=244HlpB3JoA"
+        class="normal-links"
+        target="_blank"
+        aria-label="YouTube Video zu Hammond Flip ansehen"
+        rel="noopener"
+      >
+        Hammond Flip</a
+      >
+    </div>
+  </div>
+  <div class="basis-card">
+    <div class="basis-header">ID: 2</div>
+    <div><span>Titel:</span> Lullaby In Blue</div>
+    <div><span>Komponist:</span> Klaus Wunderlich</div>
+    <div><span>Instrument:</span> Keyboard</div>
+    <div>
+      <span>anhören:</span><a
+        href="https://drive.google.com/file/d/1JTik5UfWYy7zKIvBejyQ2ltiJEyKQvc6/preview"
+        class="normal-links"
+        target="_blank"
+        rel="noopener"
+      >
+        Play Along</a
+      >
+    </div>
+    <div>
+      <span>ansehen:</span><a
+        href="/kunden-login/lullaby-in-blue/"
+        class="normal-links"
+      >
+        Kaufen</a
+      >
+    </div>
+    <div>
+      <span>YouTubeVideo:</span><a
+        href="https://www.youtube.com/watch?v=XfIO3ZWqe6g"
+        class="normal-links"
+        target="_blank"
+        rel="noopener"
+      >
+        Lullaby In Blue</a
+      >
+    </div>
+  </div>
+  <div class="basis-card">
+    <div class="basis-header">ID: 3</div>
+    <div><span>Titel:</span> Kleiner Schelm</div>
+    <div><span>Komponist:</span> Klaus Wunderlich</div>
+    <div><span>Instrument:</span> Keyboard</div>
+    <div>
+      <span>anhören:</span><a
+        href="https://drive.google.com/file/d/1JIfAu3pjlYPAJMRsJos7dcL8qIXkOpqD/preview"
+        class="normal-links"
+        target="_blank"
+        rel="noopener"
+      >
+        Play Along</a
+      >
+    </div>
+    <div>
+      <span>ansehen:</span><a
+        href="/kunden-login/kleiner-schelm/"
+        class="normal-links"
+      >
+        Kaufen</a
+      >
+    </div>
+    <div>
+      <span>YouTubeVideo:</span><a
+        href="https://www.youtube.com/watch?v=dRz-VMVUNlY"
+        class="normal-links"
+        target="_blank"
+        rel="noopener"
+      >
+        Kleiner Schelm</a
+      >
+    </div>
+  </div>
+  
   <p>
-    <a href="/kunden-login/" class="normal-links">Zurück zur Übersicht</a>
+    <a href="/kunden-login/" class="normal-links" aria-label="Zurück zu Kurse">Zurück zu Kurse</a>
   </p>
 </BaseLayout>
