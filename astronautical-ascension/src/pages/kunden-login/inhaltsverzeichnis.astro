@@ -1,0 +1,656 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPageUrl } from "../../utils/getPageUrl.js";
+const pageTitle = "Inhaltsverzeichnis der Kurse";
+const description =
+  "Schnell registrieren und sofort auf Notenbücher und Musiknoten zugreifen – ohne Abo, ohne automatische Verlängerung.";
+const keywords = "Notenbücher, Musiknoten, Gitarrennoten, Download Noten";
+const pageUrl = getPageUrl(Astro);
+
+
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <h1>Registrieren & sofort loslegen</h1>
+
+  <p>
+    Nach dem Kauf erhältst du direkten Zugriff auf deine Noten – ganz ohne Abo.
+  </p>
+
+  <ul>
+    <li>✅ Sicher bezahlen</li>
+    <li>✅ Sofortiger Zugriff auf deine Noten</li>
+    <li>✅ Zugang für einen unbegrenzten Zeitraum</li>
+  </ul>
+
+  <p>
+    Du behältst jederzeit die volle Kontrolle. Kein Zeitdruck, kein
+    Kleingedrucktes.
+  </p>
+
+  <h2>Orgel/Keyboard Kurse</h2>
+
+  <p>
+    <strong>Jetzt direkt spielen!</strong>
+  </p>
+  <!--
+  <p>
+    <a href="/kunden-login/kauf/" class="cta-button">
+      <strong>Bereit? Dann geht es jetzt zum Kauf.</strong>
+    </a>
+  </p> -->
+  <table class="basis-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Titel</th>
+            <th>Komponist</th>
+            <th>Instrument</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td data-label="Titel">Hammond Flip</td>
+            <td data-label="Komponist">Klaus Wunderlich</td>
+            <td data-label="Instrument">Keyboard</td>
+          </tr>
+          <tr>
+            <td data-label="anhören">
+              <a
+                href="https://drive.google.com/uc?export=download&id=1t78ztmJQ1Qpx6NErVMyF7jJn0zm6cvoX"
+                target="_blank"
+                class="normal-links">anhören</a
+              >
+            </td>
+            <td data-label="ansehen">
+              <a
+                href="/kunden-login/hammond-flip/"
+                class="normal-links">kaufen</a
+              >
+            </td>
+            <td data-label="download">
+              <a href="/zip_download/PM.zip" class="normal-links"
+                >download 244 KB</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td data-label="Titel">Barcarole</td>
+            <td data-label="Komponist">Offenbach</td>
+            <td data-label="Instrument">Keyboard</td>
+          </tr>
+          <tr>
+            <td data-label="anhören">
+              <a
+                href="/Songs/Barcarole.mid"
+                target="_blank"
+                class="normal-links">anhören</a
+              >
+            </td>
+            <td data-label="ansehen">
+              <a
+                href="/bilder/Barcarole.pdf"
+                target="_blank"
+                class="normal-links">ansehen</a
+              >
+            </td>
+            <td data-label="download">
+              <a href="/zip_download/Barcarole.zip" class="normal-links"
+                >download 259 KB</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td data-label="Titel">Kleine Nachtmusik</td>
+            <td data-label="Komponist">Amadeus Mozart</td>
+            <td data-label="Instrument">Keyboard</td>
+          </tr>
+          <tr>
+            <td data-label="anhören">
+              <a href="/Songs/Nachtmu.mid" target="_blank" class="normal-links"
+                >anhören</a
+              >
+            </td>
+            <td data-label="ansehen">
+              <a
+                href="/bilder/Kleine_Nachtmusik.pdf"
+                target="_blank"
+                class="normal-links">ansehen</a
+              >
+            </td>
+            <td data-label="download">
+              <a href="/zip_download/Nachtmusik.zip" class="normal-links"
+                >download 414 KB</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td data-label="Titel">Mondschein Sonate</td>
+            <td data-label="Komponist">Beethoven</td>
+            <td data-label="Instrument">Klavier</td>
+          </tr>
+          <tr>
+            <td data-label="anhören">
+              <a
+                href="/Songs/mondschein.mid"
+                target="_blank"
+                class="normal-links">anhören</a
+              >
+            </td>
+            <td data-label="ansehen">
+              <a
+                href="/bilder/Mondschein.pdf"
+                target="_blank"
+                class="normal-links">ansehen</a
+              >
+            </td>
+            <td data-label="download">
+              <a href="/zip_download/Mondschein.zip" class="normal-links"
+                >download 360 KB</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td data-label="Titel">Morning</td>
+            <td data-label="Komponist">Eduard Grieg</td>
+            <td data-label="Instrument">Keyboard</td>
+          </tr>
+          <tr>
+            <td data-label="anhören">
+              <a href="/Songs/Morning.mid" target="_blank" class="normal-links"
+                >anhören</a
+              >
+            </td>
+            <td data-label="ansehen">
+              <a href="/bilder/Morning.pdf" target="_blank" class="normal-links"
+                >ansehen</a
+              >
+            </td>
+            <td data-label="download">
+              <a href="/zip_download/Morning.zip" class="normal-links"
+                >download 259 KB</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td data-label="Titel">Swan Lake</td>
+            <td data-label="Komponist">Tschaikowsky</td>
+            <td data-label="Instrument">Keyboard</td>
+          </tr>
+          <tr>
+            <td data-label="anhören">
+              <a href="/Songs/SwanLake.mid" target="_blank" class="normal-links"
+                >anhören</a
+              >
+            </td>
+            <td data-label="ansehen">
+              <a
+                href="/bilder/SwanLake.pdf"
+                target="_blank"
+                class="normal-links">ansehen</a
+              >
+            </td>
+            <td data-label="download">
+              <a href="/zip_download/SwanLake.zip" class="normal-links"
+                >download 334 KB</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td data-label="Titel">Aloha Oe</td>
+            <td data-label="Komponist">Volkslied aus Hawai</td>
+            <td data-label="Instrument">Keyboard</td>
+          </tr>
+          <tr>
+            <td data-label="anhören">
+              <a href="/Songs/Aloha.mid" target="_blank" class="normal-links"
+                >anhören</a
+              >
+            </td>
+            <td data-label="ansehen">
+              <a
+                href="/bilder/Aloha_Oe.pdf"
+                target="_blank"
+                class="normal-links">ansehen</a
+              >
+            </td>
+            <td data-label="download">
+              <a href="/zip_download/AlohaOe.zip" class="normal-links"
+                >download 109 KB</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td data-label="Titel">Die Fledermaus</td>
+            <td data-label="Komponist">Johann Strauss</td>
+            <td data-label="Instrument">Keyboard</td>
+          </tr>
+          <tr>
+            <td data-label="anhören">
+              <a
+                href="/Songs/Fledermaus.mid"
+                target="_blank"
+                class="normal-links">anhören</a
+              >
+            </td>
+            <td data-label="ansehen">
+              <a href="/bilder/Flederm.pdf" target="_blank" class="normal-links"
+                >ansehen</a
+              >
+            </td>
+            <td data-label="download">
+              <a href="/zip_download/Die_Fledermaus.zip" class="normal-links"
+                >download 443 KB</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td data-label="Titel">Die Schlittschuhläufer</td>
+            <td data-label="Komponist">Emil Waldteufel</td>
+            <td data-label="Instrument">Keyboard</td>
+          </tr>
+          <tr>
+            <td data-label="anhören">
+              <a href="/Songs/Schlitt.mid" target="_blank" class="normal-links"
+                >anhören</a
+              >
+            </td>
+            <td data-label="ansehen">
+              <a href="/bilder/Schlitt.pdf" target="_blank" class="normal-links"
+                >ansehen</a
+              >
+            </td>
+            <td data-label="download">
+              <a href="/zip_download/Die_Schlitt.zip" class="normal-links"
+                >download 530 KB</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td data-label="Titel">Aus der neuen Welt</td>
+            <td data-label="Komponist">Antonin Dvorák</td>
+            <td data-label="Instrument">Klavier</td>
+          </tr>
+          <tr>
+            <td data-label="anhören">
+              <a
+                href="/klavier-videoanleitung/"
+                class="normal-links">siehe Video</a
+              >
+            </td>
+            <td data-label="ansehen">
+              <a
+                href="/bilder/Largo-Antonin_Dvorak.pdf"
+                target="_blank"
+                class="normal-links">ansehen</a
+              >
+            </td>
+            <td data-label="download">
+              <a
+                href="/bilder/Largo-Antonin_Dvorak.pdf"
+                target="_blank"
+                class="normal-links"
+              >
+                download 778 KB</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Variante A -->
+      <br />
+      <div class="basis-card">
+        <div class="basis-header">ID: 1</div>
+        <div><span>Titel:</span> Persischen Markt</div>
+        <div><span>Komponist:</span> Albert W. Ketelbey</div>
+        <div><span>Instrument:</span> Keyboard</div>
+        <div>
+          <span>anhören:</span><a
+            href="/Songs/Auf_einem_persischen_Markt.mp3"
+            target="_blank"
+            class="normal-links"
+          >
+            anhören</a
+          >
+        </div>
+        <div>
+          <span>ansehen:</span><a
+            href="/bilder/Auf_einem_persischen_Markt.pdf"
+            target="_blank"
+            class="normal-links"
+          >
+            ansehen</a
+          >
+        </div>
+        <div>
+          <span>Download:</span><a
+            href="/zip_download/PM.zip"
+            class="normal-links"
+          >
+            download 244 KB</a
+          >
+        </div>
+      </div>
+      <div class="basis-card">
+        <div class="basis-header">ID: 2</div>
+        <div><span>Titel:</span> Barcarole</div>
+        <div><span>Komponist:</span> Offenbach</div>
+        <div><span>Instrument:</span> Keyboard</div>
+        <div>
+          <span>anhören:</span><a
+            href="/Songs/Barcarole.mid"
+            target="_blank"
+            class="normal-links"
+          >
+            anhören</a
+          >
+        </div>
+        <div>
+          <span>ansehen:</span><a
+            href="/bilder/Barcarole.pdf"
+            target="_blank"
+            class="normal-links"
+          >
+            ansehen</a
+          >
+        </div>
+        <div>
+          <span>Download:</span><a
+            href="/zip_download/Barcarole.zip"
+            class="normal-links"
+          >
+            download 189 KB</a
+          >
+        </div>
+      </div>
+      <div class="basis-card">
+        <div class="basis-header">ID: 3</div>
+        <div><span>Titel:</span> Kleine_Nachtmusik</div>
+        <div><span>Komponist:</span> Amadeus Mozart</div>
+        <div><span>Instrument:</span> Keyboard</div>
+        <div>
+          <span>anhören:</span><a
+            href="/Songs/Nachtmu.mid"
+            target="_blank"
+            class="normal-links"
+          >
+            anhören</a
+          >
+        </div>
+        <div>
+          <span>ansehen:</span><a
+            href="/bilder/Kleine_Nachtmusik.pdf"
+            target="_blank"
+            class="normal-links"
+          >
+            ansehen</a
+          >
+        </div>
+        <div>
+          <span>Download:</span><a
+            href="/zip_download/Nachtmusik.zip"
+            class="normal-links"
+          >
+            download 414 KB</a
+          >
+        </div>
+      </div>
+      <div class="basis-card">
+        <div class="basis-header">ID: 4</div>
+        <div><span>Titel:</span> Mondschein Sonate</div>
+        <div><span>Komponist:</span> Beethoven</div>
+        <div><span>Instrument:</span> Klavier</div>
+        <div>
+          <span>anhören:</span><a
+            href="/Songs/mondschein.mid"
+            target="_blank"
+            class="normal-links"
+          >
+            anhören</a
+          >
+        </div>
+        <div>
+          <span>ansehen:</span><a
+            href="/bilder/Mondschein.pdf"
+            target="_blank"
+            class="normal-links"
+          >
+            ansehen</a
+          >
+        </div>
+        <div>
+          <span>Download:</span><a
+            href="/zip_download/Mondschein.zip"
+            class="normal-links"
+          >
+            download 360 KB</a
+          >
+        </div>
+      </div>
+      <div class="basis-card">
+        <div class="basis-header">ID: 5</div>
+        <div><span>Titel:</span> Morning</div>
+        <div><span>Komponist:</span> Eduard Grieg</div>
+        <div><span>Instrument:</span> Keyboard</div>
+        <div>
+          <span>anhören:</span><a
+            href="/Songs/Morning.mid"
+            target="_blank"
+            class="normal-links"
+          >
+            anhören</a
+          >
+        </div>
+        <div>
+          <span>ansehen:</span><a
+            href="/bilder/Morning.pdf"
+            target="_blank"
+            class="normal-links"
+          >
+            ansehen</a
+          >
+        </div>
+        <div>
+          <span>Download:</span><a
+            href="/zip_download/Morning.zip"
+            class="normal-links"
+          >
+            download 259 KB</a
+          >
+        </div>
+      </div>
+      <div class="basis-card">
+        <div class="basis-header">ID: 6</div>
+        <div><span>Titel:</span> Swan Lake</div>
+        <div><span>Komponist:</span> Tschaikowsky</div>
+        <div><span>Instrument:</span> Keyboard</div>
+        <div>
+          <span>anhören:</span><a
+            href="/Songs/SwanLake.mid"
+            target="_blank"
+            class="normal-links"
+          >
+            anhören</a
+          >
+        </div>
+        <div>
+          <span>ansehen:</span><a
+            href="/bilder/SwanLake.pdf"
+            target="_blank"
+            class="normal-links"
+          >
+            ansehen</a
+          >
+        </div>
+        <div>
+          <span>Download:</span><a
+            href="/zip_download/SwanLake.zip"
+            class="normal-links"
+          >
+            download 334 KB</a
+          >
+        </div>
+      </div>
+      <div class="basis-card">
+        <div class="basis-header">ID: 7</div>
+        <div><span>Titel:</span> Aloha Oe</div>
+        <div><span>Komponist:</span> Volkslied aus Hawai</div>
+        <div><span>Instrument:</span> Keyboard</div>
+        <div>
+          <span>anhören:</span><a
+            href="/Songs/Aloha.mid"
+            target="_blank"
+            class="normal-links"
+          >
+            anhören</a
+          >
+        </div>
+        <div>
+          <span>ansehen:</span><a
+            href="/bilder/Aloha_Oe.pdf"
+            target="_blank"
+            class="normal-links"
+          >
+            ansehen</a
+          >
+        </div>
+        <div>
+          <span>Download:</span><a
+            href="/zip_download/AlohaOe.zip"
+            class="normal-links"
+          >
+            download 334 KB</a
+          >
+        </div>
+      </div>
+      <div class="basis-card">
+        <div class="basis-header">ID: 8</div>
+        <div><span>Titel:</span> Die Fledermaus</div>
+        <div><span>Komponist:</span> Johann Strauss</div>
+        <div><span>Instrument:</span> Keyboard</div>
+        <div>
+          <span>anhören:</span><a
+            href="/Songs/Fledermaus.mid"
+            target="_blank"
+            class="normal-links"
+          >
+            anhören</a
+          >
+        </div>
+        <div>
+          <span>ansehen:</span><a
+            href="/bilder/Flederm.pdf"
+            target="_blank"
+            class="normal-links"
+          >
+            ansehen</a
+          >
+        </div>
+        <div>
+          <span>Download:</span><a
+            href="/zip_download/Die_Fledermaus.zip"
+            class="normal-links"
+          >
+            download 443 KB</a
+          >
+        </div>
+      </div>
+      <div class="basis-card">
+        <div class="basis-header">ID: 9</div>
+        <div><span>Titel:</span> Die Schlittschuhläufer</div>
+        <div><span>Komponist:</span> Emil Waldteufel</div>
+        <div><span>Instrument:</span> Keyboard</div>
+        <div>
+          <span>anhören:</span><a
+            href="/Songs/Schlitt.mid"
+            target="_blank"
+            class="normal-links"
+          >
+            anhören</a
+          >
+        </div>
+        <div>
+          <span>ansehen:</span><a
+            href="/bilder/Schlitt.pdf"
+            target="_blank"
+            class="normal-links"
+          >
+            ansehen</a
+          >
+        </div>
+        <div>
+          <span>Download:</span><a
+            href="/zip_download/Die_Schlitt.zip"
+            class="normal-links"
+          >
+            download 530 KB</a
+          >
+        </div>
+      </div>
+      <div class="basis-card">
+        <div class="basis-header">ID: 10</div>
+        <div><span>Titel:</span> Aus der neuen Welt</div>
+        <div><span>Komponist:</span> Antonin Dvorák</div>
+        <div><span>Instrument:</span> Klavier</div>
+        <div>
+          <span>siehe Video: </span><a
+            href="/klavier-videoanleitung/"
+            class="normal-links"
+          >
+          siehe Video</a>
+        </div>
+        <div>
+          <span>ansehen:</span><a
+            href="/bilder/Largo-Antonin_Dvorak.pdf"
+            target="_blank"
+            class="normal-links"
+          >
+            ansehen</a
+          >
+        </div>
+        <div>
+          <span>Download:</span><a
+            href="/bilder/Largo-Antonin_Dvorak.pdf"
+            target="_blank"
+            class="normal-links"
+          >
+            download 778 KB</a
+          >
+        </div>
+      </div>
+   
+  <p>
+      <a
+        href="/gitarrenunterricht/"
+        class="normal-links"
+        aria-label="Zurück zu Gitarrenunterricht"
+      >
+        Zurück zu Gitarrenunterricht
+      </a>
+    </p>
+  <p>
+    <a href="/kunden-login/" class="normal-links">Zurück zur Übersicht</a>
+  </p>
+</BaseLayout>

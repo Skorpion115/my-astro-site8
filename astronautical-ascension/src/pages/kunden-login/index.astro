@@ -1,10 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getPageUrl } from "../../utils/getPageUrl.js";
-const pageTitle =
-  "DOWNLOAD - PASS";
-const description =
-  "Notenbücher, Musiknoten, Gitarrennoten, Download Notenbücher für Musiker aller Art.";
+const pageTitle = "Kurse";
+const description = "Notenbücher, Musiknoten, Gitarrennoten, Download Notenbücher für Musiker aller Art.";
 const keywords = "Notenbücher, Musiknoten, Gitarrennoten, Download Noten";
 const pageUrl = getPageUrl(Astro);
 // URL der Dankeseite nach PayPal-Zahlung
@@ -24,14 +22,14 @@ const returnUrl = "https://www.musicstudio-ziebart.de/kunden-login/registrieren/
   twitterDescription={description}
   twitterUrl={pageUrl}
 >
+  <h2>Unterricht & Selbststudium</h2>
   <hr />
-  <p><strong>Preis 49,- €</strong></p>
   <p class="small">
-    1-Jahres-Abonnement • Druckbare PDFs, GP-Tabs, Audio- und Playback-Tracks für unsere beliebtesten Lektionen herunterladen • Wöchentlich aktualisiert • Sofortiger Zugriff auf allen Geräten
+    Druckbare PDFs, Audio- und Playback-Tracks für unsere beliebtesten Lektionen herunterladen • Wöchentlich aktualisiert • Sofortiger Zugriff auf allen Geräten
   </p>
   <p>
     <strong>
-      Viele Nutzer fragen nach sauberen PDF's für die kostenlosen Lektionen bei Musikstudio Ziebart. Mit diesem Download-Pass können Sie alles übersichtlich  an einem Ort kostenlos herunterladen die wir regelmäßig veröffentlichen.
+      Viele Nutzer fragen nach sauberen PDF's für die Lektionen von Musikstudio Ziebart.
     </strong>
   </p>
   <ul>
@@ -40,43 +38,45 @@ const returnUrl = "https://www.musicstudio-ziebart.de/kunden-login/registrieren/
       spielen.
     </li>
     <li>🚀 Schneller Zugriff – sofort herunterladen und loslegen.</li>
-    <li>🎁 Exklusive Inhalte – viele Stücke, die du sonst nirgends findest.</li>
+    <li>🎁 Exklusive Inhalte – viele Stücke, die Sie sonst nirgends findest.</li>
   </ul>
   <p>
     Mach Schluss mit langem Suchen und unklaren Noten. Bei uns bekommst du genau
     das, was du brauchst, damit deine Musikideen sofort lebendig werden.
   </p>
+  <p>
+    Jede Lektion enthält ein sauberes, druckfertiges PDF, Audiobeispiele und Playbacks. Die Bibliothek wächst stetig, sobald weitere Lektionen konvertiert werden. Sie können uns mitteilen, welche Lektion als Nächstes hinzugefügt werden soll oder Ideen für neue Lektionen vorschlagen.
+  </p>
+  <h2>Was Sie erhalten</h2>
+  <ul>
+    <li>
+      <strong>Druckbare PDF's</strong> – Klare, übersichtliche Layouts zum Offline-Lernen, Kommentieren oder Aufbewahren auf dem Notenständer – ideal für konzentriertes Üben ohne Ablenkung durch Bildschirme.
+    </li>
+    <li>
+      <strong>Audiobeispiele</strong> - Alle Musikbeispiele enthalten Audioaufnahmen, die im Downloadpaket enthalten sind.
+    </li>
+    <li>
+      <strong>Playbacks</strong> – Die meisten Lektionen beinhalten ein Playback, wodurch das Üben der Ideen in einem realen musikalischen Kontext erleichtert wird.
+    </li>
+    <li>
+      <strong>Zugang zu über 15 Lektionen, wöchentlich kommen neue hinzu</strong> - eine stetig wachsende Bibliothek mit Standards, Techniken, Akkordfolgen und Solo-Vokabular. Neue Downloads erscheinen, sobald ältere Lektionen konvertiert oder neue hinzugefügt werden.
+    </li>
+  </ul>
+  <h2>Häufig gestellte Fragen</h2>
+  <ul>
+    <li>
+      <strong>Erhalte ich Zugriff auf kostenpflichtige Kurse?</strong> Nein, die Kurse werden separat verkauft.
+    </li>
+    <li>
+      <strong>Werden weitere Downloads hinzugefügt?</strong> Ja, regelmäßig kommen neue Kurse hinzu.
+    </li>
+  </ul>
   <p><strong>Jetzt stöbern und direkt losspielen!</strong></p>
 
   <p>
-    <a href="/kunden-login/registrieren/" class="cta-button">
-      Jetzt registrieren & loslegen
+    <a href="/kunden-login/inhaltsverzeichnis/" class="cta-button">
+      Inhaltsverzeichnis der Kurse & loslegen
     </a>
   </p>
-
-  <form
-    action="https://www.paypal.com/cgi-bin/webscr"
-    method="post"
-    target="_top"
-  >
-    <input type="hidden" name="cmd" value="_xclick" />
-    <input type="hidden" name="business" value="musikstudio.ziebart@gmail.com" />
-    <input
-      type="hidden"
-      name="item_name"
-      value="DOWNLOAD - PASS"
-    />
-    <input type="hidden" name="amount" value="49.00" />
-    <input type="hidden" name="currency_code" value="EUR" />
-    <input type="hidden" name="no_shipping" value="1" />
-    <input type="hidden" name="charset" value="utf-8" />
-    <input type="hidden" name="lc" value="DE" />
-    <input type="hidden" name="return" value={returnUrl} />
-
-
-    <button type="submit" class="cta-button"> Jetzt mit PayPal kaufen </button>
-  </form>
-
-
   <p><a href="/" class="normal-links">Zurück zur Startseite</a></p>
 </BaseLayout>
