@@ -22,7 +22,8 @@ const pageUrl = getPageUrl(Astro);
   twitterUrl={pageUrl}
 >
   <p>
-    Nach dem Kauf erhalten Sie direkten Zugriff auf alle Noten und Playbacks – ganz ohne Abo.
+    Nach dem Kauf erhalten Sie direkten Zugriff auf alle Noten und Playbacks –
+    ganz ohne Abo.
   </p>
 
   <ul>
@@ -131,8 +132,7 @@ const pageUrl = getPageUrl(Astro);
           </a>
         </td>
         <td data-label="ansehen">
-          <a href="/kunden-login/kleiner-schelm/" class="normal-links"
-            >Kaufen</a
+          <a href="/kunden-login/kleiner-schelm/" class="normal-links">Kaufen</a
           >
         </td>
         <td data-label="download">
@@ -254,7 +254,6 @@ const pageUrl = getPageUrl(Astro);
 
   <h2>Gitarren Kurse</h2>
 
-  
   <table class="basis-table">
     <thead>
       <tr>
@@ -283,7 +282,9 @@ const pageUrl = getPageUrl(Astro);
           </a>
         </td>
         <td data-label="ansehen">
-          <a href="/kunden-login/the-lion-sleeps-tonight/" class="normal-links">Kaufen</a>
+          <a href="/kunden-login/the-lion-sleeps-tonight/" class="normal-links"
+            >Kaufen</a
+          >
         </td>
         <td data-label="download">
           <a
@@ -294,7 +295,39 @@ const pageUrl = getPageUrl(Astro);
             rel="noopener">YouTube Video: The Lion Sleeps Tonight</a
           >
         </td>
-      </tr>  
+      </tr>
+      <tr>
+        <td>2</td>
+        <td data-label="Titel">Silence Is Golden</td>
+        <td data-label="Komponist">Tremeloes</td>
+        <td data-label="Instrument">Akustik Gitarre</td>
+      </tr>
+      <tr>
+        <td data-label="anhören">
+          <a
+            href="https://drive.google.com/file/d/1OsFtazOaWIKphqXaDHqeQGXZrJKt2RgP/preview"
+            class="normal-links"
+            target="_blank"
+            rel="noopener"
+          >
+            anhören
+          </a>
+        </td>
+        <td data-label="ansehen">
+          <a href="/kunden-login/silence-is-golden/" class="normal-links"
+            >Kaufen</a
+          >
+        </td>
+        <td data-label="download">
+          <a
+            href="https://www.youtube.com/watch?v=OxBca9ZfFv8"
+            class="normal-links"
+            target="_blank"
+            aria-label="YouTube Video zu Silence Is Golden ansehen"
+            rel="noopener">YouTube Video: Silence Is Golden</a
+          >
+        </td>
+      </tr>
     </tbody>
   </table>
   <!-- Variante A gefaltet -->
@@ -323,7 +356,7 @@ const pageUrl = getPageUrl(Astro);
     </div>
     <div>
       <span>YouTubeVideo:</span><a
-        href="https://www.youtube.com/watch?v=eFcGadGwenQ"
+        href="https://www.youtube.com/watch?v=OxBca9ZfFv8"
         class="normal-links"
         target="_blank"
         aria-label="YouTube Video zu The Lion Sleeps Tonight ansehen"
@@ -331,12 +364,45 @@ const pageUrl = getPageUrl(Astro);
       >
         The Lion Sleeps Tonight</a
       >
-    </div>  
+    </div>
+    <div class="basis-header">ID: 2</div>
+    <div><span>Titel:</span> Silence Is Golden</div>
+    <div><span>Komponist:</span> Tremeloes</div>
+    <div><span>Instrument:</span> Akustik Gitarrre</div>
+    <div>
+      <span>anhören:</span><a
+        href="https://drive.google.com/file/d/1OsFtazOaWIKphqXaDHqeQGXZrJKt2RgP/preview"
+        class="normal-links"
+        target="_blank"
+        rel="noopener"
+      >
+        Play Along</a
+      >
+    </div>
+    <div>
+      <span>ansehen:</span><a
+        href="/kunden-login/silence-is-golden/"
+        class="normal-links"
+      >
+        Kaufen</a
+      >
+    </div>
+    <div>
+      <span>YouTubeVideo:</span><a
+        href="https://www.youtube.com/watch?v=OxBca9ZfFv8"
+        class="normal-links"
+        target="_blank"
+        aria-label="YouTube Video zu The Lion Sleeps Tonight ansehen"
+        rel="noopener"
+      >
+        Silence Is Golden</a
+      >
+    </div>
   </div>
 
-
-  
   <p>
-    <a href="/kunden-login/" class="normal-links" aria-label="Zurück zu Kurse">Zurück zu Kurse</a>
+    <a href="/kunden-login/" class="normal-links" aria-label="Zurück zu Kurse"
+      >Zurück zu Kurse</a
+    >
   </p>
 </BaseLayout>
