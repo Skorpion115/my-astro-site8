@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPageUrl } from "../../utils/getPageUrl.js";
+
+const pageTitle = "Danke – Dein Download ist bereit";
+const description =
+  "Vielen Dank für deine Zahlung! Deine Noten- & Pattern ‚Take Good Care Of My Baby‘ ist jetzt zum Download verfügbar.";
+const keywords = "Take Good Care Of My Baby, Noten, Tabulatur, Download Noten, PDF";
+const pageUrl = getPageUrl(Astro);
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <h1>Danke für deine Zahlung!</h1>
+
+  <h2>Deine Downloads</h2>
+
+  <ul>
+    <li>
+      <a href="/downloads/Take_Good_Care.pdf" download class="cta-button">
+        📄 Take Good Care Of My Baby – Guitar
+      </a>
+    </li>
+    <li>
+      <a href="https://drive.google.com/uc?export=download&id=18g2WPwbOY2IS5OZzG2t0f24IBQq-QKzi"
+        class="cta-button"
+        target="_blank"
+        rel="noopener">
+        🎵 Take Good Care Of My Baby – Mastering
+      </a>
+    </li>
+  </ul>
+
+  <p>
+    Falls es Probleme mit dem Download gibt, schreib mir bitte eine kurze
+    E-Mail: <br />
+    <strong>postmaster@musicstudio-ziebart.de</strong>
+  </p>
+</BaseLayout>
