@@ -1310,8 +1310,6 @@ table.basis-table tbody tr.active {
   cursor: pointer;
 }
 
-/* download/train45.astro */
-
 .paypal-button {
   display: inline-block;
   background: #2e7d32;
@@ -1325,8 +1323,6 @@ table.basis-table tbody tr.active {
 .paypal-button:hover {
   background: #256428;
 }
-
-/* yesterday.astro */
 
 .small {
   font-size: 0.9rem;
