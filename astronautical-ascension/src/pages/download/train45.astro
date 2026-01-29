@@ -7,6 +7,16 @@ const description =
   "Download der Banjo-Tabulatur »Train 45«. Vielen Dank für deinen Kauf.";
 const keywords = "Train 45, Banjo Download, Tabulatur PDF";
 const pageUrl = getPageUrl(Astro);
+const downloads = [
+  {
+    label: "Train 45 – Banjo Solo (PDF)",
+    url: "https://www.musicstudio-ziebart.de/downloads/Train_45.pdf",
+  },
+  {
+    label: "Train 45 – Mastering (MP3)",
+    url: "https://drive.google.com/uc?export=download&id=1XE5ZI3v9HD0QOTQ6XdRjge8R8TojXEmV",
+  },
+];
 ---
 <BaseLayout
   pageTitle={pageTitle}
@@ -24,21 +34,22 @@ const pageUrl = getPageUrl(Astro);
     herunterladen.
   </p>
 
+  <hr />
+  <ul>
+    {
+      downloads.map((file) => (
+        <li>
+          <a href={file.url} download class="download-button">
+            👉 {file.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
   <p>
     👉 <strong>Wichtig:</strong> Bitte speichere die Datei direkt auf deinem
     Gerät ab.
-  </p>
-
-  <hr />
-
-  <p>
-    <a
-      href="https://www.musicstudio-ziebart.de/downloads/train45/Train_45.pdf"
-      class="download-button"
-      download
-    >
-      ⬇ Train 45 – Banjo Solo (PDF) herunterladen
-    </a>
   </p>
 
   <hr />
