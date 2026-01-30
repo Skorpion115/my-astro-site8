@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPageUrl } from "../../utils/getPageUrl.js";
+
+const pageTitle = "Danke – Dein Download ist bereit";
+const description =
+  "Vielen Dank für deine Zahlung! Deine Noten- & Tabulaturblatt ‚Catch The Wind‘ ist jetzt zum Download verfügbar.";
+const keywords = "Catch The Wind, Noten, Tabulatur, Download Noten, PDF";
+const pageUrl = getPageUrl(Astro);
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <h1>Danke für deine Zahlung!</h1>
+
+  <h2>Deine Downloads</h2>
+
+  <ul>
+    <li>
+      <a href="/downloads/Flint_Hill_Special.pdf" download class="cta-button">
+        📄 Flint Hill Special – Tabulatur
+      </a>
+    </li>
+    <li>
+      <a href="https://drive.google.com/uc?export=download&id=1wm1MNi3-C03_88A45089bjo136fyS1wL"
+        class="cta-button"
+        target="_blank"
+        rel="noopener">
+        🎵 Flint Hill Special – Mastering
+      </a>
+    </li>
+    <li>
+      <a href="https://drive.google.com/uc?export=download&id=1rNSaLrsrPvAXyhOjobqAF-KZduuE8Cf1"
+        class="cta-button"
+        target="_blank"
+        rel="noopener">
+        🎵 Flint Hill Special – Backing Track
+      </a>
+    </li>
+  </ul>
+
+  <p>
+    Falls es Probleme mit dem Download gibt, schreib mir bitte eine kurze
+    E-Mail: <br />
+    <strong>postmaster@musicstudio-ziebart.de</strong>
+  </p>
+</BaseLayout>
