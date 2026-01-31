@@ -142,6 +142,7 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
     }
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Zum Inhalt</a>
     <!-- Google Tag Manager (noscript) -->
 
     <noscript
@@ -157,9 +158,9 @@ console.log(`[SERVER] Nonce GoogleScripts läuft! ${nonce}`);
       console.log("[BROWSER] Nonce Header läuft!");
     </script>
 
-    <h1 transition:animate="slide" class="page-title">{pageTitle}</h1>
+    <h1 id="top" transition:animate="slide" class="page-title">{pageTitle}</h1>
 
-    <main>
+    <main id="main-content">
       <slot />
     </main>
     <Footer1 />

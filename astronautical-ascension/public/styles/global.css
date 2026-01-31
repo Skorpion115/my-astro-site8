@@ -36,6 +36,7 @@ html {
   color: #000;
   /* Dunklerer Text für besseren Kontrast */
   font-size: 100%;
+  scroll-behavior: smooth;
 }
 
 /* ANCHOR: Darkmode CSS */
@@ -177,6 +178,28 @@ button:focus,
   /* Entfernt den blauen Umriss beim Fokussieren */
   box-shadow: none;
   /* Entfernt eventuelle Schatteneffekte */
+}
+
+/* Skip-Link für bessere Zugänglichkeit */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  background: #000;
+  color: #fff;
+  z-index: 9999;
+  text-decoration: none;
 }
 
 /* ANCHOR Im Dark Modus sind die Links in gold geschrieben funktioniert*/
