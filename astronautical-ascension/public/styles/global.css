@@ -202,6 +202,8 @@ button:focus,
   text-decoration: none;
 }
 
+
+
 /* ANCHOR Im Dark Modus sind die Links in gold geschrieben funktioniert*/
 
 .dark .normal-links {
@@ -406,7 +408,7 @@ hamburger,
 /* ANCHOR Für kleinere Bildschirme unter 637px */
 @media screen and (max-width: 636px) {
   .nav-links {
-    left: -15,6rem;
+    left: -15.6rem;
     /* Standardmäßig ausgeblendet */
   }
 

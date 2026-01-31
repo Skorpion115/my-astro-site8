@@ -73,12 +73,3 @@ table.basis-table tbody tr.active {
   font-weight: bold;
 }
 
-@media screen and (max-width: 578px) {
-  table.basis-table {
-    display: none;
-  }
-
-  .basis-card {
-    display: block;
-  }
-}
