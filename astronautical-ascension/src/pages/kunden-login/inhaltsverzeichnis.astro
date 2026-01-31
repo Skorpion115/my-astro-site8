@@ -37,6 +37,22 @@ const pageUrl = getPageUrl(Astro);
     Kleingedrucktes.
   </p>
 
+  <!-- Inhaltsverzeichnis: Desktop und Mobile -->
+  <nav class="toc-desktop" aria-label="Inhaltsverzeichnis">
+    <ul>
+      <li><a href="#gitarren-kurse" class="normal-links">Gitarren Kurse</a></li>
+      <li><a href="#banjo-5-string" class="normal-links">5-string Banjo Kurse</a></li>
+    </ul>
+  </nav>
+
+  <details class="toc-mobile" role="navigation" aria-label="Inhaltsverzeichnis">
+    <summary>Inhaltsverzeichnis</summary>
+    <ul>
+      <li><a href="#gitarren-kurse" class="normal-links">Gitarren Kurse</a></li>
+      <li><a href="#banjo-5-string" class="normal-links">5-string Banjo Kurse</a></li>
+    </ul>
+  </details>
+
   <h2>Orgel/Keyboard Kurse</h2>
 
   <p>
@@ -240,7 +256,7 @@ const pageUrl = getPageUrl(Astro);
     </div>
   </div>
 
-  <h2>Gitarren Kurse</h2>
+  <h2 id="gitarren-kurse">Gitarren Kurse</h2>
 
   <table class="basis-table">
     <thead>
@@ -850,7 +866,7 @@ const pageUrl = getPageUrl(Astro);
     </div>
   </div>
 
-  <h2>5-string Banjo Kurse</h2>
+  <h2 id="banjo-5-string">5-string Banjo Kurse</h2>
 
   <table class="basis-table">
     <thead>

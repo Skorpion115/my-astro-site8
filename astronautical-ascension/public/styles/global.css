@@ -744,6 +744,52 @@ textarea {
     font-weight: normal;
     margin-bottom: 0.5rem;
   }
+
+  /* TOC responsiveness */
+  .toc-desktop {
+    display: none;
+  }
+  .toc-mobile {
+    display: block;
+  }
+}
+
+/* TOC styles for kunden-login/inhaltsverzeichnis */
+.toc-desktop {
+  display: block;
+  margin: 1rem 1.25rem;
+}
+.toc-desktop ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.toc-desktop a {
+  text-decoration: underline;
+}
+
+.toc-mobile {
+  display: none;
+  margin: 1rem 1.25rem;
+}
+.toc-mobile summary {
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  background: #f3f3f3;
+  border-radius: 4px;
+}
+.toc-mobile ul {
+  list-style: none;
+  padding: 0.5rem 0 0 0.5rem;
+  margin: 0;
+}
+.toc-mobile a {
+  text-decoration: underline;
+  display: block;
+  padding: 0.25rem 0;
 }
 
 
