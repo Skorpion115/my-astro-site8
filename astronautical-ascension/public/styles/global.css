@@ -1395,6 +1395,13 @@ table.basis-table tbody tr.active {
   background: #256428;
 }
 
+.paypal-form {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+
 .small {
   font-size: 0.9rem;
   color: #666;
