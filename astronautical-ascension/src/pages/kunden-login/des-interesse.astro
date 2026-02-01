@@ -3,15 +3,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getPageUrl } from "../../utils/getPageUrl.js";
 
 // Meta-Infos für die Seite
-const pageTitle = "In The Still Of The Night – Noten kaufen";
+const pageTitle = "Des - interesse – Noten kaufen";
 const description =
-  "Kaufe die Noten für ‚In The Still Of The Night‘ direkt hier. Nach der Zahlung erhältst du Zugriff auf die Downloads.";
-const keywords = "In The Still Of The Night, Noten kaufen, PDF";
+  "Kaufe die Noten für ‚Des - interesse‘ direkt hier. Nach der Zahlung erhältst du Zugriff auf die Downloads.";
+const keywords = "Des - interesse, Noten kaufen, PDF";
 const pageUrl = getPageUrl(Astro);
 
 // URL der Dankeseite nach PayPal-Zahlung
 const returnUrl =
-  "https://www.musicstudio-ziebart.de/kunden-login/thanks-in-the-still/";
+  "https://www.musicstudio-ziebart.de/kunden-login/thanks-des-interesse/";
 ---
 
 <BaseLayout
@@ -28,14 +28,14 @@ const returnUrl =
   twitterUrl={pageUrl}
 >
     <img
-    src="/bilder/In_The_Still_Vorschau.png"
-    alt="In The Still Of The Night Vorschau"
+    src="/bilder/Des_Interesse_Vorschau.png"
+    alt="Des - interesse Vorschau"
     class="product-image"
   />
 
   <p>
     Nach der Zahlung erhältst du sofortigen Zugriff auf die PDF Downloads. <br />
-    Perfekt für Gitarristen, die den Song lernen möchten! <br />
+    Perfekt für Organisten/Keyboarder, die den Song lernen möchten! <br />
     Preis: <strong>2,95&nbsp;€</strong>
   </p>
 
@@ -50,7 +50,7 @@ const returnUrl =
   <p>
     Sichere dir meine
     <strong>eigenen Noten + Mastering</strong>
-    zum Song „In The Still Of The Night“ – speziell erstellt für den Unterricht und das Selbststudium.
+    zum Song „Des - interesse“ – speziell erstellt für den Unterricht und das Selbststudium.
   </p>
 
   <p class="small">
@@ -72,7 +72,7 @@ const returnUrl =
     <input
       type="hidden"
       name="item_name"
-      value="In The Still Of The Night – Noten"
+      value="Des - interesse – Noten"
     />
     <input type="hidden" name="amount" value="2.95" />
     <input type="hidden" name="currency_code" value="EUR" />
