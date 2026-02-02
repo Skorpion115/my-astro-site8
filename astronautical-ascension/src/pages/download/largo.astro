@@ -2,26 +2,22 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getPageUrl } from "../../utils/getPageUrl.js";
 
-const pageTitle = "Download – Black Mountain Rag Banjo Solo";
-const description =
-  "Download der Banjo-Tabulatur »Black Mountain Rag«. Vielen Dank für deinen Kauf.";
-const keywords = "Black Mountain Rag, Banjo Download, Tabulatur PDF";
+const pageTitle = "Download – Aus der neuen Welt Klavier Solo";
+const description = "Download der Noten »Aus der neuen Welt«. Vielen Dank für deinen Kauf.";
+const keywords = "Aus der neuen Welt, Klavier Download, Noten PDF";
 const pageUrl = getPageUrl(Astro);
 const downloads = [
   {
-    label: "Black Mountain Rag – Banjo Solo (PDF)",
-    url: "/downloads/Black_Mountain_Rag.pdf",
+    label: "Aus der neuen Welt – Klavier Solo (PDF)",
+    url: "/downloads/Largo.pdf",
   },
   {
-    label: "Black Mountain Rag – BackingTrack (MP3)",
-    url: "https://drive.google.com/uc?export=download&id=1ZxrwpBDpniwVYk-ADfDB-sx36OzaAkUN",
-  },
-  {
-    label: "Black Mountain Rag – Mastering (MP3)",
-    url: "https://drive.google.com/uc?export=download&id=1zJ8eXM_l2-Ib9ja1x8BaNY1La0OgkvPB",
+    label: "Aus der neuen Welt – Mastering (MP3)",
+    url: "https://drive.google.com/uc?export=download&id=1pJepIFMXiLfmynzJQefV6mGy4rekv-gm",
   },
 ];
 ---
+
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
@@ -34,9 +30,15 @@ const downloads = [
   <h1>Vielen Dank für deinen Kauf!</h1>
 
   <p>
-    Du kannst deine <strong>Banjo-Tabulatur „Black Mountain Rag – Solo + BackingTrack“</strong> jetzt
+    Du kannst deine <strong>Noten „Aus der neuen Welt – Klavier Solo“</strong> jetzt
     herunterladen.
   </p>
+
+  <p>
+    👉 <strong>Wichtig:</strong> Bitte speichere die Datei direkt auf deinem Gerät
+    ab.
+  </p>
+
   <hr />
   <ul>
     {
@@ -50,11 +52,6 @@ const downloads = [
     }
   </ul>
 
-  <p>
-    👉 <strong>Wichtig:</strong> Bitte speichere die Datei direkt auf deinem
-    Gerät ab.
-  </p>
-
   <hr />
 
   <p>
@@ -65,7 +62,7 @@ const downloads = [
   </p>
 
   <p class="vat-note">
-    Rechnung mit ausgewiesener MwSt. auf Anfrage per E-Mail erhältlich.
+    Rechnung mit auf Anfrage per E-Mail erhältlich.
   </p>
 
   <p>

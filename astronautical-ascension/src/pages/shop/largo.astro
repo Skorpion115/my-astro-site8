@@ -2,20 +2,22 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getPageUrl } from "../../utils/getPageUrl.js";
 
-const pageTitle = "Dear Old Dixie Banjo Solo – Tabulatur kaufen | Musicstudio Ziebart";
-const description = "Banjosolo zu »Dear Old Dixie« als PDF. Ideal für Bluegrass Banjo Picker. Sofort-Download nach Zahlung.";
-const keywords = "Dear Old Dixie, Banjo Solo, Bluegrass Banjo, Tabulatur, PDF Download";
+const pageTitle = "Aus der neuen Welt - Klavier Solo – Noten kaufen | Musicstudio Ziebart";
+const description =
+  "Klavier Solo zu »Aus der neuen Welt« als PDF. Ideal für Klavierunterricht & Selbststudium. Sofort-Download nach Zahlung.";
+const keywords =
+  "Aus der neuen Welt, Klavier Solo, Noten, PDF Download";
 const pageUrl = getPageUrl(Astro);
 
 // Produktdaten (sauber als Zahlen)
-const priceGross = 2.5;
+const priceGross = 2.95;
+
 
 // PayPal-Daten
-const itemName = "Dear Old Dixie – Banjo Solo (PDF)";
-const returnUrl = "https://www.musicstudio-ziebart.de/download/dear-old-dixie/";
+const itemName = "Aus der neuen Welt – Klavier Solo (PDF)";
+const returnUrl = "https://www.musicstudio-ziebart.de/download/largo/";
 const paypalBusiness = "musikstudio.ziebart@gmail.com";
 ---
-
 <BaseLayout
   pageTitle={pageTitle}
   description={description}
@@ -30,20 +32,19 @@ const paypalBusiness = "musikstudio.ziebart@gmail.com";
   twitterUrl={pageUrl}
 >
   <img
-    src="/bilder/Dear_Old_Dixie_Vorschau.png"
-    alt="Dear Old Dixie – Vorschau"
+    src="/bilder/Largo_Vorschau.png"
+    alt="Largo – Vorschau"
     class="product-image"
   />
 
   <p>
-    Hol dir die <strong>Tabulatur zu Dear Old Dixie Solo + BackingTrack + Mastering</strong> für
-    dein Banjospiel.
+    Hol dir die <strong>Noten zu Aus der neuen Welt II. Satz Klavier  Solo</strong> für dein Klavierspiel.
     <br />
     Sofortiger Download nach Zahlung.
   </p>
 
   <ul>
-    <li>✔ Klar notiertes Banjo Solo</li>
+    <li>✔ Klar notiertes Klavier Solo</li>
     <li>✔ Für Unterricht & Selbststudium</li>
     <li>✔ Sofortiger Download nach Zahlung</li>
   </ul>
@@ -51,7 +52,7 @@ const paypalBusiness = "musikstudio.ziebart@gmail.com";
   <table class="price-table">
     <tr>
       <th>Produkt</th>
-      <td>Dear Old Dixie – Banjo Solo (PDF) + BackingTrack</td>
+      <td>Aus der neuen Welt - II. Satz Largo – Klavier Solo (PDF)</td>
     </tr>
     <tr>
       <th>Gesamtpreis</th>
@@ -59,10 +60,9 @@ const paypalBusiness = "musikstudio.ziebart@gmail.com";
     </tr>
   </table>
 
-  <p class="small">
+ <p class="small">
     Gemäß § 19 Abs. 1 UStG wird keine Umsatzsteuer berechnet.
   </p>
-
   <!-- PayPal Button OHNE Komponente -->
   <form class="paypal-form"
     action="https://www.paypal.com/cgi-bin/webscr"
@@ -86,7 +86,7 @@ const paypalBusiness = "musikstudio.ziebart@gmail.com";
 
   <p class="vat-note">
     <small>
-      Rechnung mit auf Anfrage per E-Mail erhältlich.
+      Rechnung auf Anfrage per E-Mail erhältlich.
     </small>
   </p>
 
