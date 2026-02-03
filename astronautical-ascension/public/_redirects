@@ -1,7 +1,9 @@
 # ==============================
 # Passwortschutz Ten Words
 # ==============================
-/kundenlogin/ten-words/*   /kundenlogin/ten-words/   200   Basic-Auth: tenwords:tenwords2026
+# Passwortschutz Ten Words
+/kundenlogin/ten-words/*  /kundenlogin/ten-words/  200  Basic-Auth: tenwords:tenwords2026
+
 
 
 
