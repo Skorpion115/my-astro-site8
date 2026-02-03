@@ -1,4 +1,12 @@
 # ==============================
+# Passwortschutz Ten Words
+# ==============================
+/kundenlogin/ten-words/*   /kundenlogin/ten-words/:splat   200
+  Basic-Auth: tenwords:tenwords2026
+
+
+
+# ==============================
 # From URL shorterer script
 # ==============================
 /astronautical-ascension   https://github.com/Skorpion115/my-astro-site8
@@ -6,7 +14,7 @@
 # ==============================
 # Weiterleitungen alter Seiten
 # ==============================
-/klarinette/                  /klarinettenunterricht/       301
+/klarinette/                  /klarinettenunterricht/      301
 /saxophon/                    /saxophonunterricht/         301
 /e-gitarre/                   /e-gitarrenunterricht/       301
 /banjo/                       /banjounterricht/            301
