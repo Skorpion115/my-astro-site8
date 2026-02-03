@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPageUrl } from "../utils/getPageUrl.js";
+const pageTitle = "Schüler-Login – Musicstudio Ziebart";
+const description =
+  "Login für den Schülerbereich. Nach Einladung Passwort setzen und Inhalte wie PDFs und Audios abrufen.";
+const keywords = "schüler login, musicstudio ziebart, gitarrenunterricht, klavierunterricht";
+const pageUrl = getPageUrl(Astro);
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <article class="login-article">
+    <p>
+      Bitte melde dich hier mit deiner E-Mail und deinem Passwort an. 
+      Nach Einladung erhältst du einen Link, um dein Passwort zu setzen.
+    </p>
+
+    <section class="login-widget">
+      <button id="login-btn" class="cta-button">Login / Passwort vergeben</button>
+      <p class="hint">
+        Nach der Einladung bitte deine E-Mail bestätigen und Passwort vergeben.
+      </p>
+    </section>
+
+    <section>
+      <h2>Hinweise für Schüler</h2>
+      <ul>
+        <li>✅ Zugang zu Noten & Tutorials nach Login</li>
+        <li>✅ PDFs und Audios nur für eingeloggte Schüler sichtbar</li>
+        <li>✅ Bei Problemen Passwort zurücksetzen über E-Mail</li>
+      </ul>
+    </section>
+  </article>
+
+  <script type="module">
+    // Netlify Identity öffnen
+    const btn = document.getElementById("login-btn");
+    btn.addEventListener("click", () => {
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.open();
+      } else {
+        alert("Netlify Identity Widget noch nicht geladen.");
+      }
+    });
+
+    // Weiterleitung nach Login
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("login", () => {
+        window.location.href = "/kundenlogin/";
+      });
+    }
+  </script>
+</BaseLayout>

@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPageUrl } from "../../utils/getPageUrl.js";
+
+const pageTitle = "Ten Words – Gitarrenunterricht | Musicstudio Ziebart";
+const description = "Geschützter Bereich: Noten, Tabulaturen und Audio-Material für 'Ten Words' von Joe Satriani.";
+const keywords = "Ten Words, Joe Satriani, Gitarrenunterricht, Noten, Tabs, E-Gitarre, Musicstudio Ziebart";
+const pageUrl = getPageUrl(Astro);
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  href={pageUrl}
+  ogTitle={pageTitle}
+  ogDescription={description}
+  ogUrl={pageUrl}
+  ogType="website"
+  twitterTitle={pageTitle}
+  twitterDescription={description}
+  twitterUrl={pageUrl}
+>
+  <article class="tenwords-page">
+    <h1>Ten Words – Gitarrenunterricht</h1>
+
+    <p>Willkommen im geschützten Bereich. Hier findest du alle Materialien für deinen Unterricht:</p>
+
+    <ul>
+      <li>
+        <a 
+          href="/downloads/Ten_Words_by_Satriani.pdf" 
+          download 
+          class="cta-button"
+        >
+          🎵 Ten Words – Noten & Tabulatur
+        </a>
+      </li>
+      <li>
+        <a 
+          href="https://drive.google.com/uc?export=download&id=1VC6dS8mLwb0mPzFkvUXNzemQ2wxZGqJP" 
+          class="cta-button" 
+          target="_blank" 
+          rel="noopener"
+        >
+          🎵 Ten Words – Mastering
+        </a>
+      </li>
+    </ul>
+
+    <p>Viel Spaß beim Üben!</p>
+  </article>
+</BaseLayout>
