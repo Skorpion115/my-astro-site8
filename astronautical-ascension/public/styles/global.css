@@ -1421,3 +1421,62 @@ table.basis-table tbody tr.active {
   margin-right: 6px;
 }
 
+
+/* ==============================
+   Login-Box komplett
+   ============================== */
+.tenwords-page {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #f7f7f7; /* helles Grau */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.tenwords-page h1 {
+  color: #1d72b8;
+  margin-bottom: 20px;
+}
+
+.tenwords-page input[type="password"] {
+  width: 80%;
+  max-width: 300px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.tenwords-page #login-btn {
+  background-color: #1d72b8;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.tenwords-page #login-btn:hover {
+  background-color: #155d8b;
+}
+
+.tenwords-page #login-btn:active {
+  transform: scale(0.97);
+}
+
+.tenwords-page #error {
+  color: red;
+  margin-top: 10px;
+  display: none;
+  font-weight: bold;
+}
+
+
+

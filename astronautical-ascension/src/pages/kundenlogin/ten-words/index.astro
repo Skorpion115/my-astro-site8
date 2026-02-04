@@ -13,12 +13,12 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 
     <input
       type="password"
-      id="pw"
+      id="password"
       placeholder="Passwort"
       autocomplete="off"
     />
 
-    <button onclick="checkPassword()">Login</button>
+    <button id="login-btn">Login</button>
 
     <p id="error" style="color:red; display:none;">
       ❌ Falsches Passwort
@@ -46,47 +46,8 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
       </li>
     </ul>
   </section>
-
 </article>
 
-<script>
-const PASSWORD = "tenwords2026";
-
-function showContent() {
-  const loginBox = document.getElementById("login-box");
-  const content = document.getElementById("content");
-
-  if (loginBox) loginBox.style.display = "none";
-  if (content) content.style.display = "block";
-}
-
-function checkPassword() {
-  const inputEl = document.getElementById("pw") as HTMLInputElement;
-  const error = document.getElementById("error");
-
-  if (!inputEl) return;
-
-  const input = inputEl.value;
-  if (input === PASSWORD) {
-    sessionStorage.setItem("tenwords-login", "ok");
-    showContent();
-  } else {
-    if (error) error.style.display = "block";
-  }
-}
-
-// Sofort prüfen, ob sessionStorage schon gesetzt ist
-if (sessionStorage.getItem("tenwords-login") === "ok") {
-  showContent();
-}
-
-// Optional: sofort Inhalt sichtbar, wenn man sessionStorage manuell in Konsole setzt
-window.addEventListener("storage", (e) => {
-  if (e.key === "tenwords-login" && e.newValue === "ok") {
-    showContent();
-  }
-});
-
-</script>
+<script src="/scripts/login.js" defer></script>
 
 </BaseLayout>
