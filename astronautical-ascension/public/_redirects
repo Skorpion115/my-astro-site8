@@ -1,8 +1,7 @@
 # ==============================
 # Passwortschutz Ten Words
 # ==============================
-/kundenlogin/ten-words/*  /kundenlogin/ten-words/:splat  200  Basic-Auth:tenwords:tenwords2026
-/kundenlogin/ten-words/  /kundenlogin/ten-words/index.html  200
+/kundenlogin/ten-words/*   /kundenlogin/ten-words/tenwords.html   200   Basic-Auth:tenwords:tenwords2026
 # ==============================
 # From URL shorterer script
 # ==============================
