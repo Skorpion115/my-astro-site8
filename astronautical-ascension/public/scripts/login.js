@@ -6,8 +6,8 @@ function showContent() {
   const loginBox = document.getElementById("login-box");
   const content = document.getElementById("content");
 
-  if (loginBox) loginBox.style.display = "none";
-  if (content) content.style.display = "block";
+  if (loginBox) loginBox.classList.add("hidden");
+  if (content) content.classList.remove("hidden");
 }
 
 function checkPassword() {

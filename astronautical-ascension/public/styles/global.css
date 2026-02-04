@@ -1409,11 +1409,7 @@ table.basis-table tbody tr.active {
   margin-top: 0.5rem;
 }
 
-/* Container für die Ten Words Seite */
-.tenwords-page {
-  max-width: 700px;
-  margin: 0 auto;
-}
+/* Container für die Account Seite Login Box */
 
 #login-box input {
   padding: 8px;
@@ -1421,11 +1417,19 @@ table.basis-table tbody tr.active {
   margin-right: 6px;
 }
 
+.hidden {
+  display: none;
+}
+
+.error {
+  color: red;
+}
+
 
 /* ==============================
    Login-Box komplett
    ============================== */
-.tenwords-page {
+.account-page {
   max-width: 500px;
   margin: 60px auto;
   padding: 30px;
@@ -1436,12 +1440,17 @@ table.basis-table tbody tr.active {
   font-family: Arial, sans-serif;
 }
 
-.tenwords-page h1 {
+.account-page h1 {
   color: #1d72b8;
   margin-bottom: 20px;
 }
 
-.tenwords-page input[type="password"] {
+.account-page h2 {
+  color: #1d72b8;
+  margin-bottom: 20px;
+}
+
+.account-page input[type="password"] {
   width: 80%;
   max-width: 300px;
   padding: 10px;
@@ -1451,7 +1460,7 @@ table.basis-table tbody tr.active {
   font-size: 16px;
 }
 
-.tenwords-page #login-btn {
+.account-page #login-btn {
   background-color: #1d72b8;
   color: #fff;
   border: none;
@@ -1463,15 +1472,15 @@ table.basis-table tbody tr.active {
   transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-.tenwords-page #login-btn:hover {
+.account-page #login-btn:hover {
   background-color: #155d8b;
 }
 
-.tenwords-page #login-btn:active {
+.account-page #login-btn:active {
   transform: scale(0.97);
 }
 
-.tenwords-page #error {
+.account-page #error {
   color: red;
   margin-top: 10px;
   display: none;
