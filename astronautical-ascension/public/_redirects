@@ -3,13 +3,10 @@
 # ==============================
 /kundenlogin/ten-words/*  /kundenlogin/ten-words/:splat  200  Basic-Auth:tenwords:tenwords2026
 /kundenlogin/ten-words/  /kundenlogin/ten-words/index.html  200
-
-
 # ==============================
 # From URL shorterer script
 # ==============================
 /astronautical-ascension   https://github.com/Skorpion115/my-astro-site8
-
 # ==============================
 # Weiterleitungen alter Seiten
 # ==============================
