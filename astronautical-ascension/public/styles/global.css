@@ -513,28 +513,9 @@ hamburger,
 
 /* ANCHOR neue Videoeinstellungen von YouTube */
 
-.iframe-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-  height: 0;
-}
-
-.iframe-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  max-width: 100%;
-  width: 100%;
-  height: 100%;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  margin: 0 auto;
-}
-
 /* verkleinert das Video auf 560px */
 
-.container {
+.video-container-wrapper {
   max-width: 100%;
   width: 560px;
   left: 0;
@@ -1486,6 +1467,4 @@ table.basis-table tbody tr.active {
   display: none;
   font-weight: bold;
 }
-
-
 
