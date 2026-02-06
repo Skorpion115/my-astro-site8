@@ -1390,35 +1390,16 @@ table.basis-table tbody tr.active {
   margin-top: 0.5rem;
 }
 
-/* Container für die Account Seite Login Box */
 
-#login-box input {
-  padding: 8px;
-  font-size: 16px;
-  margin-right: 6px;
-}
-
+/* ==============================
+   Login-Box komplett
+   ============================== */
 .hidden {
   display: none;
 }
 
 .error {
   color: red;
-}
-
-
-/* ==============================
-   Login-Box komplett
-   ============================== */
-.account-page {
-  max-width: 500px;
-  margin: 60px auto;
-  padding: 30px;
-  background-color: #f7f7f7; /* helles Grau */
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-  font-family: Arial, sans-serif;
 }
 
 .account-page h1 {
@@ -1435,10 +1416,11 @@ table.basis-table tbody tr.active {
   width: 80%;
   max-width: 300px;
   padding: 10px;
-  margin-bottom: 15px;
+  margin: 0 auto 15px auto; /* ← DAS ist der Schlüssel */
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
+  display: block;
 }
 
 .account-page #login-btn {
@@ -1451,11 +1433,15 @@ table.basis-table tbody tr.active {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.1s ease;
+  display: block;
+  margin: 10px auto 0 auto;
 }
 
-.account-page #login-btn:hover {
-  background-color: #155d8b;
+.account-page #login-btn {
+  width: 80%;
+  max-width: 300px;
 }
+
 
 .account-page #login-btn:active {
   transform: scale(0.97);
@@ -1467,4 +1453,22 @@ table.basis-table tbody tr.active {
   display: none;
   font-weight: bold;
 }
+
+/* Sauberes zentralles Flexbox-Layout für die Listen-Links */
+
+.login-meta {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.meta-item {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+
 
